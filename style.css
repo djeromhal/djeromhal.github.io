@@ -1,10 +1,10 @@
 body {
-	background-color:#ffffff;
+	background-color:white;
 }
 	
 #reset {
 	border:solid 1px gray;
-	background-color:blue;
+	background-color:white;
 	color: gray;
 	margin-top: 5px;
 }
@@ -12,11 +12,11 @@ body {
 td {				
 	text-align:center;				
 	font-family:Times New Roman;
-	color: gray;
+	color: green;
 	vertical-align: middle;				
 }
 #box td {
-	border:solid 1px gray;
+	border:solid 1px green;
 	text-align:center;
 	font-size:40px;
 	font-family:Times New Roman;
