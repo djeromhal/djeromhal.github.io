@@ -1,5 +1,5 @@
 body {
-	background-color:lavender;
+	background-color:white;
 }
 	
 #reset {
@@ -16,7 +16,7 @@ td {
 	vertical-align: middle;				
 }
 #box td {
-	border:solid 1px green;
+	border:solid 4px blue;
 	text-align:center;
 	font-size:40px;
 	font-family:Times New Roman;
@@ -26,6 +26,6 @@ td {
 }
 
 #box td:hover {
-	color:white;
+	color:blue;
 	cursor: hand;
 }
