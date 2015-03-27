@@ -1,3 +1,22 @@
+<!-- <html> <head>
+ <?php $date=(date("F d, Y H:i:s")) ?>
+<script type="text/javascript">
+ function startTime()
+ {
+ var c="<?php echo $date?>";
+ var tm = new Date();
+ var h = tm.getHours();
+ var m = tm.getMinutes();
+ var s = tm.getSeconds();
+ if (h<=9) h="0"+h;
+ if (m<=9) m="0"+m;  
+ if (s<=9) s="0"+s;
+ tm=h+":"+m+":"+s;
+ document.getElementById('srvtime').innerHTML=tm;
+ setTimeout("startTime()", 1000);
+ }
+ </script>  </head> <body onload="startTime()"> <p id="srvtime"> </p> </body> </html>
+  -->
 <html> <head>
  <?php echo date('H:i:s'); ?>
 <script type="text/javascript">
