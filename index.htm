@@ -20,56 +20,38 @@
 				<p>Технологии. Реальные примеры. Факты</p>
 			</div>
 			<div id="serverTime">
-				<p>
-					<?
-echo date( 'Y-г m-м d-ч ', time() );
-?>
-<b id="seconds">0</b>
+				<p id="clock"></p>
+					<script>
+					function showClock() {
+					var obj = document.getElementById('clock');
+					var req;
 
-<script Language="JavaScript">
-var hours = <?php echo date("H"); ?>;
-var min = <?php echo date("i"); ?>;
-var sec = <?php echo date("s"); ?>;
-function display() {
-sec+=1;
-if (sec>=60)
-{
-min+=1;
-sec=0;
-}
-if (min>=60)
-{
-hours+=1;
-min=0;
-}
-if (hours>=24)
-hours=0;
+					if (window.XMLHttpRequest)	req = new XMLHttpRequest();
+					else if(window.ActiveXObject) {
+					    try {
+					        req = new ActiveXObject('Msxml2.XMLHTTP');  
+					    } catch (e){}									
+					    try {											
+					        req = new ActiveXObject('Microsoft.XMLHTTP');
+					    } catch (e){}
+					}
 
+					if (req) {
+					    req.onreadystatechange = function() {
+					    	if (req.readyState == 4 && req.status == 200)  
+							{ obj.innerHTML = 'Московское время '+req.responseText; }        
+					    };  
+					    req.open("POST", 'xmlhttp.php', true);
+					    req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					    req.send('clock=1&ajax=1');
+					} 
+					else alert("Браузер не поддерживает AJAX");
+					}
 
-if (sec<10)
-sec2display = "0"+sec;
-else
-sec2display = sec;
+					setInterval(showClock, 3000); 
+					</script>
 
-
-if (min<10)
-min2display = "0"+min;
-else
-min2display = min;
-
-if (hours<10)
-hour2display = "0"+hours;
-else
-hour2display = hours;
-
-document.getElementById("seconds").innerHTML = hour2display+":"+min2display+":"+sec2display;
-setTimeout("display();", 1000);
-}
-
-display();
-</script>
-
-				</p>
+				
 			</div>
 		</div>		
 	</div>
