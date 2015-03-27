@@ -61,7 +61,7 @@ p{font-family: PT_Sans-Narrow-Web-Regular;}
 	background: #027ED6;
 	position: absolute;
 	text-align: center;
-	top:280;
+	top:290;
 	left: 0;
 	right: 0;
 	width: 470;
@@ -71,20 +71,95 @@ p{font-family: PT_Sans-Narrow-Web-Regular;}
 #whiteText{
 	position: absolute;
 	text-align: center;
-	top:250;
+	top:260;
 	left: 0;
 	right: 0;
 	margin: auto;
 	font-size: 30;
 	color: #fff;
 }
-#serverTime{
+#wrapperDM{
 	position: absolute;
 	text-align: center;
-	top:400;
+	top:290;
 	left: 0;
 	right: 0;
 	margin: auto;
-	font-size: 30;
 	color: #fff;
+	text-shadow: black 1px 1px;
+	font-size: 70;
+}
+#wrapperST{
+	position: absolute;
+	text-align: center;
+	top:330;
+	left: 0;
+	right: 0;
+	margin: auto;
+	color: #fff;
+	text-shadow: black 1px 1px;
+	font-size: 100;
+}
+#uznatBtn{
+	position: absolute;
+	top:570;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: url(../images/uznat-off.png);
+	width: 395;
+	height: 77;
+}
+#uznatBtn:hover{
+	background: url(../images/uznat-hov.png);
+}
+
+#vsplivashka{
+	display: none;
+	position: fixed;
+	margin: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	width: 678;
+  	height: 602;
+  	background: url(../images/всплывашка.png) no-repeat;
+}
+#bgVsplivashka{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #111;
+	opacity: 0.8;
+}
+.form-control{
+	position: absolute;
+	left: -30; right: 0;
+	margin: auto;
+	width: 75%;
+	height: 60;
+	font-size: 25;
+	text-align: center;
+	border-radius: 5px;
+}
+#inputname{
+	top:220;
+}
+#inputmail{
+	top:345;
+}
+
+#sentReq{
+	width: 533;
+	height: 86;
+	background: url(../images/otpr-off.png);
+	border: 0px;
+	position: absolute;
+	left: -30; right: 0;
+	margin: auto;
+	top:460;
+}
+#sentReq:hover{
+	background: url(../images/otpr-hov.png);
 }

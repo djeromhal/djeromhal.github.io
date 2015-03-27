@@ -4,8 +4,11 @@
 	<title>Одностранничник на миллион</title>
 
 	<link rel="stylesheet" href="css/style.css">
+
+		<!-- Jquery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
-<body>
+<body onload="startTime()">
 
 	<div id="wrapper">
 		<div id="formRight">
@@ -20,43 +23,33 @@
 			<div id="whiteText">
 				<p>Технологии. Реальные примеры. Факты</p>
 			</div>
-			<div id="serverTime">
-				<?php echo "Hello world!"; ?>
-				<!--#include virtual="time.php" -->
-				<p id="clock"></p>
-					<script>
-					function showClock() {
-					var obj = document.getElementById('clock');
-					var req;
-
-					if (window.XMLHttpRequest)	req = new XMLHttpRequest();
-					else if(window.ActiveXObject) {
-					    try {
-					        req = new ActiveXObject('Msxml2.XMLHTTP');  
-					    } catch (e){}									
-					    try {											
-					        req = new ActiveXObject('Microsoft.XMLHTTP');
-					    } catch (e){}
-					}
-
-					if (req) {
-					    req.onreadystatechange = function() {
-					    	if (req.readyState == 4 && req.status == 200)  
-							{ obj.innerHTML = 'Московское время '+req.responseText; }        
-					    };  
-					    req.open("POST", 'xmlhttp.php', true);
-					    req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-					    req.send('clock=1&ajax=1');
-					} 
-					else alert("Браузер не поддерживает AJAX");
-					}
-
-					setInterval(showClock, 3000); 
-					</script>
-
-				
+			<div id="wrapperDM">
+				<p id="dayMonth"> </p>
 			</div>
+			<div id="wrapperST">
+	 			<p id="srvtime"> </p> 
+ 			</div>
+ 			<div id="uznatBtn"></div>
 		</div>		
 	</div>
+	<div id="bgVsplivashka"></div>
+	<div id="vsplivashka">
+		<form method="POST" id="feedback-form" role="form">
+					<div class="form-group">
+						<input id="inputname" class="form-control" type="text" name="nameF" required placeholder="Ваше имя" x-autocompletetype="name">
+					</div>
+					<div class="form-group">
+						<input id="inputmail" class="form-control" type="email" name="contactF" required placeholder="Ваш E-mail" x-autocompletetype="email">
+					</div>
+					<div class="form-group">
+						<button id="sentReq" type="submit" ></button>
+					</div>
+				</form>
+	</div>
+
+	<script src="js/form.js"></script>
+	<script src="js/time.js"></script>
+	<script src="js/request.js"></script>
+
 </body>
 </html>
