@@ -1,20 +1,90 @@
 body{
 	background: url(../images/bg.png) no-repeat center 0;
+	height: 1180;
 }
+@font-face{
+	font-family: PT_Sans-Narrow-Web-Regular;
+	src: url(../fonts/PT_Sans-Narrow-Web-Regular.ttf);
+}
+@font-face{
+	font-family: PT_Sans-Narrow-Web-Bold;
+	src: url(../fonts/PT_Sans-Narrow-Web-Bold.ttf);
+}
+h1{font-family: PT_Sans-Narrow-Web-Bold;}
+p{font-family: PT_Sans-Narrow-Web-Regular;}
 #wrapper{
 	position: absolute;
 	width: 1000;
-	height: 1720;
-	background: #ccc;
-	opacity: .5;
+	height: 700;
+	/*background: #ccc;*/
+	/*opacity: .8;*/
 	top:0; bottom: 0; left: 0; right: 0;
 	margin: auto;
 }
 #formRight{
 	position: absolute;
-	width: 570;
-	height: 800;
-	background: #111;
-	top:300;
-	/*right: 0;*/
+	width: 600;
+	height: 700;
+	/*background: #fff;*/
+	top:0;
+	right: 0;
+}
+#onlineTrans{
+	position: absolute;
+	background: url(../images/online-trans.png);
+	width: 191;
+	height: 48;
+	margin: auto;
+	top:90;
+	left: 0;
+	right: 0;
+}
+#odnostr{
+	position: absolute;
+	text-align: center;
+	top:100;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 25;
+}
+#underOdnostr{
+	position: absolute;
+	text-align: center;
+	top:180;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 24;
+}
+#blueBg{
+	background: #027ED6;
+	position: absolute;
+	text-align: center;
+	top:280;
+	left: 0;
+	right: 0;
+	width: 470;
+	height: 40;
+	margin: auto;
+}
+#whiteText{
+	position: absolute;
+	text-align: center;
+	top:250;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 30;
+	color: #fff;
+}
+#serverTime{
+	position: absolute;
+	text-align: center;
+	top:400;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 30;
+	color: #fff;
 }
