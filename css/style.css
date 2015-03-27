@@ -1,0 +1,20 @@
+body{
+	background: url(../images/bg.png) no-repeat center 0;
+}
+#wrapper{
+	position: absolute;
+	width: 1000;
+	height: 1720;
+	background: #ccc;
+	opacity: .5;
+	top:0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+}
+#formRight{
+	position: absolute;
+	width: 570;
+	height: 800;
+	background: #111;
+	top:300;
+	/*right: 0;*/
+}
