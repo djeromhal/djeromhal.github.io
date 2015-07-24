@@ -1,5 +1,4 @@
-﻿$(document).ready(function(){
-  document.getElementById('feedback-form').onsubmit = function(){
+﻿  document.getElementById('feedback-form').onsubmit = function(){
     var http = new XMLHttpRequest();
     http.open("POST", "php/form.php", true);
     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -14,4 +13,3 @@
     };
     return false;
   };
-});

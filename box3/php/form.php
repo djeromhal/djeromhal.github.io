@@ -1,4 +1,4 @@
-<?
+<?php
 if (array_key_exists('textF', $_POST)) {
   mail ("ivankohw@mail.ru",
         "Заполнена форма ".$_SERVER['HTTP_REFERER'],
