@@ -1,6 +1,6 @@
 ﻿  document.getElementById('feedback-form').onsubmit = function(){
     var http = new XMLHttpRequest();
-    http.open("POST", "php/form.php", true);
+    http.open("POST", "../php/form.php", true);
     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     http.send("nameF=" + this.nameF.value + "&contactF=" + this.contactF.value + "&textF=" + this.textF.value);
     http.onreadystatechange = function() {
