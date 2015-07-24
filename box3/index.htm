@@ -162,7 +162,7 @@
 		 	<center><img src="img/logo.png"></center>
 	</footer>
 	<div id='bgpopup'><div id='popup'>
-		<form method="POST" id="feedback-form" role="form">
+		<!-- <form method="POST" id="feedback-form" role="form">
 			<div class="form-group">
 				<input id="inputname" class="form-control white" type="text" name="nameF" required placeholder="Ваше имя" x-autocompletetype="name">
 			</div>
@@ -175,7 +175,21 @@
 			<div class="form-group">
 				<button id="sentReq" type="submit" class='white'>НАПИСАТЬ НАМ</button>
 			</div>
-		</form>
+		</form> -->
+		<form method="POST" id="feedback-form-GVR" role="form">
+						<div class="form-group">
+							<input class="form-control" type="text" name="nameGVR" required placeholder="Имя руководителя*" x-autocompletetype="name">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="email" name="contactGVR" required placeholder="E-mail руководителя*" x-autocompletetype="email">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="tel" name="telGVR" required placeholder="Телефон руководителя*" x-autocompletetype="tel">
+						</div>
+						<div class="form-group">
+							<button class="btn btn-warning" type="submit" >Отправить заявку</button>
+						</div>
+					</form>
 	</div></div>
 <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
