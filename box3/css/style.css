@@ -107,7 +107,7 @@ body{
 }
 
 nav{
-	position: absolute;
+	position: fixed;
 	height: 70px;
 	width: 1200px;
 	margin: 0 auto;
