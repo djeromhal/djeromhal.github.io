@@ -113,7 +113,9 @@ nav{
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	/*background: linear-gradient(to bottom, #4b4e61, #4E5163);*/
+	background: rgba(78,81,100, 0.5);
+	color: white;
+	
 }
 nav img{
 	position: absolute;
@@ -146,7 +148,6 @@ header{
 	background-size: 100%;
 	text-align: left;
 }
-
 .yellow{
 	color: #fbfe03;
 }
