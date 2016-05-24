@@ -27,7 +27,13 @@ window.onload = (function() {
 
 </body>
 </html>-->
-<script src="//vk.com/js/api/openapi.js"></script>;
+<html>
+<head>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
+	<script src="//vk.com/js/api/openapi.js"></script>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
 <script type="text/javascript">
     VK.init({
             apiId: 4983778
@@ -50,7 +56,11 @@ function authInfo(response) {
     }
 }
 
-VK.Auth.getLoginStatus(authInfo); // проверяем наличие входа в ВК, ответ отправляем в функцию обработчик
+$(function(){VK.Auth.getLoginStatus(authInfo)}); // проверяем наличие входа в ВК, ответ отправляем в функцию обработчик
 </script>
 
 <span id="VKInfo"> </span>
+
+</body>
+</html>
+
