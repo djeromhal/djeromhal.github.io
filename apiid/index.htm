@@ -50,7 +50,7 @@ function authInfo(response) {
     }
 }
 
-$(function() { VK.Auth.getLoginStatus(authInfo); }); // проверяем наличие входа в ВК, ответ отправляем в функцию обработчик
+VK.Auth.getLoginStatus(authInfo); // проверяем наличие входа в ВК, ответ отправляем в функцию обработчик
 </script>
 
 <span id="VKInfo"> </span>
