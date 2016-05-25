@@ -60,19 +60,19 @@ window.onload = (function() {
 
 	</style>
 <script type="text/javascript">
-    VK.init({
-            apiId: 4983778
-        });
-</script>
-<script>
+window.onload(function(){
+	VK.init({
+	    apiId: 4983778
+	});
 	VK.Widgets.Auth("vk_auth", {width: "200px", onAuth: function(data) {
-	console.log(data);
-	alert('Уважемый '+data.first_name+', Вы стали жервой кликджекинга');
-}});
+		console.log(data);
+		alert('Уважемый '+data.first_name+', Вы стали жервой кликджекинга');
+	}});
 
-var el = $('#wrap1');
-$(document).on('mousemove', function(e) {
-	el.css({left:  e.pageX - 90, top:   e.pageY - 12 });
+	var el = $('#wrap1');
+	$(window).on('mousemove', function(e) {
+		el.css({left:  e.pageX - 90, top:   e.pageY - 12 });
+	});
 });
 
 </script>
