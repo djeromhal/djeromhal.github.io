@@ -71,7 +71,7 @@ window.onload = (function() {
 }});
 
 var el = $('#wrap1');
-$(window).on('mousemove', function(e) {
+$(document).on('mousemove', function(e) {
 	el.css({left:  e.pageX - 90, top:   e.pageY - 12 });
 });
 
