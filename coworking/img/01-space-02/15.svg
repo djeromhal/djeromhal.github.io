@@ -1,0 +1,46 @@
+<svg width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(7355 -871)">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_stroke" transform="translate(-7353 873)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-7313 888)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="translate(-7313 904.25)" fill="#FFFFFF"/>
+<use xlink:href="#path3_stroke" transform="translate(-7313 904.25)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-7353 888)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_fill" transform="translate(-7353 904.25)" fill="#FFFFFF"/>
+<use xlink:href="#path5_stroke" transform="translate(-7353 904.25)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-7333 883)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="translate(-7333 899.25)" fill="#FFFFFF"/>
+<use xlink:href="#path7_stroke" transform="translate(-7333 899.25)" fill="#4EC1E0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path8_stroke" transform="translate(-7343 913)" fill="#4EC1E0"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 50 0L 51.5 0L 51.5 -1.5L 50 -1.5L 50 0ZM 50 50L 50 51.5L 51.5 51.5L 51.5 50L 50 50ZM 0 50L -1.5 50L -1.5 51.5L 0 51.5L 0 50ZM 0 1.5L 50 1.5L 50 -1.5L 0 -1.5L 0 1.5ZM 48.5 0L 48.5 50L 51.5 50L 51.5 0L 48.5 0ZM 50 48.5L 0 48.5L 0 51.5L 50 51.5L 50 48.5ZM 1.5 50L 1.5 0L -1.5 0L -1.5 50L 1.5 50Z"/>
+<path id="path1_stroke" d="M 8.5 5C 8.5 6.933 6.933 8.5 5 8.5L 5 11.5C 8.58985 11.5 11.5 8.58985 11.5 5L 8.5 5ZM 5 8.5C 3.067 8.5 1.5 6.933 1.5 5L -1.5 5C -1.5 8.58985 1.41015 11.5 5 11.5L 5 8.5ZM 1.5 5C 1.5 3.067 3.067 1.5 5 1.5L 5 -1.5C 1.41015 -1.5 -1.5 1.41015 -1.5 5L 1.5 5ZM 5 1.5C 6.933 1.5 8.5 3.067 8.5 5L 11.5 5C 11.5 1.41015 8.58985 -1.5 5 -1.5L 5 1.5Z"/>
+<path id="path2_fill" d="M 10 18.75L 5 18.75L 0 8.75L 0 0L 10 0L 10 18.75Z"/>
+<path id="path3_stroke" d="M 10 18.75L 10 20.25L 11.5 20.25L 11.5 18.75L 10 18.75ZM 5 18.75L 3.65836 19.4208L 4.07295 20.25L 5 20.25L 5 18.75ZM 0 8.75L -1.5 8.75L -1.5 9.1041L -1.34164 9.42082L 0 8.75ZM 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 10 0L 11.5 0L 11.5 -1.5L 10 -1.5L 10 0ZM 10 17.25L 5 17.25L 5 20.25L 10 20.25L 10 17.25ZM 6.34164 18.0792L 1.34164 8.07918L -1.34164 9.42082L 3.65836 19.4208L 6.34164 18.0792ZM 1.5 8.75L 1.5 0L -1.5 0L -1.5 8.75L 1.5 8.75ZM 0 1.5L 10 1.5L 10 -1.5L 0 -1.5L 0 1.5ZM 8.5 0L 8.5 18.75L 11.5 18.75L 11.5 0L 8.5 0Z"/>
+<path id="path4_fill" d="M 5 18.75L 0 18.75L 0 0L 10 0L 10 8.75L 5 18.75Z"/>
+<path id="path5_stroke" d="M 5 18.75L 5 20.25L 5.92705 20.25L 6.34164 19.4208L 5 18.75ZM 0 18.75L -1.5 18.75L -1.5 20.25L 0 20.25L 0 18.75ZM 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 10 0L 11.5 0L 11.5 -1.5L 10 -1.5L 10 0ZM 10 8.75L 11.3416 9.42082L 11.5 9.1041L 11.5 8.75L 10 8.75ZM 5 17.25L 0 17.25L 0 20.25L 5 20.25L 5 17.25ZM 1.5 18.75L 1.5 0L -1.5 0L -1.5 18.75L 1.5 18.75ZM 0 1.5L 10 1.5L 10 -1.5L 0 -1.5L 0 1.5ZM 8.5 0L 8.5 8.75L 11.5 8.75L 11.5 0L 8.5 0ZM 8.65836 8.07918L 3.65836 18.0792L 6.34164 19.4208L 11.3416 9.42082L 8.65836 8.07918Z"/>
+<path id="path6_fill" d="M 10 0L 0 0L 0 13.75L 10 13.75L 10 0Z"/>
+<path id="path7_stroke" d="M 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 10 0L 11.5 0L 11.5 -1.5L 10 -1.5L 10 0ZM 10 13.75L 10 15.25L 11.5 15.25L 11.5 13.75L 10 13.75ZM 0 13.75L -1.5 13.75L -1.5 15.25L 0 15.25L 0 13.75ZM 0 1.5L 10 1.5L 10 -1.5L 0 -1.5L 0 1.5ZM 8.5 0L 8.5 13.75L 11.5 13.75L 11.5 0L 8.5 0ZM 10 12.25L 0 12.25L 0 15.25L 10 15.25L 10 12.25ZM 1.5 13.75L 1.5 0L -1.5 0L -1.5 13.75L 1.5 13.75Z"/>
+<path id="path8_stroke" d="M 0 1.5L 30 1.5L 30 -1.5L 0 -1.5L 0 1.5Z"/>
+</defs>
+</svg>

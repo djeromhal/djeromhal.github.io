@@ -1,0 +1,43 @@
+<svg width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(8238 -872)">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-8236 874)" fill="#FFFFFF"/>
+<use xlink:href="#path1_stroke" transform="translate(-8236 874)" fill="#4C4F54"/>
+</g>
+<g id="Ellipse 10">
+<use xlink:href="#path2_fill" transform="translate(-8219 905)" fill="#4C4F54"/>
+</g>
+<g id="Ellipse 10">
+<use xlink:href="#path2_fill" transform="translate(-8204.34 904.833)" fill="#4C4F54"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_stroke" transform="translate(-8226 884)" fill="#4C4F54"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_stroke" transform="translate(-8211 884)" fill="#4C4F54"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(-8221 891.667)" fill="#4C4F54"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(-8206 892)" fill="#4C4F54"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(-8221 897.667)" fill="#4C4F54"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(-8206 898)" fill="#4C4F54"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 50 0L 0 0L 0 50L 50 50L 50 0Z"/>
+<path id="path1_stroke" d="M 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 50 0L 51.5 0L 51.5 -1.5L 50 -1.5L 50 0ZM 50 50L 50 51.5L 51.5 51.5L 51.5 50L 50 50ZM 0 50L -1.5 50L -1.5 51.5L 0 51.5L 0 50ZM 0 1.5L 50 1.5L 50 -1.5L 0 -1.5L 0 1.5ZM 48.5 0L 48.5 50L 51.5 50L 51.5 0L 48.5 0ZM 50 48.5L 0 48.5L 0 51.5L 50 51.5L 50 48.5ZM 1.5 50L 1.5 0L -1.5 0L -1.5 50L 1.5 50Z"/>
+<path id="path2_fill" d="M 3.33333 1.66667C 3.33333 2.58714 2.58714 3.33333 1.66667 3.33333C 0.746192 3.33333 0 2.58714 0 1.66667C 0 0.746192 0.746192 0 1.66667 0C 2.58714 0 3.33333 0.746192 3.33333 1.66667Z"/>
+<path id="path3_stroke" d="M 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 15 0L 16.5 0L 16.5 -1.5L 15 -1.5L 15 0ZM 15 30L 15 31.5L 16.5 31.5L 16.5 30L 15 30ZM 0 30L -1.5 30L -1.5 31.5L 0 31.5L 0 30ZM 0 1.5L 15 1.5L 15 -1.5L 0 -1.5L 0 1.5ZM 13.5 0L 13.5 30L 16.5 30L 16.5 0L 13.5 0ZM 15 28.5L 0 28.5L 0 31.5L 15 31.5L 15 28.5ZM 1.5 30L 1.5 0L -1.5 0L -1.5 30L 1.5 30Z"/>
+<path id="path4_stroke" d="M 0 1.5L 5 1.5L 5 -1.5L 0 -1.5L 0 1.5Z"/>
+</defs>
+</svg>

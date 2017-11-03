@@ -1,0 +1,30 @@
+<svg width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(7648 -871)">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_stroke" transform="translate(-7646 873)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(-7623.5 909.5)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(-7627.75 902.438)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_stroke" transform="translate(-7634.33 893.167)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(-7641 883.688)" fill="#D41B5D"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 50 0L 51.5 0L 51.5 -1.5L 50 -1.5L 50 0ZM 50 50L 50 51.5L 51.5 51.5L 51.5 50L 50 50ZM 0 50L -1.5 50L -1.5 51.5L 0 51.5L 0 50ZM 0 1.5L 50 1.5L 50 -1.5L 0 -1.5L 0 1.5ZM 48.5 0L 48.5 50L 51.5 50L 51.5 0L 48.5 0ZM 50 48.5L 0 48.5L 0 51.5L 50 51.5L 50 48.5ZM 1.5 50L 1.5 0L -1.5 0L -1.5 50L 1.5 50Z"/>
+<path id="path1_fill" d="M 2.5 5C 3.88071 5 5 3.88071 5 2.5C 5 1.11929 3.88071 0 2.5 0C 1.11929 0 0 1.11929 0 2.5C 0 3.88071 1.11929 5 2.5 5Z"/>
+<path id="path2_stroke" d="M 1.06066 3.87316C 4.22487 0.708947 9.27513 0.708947 12.4393 3.87316L 14.5607 1.75184C 10.2249 -2.58395 3.27513 -2.58395 -1.06066 1.75184L 1.06066 3.87316Z"/>
+<path id="path3_stroke" d="M 1.06066 6.56066C 7.80821 -0.186887 18.8585 -0.186887 25.606 6.56066L 27.7273 4.43934C 19.8082 -3.47978 6.85846 -3.47978 -1.06066 4.43934L 1.06066 6.56066Z"/>
+<path id="path4_stroke" d="M 1.06066 9.37316C 11.5582 -1.12439 28.5251 -1.12439 39.0227 9.37316L 41.144 7.25184C 29.4749 -4.41728 10.6085 -4.41728 -1.06066 7.25184L 1.06066 9.37316Z"/>
+</defs>
+</svg>
