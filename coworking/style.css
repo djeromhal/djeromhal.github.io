@@ -1039,3 +1039,9 @@ p{
 	padding-top: 50px;
 	box-sizing: border-box;
 }
+.overflow_auto{
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

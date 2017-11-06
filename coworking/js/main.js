@@ -223,7 +223,7 @@ $(function(){
 					// IF MOVE BLOCK TO TOP SIDE
 					case 'top':
 						if(typeof attr !== typeof undefined && attr !== false){
-							nextInnerItem.load('ajax/1.html', function(){
+							nextInnerItem.load('ajax/' + attr, function(){
 								$('#ajaxloader').fadeOut(function(){
 									$('#ajaxloader').attr('style','');
 								});
@@ -243,7 +243,7 @@ $(function(){
 			}else if(Math.abs(ui.position.top) <= OFFSETTOBLOCKCHANGE && Math.abs(ui.position.top) !== 0){
 				console.log('4');
 				if(typeof attr !== typeof undefined && attr !== false){
-					nextInnerItem.load('ajax/1.html', function(){
+					nextInnerItem.load('ajax/' + attr, function(){
 						$('#ajaxloader').animate({top: '100%'},function(){
 							$('#ajaxloader').attr('style','');
 						});
