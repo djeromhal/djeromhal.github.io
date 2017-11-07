@@ -1285,6 +1285,7 @@ p{
 	padding-top: 50px;
 	padding-bottom: 80px;
     background: #fff;
+    box-sizing: border-box;
 }
 .calendar_date.next_mounth{
 	box-shadow: 
