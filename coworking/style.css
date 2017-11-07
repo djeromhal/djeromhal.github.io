@@ -392,7 +392,7 @@ p{
     text-align: center;
     font-weight: bold;
     font-size: 50px;
-    text-transform: lowercase;
+    /*text-transform: lowercase;*/
 }
 .anim_top_block_wrapper>div{
 	position: absolute;
@@ -1070,7 +1070,7 @@ p{
 }
 .right_title_block .top_block_title h1{
 	font-size: 30px;
-	text-transform: lowercase;
+	/*text-transform: lowercase;*/
 }
 .right_title_block .tob_block_text{
 	height: auto;
@@ -1224,7 +1224,7 @@ p{
 .right_title_block .tob_block_text{
 	width: 500px;
 }
-#anim_block_rt_5{
+#anim_block_rt_5, #anim_block_c4_5{
     top: 0;
     left: auto;
     right: 47px;
