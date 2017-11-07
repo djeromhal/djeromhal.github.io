@@ -1244,3 +1244,224 @@ p{
     right: -4px;
     bottom: -50px;
 }
+.calendar_page .btn_wrapper{
+	text-align: center;
+}
+.calendar_page .button{
+	width: 260px;
+	height: 60px;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+	text-align: center;
+	line-height: 52px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.calendar_page .button.orange{
+	border: 4px solid #F78D28;
+	color: #F78D28;
+}
+.calendar_page .button.blue{
+	border: 4px solid #00A2AE;
+	color: #00A2AE;
+}
+.calendar_page .button.red{
+	border: 4px solid #F04A24;
+	color: #F04A24;
+}
+.calendar_page .button.purple{
+	border: 4px solid #D41B5D;
+	color: #D41B5D;
+}
+.calendar_page h3{
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.calendar_page{
+	padding-top: 50px;
+	padding-bottom: 80px;
+    background: #fff;
+}
+.calendar_date.next_mounth{
+	box-shadow: 
+    0px 0 0 0 #DADADA, 
+    0 0px 0 0 #DADADA, 
+    4px 4px 0 0 #DADADA, 
+    0px 0 0 0 #DADADA inset, 
+    0 0px 0 0 #DADADA inset;
+    color: #DADADA;
+}
+.calendar_date.prev_mounth{
+	box-shadow: 
+    4px 0 0 0 #DADADA, 
+    0 4px 0 0 #DADADA, 
+    4px 4px 0 0 #DADADA,
+    4px 0 0 0 #DADADA inset, 
+    0 4px 0 0 #DADADA inset;
+    color: #DADADA;
+}
+.calendar_date{
+	position: relative;
+	box-shadow: 
+    4px 0 0 0 #000, 
+    0 4px 0 0 #000, 
+    4px 4px 0 0 #000,
+    4px 0 0 0 #000 inset, 
+    0 4px 0 0 #000 inset;
+    width: 95px;
+    height: 95px;
+    float: left;
+    box-sizing: border-box;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: right;
+    padding-right: 10px;
+}
+.calendar{
+	width: 665px;
+	height: 570px;
+	display: inline-block;
+	vertical-align: top;
+}
+.calendar_date_description{
+	width: 450px;
+	height: 570px;
+	display: inline-block;
+	vertical-align: top;
+}
+.calendar_wrapper{
+	text-align: center;
+	padding-top: 48px;
+}
+.date_img_wrapper{
+	width: 450px;
+	height: 285px;
+	box-shadow: 
+    4px 0 0 0 #000, 
+    0 4px 0 0 #000, 
+    4px 4px 0 0 #000,
+    4px 0 0 0 #000 inset, 
+    0 4px 0 0 #000 inset;
+}
+.date_img_wrapper img{
+	max-width: 100%;
+	height: auto;
+}
+.date_desc_wrapper{
+	box-shadow: 
+    4px 0 0 0 #000, 
+    0 4px 0 0 #000, 
+    4px 4px 0 0 #000,
+    4px 0 0 0 #000 inset, 
+    0 4px 0 0 #000 inset;
+    padding: 30px 20px 20px 30px;
+    text-align: left;
+    height: 285px;
+    box-sizing: border-box;
+}
+.date_desc_wrapper h4{
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.date_desc_wrapper p{
+	font-size: 16px;
+	line-height: 16px;
+	margin-bottom: 30px;
+}
+.date_desc_wrapper .date_time{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+.date_desc_wrapper .more_space{
+	display: inline-block;
+	vertical-align: middle;
+	width: 256px;
+}
+.calendar_date_description_help{
+	font-size: 16px;
+	line-height: 19px;
+	color: #5AB7B2;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 30px;
+}
+.calendar_wrapper{
+	margin-bottom: 58px;
+}
+.application_wrapper{
+	width: 890px;
+	padding: 50px 80px 80px 80px;
+	border: 4px solid #000;
+	box-sizing: border-box;
+	margin: auto;
+	text-align: center;
+	position: relative;
+}
+.application_wrapper p{
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: bold;
+}
+.application_wrapper p .orange{
+	color: #F04A24;
+}
+.application_wrapper .more_space{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: -35px;
+}
+.big_more_space.more_space{
+	width: 293px;
+	height: 70px;
+	padding-right: 62px;
+}
+.big_more_space.more_space .more_space_inner{
+	line-height: 62px;
+}
+.big_more_space.more_space .more_space_arrow{
+	height: 62px;
+	width: 62px;
+}
+.big_more_space.more_space .more_space_arrow::before{
+	top: 24px;
+	left: 20px;
+}
+.big_more_space.more_space .more_space_arrow::after{
+	bottom: 24px;
+	left: 20px;
+}
+.picker_container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 10px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.picker_container>span{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+	float: left;
+}
+.orange_picker{
+	background-color: #F78D28;
+}
+.blue_picker{
+	background-color:#00A2AE;
+}
+.purple_picker{
+	background-color: #D41B5D;
+}
