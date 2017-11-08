@@ -1466,3 +1466,70 @@ p{
 .purple_picker{
 	background-color: #D41B5D;
 }
+h2{
+	font-size: 32px;
+	line-height: 38px;
+	color: #000;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+.white_page{
+	background-color: #fff;
+	padding-top: 50px;
+	padding-bottom: 80px;
+	box-sizing: border-box;
+}
+.faces_table{
+	width: 1260px;
+	margin: auto;
+}
+.face_wrapper{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+}
+.face_wrapper:last-child{
+	margin-right: 0;
+}
+.face_img{
+	width: 180px;
+	height: 180px;
+	border: 4px solid #000;
+	border-radius: 100%;
+	overflow: hidden;
+	margin-bottom: 36px;
+}
+.face_img img{
+	width: 100%;
+	height: auto;
+}
+.face_wrapper h3{
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.faces_job{
+	font-size: 16px;
+	line-height: 19px;
+	color: #F04A24;
+	margin-bottom: 13px;
+}
+.faces_soc a{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+.faces_soc a:last-child{
+	margin-right: 0;
+}
+.faces_partners{
+	width: 1260px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+.faces_partners .more_space{
+	width: 283px;
+	margin-top: 30px;
+}
