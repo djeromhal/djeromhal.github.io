@@ -31,6 +31,8 @@ $(function(){
 		var left = -activeWidth + leftActive;
 		return left;
 	}
+	var updateTopNav = function(item) {
+	}
 	var updateGalleryClasses = function(item){
 		checkItemOnContinue(item);
 		if(item.hasClass('prev_item')){
@@ -47,6 +49,12 @@ $(function(){
 			item.next().addClass('next_item');
 			item.draggable(draggableOptions).addClass('active_drag').prev().addClass('prev_item');
 		}
+		// update Tov Nav
+		$('.top_nav').find('.active').removeClass('active');
+		var href = $('.active_drag').attr('id');
+		var liToActive = $('.top_nav').find('a[href=#'+href+']').parent();
+		console.log(liToActive);
+		liToActive.addClass('active');
 	}
 	var checkItemOnContinue = function(item){
 		if(!item.prev().length){
