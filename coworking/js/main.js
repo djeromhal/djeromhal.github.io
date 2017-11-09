@@ -78,6 +78,7 @@ $(function(){
 				thisInnerItem.removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
 				prevInnerItem.removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
 				parent.draggable( "option", "revert", true);
+				parent.attr('style','');
 				thisInnerItem.attr('style','');
 				prevInnerItem.attr('style','');
 			});
@@ -89,6 +90,7 @@ $(function(){
 				thisInnerItem.removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
 				nextInnerItem.removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
 				parent.draggable( "option", "revert", true);
+				parent.attr('style','');
 				thisInnerItem.attr('style','');
 				nextInnerItem.attr('style','');
 			});
