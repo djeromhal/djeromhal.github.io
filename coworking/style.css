@@ -389,6 +389,8 @@ body{
 }
 p{
 	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 19px;
 }
 .top_block_title{
 	position: absolute;
@@ -918,15 +920,16 @@ p{
 }
 .more_space .more_space_inner{
 	line-height: 42px;
+	height: 42px;
 	color: #000;
 	text-decoration: none;
 }
 .more_space .more_space_arrow{
 	width: 50px;
-	height: 42px;
+	height: 50px;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: -4px;
 	border-left: 4px solid #000;
 }
 .more_space.blue .more_space_arrow{
@@ -956,7 +959,7 @@ p{
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 14px;
+    top: 17px;
 }
 .more_space .more_space_arrow::after{
     -webkit-transform: rotate(-45deg);
@@ -964,7 +967,7 @@ p{
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    bottom: 14px;
+    bottom: 17px;
 }
 .space_wrapper:hover .space_desc, .space_wrapper:hover .space_desc_2, .space_wrapper:hover .more_space{
 	display: block;
@@ -1020,7 +1023,7 @@ p{
 .space_dop_service img{
 	height: 50px;
 }
-.space_dop_service.more_space img{	
+.space_dop_service .more_space img{	
     position: absolute;
     top: -4px;
     left: -4px;
@@ -1044,6 +1047,7 @@ p{
 	/*float: left;*/
 	display: inline-block;
 	vertical-align: top;
+	text-align: left;
 }
 .space_dop_service_col_wrapper{
 	width: 100%;
@@ -1446,17 +1450,18 @@ p{
 }
 .big_more_space.more_space .more_space_inner{
 	line-height: 62px;
+	height: 62px;
 }
 .big_more_space.more_space .more_space_arrow{
-	height: 62px;
+	height: 70px;
 	width: 62px;
 }
 .big_more_space.more_space .more_space_arrow::before{
-	top: 24px;
+	top: 27px;
 	left: 20px;
 }
 .big_more_space.more_space .more_space_arrow::after{
-	bottom: 24px;
+	bottom: 27px;
 	left: 20px;
 }
 .picker_container{
@@ -1728,4 +1733,286 @@ h4{
     left: auto;
     right: -44px;
     z-index: 1;
+}
+.coworking_tab_wrapper{
+	width: 660px;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	border: 4px solid #000;
+    margin: 10px 10px 40px 10px;
+    text-align: left;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.coworking_tab_top_img{
+	width: 100%;
+	height: 320px;
+	position: relative;
+	overflow: hidden;
+}
+.coworking_tab_top_img img{
+    width: 100%;
+    height: auto;
+}
+.title_white{
+	font-size: 26px;
+	line-height: 30px;
+	color: #fff;
+	font-weight: bold;
+}
+.coworking_tab_top_img .title_white{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 30px;
+	padding-left: 35px;
+}
+.white_text{
+	font-size: 16px;
+	line-height: 19px;
+	color: #fff;
+}
+.coworking_tab_top_img .white_text{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-left: 35px;
+	padding-bottom: 100px;
+}
+.coworking_tab {
+    width: 33.33333%;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    line-height: 62px;
+    height: 62px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 4px solid #000;
+    border-right: 4px solid #000;
+    border-top: 4px solid #000;
+    box-sizing: border-box;
+}
+.coworking_tab:last-child{
+    border-right: none;	
+}
+.coworking_tab.active{
+	height: 70px;
+	line-height: 70px;
+}
+.coworking_tabs{
+	width: 100%;
+	height: 62px;
+	margin-top: -68px;
+	box-sizing: border-box;
+	position: relative;
+}
+.coworking_tab_list {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 50px;
+	box-sizing: border-box;
+	height: 100%;
+}
+.coworking_tab_list .dop{
+    margin-top: 15px;
+    display: block;
+    color: rgba(0,0,0,.5);
+}
+.coworking_tab_list:last-child{
+	padding-left: 50px;
+	padding-right: 20px;
+}
+.coworking_tabs_content{
+	background-color: #fff;
+	box-sizing: border-box;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    height: 402px;
+}
+.coworking_tabs_content.with_calc{
+	height: 332px;
+}
+.coworking_tab_bottom .coworking_tab_price, .coworking_tab_bottom .big_more_space{
+	display: inline-block;
+	width: 50%;
+	vertical-align: bottom;
+}
+.coworking_tab_bottom .big_more_space{
+	border-bottom: none;
+	border-right: none;
+}
+.coworking_tab_bottom .coworking_tab_price{
+    height: 70px;
+    line-height: 70px;
+    border-top: 4px solid #000;
+    box-sizing: border-box;
+    padding-left: 22px;
+    font-size: 26px;
+    font-weight: bold;
+}
+.with_calc .coworking_tab_list li{
+	margin-bottom: 10%;
+}
+.coworking_tab_list li{
+	font-size: 16px;
+	line-height: 16px;
+	margin-bottom: 15%;
+	padding-left: 40px;
+	box-sizing: border-box;
+	position: relative;
+}
+.coworking_tab_list li:before{
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.coworking_tab_list.adv li:before{
+	width: 27px;
+	height: 19px;
+	background: url(img/02-coworking-02/1.svg) left top no-repeat;
+}
+.coworking_tab_list.disadv li:before{
+	width: 25px;
+	height: 25px;
+	background: url(img/02-coworking-02/2.svg) left top no-repeat;
+}
+.coworking_tab_list_wrapper{
+	height: 100%;
+}
+.coworking_tab_content{
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+.coworking_tab_content.active{
+	display: block;
+}
+.coworking_tab_calc{
+    height: 70px;
+    width: 100%;
+    border-top: 4px solid #000;
+    box-sizing: border-box;
+    position: relative;
+}
+.coworking_tab_calc_title{
+    width: 100%;
+    height: 100%;
+    padding-right: 210px;
+    box-sizing: border-box;
+    padding-top: 6px;
+    padding-left: 22px;
+}
+.coworking_tab_calc_title h3{
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.red_text{
+	color: #F04A24;
+}
+.coworking_tab_calc_btns{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.coworking_tab_calc_btns>div{
+	display: inline-block;
+	vertical-align: top;
+	height: 67px;
+	width: 66px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 26px;
+	font-weight: bold;
+	border-left: 4px solid #000;
+	box-sizing: border-box;
+}
+.coworking_tab_calc_minus, .coworking_tab_calc_plus{
+	color: #fff;
+	background-color: #000;
+	position: relative;
+	cursor: pointer;
+}
+.coworking_tab_calc_minus:before, .coworking_tab_calc_plus:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 4px solid #fff;
+	box-sizing: border-box;
+}
+h3{
+	font-size: 26px;
+	line-height: 30px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.one_line_share{
+	width: 1342px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 40px;
+	background-color: #fff;
+	height: 70px;
+	box-sizing: border-box;
+	border: 4px solid #000;
+	padding-right: 320px;
+	position: relative;
+}
+.one_line_share h3{
+	line-height: 62px;
+	display: block;
+	text-align: center;
+}
+.one_line_share .big_more_space{
+	position: absolute;
+	right: -4px;
+	top: -4px;
+	width: 320px;
+}
+.three_col .space_dop_service_col{
+	margin: 0 40px;
+	padding-left: 50px;
+	box-sizing: border-box;
+}
+.space_dop_service_wrapper.three_col{
+	padding-left: 0;
+	padding-right: 0;
+}
+.three_col .space_dop_service p{
+	font-size: 20px;
+}
+.three_col .space_dop_service{
+	min-height: 150px;
+}
+.space_dop_service table.dop{
+	margin-top: 10px;
+}
+.space_dop_service table.dop td{
+	padding: 5px 20px 5px 0;
+	font-size: 20px;
+	line-height: 23px;
+}
+.space_dop_service table.dop td:last-child{
+	padding-right: 0;
+	font-weight: bold;
+}
+.space_dop_service p.dop{
+	margin-left: 0;
+	display: block;
 }
