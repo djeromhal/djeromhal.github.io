@@ -1,0 +1,40 @@
+<svg width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(4926 -944)">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path0_stroke" transform="translate(-4924 946)" fill="#D41B5D"/>
+</g>
+<g id="Group">
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-4911.92 951.833)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-4906.92 951.833)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-4901.92 951.833)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(-4911.92 961.833)" fill="#D41B5D"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_stroke" transform="translate(-4906.92 966.833)" fill="#D41B5D"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(-4892.75 953.667)" fill="#D41B5D"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 0 0L 0 -1.5L -1.5 -1.5L -1.5 0L 0 0ZM 50 0L 51.5 0L 51.5 -1.5L 50 -1.5L 50 0ZM 50 50L 50 51.5L 51.5 51.5L 51.5 50L 50 50ZM 0 50L -1.5 50L -1.5 51.5L 0 51.5L 0 50ZM 0 1.5L 50 1.5L 50 -1.5L 0 -1.5L 0 1.5ZM 48.5 0L 48.5 50L 51.5 50L 51.5 0L 48.5 0ZM 50 48.5L 0 48.5L 0 51.5L 50 51.5L 50 48.5ZM 1.5 50L 1.5 0L -1.5 0L -1.5 50L 1.5 50Z"/>
+<path id="path1_stroke" d="M -1.5 0L -1.5 10L 1.5 10L 1.5 0L -1.5 0Z"/>
+<path id="path2_stroke" d="M 8.5 0C 8.5 1.92157 6.92157 3.5 5 3.5L 5 6.5C 8.57843 6.5 11.5 3.57843 11.5 0L 8.5 0ZM 5 3.5C 3.07843 3.5 1.5 1.92157 1.5 0L -1.5 0C -1.5 3.57843 1.42157 6.5 5 6.5L 5 3.5Z"/>
+<path id="path3_stroke" d="M -1.5 0L -1.5 23.3333L 1.5 23.3333L 1.5 0L -1.5 0Z"/>
+<path id="path4_stroke" d="M 5 -1.58946e-07L 6.5 -1.58946e-07L 6.5 -1.5L 5 -1.5L 5 -1.58946e-07ZM 5 20C 4.31176 20 3.47163 19.5576 2.72961 18.4062C 1.99976 17.2737 1.5 15.6267 1.5 13.75L -1.5 13.75C -1.5 16.1233 -0.874763 18.3513 0.207893 20.0313C 1.27837 21.6924 2.93824 23 5 23L 5 20ZM 1.5 13.75C 1.5 11.625 1.49159 8.34607 2.09147 5.59662C 2.38547 4.22955 2.79729 3.14791 3.3182 2.4389C 3.79682 1.78743 4.31769 1.5 5 1.5L 5 -1.5C 3.18231 -1.5 1.82818 -0.599932 0.900552 0.662666C 0.0152073 1.86772 -0.510466 3.4267 -0.841472 4.96588C -1.49159 8.02893 -1.5 11.625 -1.5 13.75L 1.5 13.75ZM 3.5 -1.58946e-07L 3.5 36.5L 6.5 36.5L 6.5 -1.58946e-07L 3.5 -1.58946e-07Z"/>
+</defs>
+</svg>

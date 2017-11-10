@@ -902,8 +902,9 @@ p{
 	box-sizing: border-box;
 	text-decoration: none;
 	position: relative;
-	display: block;
+	display: inline-block;
 	color: #000;
+	margin-bottom: 20px;
 }
 .more_space.yellow{
 	background-color: #FFC530;
@@ -1028,11 +1029,14 @@ p{
     top: -4px;
     left: -4px;
 }
+.more_space p{
+	line-height: 44px;
+}
 .space_dop_service p{
 	margin-left: 18px;
 	margin-bottom: 0;
 	font-size: 16px;
-	line-height: 44px;
+	line-height: 20px;
 	font-weight: bold;
 	color: #000;
 }
@@ -1582,8 +1586,8 @@ h2{
 	width: 20%;
 }
 h4{
-	font-size: 16px;
-	line-height: 19px;
+	font-size: 20px;
+	line-height: 23px;
 	font-weight: bold;
 	color: #000;
 	margin-bottom: 18px;
@@ -2015,4 +2019,146 @@ h3{
 .space_dop_service p.dop{
 	margin-left: 0;
 	display: block;
+}
+/*MEETING ROOMS*/
+#meeting-rooms .top_block .right_title_block .tob_block_text{
+	margin-left: 0;
+}
+#meeting-rooms .top_block .right_title_block .top_block_center{
+	width: 350px;
+}
+#meeting-rooms .top_block .right_title_block .top_block_title{
+	left: 46px;
+}
+#meeting-rooms .top_block_small_title{
+	width: 250px;
+	left: 292px;
+	right: auto;
+}
+#anim_block_met_6{
+    width: 50px;
+    height: 50px;
+    left: 50px;
+    bottom: -46px;
+    top: auto;
+}
+#anim_block_met_1{
+    width: 50px;
+    height: 50px;
+    left: auto;
+    top: 48px;
+    z-index: 1;
+    right: 0;
+    bottom: auto;
+}
+#anim_block_met_1>div, #anim_block_met_6>div{
+	background-color: #fff;
+	border: 4px solid black;
+	box-sizing: border-box;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+#anim_block_met_1>div:first-child, #anim_block_met_6>div:first-child{
+	right: 0;
+	top: 0;
+}
+#anim_block_met_1>div:last-child, #anim_block_met_6>div:last-child{
+	left: 0;
+	bottom: 0;
+}
+#anim_block_met_1>div:first-child::before, #anim_block_met_1>div:first-child::after, #anim_block_met_1>div:last-child::before, #anim_block_met_1>div:last-child::after, #anim_block_met_6>div:first-child::before, #anim_block_met_6>div:first-child::after, #anim_block_met_6>div:last-child::before, #anim_block_met_6>div:last-child::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 4px solid #000;
+    position: absolute;
+}
+#anim_block_met_1>div:first-child::before, #anim_block_met_1>div:last-child::before, #anim_block_met_6>div:first-child::before, #anim_block_met_6>div:last-child::before{
+    top: -60%;
+    right: -60%;
+}
+#anim_block_met_1>div:first-child::after, #anim_block_met_1>div:last-child::after, #anim_block_met_6>div:first-child::after, #anim_block_met_6>div:last-child::after{
+    bottom: -60%;
+    left: -60%;
+}
+#anim_block_met_2 {
+    top: auto;
+    bottom: -48px;
+    right: -98px;
+    left: auto;
+    width: 200px;
+    height: 100px;
+}
+#anim_block_met_5{
+    bottom: -96px;
+    left: auto;
+    right: 150px;
+    top: auto;
+    width: 100px;
+    height: 100px;
+    transform: rotate(90deg);
+}
+#anim_block_met_7{
+	transform: rotate(90deg);
+	top: auto;
+	left: auto;
+    bottom: -146px;
+    right: 4px;
+}
+#aim_block_met_3{
+    top: -50px;
+    left: -46px;
+    width: 150px;
+    height: 150px;
+}
+#meeting-rooms .top_block .right_title_block .top_block_center{
+	right: -156px;
+}
+.meeting_room{
+	display: inline-block;
+	vertical-align: top;
+	width: 440px;
+	height: 300px;
+	border: 4px solid #000;
+	margin: 10px;
+	position: relative;
+	text-align: left;
+}
+.meeting_rooms{
+	margin-bottom: 25px;
+}
+.meeting_room img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+.meeting_room h3{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 30px;
+	padding-left: 35px;	
+}
+.meeting_room p{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 20px;
+	padding-left: 30px;
+}
+.orange_text{
+	color: orange;
+}
+.meeting_room p span{
+	display: block;
+}
+.meeting_note{
+	width: 100%;
+	margin-bottom: 30px;
 }
