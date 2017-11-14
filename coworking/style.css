@@ -2792,3 +2792,96 @@ footer{
     top: auto;
     left: 50px;
 }
+#event-platform .tob_block_text, #event-platform .top_block_center{
+	width: 400px;
+}
+#anim_block_event_1{
+    top: -50px;
+    left: -46px;
+    width: 150px;
+    height: 150px;
+}
+#anim_block_event_2{
+    width: 50px;
+    height: 50px;
+    left: auto;
+    top: 48px;
+    z-index: 1;
+    right: 54px;
+    bottom: auto;
+}
+#anim_block_event_5{
+    width: 50px;
+    height: 50px;
+    left: auto;
+    top: auto;
+    z-index: 1;
+    right: 156px;
+    bottom: -46px;
+}
+#anim_block_event_2>div, #anim_block_event_5>div{
+	background-color: #fff;
+	border: 4px solid black;
+	box-sizing: border-box;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+#anim_block_event_2>div:first-child, #anim_block_event_5>div:first-child{
+	right: 0;
+	top: 0;
+}
+#anim_block_event_2>div:last-child, #anim_block_event_5>div:last-child{
+	left: 0;
+	bottom: 0;
+}
+#anim_block_event_2>div:first-child::before, #anim_block_event_5>div:first-child::before, #anim_block_event_2>div:first-child::after, #anim_block_event_5>div:first-child::after, #anim_block_event_2>div:last-child::before, #anim_block_event_5>div:last-child::before, #anim_block_event_2>div:last-child::after, #anim_block_event_5>div:last-child::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 4px solid #000;
+    position: absolute;
+}
+#anim_block_event_2>div:first-child::before, #anim_block_event_2>div:last-child::before, #anim_block_event_5>div:first-child::before, #anim_block_event_5>div:last-child::before{
+    top: -60%;
+    right: -60%;
+}
+#anim_block_event_2>div:first-child::after, #anim_block_event_2>div:last-child::after, #anim_block_event_5>div:first-child::after, #anim_block_event_5>div:last-child::after{
+    bottom: -60%;
+    left: -60%;
+}
+#anim_block_event_3{
+    bottom: -94px;
+    left: auto;
+    right: 202px;
+    top: auto;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(90deg);
+}
+#anim_block_event_4{
+    top: auto;
+    bottom: -48px;
+    right: -96px;
+    left: auto;
+    width: 200px;
+    height: 150px;
+}
+#anim_block_event_6{
+    top: auto;
+    bottom: -46px;
+    right: auto;
+    left: 0;
+    width: 150px;
+    height: 50px;	
+}
+#event-platform .top_block_center{
+	right: -206px;
+}
