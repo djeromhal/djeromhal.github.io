@@ -812,8 +812,14 @@ p{
     border-bottom: 4px solid #000;
     box-sizing: border-box;
     cursor: pointer;
-    height: 16.666667%;
+    height: 20%;
     position: relative;
+}
+.v_nav ul li.active{
+	background-color: #F04A24;
+}
+.v_nav ul li.active a{
+	color: #fff;
 }
 .v_nav ul li a {
     display: block;
@@ -1159,6 +1165,9 @@ p{
     width: 100%;
     min-height: 100%;
 }
+.overflow_hidden{
+	overflow: hidden;
+}
 .big_img_wrapper{
 	position: absolute;
 	left: 0;
@@ -1295,11 +1304,11 @@ p{
 	height: 50px;
 	left: 382px;
 	top: 48px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 #anim_block_rt_3>div{
 	background-color: #fff;
