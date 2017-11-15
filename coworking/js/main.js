@@ -51,7 +51,7 @@ $(function(){
 		// update V Nav
 		$('.v_nav').find('.active').removeClass('active');
 		// if(!$('.active_inner').hasClass('top_block')){
-			var href = $('.active_inner').attr('id');
+			var href = $('.active_drag .active_inner').attr('id');
 			var liToActive = $('.v_nav').find('a[href=#'+href+']').parent();
 			liToActive.addClass('active');
 			// alert('2')
@@ -122,8 +122,8 @@ $(function(){
 		}
 	}
 	var updateAxisYGalleryByVNav = function(item){
-		$('.active_inner').next().removeClass('next_inner_item');
-		$('.active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
+		$('.active_drag .active_inner').next().removeClass('next_inner_item');
+		$('.active_drag .active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
 		item.next().addClass('next_inner_item');
 		item.addClass('active_inner').prev().addClass('prev_inner_item');
 		attr = item.attr('data-to-load');
@@ -389,4 +389,5 @@ $(function(){
 		var href = $(this).find('a').attr('href');
 		updateAxisYGalleryByVNav($(href));
 	})
+	$('.inner_block')
 })
