@@ -389,5 +389,74 @@ $(function(){
 		var href = $(this).find('a').attr('href');
 		updateAxisYGalleryByVNav($(href));
 	})
-	$('.inner_block')
+	var i = 0;
+	$('.active_drag').on('mousewheel', function(e) {
+		// if($(this).hasClass('top_block')){
+		// 	console.log('top_block');
+		// }else if($(this).is(':last-child')){
+		// 	console.log('last-child');
+		// }else if($(this).outerHeight() == $(this).children('div').outerHeight()){
+		// 	console.log('444')
+		// }else{
+		// 	if($(this).scrollTop() == 0){
+		// 		console.log('222')
+		// 	}
+		// 	if($(this).scrollTop() + $(this).outerHeight() == $(this).children('div').outerHeight()){
+		// 		console.log('333')
+		// 	}
+		// }
+		var active_drag = $(this);
+		thisInnerItem = $(this).find('.active_inner');
+		var hasnext = thisInnerItem.next('.next_inner_item').length;
+		var hasprev = thisInnerItem.prev('.prev_inner_item').length;
+		nextInnerItem = thisInnerItem.next('.next_inner_item');
+		attr = nextInnerItem.attr('data-to-load');
+		if(hasnext){
+			// if(typeof attr !== typeof undefined && attr !== false){
+			// 	$('#ajaxloader').css({visibility: 'visible', opacity: '1', height: '100%'})
+			// 	item.load('ajax/' + attr, function(){
+			// 		$('#ajaxloader').fadeOut(function(){
+			// 			$('#ajaxloader').attr('style','');
+			// 		});
+			// 		$(this).removeAttr('data-to-load');
+			// 	});
+			// }
+			clearTimeout($.data(this, 'scrollTimer'));
+		    $.data(this, 'scrollTimer', setTimeout(function() {
+		    	active_drag.animate({top:'0'},function() {
+		    		active_drag.attr('style','');
+		    		thisInnerItem.animate({top:'0'},function(){
+		    			$(this).attr('style','');
+		    		});
+		    		nextInnerItem.attr('style','');
+		    		$('#ajaxloader').animate({top: thisInnerItem.height()},function() {
+		    			$('#ajaxloader').fadeOut(function(){
+		    				$(this).attr('style','');
+		    			})
+		    		})
+		    	});
+		    	i=0;
+		    }, 2500));
+			if(typeof attr !== typeof undefined && attr !== false){
+				speedOfActive = i++ * -16 / 2;
+				active_drag.css({top: speedOfActive * 2});
+				thisInnerItem.css({top: speedOfActive * -1});
+				var ajaxloader = $('#ajaxloader');
+				var offsetAjaxloader = thisInnerItem.height() - parseInt(thisInnerItem.css('top'))*2 + $('.top_nav').height();
+				var heightAjaxloader = thisInnerItem.height() + $('.top_nav').height() - offsetAjaxloader;
+				ajaxloader.css({visibility: 'visible', opacity: '1', top: offsetAjaxloader, height: heightAjaxloader})
+				nextInnerItem.css({zIndex: '5'});
+				console.log(offsetAjaxloader);
+				console.log(heightAjaxloader);
+			}else{
+				speedOfActive = i++ * -10;
+				$(this).css({top: i});
+				thisInnerItem.css({top: speedOfActive});
+				nextInnerItem.css({zIndex: '5'});
+			}
+		}
+		if(hasprev){
+			console.log('isprev')
+		}
+	})
 })
