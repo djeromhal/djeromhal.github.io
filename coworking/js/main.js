@@ -416,7 +416,7 @@ $(function(){
 		// }
 		var active_drag = $(this);
 		thisInnerItem = $(this).find('.active_inner');
-		if(thisInnerItem.scrollTop() == 0 || thisInnerItem.scrollTop() + thisInnerItem.outerHeight() == thisInnerItem.children('div').outerHeight()){
+		if( (thisInnerItem.scrollTop() == 0 || thisInnerItem.scrollTop() + thisInnerItem.outerHeight() == thisInnerItem.children('div').outerHeight())){
 			var hasnext = thisInnerItem.next('.next_inner_item').length;
 			var hasprev = thisInnerItem.prev('.prev_inner_item').length;
 			nextInnerItem = thisInnerItem.next('.next_inner_item');
