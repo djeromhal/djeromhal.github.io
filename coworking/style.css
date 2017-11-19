@@ -91,7 +91,7 @@ body{
 	font-family: 'TT Norms';
 }
 .block{
-	background-color: #ccc;
+	background-color: #fff;
 	z-index: 50;
 	width: 100%;
 	height: 100%;
@@ -103,16 +103,19 @@ body{
 }
 .block.next_item{
 	z-index: 1;
-	display: block;
+	display:  block;
     transform-origin: 100% 50%;
     transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-20deg);
-    opacity: .33;
     left: 0;
+    opacity: 0;
+    visibility: hidden;
 }
 .block.next_item.toActive{
     transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
     opacity: 1;
     transition: all .5s linear;
+    opacity: 1;
+    visibility: visible;
 }
 .block.active_drag{
 	z-index: 3;
@@ -344,6 +347,7 @@ body{
 	line-height: 20px;
 	border: 4px solid #000;
 	cursor: pointer;
+	box-sizing: border-box;
 }
 .top_gallery_arrows>div:first-child{
 	left: 0;
@@ -382,7 +386,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #ccc;
+	background: #fff;
 	overflow: hidden;
 }
 .inner_block.active_inner{
@@ -1750,7 +1754,7 @@ h4{
 	margin-right: 0;
 }
 .dotted_bg{
-	background: #fff url(img/bg.svg) repeat calc(50% + 11px) 15px / 22px 22px;
+	background: #fff url(img/bg.svg) repeat calc(50% + 10px) 15px / 20px 20px;
 }
 .full_page{
 	width: 100%;
@@ -1988,12 +1992,13 @@ h4{
 .coworking_tab_bottom .coworking_tab_price, .coworking_tab_bottom .big_more_space{
 	display: inline-block;
 	width: 50%;
-	vertical-align: bottom;
+	vertical-align: top;
 }
 .coworking_tab_bottom .big_more_space{
-	border-bottom: none;
-	border-right: none;
-	margin-bottom: 0;
+    height: 74px;
+    margin-bottom: 0;
+    top: -4px;
+    left: 4px;
 }
 .coworking_tab_bottom .coworking_tab_price{
     height: 70px;
@@ -2003,6 +2008,12 @@ h4{
     padding-left: 22px;
     font-size: 26px;
     font-weight: bold;
+    margin-top: -4px;
+}
+.coworking_tab_bottom{
+    border-top: 4px solid #000;
+    box-sizing: border-box;
+    height: 70px;
 }
 .with_calc .coworking_tab_list li{
 	margin-bottom: 10%;
@@ -2053,7 +2064,7 @@ h4{
 .coworking_tab_wrapper .coworking_tab_calc{
     width: calc(100% + 8px);
     margin-left: -4px;
-    margin-bottom: -4px;
+    top: 4px;
 }
 .coworking_tab_calc_title{
     width: 100%;
@@ -2147,7 +2158,7 @@ h3{
 }
 .three_col .space_dop_service_col{
 	margin-right: 70px;
-	padding-left: 50px;
+	padding-left: 20px;
 	box-sizing: border-box;
 }
 .three_col .space_dop_service_col:last-child{
@@ -2194,6 +2205,9 @@ h3{
 	margin-top: 20px;
 }
 /*MEETING ROOMS*/
+.white_bg{
+	background-color: #fff;
+}
 .center_blocks.right_title_block .tob_block_text{
 	margin-left: 0;
 }
@@ -2211,26 +2225,32 @@ h3{
 #anim_block_met_6{
     width: 50px;
     height: 50px;
-    left: 54px;
+    left: 60px;
     bottom: -46px;
     top: auto;
 }
 #anim_block_met_1{
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     left: auto;
-    top: 48px;
+    top: 46px;
     z-index: 1;
     right: 0;
     bottom: auto;
+}
+#anim_block_met_1>div{
+	width: 54px;
+	height: 54px;	
+}
+#anim_block_met_6>div{
+	width: 50px;
+	height: 50px;
 }
 #anim_block_met_1>div, #anim_block_met_6>div{
 	background-color: #fff;
 	border: 4px solid black;
 	box-sizing: border-box;
 	position: absolute;
-	width: 50px;
-	height: 50px;
 	overflow: hidden;
 }
 #anim_block_met_1>div:first-child, #anim_block_met_6>div:first-child{
@@ -2267,9 +2287,9 @@ h3{
     height: 100px;
 }
 #anim_block_met_5{
-    bottom: -96px;
+    bottom: -94px;
     left: auto;
-    right: 146px;
+    right: 144px;
     top: auto;
     width: 100px;
     height: 100px;
@@ -2301,7 +2321,14 @@ h3{
 }
 .red_bg{
 	background-color: #F04A24;
-	padding: 10px;
+	padding: 10px 15px;
+}
+.meeting_page{
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+.meeting_page h2.white_bg_title{
+	margin-bottom: 20px;
 }
 .meeting_room{
 	display: inline-block;
@@ -2310,10 +2337,21 @@ h3{
 	height: 300px;
 	border: 4px solid #000;
 	box-sizing: border-box;
-	margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 25px;
 	position: relative;
 	text-align: left;
 	overflow: hidden;
+}
+.meeting_room:nth-child(3n+1){
+	margin-left: 0;
+}
+.meeting_room:nth-child(3n){
+	margin-right: 0;
+}
+.meeting_room:last-child{
+	margin-right: 0;
 }
 .meeting_room.active{
 	border: 12px solid #FFC530;
@@ -2326,8 +2364,8 @@ h3{
 	padding-right: 30px;
 }
 .meeting_rooms{
-	margin-bottom: 25px;
-	width: 1370px;
+	width: 1339px;
+	display: inline-block;
 	text-align: left;
 }
 .meeting_room img{
@@ -2351,6 +2389,10 @@ h3{
 	padding-bottom: 20px;
 	padding-left: 30px;
 	padding-right: 20px;
+	font-weight: 100;
+}
+.meeting_room>.title_white{
+	font-weight: bold;
 }
 .orange_text{
 	color: orange;
@@ -2394,10 +2436,10 @@ h3{
     top: -46px;
 }
 #anim_block_off_4{
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     left: auto;
-    top: 48px;
+    top: 47px;
     z-index: 1;
     right: 0;
     bottom: auto;
@@ -2419,6 +2461,10 @@ h3{
 	width: 50px;
 	height: 50px;
 	overflow: hidden;
+}
+#anim_block_off_4>div{
+	width: 54px;
+	height: 53px;
 }
 #anim_block_off_3>div:first-child, #anim_block_off_4>div:first-child, #anim_block_virt_1>div:first-child{
 	right: 0;
@@ -2454,13 +2500,14 @@ h3{
     height: 150px;
 }
 #offices .top_block_small_title{
-	width: 150px;
+	width: 152px;
+	height: 51px;
 }
 #anim_block_off_6{
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     top: -51px;
-    right: -144px;
+    right: -148px;
     left: auto;
 }
 #anim_block_off_7{
@@ -2939,6 +2986,17 @@ footer{
 	margin-top: 20px;
 	width: 278px;
 	height: 356px;
+	position: relative;
+}
+.hall_rent.small:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 4px;
+	background-color: rgba(0,0,0,.1);
 }
 .hall_rent_title{
 	width: 100%;
@@ -2963,9 +3021,12 @@ footer{
 	height: 70px;
 }
 .hall_rent_bottom .big_more_space{
-	width: 100%;
+    width: calc(100% + 4px);
     border-left: none;
-    border-right: none;
+}
+.m70{
+	margin-left: 70px;
+	margin-right: 70px;
 }
 .hall_rent_middle{
 	padding-left: 20px;
@@ -3020,6 +3081,10 @@ footer{
 	padding-top: 20px;
 	padding-bottom: 30px;
 	background-color: #fff;
+}
+.event_partners.m70{
+	margin-right: 70px;
+	margin-left: 70px;	
 }
 .event_partners_table a{
 	display: inline-block;
@@ -3089,4 +3154,13 @@ footer{
 }
 .no_margin_bottom{
 	margin-bottom: 0;
+}
+.virt_page{
+	padding-top: 100px;
+}
+.virt_page .space_dop_service_wrapper{
+	margin-bottom: 60px;
+}
+.virt_page .application_wrapper.inline{
+	margin-bottom: 140px;
 }
