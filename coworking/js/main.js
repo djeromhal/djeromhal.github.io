@@ -469,7 +469,7 @@ $(function(){
 						}
 				    }
 			    	i=0;
-			    }, 250));
+			    }, 500));
 
 				speedOfActive = i++ * -16;
 				var	speedOfOther = speedOfActive + thisInnerItem.height();
@@ -527,7 +527,7 @@ $(function(){
 						}
 				    }
 			    	i=0;
-			    }, 250));
+			    }, 500));
 
 				speedOfActive = i++ * 16;
 				var	speedOfOther = speedOfActive - thisInnerItem.height();
