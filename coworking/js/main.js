@@ -418,13 +418,13 @@ $(function(){
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
 		thisInnerItem = $(this).find('.active_inner');
-		if((thisInnerItem.scrollTop() == 0 || thisInnerItem.scrollTop() + thisInnerItem.outerHeight() == thisInnerItem.children('div').outerHeight())){
+		var scrollSide = e.originalEvent.deltaY;
+		if(thisInnerItem.scrollTop() == 0 && scrollSide < 0 || thisInnerItem.scrollTop() + thisInnerItem.outerHeight() == thisInnerItem.children('div').outerHeight()  && scrollSide > 0 ){
 			var hasnext = thisInnerItem.next('.next_inner_item').length;
 			var hasprev = thisInnerItem.prev('.prev_inner_item').length;
 			nextInnerItem = thisInnerItem.next('.next_inner_item');
 			prevInnerItem = thisInnerItem.prev('.prev_inner_item');
 
-			var scrollSide = e.originalEvent.deltaY;
 			var showBlock = false;
 		    if(i*20>200){
 		    	showBlock = true;
