@@ -414,10 +414,11 @@ $(function(){
 		}
 	}
 
+	var ajaxloader_flag = true;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
 		thisInnerItem = $(this).find('.active_inner');
-		// if(!(thisInnerItem.outerHeight() < thisInnerItem.children('div').outerHeight()) && (thisInnerItem.scrollTop() == 0 || thisInnerItem.scrollTop() + thisInnerItem.outerHeight() == thisInnerItem.children('div').outerHeight())){
+		if((thisInnerItem.scrollTop() == 0 || thisInnerItem.scrollTop() + thisInnerItem.outerHeight() == thisInnerItem.children('div').outerHeight())){
 			var hasnext = thisInnerItem.next('.next_inner_item').length;
 			var hasprev = thisInnerItem.prev('.prev_inner_item').length;
 			nextInnerItem = thisInnerItem.next('.next_inner_item');
@@ -469,6 +470,7 @@ $(function(){
 						}
 				    }
 			    	i=0;
+			    	ajaxloader_flag = true;
 			    }, 500));
 
 				speedOfActive = i++ * -16;
@@ -476,10 +478,18 @@ $(function(){
 
 				if(isAttr(nextInnerItem)){
 					active_drag.css({top: speedOfActive});
-					var ajaxloader = $('#ajaxloader');
-					var offsetAjaxloader = speedOfOther + speedOfActive + $('.top_nav').height();
-					var heightAjaxloader = thisInnerItem.height() - offsetAjaxloader + $('.top_nav').height();
-					ajaxloader.css({visibility: 'visible', opacity: '1', top: offsetAjaxloader, height: heightAjaxloader})
+					// var ajaxloader = $('#ajaxloader');
+					// var offsetAjaxloader = speedOfOther + speedOfActive + $('.top_nav').height();
+					// var heightAjaxloader = thisInnerItem.height() - offsetAjaxloader + $('.top_nav').height();
+					// ajaxloader.css({visibility: 'visible', opacity: '1', top: offsetAjaxloader, height: heightAjaxloader})
+					var ajaxloader;
+					if(ajaxloader_flag){
+						ajaxloader = nextInnerItem.html('<div class="ajaxloader_bg"></div>');
+						ajaxloader_flag = false;
+					}
+					ajaxloader = nextInnerItem.find('.ajaxloader_bg');
+					var heightAjaxloader = thisInnerItem.height() + $('.top_nav').height() - parseInt(nextInnerItem.css('top'),10) - parseInt(active_drag.css('top'),10);
+					ajaxloader.css({height: heightAjaxloader})
 					nextInnerItem.css({zIndex: '5'});
 					nextInnerItem.css({top: speedOfOther});
 				}else{
@@ -491,6 +501,8 @@ $(function(){
 			if(hasprev && scrollSide < 0){
 				clearTimeout($.data(this, 'scrollTimer2'));
 			    $.data(this, 'scrollTimer2', setTimeout(function() {
+					// $(this).unbind('mousewheel');
+					// $(this).bind('mousewheel', mouseWheelFunc);
 					if (showBlock) {
 						if(isAttr(prevInnerItem)){
 							prevInnerItem.load('ajax/' + attr, function(){
@@ -527,6 +539,7 @@ $(function(){
 						}
 				    }
 			    	i=0;
+			    	ajaxloader_flag = true;
 			    }, 500));
 
 				speedOfActive = i++ * 16;
@@ -534,19 +547,29 @@ $(function(){
 
 				if(isAttr(prevInnerItem)){
 					active_drag.css({top: speedOfActive});
-					var ajaxloader = $('#ajaxloader');
-					var offsetAjaxloader =  $('.top_nav').height();
-					var heightAjaxloader = speedOfActive*2
-					ajaxloader.css({visibility: 'visible', opacity: '1', top: offsetAjaxloader, height: heightAjaxloader})
+					// var ajaxloader = $('#ajaxloader');
+					// var offsetAjaxloader =  $('.top_nav').height();
+					// var heightAjaxloader = speedOfActive*2
+					// ajaxloader.css({visibility: 'visible', opacity: '1', top: offsetAjaxloader, height: heightAjaxloader})
+					var ajaxloader;
+					if(ajaxloader_flag){
+						ajaxloader = prevInnerItem.html('<div class="ajaxloader_bg"></div>');
+						ajaxloader_flag = false;
+					}
+					ajaxloader = prevInnerItem.find('.ajaxloader_bg');
+					var heightAjaxloader = thisInnerItem.height() + parseInt(prevInnerItem.css('top'),10) + parseInt(active_drag.css('top'),10) + $('.top_nav').height();
+					// var heightAjaxloader = '100px';
+					ajaxloader.css({height: heightAjaxloader})
 					prevInnerItem.css({zIndex: '5'});
 					prevInnerItem.css({top: speedOfOther});
+					console.log(heightAjaxloader)
 				}else{
 					active_drag.css({top: speedOfActive});
 					prevInnerItem.css({top: speedOfOther});
 					prevInnerItem.css({zIndex: '5'});
 				}
 			}
-		// }
+		}
 	}
 
 	var i = 0;
