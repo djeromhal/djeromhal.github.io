@@ -376,7 +376,7 @@ body{
   width: 100%;
   height: 100px;
   overflow: visible;
-  background: #fff url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+  background: #ccc url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
   opacity: 0;
   visibility: hidden;
 }
