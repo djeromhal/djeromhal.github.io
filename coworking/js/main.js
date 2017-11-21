@@ -431,7 +431,7 @@ $(function(){
 		    }else{
 		    	showBlock = false;
 		    }
-			if(hasnext && scrollSide > 0 !prevInnerItem.hasClass('not_scrollable')){
+			if(hasnext && scrollSide > 0 && !prevInnerItem.hasClass('not_scrollable')){
 				// if(nextInnerItem.offset().top <= $('.top_nav').height()){
 				// 	updateAxisYGallery(nextInnerItem);
 				// 	return false;
