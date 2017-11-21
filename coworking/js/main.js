@@ -579,7 +579,7 @@ $(function(){
 			    	i=0;
 			    	ajaxloader_flag = true;
 			    }
-			    if(showBlock && isAttr(nextInnerItem)){
+			    if(showBlock && isAttr(prevInnerItem)){
 			    	active_drag.unbind('mousewheel');
 					prevInnerItem.load('ajax/' + attr, function(){
 				    	active_drag.animate({top:'0'},{duration:500, queue:false, complete: function(){
