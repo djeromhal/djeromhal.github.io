@@ -431,7 +431,7 @@ $(function(){
 		    }else{
 		    	showBlock = false;
 		    }
-			if(hasnext && scrollSide > 0){
+			if(hasnext && scrollSide > 0 !prevInnerItem.hasClass('not_scrollable')){
 				// if(nextInnerItem.offset().top <= $('.top_nav').height()){
 				// 	updateAxisYGallery(nextInnerItem);
 				// 	return false;
@@ -464,11 +464,13 @@ $(function(){
 								$(this).removeAttr('data-to-load');
 							});
 						}else{
+				    		active_drag.unbind('mousewheel');
 					    	active_drag.animate({top:'0'},{duration:500, queue:false, complete: function(){
 				    			$(this).attr('style','');
 				    		}});
 				    		nextInnerItem.animate({top:'100%'},{duration:500, queue:false, complete: function(){
-				    			$(this).attr('style','');
+				    			$(this).attr('style','').removeClass('not_scrollable');
+								active_drag.bind('mousewheel', mouseWheelFunc);
 				    		}});
 						}
 				    }
@@ -482,7 +484,7 @@ $(function(){
 					nextInnerItem.animate({top: '0'},{duration:500, queue:false, complete: function(){
 						thisInnerItem.removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
 						nextInnerItem.removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
-						nextInnerItem.attr('style','');
+						nextInnerItem.attr('style','').removeClass('not_scrollable');
 						updateVNav();
 						active_drag.bind('mousewheel', mouseWheelFunc);
 					}});
@@ -521,11 +523,14 @@ $(function(){
 					active_drag.css({top: speedOfActive});
 					nextInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
 				}else if(!isAttr(nextInnerItem) && !showBlock){
+					if(!nextInnerItem.hasClass('not_scrollable')){
+						nextInnerItem.addClass('not_scrollable');
+					}
 					active_drag.css({top: speedOfActive});
 					nextInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
 				}
 			}
-			if(hasprev && scrollSide < 0){
+			if(hasprev && scrollSide < 0 && !nextInnerItem.hasClass('not_scrollable')){
 				clearTimeout($.data(this, 'scrollTimer2'));
 			    $.data(this, 'scrollTimer2', setTimeout(function() {
 					// if (showBlock) {
@@ -554,11 +559,13 @@ $(function(){
 								$(this).removeAttr('data-to-load');
 							});
 						}else{
+				    		active_drag.unbind('mousewheel');
 					    	active_drag.animate({top:'0'},{duration:500, queue:false, complete: function(){
 				    			$(this).attr('style','');
 				    		}});
 				    		prevInnerItem.animate({top:'-100%'},{duration:500, queue:false, complete: function(){
-				    			$(this).attr('style','');
+				    			$(this).attr('style','').removeClass('not_scrollable');
+								active_drag.bind('mousewheel', mouseWheelFunc);
 				    		}});
 						}
 				    }
@@ -604,7 +611,7 @@ $(function(){
 					prevInnerItem.animate({top: '0'},{duration:500, queue:false, complete: function(){
 						thisInnerItem.removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
 						prevInnerItem.removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
-						prevInnerItem.attr('style','');
+						prevInnerItem.attr('style','').removeClass('not_scrollable');
 						updateVNav();
 						active_drag.bind('mousewheel', mouseWheelFunc);
 					}});
@@ -626,6 +633,9 @@ $(function(){
 					active_drag.css({top: speedOfActive});
 					prevInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
 				}else if(!isAttr(prevInnerItem) && !showBlock){
+					if(!prevInnerItem.hasClass('not_scrollable')){
+						prevInnerItem.addClass('not_scrollable');
+					}
 					active_drag.css({top: speedOfActive});
 					prevInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
 				}
