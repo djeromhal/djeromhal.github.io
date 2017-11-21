@@ -487,7 +487,7 @@ $(function(){
 
 				speedOfActive = i++ * -16;
 				var	speedOfOther = speedOfActive + thisInnerItem.height();
-				// if(isAttr(nextInnerItem) && !showBlock){
+				if(isAttr(nextInnerItem) && !showBlock){
 				if(isAttr(nextInnerItem)){
 					var ajaxloader;
 					if(ajaxloader_flag){
@@ -500,10 +500,10 @@ $(function(){
 					active_drag.css({top: speedOfActive});
 					nextInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'}).addClass('no_scroll_back');
 				}
-				// }else if(!isAttr(nextInnerItem) && !showBlock){
+				}else if(!isAttr(nextInnerItem) && !showBlock){
 					active_drag.css({top: speedOfActive});
 					nextInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'}).addClass('no_scroll_back');
-				// }
+				}
 			}
 			if(hasprev && scrollSide < 0){
 				clearTimeout($.data(this, 'scrollTimer2'));
