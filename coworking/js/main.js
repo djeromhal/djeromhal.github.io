@@ -649,10 +649,4 @@ $(function(){
 
 	var i = 0;
 	$('.active_drag').bind('mousewheel', mouseWheelFunc);
-
-	// 01-space-02 OPEN COWORKING TAB
-	$('#space').on('click','.space_wrapper',function(e){
-		e.preventDefault();
-		$(this).toggleClass('active');
-	})
 })
