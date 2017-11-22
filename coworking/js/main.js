@@ -40,23 +40,28 @@ $(function(){
 
 		// update V Nav
 		if($('.block:first-child').hasClass('active_drag')){
-			$('.v_nav').show();
+			$('.v_nav').fadeIn();
 			$('.top_gallery').removeClass('no_v_nav');
 		}else{
-			$('.v_nav').hide();
+			$('.v_nav').fadeOut();
 			$('.top_gallery').addClass('no_v_nav');
 		}
 	}
 	var updateVNav = function(item) {
-		// update V Nav
 		$('.v_nav').find('.active').removeClass('active');
-		// if(!$('.active_inner').hasClass('top_block')){
-			var href = $('.active_drag .active_inner').attr('id');
-			var liToActive = $('.v_nav').find('a[href=#'+href+']').parent();
-			liToActive.addClass('active');
-			// alert('2')
-		// }
-		// alert('1');
+		var href = $('.active_drag .active_inner').attr('id');
+		var liToActive = $('.v_nav').find('a[href=#'+href+']').parent();
+		liToActive.addClass('active');
+
+		// update Р Nav
+		if($('.active_drag .inner_block:first-child').hasClass('active_inner')){
+			$('.h_nav_dot').fadeIn();
+			$('.top_gallery_arrows').fadeIn();
+		}else{
+			$('.h_nav_dot').fadeOut();
+			$('.top_gallery_arrows').fadeOut();
+		}
+
 	}
 	var updateGalleryClasses = function(item){
 		checkItemOnContinue(item);
