@@ -33,9 +33,9 @@ $(function(){
 	}
 	var updateNavs = function(item) {
 		// update Tov Nav
-		$('.top_nav, .h_nav_dot').find('.active').removeClass('active');
+		$('.top_nav').find('.active').removeClass('active');
 		var href = $('.active_drag').attr('id');
-		var liToActive = $('.top_nav, .h_nav_dot').find('a[href=#'+href+']').parent();
+		var liToActive = $('.top_nav').find('a[href=#'+href+']').parent();
 		liToActive.addClass('active');
 
 		// update V Nav
@@ -53,7 +53,7 @@ $(function(){
 		var liToActive = $('.v_nav').find('a[href=#'+href+']').parent();
 		liToActive.addClass('active');
 
-		// update Р Nav
+		// update H Nav
 		if($('.active_drag .inner_block:first-child').hasClass('active_inner')){
 			$('.h_nav_dot').fadeIn();
 			$('.top_gallery_arrows').fadeIn();
@@ -403,7 +403,7 @@ $(function(){
 	})
 
 	// TOP NAV AVIMATION
-	$('.top_nav ul a, .h_nav_dot ul a').click(function(e){
+	$('.top_nav ul a').click(function(e){
 		e.preventDefault();
 		var href = $(this).attr('href');
 		// $(href).css({'left':'100%','display':'block'}).addClass('toActiveForce');
