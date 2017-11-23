@@ -14,33 +14,65 @@
 <script src="js/jquery-ui-datepicker.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-		var calendarArrowPos = function(){
-			var calendarWrapperWidth = $('.calendar_wrapper').width();
-			var calendarPageWidth = $('.calendar_page').width();
-			var sideDistance = (calendarPageWidth - calendarWrapperWidth) / 2;
-			$('.ui-datepicker .ui-datepicker-prev').css({left: -sideDistance});
-			$('.ui-datepicker .ui-datepicker-next').css({right: -sideDistance});
-		}
+		// var calendarArrowPos = function(){
+		// 	var calendarWrapperWidth = $('.calendar_wrapper').width();
+		// 	var calendarPageWidth = $('.calendar_page').width();
+		// 	var sideDistance = (calendarPageWidth - calendarWrapperWidth) / 2;
+		// 	$('.ui-datepicker .ui-datepicker-prev').css({left: -sideDistance});
+		// 	$('.ui-datepicker .ui-datepicker-next').css({right: -sideDistance});
+		// }
 		$('.calendar_page').ready(function(){
+			var d = new Date();
+			var month = d.getMonth() + 1;
+
+			var eventDates = {};
+			eventDates[ new Date( '11/10/2017' )] = 'orange blue purple';
+			eventDates[ new Date( '11/11/2017' )] = 'orange purple';
+			eventDates[ new Date( '11/12/2017' )] = 'purple';
+			eventDates[ new Date( '11/13/2017' )] = 'blue purple';
+
 		    $('#calendar').datepicker({
 		        inline: true,
 		        firstDay: 1,
 		        showOtherMonths: true,
 		        dayNamesMin: [ 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
 		        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-  				nextText: "<div>FUCK</div>"
-		    });
-			$( "#calendar" ).datepicker( "option", "prevText", function() { 
-			        var date = $(this).datepicker('getDate'),
-			            day  = date.getDate(),  
-			            month = date.getMonth() + 1,              
-			            year =  date.getFullYear();
-			        return	month + "";
-			    });
-		  //   $('#calendar').ready(function(){
-				// calendarArrowPos();
-		  //   })
+		        nextText: '',
+		        prevText: '',
+			    beforeShowDay: function(date) {
+                	var highlight = eventDates[date];
+                	if(highlight){
+				        return [true, 'picker_container_wrapper ' + highlight, ''];
+                	}else{
+				        return [true, '', ''];
+				    }
 
+			     },
+			    onSelect: function () {
+			    },
+			    beforeShow: function () {
+			    },
+			    afterShow: function() {
+			        var prevMonth = month - 1 == 0 ? 12 : month - 1;
+			        var nextMonth = month + 1 == 13 ? 01 : month + 1;
+			        var prevMonthName = $(this).datepicker('option','monthNames')[prevMonth-1];
+			        var nextMonthName = $(this).datepicker('option','monthNames')[nextMonth-1];
+			    	$('.ui-datepicker .ui-datepicker-prev').append('<div class="arrow_day">' + prevMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + prevMonthName + '</div></div>');
+			    	$('.ui-datepicker .ui-datepicker-next').append('<div class="arrow_day">' + nextMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + nextMonthName + '</div></div>');
+
+			    	// $('.ui-datepicker td .picker_container_wrapper').find('.picker_container').append('<div class="picker_container"></div>');
+			    	$('.ui-datepicker td').each(function(i,e){
+			    		if($(e).length){
+			    			console.log('AAAAAAAAAAAAAAAAAAAAAAA')
+			    		}else{
+			    			$(e).append('<div class="picker_container"></div>')
+			    		}
+			    	})
+			    },
+			    onChangeMonthYear: function (y,m) {
+			    	month = m;
+			    }
+		    });
 		})
 	})
 </script>
@@ -153,6 +185,9 @@
 	    padding-top: 80px;
 	    box-sizing: border-box;
 	}
+	.ui-datepicker .ui-datepicker-prev.ui-state-hover, .ui-datepicker .ui-datepicker-next.ui-state-hover{
+		background-color: #fff;
+	}
 	.ui-widget-header a{
 		color: #000;
 	}
@@ -160,7 +195,7 @@
 		left: -100px;
 	}
 	.ui-datepicker .ui-datepicker-next{
-		right: -100px;
+		right: -560px;
 	}
 	.ui-datepicker .ui-datepicker-header{
 		position: absolute;
@@ -188,11 +223,20 @@
 	.ui-datepicker .ui-datepicker-next span{
     	background: url(img/arrow_right.png) #fff no-repeat center center;
 	}
-	.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	.ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
 	    border: none;
-	    background: none;
+	    background: #fff;
 	    font-weight: bold;
 	    color: #000;
+	}
+	.ui-state-hover, .ui-widget-content .ui-state-hover{
+	    border: none;
+	    background: rgba(0, 0, 0, 0.15);
+	    font-weight: bold;
+	    color: #000;
+	}
+	.ui-datepicker-today .ui-state-default{
+	    background: rgba(0, 0, 0, 0.15);
 	}
 </style>
 	<div class="calendar_page overflow_auto dotted_bg">
@@ -205,7 +249,7 @@
 				<div class="button purple">закрытые</div>
 			</div>
 			<div class="calendar_wrapper">
-				<div class="callendar_arrows">
+				<!-- <div class="callendar_arrows">
 					<div class="callendar_arrow_wrapper">
 						<div class="callendar_arrow left"></div>
 						<div class="arrow_day">09</div>
@@ -220,9 +264,8 @@
 							<div class="arrow_month">ноябрь</div>
 						</div>
 					</div>
-				</div>
-				<div id="calendar"></div>
-				<div class="calendar">
+				</div> -->
+				<!-- <div class="calendar">
 					<div class="calendar_week_days">
 						<div>пн</div>
 						<div>вт</div>
@@ -300,7 +343,8 @@
 					<div class="calendar_date next_mounth">4</div>
 					<div class="calendar_date next_mounth">5</div>
 					<div class="calendar_date next_mounth">6</div>
-				</div>
+				</div> -->
+				<div id="calendar"></div>
 				<div class="calendar_date_description">
 					<div class="date_img_wrapper">
 						<img src="img/01-event-05/1.jpg">
@@ -323,4 +367,4 @@
 	</div>
 <!-- 	<script type="text/javascript" src="../js/main.js"></script>
 </body>
-</html> -->
+</html>
