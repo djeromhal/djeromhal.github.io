@@ -1522,6 +1522,7 @@ p{
 	vertical-align: top;
 	position: relative;
 	z-index: 3;
+	left: -2px;
 }
 .calendar_wrapper{
 	text-align: center;
