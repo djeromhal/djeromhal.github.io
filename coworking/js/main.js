@@ -410,7 +410,7 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
-	var scrollSesitivity = 8;
+	var scrollSesitivity = 12;
 	var offsetActiveDrag;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
