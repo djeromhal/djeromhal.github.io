@@ -410,7 +410,8 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
-	var scrollSesitivity = 3;
+	var scrollSesitivity = 8;
+	var offsetActiveDrag;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
 		thisInnerItem = $(this).find('.active_inner');
@@ -421,8 +422,13 @@ $(function(){
 			nextInnerItem = thisInnerItem.next('.next_inner_item');
 			prevInnerItem = thisInnerItem.prev('.prev_inner_item');
 
+			var borderToscroll = thisInnerItem.height()/3;
+				offsetActiveDrag = Math.abs(parseInt(active_drag.css('top'),10));
+			console.log(thisInnerItem.height())
+			console.log(thisInnerItem.height()/3)
 			var showBlock = false;
-		    if(i*20>200){
+			console.log(i)
+		    if(offsetActiveDrag>borderToscroll){
 		    	showBlock = true;
 		    }else{
 		    	showBlock = false;
@@ -517,13 +523,13 @@ $(function(){
 					var heightAjaxloader = thisInnerItem.height() + $('.top_nav').height() - parseInt(nextInnerItem.css('top'),10) - parseInt(active_drag.css('top'),10);
 					ajaxloader.css({height: heightAjaxloader});
 					active_drag.css({top: speedOfActive});
-					nextInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
+					nextInnerItem.css({zIndex: '5', overflow: 'hidden'});
 				}else if(!isAttr(nextInnerItem) && !showBlock){
 					if(!nextInnerItem.hasClass('not_scrollable')){
 						nextInnerItem.addClass('not_scrollable');
 					}
 					active_drag.css({top: speedOfActive});
-					nextInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
+					nextInnerItem.css({zIndex: '5', overflow: 'hidden'});
 				}
 			}
 			if(hasprev && scrollSide < 0 && !nextInnerItem.hasClass('not_scrollable')){
@@ -627,13 +633,13 @@ $(function(){
 					var heightAjaxloader = thisInnerItem.height() + parseInt(prevInnerItem.css('top'),10) + parseInt(active_drag.css('top'),10) + $('.top_nav').height();
 					ajaxloader.css({height: heightAjaxloader})
 					active_drag.css({top: speedOfActive});
-					prevInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
+					prevInnerItem.css({zIndex: '5', overflow: 'hidden'});
 				}else if(!isAttr(prevInnerItem) && !showBlock){
 					if(!prevInnerItem.hasClass('not_scrollable')){
 						prevInnerItem.addClass('not_scrollable');
 					}
 					active_drag.css({top: speedOfActive});
-					prevInnerItem.css({top: speedOfOther, zIndex: '5', overflow: 'hidden'});
+					prevInnerItem.css({zIndex: '5', overflow: 'hidden'});
 				}
 			}
 		}
