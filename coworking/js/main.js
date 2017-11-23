@@ -410,7 +410,7 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
-	var scrollSesitivity = 6;
+	var scrollSesitivity = 3;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
 		thisInnerItem = $(this).find('.active_inner');
