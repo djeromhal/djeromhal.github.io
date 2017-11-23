@@ -3286,3 +3286,20 @@ footer{
 .calendar_date.prev_mounth:hover, .calendar_date.next_mounth:hover, .calendar_date.prev_mounth.active, .calendar_date.next_mounth.active{
 	background-color: rgba(0, 0, 0, 0.05);
 }
+.popup{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	transition: all .5s ease;
+	visibility: hidden;
+	opacity: 0;
+	height: 0;
+}
+.popup.active{
+	visibility: visible;
+	opacity: 1;
+	height: 100%;	
+}

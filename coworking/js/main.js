@@ -261,15 +261,6 @@ $(function(){
 			// Continue animate ACTIVE if drag and drop on > 300px
 			nextItem = $('.next_item');
 			prevItem = $('.prev_item');
-			// checkItemOnContinue(prevItem.prev());
-			// if(!prevInnerItem.length || !nextInnerItem.length || !prevItem.length || !nextItem.length){
-			// 	$(this).animate({top: '0', left: '0'},{duration: 500, queue: false, 
-			// 		complete: function(){
-			// 			$(this).attr('style','');
-			// 		}
-			// 	});
-
-			// }else 
 			if(Math.abs(ui.position.left) > OFFSETTOBLOCKCHANGE){
 				console.log('1');
 				switch(sideToMoveX){
@@ -419,6 +410,7 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
+	var scrollSesitivity = 6;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
 		thisInnerItem = $(this).find('.active_inner');
@@ -513,7 +505,7 @@ $(function(){
 			    	i=0;
 			    	ajaxloader_flag = true;
 				}
-				speedOfActive = i++ * -16;
+				speedOfActive = i++ * -scrollSesitivity;
 				var	speedOfOther = speedOfActive + thisInnerItem.height();
 				if(isAttr(nextInnerItem) && !showBlock){
 					var ajaxloader;
@@ -622,7 +614,7 @@ $(function(){
 			    	i=0;
 			    	ajaxloader_flag = true;
 			    }
-				speedOfActive = i++ * 16;
+				speedOfActive = i++ * scrollSesitivity;
 				var	speedOfOther = speedOfActive - thisInnerItem.height();
 
 				if(isAttr(prevInnerItem) && !showBlock){
