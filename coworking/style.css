@@ -1520,6 +1520,8 @@ p{
 	height: 570px;
 	display: inline-block;
 	vertical-align: top;
+	position: relative;
+	z-index: 3;
 }
 .calendar_wrapper{
 	text-align: center;
