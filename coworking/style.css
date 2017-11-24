@@ -579,9 +579,20 @@ p{
     -ms-transform: rotateZ(90deg);
     -moz-transform: rotateZ(90deg);
     -o-transform: rotateZ(90deg);
-    top: -21px;
-    left: -3px;
+    top: -131px;
+    left: 100px;
     position: relative;
+    -webkit-animation: move 5s linear infinite;
+    animation: move 5s linear infinite;
+}
+@-webkit-keyframes move {
+    from {left: 100px;}
+    to {left: -104px;}
+}
+
+@keyframes move {
+    from {left: 100px;}
+    to {left: -104px;}
 }
 #anim_block_2 span{
     width: 75px;
@@ -674,6 +685,26 @@ p{
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
+}
+#anim_block_4 path:last-child{
+	stroke-dasharray: 100;
+	  -webkit-animation: animate1 5s infinite linear;
+	  animation: animate1 5s infinite linear;
+}
+@keyframes animate1 {
+     to {
+    stroke-dashoffset: 850;
+  }
+}
+@-moz-keyframes animate1 {
+     to {
+    stroke-dashoffset: 850;
+  }
+}
+@-webkit-keyframes animate1 {
+     to {
+    stroke-dashoffset: 850;
+  }
 }
 #anim_block_5{
 	width: 50px;
@@ -1578,6 +1609,22 @@ p{
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 40px;
+	padding-left: 38px;
+	box-sizing: border-box;
+	position: relative;
+}
+.date_desc_wrapper .date_time:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 28px;
+	height: 28px;
+	background: url('img/01-event-05/1.svg') no-repeat center center;
+	background-size: 100%;
 }
 .date_desc_wrapper .more_space{
 	display: inline-block;
@@ -2434,6 +2481,15 @@ h3{
 	padding-right: 20px;
 	font-weight: 100;
 }
+.meeting_room>.abs{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	padding-right: 20px;
+	font-weight: 100;	
+}
 .meeting_room>.title_white{
 	font-weight: bold;
 }
@@ -2657,12 +2713,12 @@ h3{
 	line-height: 96px;
 	margin-bottom: 0;
 }
-.detail_office_title li{
+/*.detail_office_title li{
 	font-size: 20px;
 	line-height: 23px;
 	font-weight: bold;
 	margin-bottom: 10px;
-}
+}*/
 .detail_office_adv{
 	height: 359px;
 	padding-top: 50px;
@@ -3336,4 +3392,208 @@ footer{
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.2);
+}
+.ui-state-hover .ui-icon{
+		text-indent: unset;
+}
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-spacing: 0;
+}
+.ui-datepicker-title{
+	display: none;
+}
+.ui-datepicker td{
+    position: relative;
+    box-shadow: 4px 0 0 0 #000, 0 4px 0 0 #000, 4px 4px 0 0 #000, 4px 0 0 0 #000 inset, 0 4px 0 0 #000 inset;
+    width: 95px;
+    height: 95px;
+    float: left;
+    box-sizing: border-box;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: right;
+    padding-right: 10px;
+	font-family: 'TT Norms';
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled{
+    box-shadow: 4px 0 0 0 #DADADA, 0 4px 0 0 #DADADA, 4px 4px 0 0 #DADADA, 4px 0 0 0 #DADADA inset, 0 4px 0 0 #DADADA inset;
+}
+#calendar{
+    position: relative;
+    width: 665px;
+    height: 570px;
+    display: inline-block;
+    vertical-align: top;
+    right: -2px;
+}
+.ui-datepicker{
+	width: 680px;
+    height: 570px;
+}
+.ui-datepicker-calendar tr{
+	display: block;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: none;
+    background: none;
+    font-weight: bold;
+    color: inherit;
+    width: 95px;
+    height: 95px;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px 0 0;
+    color: #000;
+}
+.ui-widget-content .ui-state-disabled span{
+	color: #DADADA;
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
+	opacity: 1;
+}
+.ui-datepicker-calendar tr:last-child .ui-datepicker-other-month{
+	box-shadow: 0px 0 0 0 #DADADA, 0 0px 0 0 #DADADA, 4px 4px 0 0 #DADADA, 0px 0 0 0 #DADADA inset, 0 0px 0 0 #DADADA inset;
+}
+.ui-datepicker-calendar{
+	position: relative;
+}
+.ui-datepicker-calendar thead{
+    position: absolute;
+    top: -25px;
+    left: 0;
+	font-family: 'TT Norms';
+}
+.ui-datepicker th{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    width: 95px;
+    float: left;
+    text-align: right;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+.ui-widget-header {
+    border: none;
+    border-radius: unset !important;
+    background: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
+    position: absolute;
+    top: 50%;
+    margin-top: -125px;
+    width: 100px;
+    height: 250px;
+    background-color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+.ui-datepicker .ui-datepicker-prev.ui-state-hover, .ui-datepicker .ui-datepicker-next.ui-state-hover{
+	background-color: #fff;
+}
+.ui-widget-header a{
+	color: #000;
+}
+.ui-datepicker .ui-datepicker-prev{
+	left: -100px;
+}
+.ui-datepicker .ui-datepicker-next{
+	right: -560px;
+}
+.ui-datepicker .ui-datepicker-header{
+	position: absolute;
+	z-index: 1;
+}
+.ui-datepicker table{
+	z-index: 2;
+	display: block;
+}
+.ui-datepicker table tbody, .ui-datepicker table tr, .ui-datepicker table thead{
+	display: block;
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
+    border: 4px solid #000;
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 17px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+}
+.ui-datepicker .ui-datepicker-prev span{
+	background: url(img/arrow_left.svg) #fff no-repeat center center;
+}
+.ui-datepicker .ui-datepicker-next span{
+	background: url(img/arrow_right.svg) #fff no-repeat center center;
+}
+.ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    border: none;
+    background: #fff;
+    font-weight: bold;
+    color: #000;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover{
+    border: none;
+    background: rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    color: #000;
+}
+.ui-datepicker-today .ui-state-default{
+    background: rgba(0, 0, 0, 0.15);
+}
+.meeting_list li{
+	font-size: 18px;
+	line-height: 30px;
+	color: #fff;
+	font-weight: bold;
+	padding-left: 30px;
+	box-sizing: border-box;
+	position: relative;
+}
+.meeting_list li:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+}
+.meeting_list li.sqr:before{
+	background: url(img/04-office-02/2.svg) no-repeat center center;
+	background-size: 100%;
+}
+.meeting_list li.week:before{
+	background: url(img/04-office-02/3.svg) no-repeat center center;
+	background-size: 100%;
+}
+.meeting_list li.pers:before{
+	width: 15px;
+	height: 21px;
+	background: url(img/04-office-02/4.svg) no-repeat center center;
+	background-size: 100%;
+}
+.meeting_list.big li{
+	font-size: 20px;
+	line-height: 33px;
 }

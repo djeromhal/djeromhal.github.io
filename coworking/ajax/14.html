@@ -10,7 +10,71 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body> -->
-	<div class="calendar_page overflow_auto dotted_bg footer_page">
+<script type="text/javascript">
+	$(function(){
+		// var calendarArrowPos = function(){
+		// 	var calendarWrapperWidth = $('.calendar_wrapper').width();
+		// 	var calendarPageWidth = $('.calendar_page').width();
+		// 	var sideDistance = (calendarPageWidth - calendarWrapperWidth) / 2;
+		// 	$('.ui-datepicker .ui-datepicker-prev').css({left: -sideDistance});
+		// 	$('.ui-datepicker .ui-datepicker-next').css({right: -sideDistance});
+		// }
+		$('.calendar_page.two').ready(function(){
+			var d = new Date();
+			var month = d.getMonth() + 1;
+
+			var eventDates = {};
+			eventDates[ new Date( '11/10/2017' )] = 'orange blue purple';
+			eventDates[ new Date( '11/11/2017' )] = 'orange purple';
+			eventDates[ new Date( '11/12/2017' )] = 'purple';
+			eventDates[ new Date( '11/13/2017' )] = 'blue purple';
+
+		    $('#calendar_2').datepicker({
+		        inline: true,
+		        firstDay: 1,
+		        showOtherMonths: true,
+		        dayNamesMin: [ 'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
+		        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+		        nextText: '',
+		        prevText: '',
+			    beforeShowDay: function(date) {
+                	var highlight = eventDates[date];
+                	if(highlight){
+				        return [true, 'picker_container_wrapper ' + highlight, ''];
+                	}else{
+				        return [true, '', ''];
+				    }
+
+			     },
+			    onSelect: function () {
+			    },
+			    beforeShow: function () {
+			    },
+			    afterShow: function() {
+			        var prevMonth = month - 1 == 0 ? 12 : month - 1;
+			        var nextMonth = month + 1 == 13 ? 01 : month + 1;
+			        var prevMonthName = $(this).datepicker('option','monthNames')[prevMonth-1];
+			        var nextMonthName = $(this).datepicker('option','monthNames')[nextMonth-1];
+			    	$(this).find('.ui-datepicker .ui-datepicker-prev').append('<div class="arrow_day">' + prevMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + prevMonthName + '</div></div>');
+			    	$(this).find('.ui-datepicker .ui-datepicker-next').append('<div class="arrow_day">' + nextMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + nextMonthName + '</div></div>');
+
+			    	// $('.ui-datepicker td .picker_container_wrapper').find('.picker_container').append('<div class="picker_container"></div>');
+			    	$('.ui-datepicker td').each(function(i,e){
+			    		if($(e).length){
+			    			console.log('AAAAAAAAAAAAAAAAAAAAAAA')
+			    		}else{
+			    			$(e).append('<div class="picker_container"></div>')
+			    		}
+			    	})
+			    },
+			    onChangeMonthYear: function (y,m) {
+			    	month = m;
+			    }
+		    });
+		})
+	})
+</script>
+	<div class="calendar_page two overflow_auto dotted_bg footer_page">
 		<div class="calendar_white_wrapper">
 			<h3>Мероприятия в октябре</h3>
 			<div class="btn_wrapper">
@@ -20,7 +84,7 @@
 				<div class="button purple">закрытые</div>
 			</div>
 			<div class="calendar_wrapper">
-				<div class="calendar">
+				<!-- <div class="calendar">
 					<div class="calendar_date prev_mounth">26</div>
 					<div class="calendar_date prev_mounth">27</div>
 					<div class="calendar_date prev_mounth">28</div>
@@ -89,7 +153,8 @@
 					<div class="calendar_date next_mounth">4</div>
 					<div class="calendar_date next_mounth">5</div>
 					<div class="calendar_date next_mounth">6</div>
-				</div>
+				</div> -->
+				<div id="calendar_2" class="calendar"></div>
 				<div class="calendar_date_description">
 					<div class="date_img_wrapper">
 						<img src="img/01-event-05/1.jpg">

@@ -1,0 +1,18 @@
+<svg width="17" height="24" viewBox="0 0 17 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(3617 -1678)">
+<g id="Group">
+<g id="Rectangle 25">
+<use xlink:href="#path0_stroke" transform="translate(-3615 1691)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse 7">
+<use xlink:href="#path1_stroke" transform="translate(-3614 1680)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 2 0L 2 -1.5L 0.796743 -1.5L 0.535719 -0.325396L 2 0ZM 11 0L 12.4643 -0.325396L 12.2033 -1.5L 11 -1.5L 11 0ZM 13 9L 13 10.5L 14.8699 10.5L 14.4643 8.6746L 13 9ZM 0 9L -1.46428 8.6746L -1.86992 10.5L 0 10.5L 0 9ZM 2 1.5L 11 1.5L 11 -1.5L 2 -1.5L 2 1.5ZM 9.53572 0.325396L 11.5357 9.3254L 14.4643 8.6746L 12.4643 -0.325396L 9.53572 0.325396ZM 13 7.5L 0 7.5L 0 10.5L 13 10.5L 13 7.5ZM 1.46428 9.3254L 3.46428 0.325396L 0.535719 -0.325396L -1.46428 8.6746L 1.46428 9.3254Z"/>
+<path id="path1_stroke" d="M 9.5 5.5C 9.5 7.70914 7.70914 9.5 5.5 9.5L 5.5 12.5C 9.36599 12.5 12.5 9.36599 12.5 5.5L 9.5 5.5ZM 5.5 9.5C 3.29086 9.5 1.5 7.70914 1.5 5.5L -1.5 5.5C -1.5 9.36599 1.63401 12.5 5.5 12.5L 5.5 9.5ZM 1.5 5.5C 1.5 3.29086 3.29086 1.5 5.5 1.5L 5.5 -1.5C 1.63401 -1.5 -1.5 1.63401 -1.5 5.5L 1.5 5.5ZM 5.5 1.5C 7.70914 1.5 9.5 3.29086 9.5 5.5L 12.5 5.5C 12.5 1.63401 9.36599 -1.5 5.5 -1.5L 5.5 1.5Z"/>
+</defs>
+</svg>

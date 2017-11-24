@@ -19,7 +19,7 @@
 		// 	$('.ui-datepicker .ui-datepicker-prev').css({left: -sideDistance});
 		// 	$('.ui-datepicker .ui-datepicker-next').css({right: -sideDistance});
 		// }
-		$('.calendar_page').ready(function(){
+		$('.calendar_page.one').ready(function(){
 			var d = new Date();
 			var month = d.getMonth() + 1;
 
@@ -29,7 +29,7 @@
 			eventDates[ new Date( '11/12/2017' )] = 'purple';
 			eventDates[ new Date( '11/13/2017' )] = 'blue purple';
 
-		    $('#calendar').datepicker({
+		    $('#calendar_1').datepicker({
 		        inline: true,
 		        firstDay: 1,
 		        showOtherMonths: true,
@@ -55,8 +55,8 @@
 			        var nextMonth = month + 1 == 13 ? 01 : month + 1;
 			        var prevMonthName = $(this).datepicker('option','monthNames')[prevMonth-1];
 			        var nextMonthName = $(this).datepicker('option','monthNames')[nextMonth-1];
-			    	$('.ui-datepicker .ui-datepicker-prev').append('<div class="arrow_day">' + prevMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + prevMonthName + '</div></div>');
-			    	$('.ui-datepicker .ui-datepicker-next').append('<div class="arrow_day">' + nextMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + nextMonthName + '</div></div>');
+			    	$(this).find('.ui-datepicker .ui-datepicker-prev').append('<div class="arrow_day">' + prevMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + prevMonthName + '</div></div>');
+			    	$(this).find('.ui-datepicker .ui-datepicker-next').append('<div class="arrow_day">' + nextMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + nextMonthName + '</div></div>');
 
 			    	// $('.ui-datepicker td .picker_container_wrapper').find('.picker_container').append('<div class="picker_container"></div>');
 			    	$('.ui-datepicker td').each(function(i,e){
@@ -74,175 +74,7 @@
 		})
 	})
 </script>
-<style type="text/css">
-	.ui-state-hover .ui-icon{
-		text-indent: unset;
-	}
-	.ui-datepicker,
-	.ui-datepicker table,
-	.ui-datepicker tr,
-	.ui-datepicker td,
-	.ui-datepicker th {
-	    margin: 0;
-	    padding: 0;
-	    border: none;
-	    border-spacing: 0;
-	}
-	.ui-datepicker-title{
-		display: none;
-	}
-	.ui-datepicker td{
-	    position: relative;
-	    box-shadow: 4px 0 0 0 #000, 0 4px 0 0 #000, 4px 4px 0 0 #000, 4px 0 0 0 #000 inset, 0 4px 0 0 #000 inset;
-	    width: 95px;
-	    height: 95px;
-	    float: left;
-	    box-sizing: border-box;
-	    font-size: 42px;
-	    font-weight: bold;
-	    line-height: 120px;
-	    text-align: right;
-	    padding-right: 10px;
-		font-family: 'TT Norms';
-	}
-	.ui-state-disabled, .ui-widget-content .ui-state-disabled{
-	    box-shadow: 4px 0 0 0 #DADADA, 0 4px 0 0 #DADADA, 4px 4px 0 0 #DADADA, 4px 0 0 0 #DADADA inset, 0 4px 0 0 #DADADA inset;
-	}
-	#calendar{
-	    position: relative;
-	    width: 665px;
-	    height: 570px;
-	    display: inline-block;
-	    vertical-align: top;
-	    right: -2px;
-	}
-	.ui-datepicker{
-		width: 680px;
-	    height: 570px;
-	}
-	.ui-datepicker-calendar tr{
-		display: block;
-	}
-	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-	    border: none;
-	    background: none;
-	    font-weight: bold;
-	    color: inherit;
-	    width: 95px;
-	    height: 95px;
-	    display: block;
-	    box-sizing: border-box;
-	    padding: 0 10px 0 0;
-	    color: #000;
-	}
-	.ui-widget-content .ui-state-disabled span{
-		color: #DADADA;
-	}
-	.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
-		opacity: 1;
-	}
-	.ui-datepicker-calendar tr:last-child .ui-datepicker-other-month{
-    	box-shadow: 0px 0 0 0 #DADADA, 0 0px 0 0 #DADADA, 4px 4px 0 0 #DADADA, 0px 0 0 0 #DADADA inset, 0 0px 0 0 #DADADA inset;
-	}
-	.ui-datepicker-calendar{
-		position: relative;
-	}
-	.ui-datepicker-calendar thead{
-	    position: absolute;
-	    top: -25px;
-	    left: 0;
-		font-family: 'TT Norms';
-	}
-	.ui-datepicker th{
-	    font-size: 16px;
-	    line-height: 19px;
-	    font-weight: bold;
-	    width: 95px;
-	    float: left;
-	    text-align: right;
-	    padding-right: 15px;
-	    box-sizing: border-box;
-	}
-	.ui-widget-header {
-	    border: none;
-	    border-radius: unset !important;
-	    background: none;
-	    color: inherit;
-	    width: 100%;
-	    height: 100%;
-	    z-index: 1;
-	}
-	.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
-	    position: absolute;
-	    top: 50%;
-	    margin-top: -125px;
-	    width: 100px;
-	    height: 250px;
-	    background-color: #fff;
-	    z-index: 1;
-	    cursor: pointer;
-	    padding-top: 80px;
-	    box-sizing: border-box;
-	}
-	.ui-datepicker .ui-datepicker-prev.ui-state-hover, .ui-datepicker .ui-datepicker-next.ui-state-hover{
-		background-color: #fff;
-	}
-	.ui-widget-header a{
-		color: #000;
-	}
-	.ui-datepicker .ui-datepicker-prev{
-		left: -100px;
-	}
-	.ui-datepicker .ui-datepicker-next{
-		right: -560px;
-	}
-	.ui-datepicker .ui-datepicker-header{
-		position: absolute;
-		z-index: 1;
-	}
-	.ui-datepicker table{
-		z-index: 2;
-		display: block;
-	}
-	.ui-datepicker table tbody, .ui-datepicker table tr, .ui-datepicker table thead{
-		display: block;
-	}
-	.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
-	    border: 4px solid #000;
-	    text-align: center;
-	    box-sizing: border-box;
-	    position: absolute;
-	    top: 17px;
-	    left: 0;
-	    right: 0;
-	    margin: auto;
-	    width: 50px;
-	    height: 50px;
-	    background-color: #fff;
-	}
-	.ui-datepicker .ui-datepicker-prev span{
-    	background: url(img/arrow_left.svg) #fff no-repeat center center;
-	}
-	.ui-datepicker .ui-datepicker-next span{
-    	background: url(img/arrow_right.svg) #fff no-repeat center center;
-	}
-	.ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-	    border: none;
-	    background: #fff;
-	    font-weight: bold;
-	    color: #000;
-	}
-	.ui-state-hover, .ui-widget-content .ui-state-hover{
-	    border: none;
-	    background: rgba(0, 0, 0, 0.15);
-	    font-weight: bold;
-	    color: #000;
-	}
-	.ui-datepicker-today .ui-state-default{
-	    background: rgba(0, 0, 0, 0.15);
-	}
-</style>
-	<div class="calendar_page overflow_auto dotted_bg">
+	<div class="calendar_page one overflow_auto dotted_bg">
 		<div class="calendar_white_wrapper">
 			<h3>Мероприятия в октябре</h3>
 			<div class="btn_wrapper">
@@ -347,7 +179,7 @@
 					<div class="calendar_date next_mounth">5</div>
 					<div class="calendar_date next_mounth">6</div>
 				</div> -->
-				<div id="calendar"></div>
+				<div id="calendar_1" class="calendar"></div>
 				<div class="calendar_date_description">
 					<div class="date_img_wrapper">
 						<img src="img/01-event-05/1.jpg">
