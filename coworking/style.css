@@ -2749,7 +2749,7 @@ h3{
 .office_calc_title_sum{
 	width: 295px;
 }
-.detail_office .close{
+.popup_inner .close{
 	width: 50px;
 	height: 50px;
 	position: absolute;
@@ -2757,6 +2757,7 @@ h3{
 	right: 0;
 	background: #000 url(img/04-office-02/1.svg) center center / 25px 25px no-repeat;
 	cursor: pointer;
+	z-index: 1;
 }
 footer{
 	width: 100%;

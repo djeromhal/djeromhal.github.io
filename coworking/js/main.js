@@ -141,6 +141,7 @@ $(function(){
 			// 	updateVNav();
 			// });
 		}
+		$('.popup').removeClass('active');
 	}
 	var updateAxisYGalleryByVNav = function(item){
 		$('.active_drag .active_inner').next().removeClass('next_inner_item');
@@ -690,4 +691,13 @@ $(function(){
 
 	var i = 0;
 	$('.active_drag').bind('mousewheel', mouseWheelFunc);
+
+	$('.inner_block').on('click','.popup_activator',function(){
+		var popupLink = $(this).attr('href');
+		$(popupLink).addClass('active');
+	});
+	$('.inner_block').on('click','.popup_inner>.close, .popup>.blur',function(){
+		var p = $(this).parents('.popup');
+		p.removeClass('active');
+	})
 })

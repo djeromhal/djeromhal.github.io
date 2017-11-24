@@ -10,6 +10,19 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body> -->
+	<script type="text/javascript">
+		$(function(){
+			$('.coworking_tab').click(function(e){
+				var tabLink = $(this).attr('href');
+				var p = $(this).parents('.coworking_tab_wrapper');
+				p.find('.coworking_tab').removeClass('active')
+				$(this).addClass('active');
+
+				p.find('.coworking_tab_content').removeClass('active');
+				p.find(tabLink).addClass('active');
+			})
+		})
+	</script>
 	<div class="white_page overflow_auto dotted_bg footer_page">
 		<center>
 			<div class="coworking_tab_wrapper">
@@ -19,12 +32,12 @@
 					<p class="white_text">Выбирайте любое свободное место в открытом пространстве и приступайте к работе. Вам доступна вся инфраструктура офиса.</p>
 				</div>
 				<div class="coworking_tabs">
-					<a href="#" class="coworking_tab active">день</a><!--
-					--><a href="#" class="coworking_tab">неделя</a><!--
-					--><a href="#" class="coworking_tab">месяц</a>
+					<a href="#cow-tab-1" class="coworking_tab active">день</a><!--
+					--><a href="#cow-tab-2" class="coworking_tab">неделя</a><!--
+					--><a href="#cow-tab-3" class="coworking_tab">месяц</a>
 				</div>
 				<div class="coworking_tabs_content">
-					<div class="coworking_tab_content active">
+					<div class="coworking_tab_content active" id="cow-tab-1">
 						<div class="coworking_tab_list_wrapper">
 							<ul class="coworking_tab_list adv">
 								<li>незакрепленное рабочее место</li>
@@ -42,8 +55,8 @@
 							</ul>
 						</div>
 					</div>
-					<div class="coworking_tab_content"></div>
-					<div class="coworking_tab_content"></div>
+					<div class="coworking_tab_content" id="cow-tab-2">1</div>
+					<div class="coworking_tab_content" id="cow-tab-3">2</div>
 				</div>
 				<div class="coworking_tab_bottom">
 					<div class="coworking_tab_price">850 ₽ в день</div><!--
@@ -57,12 +70,12 @@
 					<p class="white_text">За вами закреплено рабочее место в нашем коворкинге. Расширенное использование переговорных комнат, возможность оформления гостевого пропуска для ваших клиентов — все для полноценной работы.</p>
 				</div>
 				<div class="coworking_tabs">
-					<a href="#" class="coworking_tab active">месяц</a><!--
-					--><a href="#" class="coworking_tab">3 месяца</a><!--
-					--><a href="#" class="coworking_tab">полгода</a>
+					<a href="#cow-tab-1" class="coworking_tab active">месяц</a><!--
+					--><a href="#cow-tab-2" class="coworking_tab">3 месяца</a><!--
+					--><a href="#cow-tab-3" class="coworking_tab">полгода</a>
 				</div>
 				<div class="coworking_tabs_content with_calc">
-					<div class="coworking_tab_content active">
+					<div class="coworking_tab_content active" id="cow-tab-1">
 						<div class="coworking_tab_list_wrapper">
 							<ul class="coworking_tab_list adv">
 								<li>закрепленное рабочее место</li>
@@ -81,8 +94,8 @@
 							</ul>
 						</div>
 					</div>
-					<div class="coworking_tab_content"></div>
-					<div class="coworking_tab_content"></div>
+					<div class="coworking_tab_content" id="cow-tab-2">2</div>
+					<div class="coworking_tab_content" id="cow-tab-3">3</div>
 				</div>
 				<div class="coworking_tab_calc">
 					<div class="coworking_tab_calc_title">
