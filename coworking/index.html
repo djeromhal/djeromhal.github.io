@@ -36,6 +36,7 @@
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
 	<div id="preloader"></div>
@@ -437,10 +438,70 @@
 			</div>
 			<div class="block" id="contacts">
 				<div class="inner_block active_inner">
+					<script type="text/javascript">
+						ymaps.ready(function () {
+						    var myMap = new ymaps.Map('contact_map_1', {
+						            center: [55.781512, 37.599227],
+						            zoom: 16
+						        }, {
+						            searchControlProvider: 'yandex#search'
+						        }),
+
+						        // Creating a content layout.
+						        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+						            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+						        ),
+
+						        myPlacemark = new ymaps.Placemark(myMap.getCenter(), null, {
+						            /**
+						             * Options.
+						             * You must specify this type of layout.
+						             */
+						            iconLayout: 'default#image',
+						            // Custom image for the placemark icon.
+						            iconImageHref: 'img/tag.svg',
+						            // The size of the placemark.
+						            iconImageSize: [222, 66],
+						            /**
+						             * The offset of the upper left corner of the icon relative
+						             * to its "tail" (the anchor point).
+						             */
+						            iconImageOffset: [-10, -120]
+						        });
+
+						        // myPlacemarkWithContent = new ymaps.Placemark([55.781512, 37.599227], {
+						        //     hintContent: 'A custom placemark icon with contents',
+						        //     balloonContent: 'This one — for Christmas',
+						        //     iconContent: '12'
+						        // }, {
+						        //     /**
+						        //      * Options.
+						        //      * You must specify this type of layout.
+						        //      */
+						        //     iconLayout: 'default#imageWithContent',
+						        //     // Custom image for the placemark icon.
+						        //     iconImageHref: 'images/ball.png',
+						        //     // The size of the placemark.
+						        //     iconImageSize: [48, 48],
+						        //     /**
+						        //      * The offset of the upper left corner of the icon relative
+						        //      * to its "tail" (the anchor point).
+						        //      */
+						        //     iconImageOffset: [-24, -24],
+						        //     // Offset of the layer with content relative to the layer with the image.
+						        //     iconContentOffset: [15, 15],
+						        //     // Content layout.
+						        //     iconContentLayout: MyIconContentLayout
+						        // });
+
+						    myMap.geoObjects
+						        .add(myPlacemark);
+						});
+					</script>
 					<div class="white_page overflow_auto dotted_bg footer_page">
 						<center><h2 class="white_bg_title">Где мы находимся</h2></center>
-						<div class="contact_map">
-							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A531465f3cd83e17fde993f0bd6cc021c09cd66dd0275bddb62d4b7c0316a48d5&amp;width=100%25&amp;height=520&amp;lang=ru_UA&amp;scroll=true"></script>
+						<div class="contact_map" id="contact_map_1">
+							
 						</div>
 						<div class="contact_bottom">
 							<div class="contact_bottom_inner">
