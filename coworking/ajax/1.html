@@ -15,6 +15,9 @@ $(function(){
 	// 01-space-02 OPEN COWORKING TAB
 	$('.space_wrapper').click(function(e){
 		e.preventDefault();
+		if (!$(this).hasClass('active')) {
+			$('.space_wrapper').removeClass('active');
+		}
 		$(this).toggleClass('active');
 	})
 })
