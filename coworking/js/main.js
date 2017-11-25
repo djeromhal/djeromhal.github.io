@@ -53,6 +53,13 @@ $(function(){
 		var liToActive = $('.v_nav').find('a[href=#'+href+']').parent();
 		liToActive.addClass('active');
 
+		if(!$('.v_nav .active').length){
+			$('.top_nav ul li').first().addClass('main_page');
+		}else{
+			if($('.top_nav ul li.main_page').length){
+				$('.top_nav ul li.main_page').removeClass('main_page');
+			}
+		}
 		// update H Nav
 		if($('.active_drag .inner_block:first-child').hasClass('active_inner')){
 			$('.h_nav_dot').fadeIn();
@@ -407,12 +414,29 @@ $(function(){
 	$('.top_nav ul a').click(function(e){
 		e.preventDefault();
 		var href = $(this).attr('href');
-		// $(href).css({'left':'100%','display':'block'}).addClass('toActiveForce');
-		// $('.block.active_drag').animate({left: '-' + $('.block.active_drag').outerWidth() + 'px'},500 ,function(){
-			updateGalleryClassesByTopNav($(href));
-		// })
+		var block = $(href);
+		updateGalleryClassesByTopNav($(href));
+		// if(block.hasClass('next_item') || block.hasClass('prev_item')){
+		// 	// updateGalleryClassesByTopNav($(href));
+		// 	block.find('.active_inner').show();
+		// 	block.addClass('toActive');
+		// 	if(block.hasClass('next_item')){
+		// 		// $('.block.next_item .active_inner').show();
+		// 		$('.block.active_drag').animate({left: '-' + $('.block.active_drag').outerWidth() + 'px'},500 ,function(){
+		// 			updateGalleryClasses(block);
+		// 		})
+		// 	}
+		// 	if(block.hasClass('prev_item')){
+		// 		// $('.block.prev_item .active_inner').show();
+		// 		$('.block.active_drag').animate({left: + $('.block.active_drag').outerWidth() + 'px'},500 ,function(){
+		// 			updateGalleryClasses(block);
+		// 		})
+		// 	}
+		// }
 	})
-
+	$('#main_page_link').click(function(){
+		updateAxisYGalleryByVNav($('#main_page_top'));
+	})
 	// V NAV AVIMATION
 	$('.v_nav ul li').click(function(e){
 		e.preventDefault();
@@ -430,7 +454,7 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
-	var scrollSesitivity = 16;
+	var scrollSesitivity = 20;
 	var offsetActiveDrag;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
@@ -692,12 +716,34 @@ $(function(){
 	var i = 0;
 	$('.active_drag').bind('mousewheel', mouseWheelFunc);
 
-	$('.inner_block').on('click','.popup_activator',function(){
+	$('.inner_block').on('click','.popup_activator',function(e){
+		e.preventDefault();
 		var popupLink = $(this).attr('href');
 		$(popupLink).addClass('active');
 	});
-	$('.inner_block').on('click','.popup_inner>.close, .popup>.blur',function(){
+	$('.inner_block').on('click','.popup .close_p, .popup>.blur',function(e){
+		e.preventDefault();
 		var p = $(this).parents('.popup');
 		p.removeClass('active');
+	})
+	$('.inner_block').on('click','.answer',function(e){
+		e.preventDefault();
+		var answerId = '#answers_' + $(this).attr('id').match(/\d+/);
+		$(answerId).fadeIn();
+	})
+	$('.inner_block').on('click','.answers',function(e){
+		e.preventDefault();
+		$(this).fadeOut();
+	})
+	$('.inner_block').on('click','.answers > div > div > span',function(e){
+		e.preventDefault();
+		var p = $(this).parents('.answers');
+		var questionId = '#question_' + p.attr('id').match(/\d+/);
+
+		var textToChange = $(this).html();
+		$(questionId).html(textToChange);
+	})
+	$('.cabinet_wrapper').hover(function(){
+
 	})
 })
