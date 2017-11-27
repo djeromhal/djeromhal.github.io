@@ -109,6 +109,7 @@ body{
     left: 0;
     opacity: 0;
     visibility: hidden;
+    width: calc(100% + 50px); /*fix for owlcarousel*/
 }
 .block.next_item.toActive{
     transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
@@ -507,6 +508,7 @@ body{
 	-webkit-transform: translateY(-45%);
 	-ms-transform: translateY(-45%);
 	transform: translateY(-45%);
+	z-index: 1;
 }
 .tob_block_text{
 	width: 500px;

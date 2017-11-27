@@ -35,6 +35,8 @@
 		  background: #fff url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
 		}
 	</style>
+	<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
@@ -63,21 +65,43 @@
 		--><li><a href="#faces">Лица</a></li>
 		</ul>
 	</nav>
-	<nav class="h_nav_dot">
+	<!-- <nav class="h_nav_dot">
 		<ul>
-		   <li class="active"><a href="#main_page"></a></li><!--
-		--><li><a href="#coworking"></a></li><!--
-		--><li><a href="#meeting-rooms"></a></li><!--
-		--><li><a href="#offices"></a></li><!--
-		--><li><a href="#virtual-office"></a></li><!--
-		--><li><a href="#event-platform"></a></li><!--
-		--><li><a href="#contacts"></a></li>
+		   <li class="active"><a href="#main_page"></a></li>
+			<li><a href="#coworking"></a></li>
+			<li><a href="#meeting-rooms"></a></li>
+			<li><a href="#offices"></a></li>
+			<li><a href="#virtual-office"></a></li>
+			<li><a href="#event-platform"></a></li>
+			<li><a href="#contacts"></a><
 		</ul>
-	</nav>
+	</nav> -->
 	<div class="top_gallery">
 		<div class="block_wrapper">
 			<div class="block active_drag" id="main_page">
 				<div class="top_block inner_block active_inner" id="main_page_top">
+					<script type="text/javascript">
+						$(function(){
+							$(document).ready(function(){
+								$('#owl1').owlCarousel({
+								    loop:true,
+								    margin:0,
+								    responsiveClass:true,
+								    nav:false,
+								    items: 1,
+								    dots: true,
+								    mouseDrag: false,
+    								touchDrag: false
+								})
+							});
+						})
+					</script>
+					<div class="owl-carousel" id="owl1">
+						<div class="img"><img src="img/main_image.jpg"></div>
+						<div class="img"><img src="img/main_image.jpg"></div>
+						<div class="img"><img src="img/main_image.jpg"></div>
+						<div class="img"><img src="img/main_image.jpg"></div>
+					</div>
 					<div class="anim_top_block_wrapper">
 						<div id="anim_block_1">
 							<div></div>
@@ -172,8 +196,30 @@
 				<div class="top_block inner_block active_inner">
 					<div class="full_page dotted_bg">
 						<div class="big_img_wrapper">
-							<img src="img/02-coworking-01/1.jpg">
+							<!-- <img src="img/02-coworking-01/1.jpg">	 -->
 							<div class="right_title_block">
+								<script type="text/javascript">
+									$(function(){
+										$(document).ready(function(){
+											$('#owl2').owlCarousel({
+											    loop:true,
+											    margin:0,
+											    responsiveClass:true,
+											    nav:false,
+											    items: 1,
+											    dots: true,
+											    mouseDrag: false,
+			    								touchDrag: false
+											})
+										});
+									})
+								</script>
+								<div class="owl-carousel" id="owl2">
+									<div class="img"><img src="img/02-coworking-01/1.jpg"></div>
+									<div class="img"><img src="img/02-coworking-01/1.jpg"></div>
+									<div class="img"><img src="img/02-coworking-01/1.jpg"></div>
+									<div class="img"><img src="img/02-coworking-01/1.jpg"></div>
+								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
 										<div id="anim_block_cow_1">
@@ -226,8 +272,30 @@
 				<div class="top_block inner_block active_inner">
 					<div class="full_page dotted_bg">
 						<div class="big_img_wrapper">
-							<img src="img/03-meeting-01/1.jpg">
+							<!-- <img src="img/03-meeting-01/1.jpg"> -->
 							<div class="right_title_block center_blocks">
+								<script type="text/javascript">
+									$(function(){
+										$(document).ready(function(){
+											$('#owl3').owlCarousel({
+											    loop:true,
+											    margin:0,
+											    responsiveClass:true,
+											    nav:false,
+											    items: 1,
+											    dots: true,
+											    mouseDrag: false,
+			    								touchDrag: false
+											})
+										});
+									})
+								</script>
+								<div class="owl-carousel" id="owl3">
+									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
 										<div id="anim_block_met_1">
@@ -279,8 +347,30 @@
 				<div class="top_block inner_block active_inner">
 					<div class="full_page dotted_bg">
 						<div class="big_img_wrapper">
-							<img src="img/04-office-01/1.jpg">
+							<!-- <img src="img/04-office-01/1.jpg"> -->
 							<div class="right_title_block center_blocks">
+								<script type="text/javascript">
+									$(function(){
+										$(document).ready(function(){
+											$('#owl4').owlCarousel({
+											    loop:true,
+											    margin:0,
+											    responsiveClass:true,
+											    nav:false,
+											    items: 1,
+											    dots: true,
+											    mouseDrag: false,
+			    								touchDrag: false
+											})
+										});
+									})
+								</script>
+								<div class="owl-carousel" id="owl4">
+									<div class="img"><img src="img/04-office-01/1.jpg"></div>
+									<div class="img"><img src="img/04-office-01/1.jpg"></div>
+									<div class="img"><img src="img/04-office-01/1.jpg"></div>
+									<div class="img"><img src="img/04-office-01/1.jpg"></div>
+								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
 										<div id="anim_block_off_1">
@@ -335,8 +425,30 @@
 				<div class="top_block inner_block active_inner">
 					<div class="full_page dotted_bg">
 						<div class="big_img_wrapper">
-							<img src="img/05-virt-office-01/1.jpg">
+							<!-- <img src="img/05-virt-office-01/1.jpg"> -->
 							<div class="right_title_block center_blocks">
+								<script type="text/javascript">
+									$(function(){
+										$(document).ready(function(){
+											$('#owl5').owlCarousel({
+											    loop:true,
+											    margin:0,
+											    responsiveClass:true,
+											    nav:false,
+											    items: 1,
+											    dots: true,
+											    mouseDrag: false,
+			    								touchDrag: false
+											})
+										});
+									})
+								</script>
+								<div class="owl-carousel" id="owl5">
+									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
 										<div id="anim_block_virt_5">
@@ -387,6 +499,28 @@
 						<div class="big_img_wrapper">
 							<img src="img/06-events-01/1.jpg">
 							<div class="right_title_block center_blocks">
+								<script type="text/javascript">
+									$(function(){
+										$(document).ready(function(){
+											$('#owl6').owlCarousel({
+											    loop:true,
+											    margin:0,
+											    responsiveClass:true,
+											    nav:false,
+											    items: 1,
+											    dots: true,
+											    mouseDrag: false,
+			    								touchDrag: false
+											})
+										});
+									})
+								</script>
+								<div class="owl-carousel" id="owl6">
+									<div class="img"><img src="img/06-events-01/1.jpg"></div>
+									<div class="img"><img src="img/06-events-01/1.jpg"></div>
+									<div class="img"><img src="img/06-events-01/1.jpg"></div>
+									<div class="img"><img src="img/06-events-01/1.jpg"></div>
+								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
 										<div id="anim_block_event_1">
@@ -563,6 +697,7 @@
 		</div>
 	</div>
 	<!-- <script type="text/javascript" src="js/jquery-ui.min.js"></script> -->
+	<script src="js/owlcarousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
