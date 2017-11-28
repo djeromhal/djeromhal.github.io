@@ -206,9 +206,10 @@ body{
 	box-sizing: border-box;
 }
 .cabinet_wrapper .hover{
-	overflow: hidden;
+	border-left: 4px solid #000;
+    overflow: hidden;
     display: block;
-    width: 0;
+    width: 50px;
     height: 42px;
     background-color: #fff;
     font-size: 20px;
@@ -218,20 +219,31 @@ body{
     position: absolute;
     right: 0;
     top: 0;
-    text-align: center;
+    text-align: right;
+    padding-right: 20px;
     cursor: pointer;
     box-sizing: border-box;
     transition: all .5s ease-in-out;
 }
 .cabinet_wrapper:hover .hover{
-	width: 200px;
+	width: 230px;
     border-left: 4px solid #000;
+}
+.cabinet_wrapper:hover .cabinet{
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
 }
 .cabinet_wrapper .hover a{
 	text-decoration: none;
 	color: #000;
 	line-height: 42px;
 	font-weight: bold;
+	position: absolute;
+	left: 55px;
+	top: 0;
 }
 .top_nav .cabinet_wrapper{
 	width: 50px;
@@ -257,9 +269,10 @@ body{
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 8px;
+    /*right: 0;*/
     cursor: pointer;
+    transition: all .5s ease-in-out;
 }
 .top_nav .cabinet::before{
     content: '';
@@ -1771,8 +1784,8 @@ p{
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding-top: 10px;
-	padding-left: 10px;
+	padding-top: 12px;
+	padding-left: 12px;
 	box-sizing: border-box;
 }
 .picker_container>span{
@@ -1781,6 +1794,8 @@ p{
 	height: 20px;
 	margin-right: 6px;
 	float: left;
+    border: none;
+    padding: 0 !important;
 }
 .orange_picker{
 	background-color: #F78D28;
@@ -1872,6 +1887,9 @@ h2{
 	border: 4px solid #000;
 	margin-bottom: 50px;
 	height: 528px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .contact_bottom{
 	padding: 30px 50px 30px 50px;
@@ -3637,6 +3655,9 @@ footer{
 }
 .ui-datepicker-today .ui-state-default{
     background: rgba(0, 0, 0, 0.15);
+}
+.ui-datepicker-today.ui-datepicker-other-month .ui-state-default{
+    background: rgba(0, 0, 0, 0.05);
 }
 .meeting_list li{
 	font-size: 18px;

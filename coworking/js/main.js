@@ -776,7 +776,13 @@ $(function(){
 		var textToChange = $(this).html();
 		$(questionId).html(textToChange);
 	})
-	$('.cabinet_wrapper').hover(function(){
-
-	})
+	var navToPage = function(e){
+		e.preventDefault();
+		var href = $(this).attr('href');
+		var block = $(href);
+		if('#' + $('.active_drag').attr('id') != href){
+			updateGalleryClassesByTopNav($(href));
+		}
+	}
+	$('.inner_block').on('click','.space_wrapper a.more_space',navToPage);
 })

@@ -24,10 +24,13 @@
 			var month = d.getMonth() + 1;
 
 			var eventDates = {};
-			eventDates[ new Date( '11/10/2017' )] = 'orange blue purple';
-			eventDates[ new Date( '11/11/2017' )] = 'orange purple';
-			eventDates[ new Date( '11/12/2017' )] = 'purple';
+			eventDates[ new Date( '11/3/2017' )] = 'orange blue';
+			eventDates[ new Date( '11/5/2017' )] = 'orange';
+			eventDates[ new Date( '11/6/2017' )] = 'blue';
 			eventDates[ new Date( '11/13/2017' )] = 'blue purple';
+			eventDates[ new Date( '11/17/2017' )] = 'purple';
+			eventDates[ new Date( '11/19/2017' )] = 'orange';
+			eventDates[ new Date( '11/27/2017' )] = 'orange blue purple';
 
 		    $('#calendar_1').datepicker({
 		        inline: true,
@@ -59,12 +62,23 @@
 			    	$(this).find('.ui-datepicker .ui-datepicker-next').append('<div class="arrow_day">' + nextMonth + '</div><div class="arrow_month_wrapper"><div class="arrow_month">' + nextMonthName + '</div></div>');
 
 			    	// $('.ui-datepicker td .picker_container_wrapper').find('.picker_container').append('<div class="picker_container"></div>');
-			    	$('.ui-datepicker td').each(function(i,e){
-			    		if($(e).length){
-			    			console.log('AAAAAAAAAAAAAAAAAAAAAAA')
-			    		}else{
-			    			$(e).append('<div class="picker_container"></div>')
+			    	$('.ui-datepicker td.picker_container_wrapper').each(function(i,e){
+			    		var classList = $(e)[0].className.split(' ')
+			    		var addPickers = function(classList){
+			    			var pickerStr = "";
+			    			$.each(classList,function(i,v){
+				    			if(v == 'orange')
+				    				pickerStr += '<span class="' + v + '_picker"></span>';
+				    			if(v == 'blue')
+				    				pickerStr += '<span class="' + v + '_picker"></span>';
+				    			if(v == 'purple')
+				    				pickerStr += '<span class="' + v + '_picker"></span>';
+
+			    			})
+			    			console.log(pickerStr)
+			    			return pickerStr;
 			    		}
+			    		$(e).append('<div class="picker_container">'+ addPickers(classList) + '</div>');
 			    	})
 			    },
 			    onChangeMonthYear: function (y,m) {
