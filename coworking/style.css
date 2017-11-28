@@ -1374,8 +1374,8 @@ p{
 	overflow-x: hidden;
 }
 .big_img_wrapper .img>img{
-	height: 100%;
-	width: auto;
+	height: auto;
+	width: 100%;
 	position: absolute;
 	top: 50%;
     left: 50%;
