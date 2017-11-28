@@ -54,10 +54,10 @@ $(function(){
 
 		// update V Nav
 		if($('.block:first-child').hasClass('active_drag')){
-			$('.v_nav').fadeIn();
+			$('.v_nav').show();
 			$('.top_gallery').removeClass('no_v_nav');
 		}else{
-			$('.v_nav').fadeOut();
+			$('.v_nav').hide();
 			$('.top_gallery').addClass('no_v_nav');
 		}
 	}
@@ -103,7 +103,6 @@ $(function(){
 		$('.block.active_drag').prev().removeClass('prev_item');
 		$('.block.active_drag').unbind('mousewheel').draggable("destroy").addClass('toActive').delay(500).queue(function(next){
 			$(this).attr('style','').removeClass('active_drag toActive');
-			updateNavs();
 			next();
 		})
 		item.addClass('next_item',function(){
@@ -114,6 +113,14 @@ $(function(){
 				$(this).prev().addClass('prev_item');
 				$(this).attr('style','').find('.active_inner').attr('style','');
 				updateNavs();
+				// update H Nav
+				if($(this).find('.top_block').hasClass('active_inner')){
+					// $('.h_nav_dot').fadeIn();
+					$('.top_gallery_arrows').fadeIn();
+				}else{
+					// $('.h_nav_dot').fadeOut();
+					$('.top_gallery_arrows').fadeOut();
+				}
 				next();
 			});
 		})
