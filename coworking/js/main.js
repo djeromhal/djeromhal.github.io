@@ -102,8 +102,7 @@ $(function(){
 		$('.block.active_drag').next().removeClass('next_item');
 		$('.block.active_drag').prev().removeClass('prev_item');
 		$('.block.active_drag').unbind('mousewheel').draggable("destroy").addClass('toActive').delay(500).queue(function(next){
-			$(this).removeClass('active_drag toActive');
-			$(this).next();
+			$(this).attr('style','').removeClass('active_drag toActive');
 			updateNavs();
 			next();
 		})
@@ -113,7 +112,7 @@ $(function(){
 				$(this).draggable(draggableOptions).addClass('active_drag').bind('mousewheel', mouseWheelFunc).removeClass('next_item toActive');
 				$(this).next().addClass('next_item');
 				$(this).prev().addClass('prev_item');
-				$(this).find('.active_inner').attr('style','');
+				$(this).attr('style','').find('.active_inner').attr('style','');
 				updateNavs();
 				next();
 			});
@@ -139,7 +138,7 @@ $(function(){
 		if(item.hasClass('prev_inner_item')){
 			var parent = item.parents('.block');
 			parent.animate({top: '100%'},500, function(){
-				thisInnerItem.removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
+				thisInnerItem.scrollTop(0).removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
 				prevInnerItem.removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
 				// parent.draggable( "option", "revert", true);
 				parent.attr('style','');
@@ -160,7 +159,7 @@ $(function(){
 		}else if(item.hasClass('next_inner_item')){
 			var parent = item.parents('.block');
 			parent.animate({top: '-100%'},500, function(){
-				thisInnerItem.removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
+				thisInnerItem.scrollTop(0).removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
 				nextInnerItem.removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
 				// parent.draggable( "option", "revert", true);
 				parent.attr('style','');
@@ -182,7 +181,7 @@ $(function(){
 		$('.popup').removeClass('active');
 	}
 	var updateAxisYGalleryByVNav = function(item){
-		$('#main_page .active_inner').next().removeClass('next_inner_item');
+		$('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
 		$('#main_page .active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
 		item.next().addClass('next_inner_item');
 		item.addClass('active_inner').prev().addClass('prev_inner_item');
@@ -420,6 +419,8 @@ $(function(){
 				// 	$(this).attr('style','');
 				// });
 				// $(this).draggable( "option", "revert", true);
+			}else{
+				$(this).attr('style','');
 			}
 		}
 	}
@@ -487,7 +488,7 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
-	var scrollSesitivity = 20;
+	var scrollSesitivity = 30;
 	var offsetActiveDrag;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
@@ -561,7 +562,7 @@ $(function(){
 			    if(showBlock && !isAttr(nextInnerItem)){
 			    	active_drag.unbind('mousewheel').animate({top:'-100%'},{duration:500, queue:false, complete: function(){
 		    			$(this).attr('style','');
-						thisInnerItem.removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
+						thisInnerItem.scrollTop(0).removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
 						nextInnerItem.removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
 						nextInnerItem.attr('style','').removeClass('not_scrollable');
 						updateVNav();
@@ -582,7 +583,7 @@ $(function(){
 					nextInnerItem.load('ajax/' + attr, function(){
 				    	active_drag.animate({top:'-100%'},{duration:500, queue:false, complete: function(){
 			    			$(this).attr('style','');
-							thisInnerItem.removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
+							thisInnerItem.scrollTop(0).removeClass('active_inner').addClass('prev_inner_item').prev().removeClass('prev_inner_item');
 							nextInnerItem.removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
 							nextInnerItem.attr('style','');
 							updateVNav();
@@ -684,7 +685,7 @@ $(function(){
 					prevInnerItem.load('ajax/' + attr, function(){
 				    	active_drag.animate({top:'100%'},{duration:500, queue:false, complete: function(){
 			    			$(this).attr('style','');
-							thisInnerItem.removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
+							thisInnerItem.scrollTop(0).removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
 							prevInnerItem.removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
 							prevInnerItem.attr('style','');
 							updateVNav();
@@ -705,7 +706,7 @@ $(function(){
 			    if(showBlock && !isAttr(prevInnerItem)){
 			    	active_drag.unbind('mousewheel').animate({top:'100%'},{duration:500, queue:false, complete: function(){
 		    			$(this).attr('style','');
-						thisInnerItem.removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
+						thisInnerItem.scrollTop(0).removeClass('active_inner').addClass('next_inner_item').next().removeClass('next_inner_item');
 						prevInnerItem.removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
 						prevInnerItem.attr('style','').removeClass('not_scrollable');
 						updateVNav();
@@ -785,4 +786,23 @@ $(function(){
 		}
 	}
 	$('.inner_block').on('click','.space_wrapper a.more_space',navToPage);
+	$('.inner_block').on('click','.calendar_tab',function(){
+		var p = $(this).parent();
+		p.find('.active').removeClass('active');
+		$(this).addClass('active');
+	});
+	$('.inner_block').on('click','.coworking_tab_calc_minus, .coworking_tab_calc_plus', function(){
+		var p = $(this).parent();
+		var num = p.find('.coworking_tab_calc_num');
+		var numV = parseInt(num.html());
+		// if(numV === 0){
+		// 	return false;
+		// }
+		if($(this).hasClass('coworking_tab_calc_plus')){
+			num.html(numV+1);
+		}
+		if($(this).hasClass('coworking_tab_calc_minus') && numV > 1){
+			num.html(numV-1);
+		}
+	});
 })

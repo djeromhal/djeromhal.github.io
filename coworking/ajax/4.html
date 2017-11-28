@@ -49,7 +49,11 @@
 				    }
 
 			     },
-			    onSelect: function () {
+			    onSelect: function (date) {
+			    	if(date == '11/13/2017')
+			    		$(this).next().find('.calendar_tabs').show();
+			    	else
+			    		$(this).next().find('.calendar_tabs').hide();
 			    },
 			    beforeShow: function () {
 			    },
@@ -75,7 +79,6 @@
 				    				pickerStr += '<span class="' + v + '_picker"></span>';
 
 			    			})
-			    			console.log(pickerStr)
 			    			return pickerStr;
 			    		}
 			    		$(e).append('<div class="picker_container">'+ addPickers(classList) + '</div>');
@@ -225,6 +228,11 @@
 				</div> -->
 				<div id="calendar_1" class="calendar"></div>
 				<div class="calendar_date_description">
+					<div class="howSoon">ближайшее</div>
+					<div class="calendar_tabs">
+						<div class="calendar_tab active">13:00</div><!--
+						--><div class="calendar_tab">18:00</div>
+					</div>
 					<div class="date_img_wrapper">
 						<img src="img/01-event-05/1.jpg">
 					</div>
