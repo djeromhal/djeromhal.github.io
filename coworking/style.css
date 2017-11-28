@@ -525,6 +525,9 @@ body{
 	background: url(img/main_image.jpg) no-repeat center center;
 	background-size: cover;
 }
+#owl1{
+	position: static;
+}
 .top_block_center, .anim_top_block_wrapper{
 	width: 594px;
 	height: 296px;
@@ -533,11 +536,11 @@ body{
 	right: 0;
 	margin: auto;
 	top: 50%;
-	-webkit-transform: translateY(-65%);
-	-ms-transform: translateY(-65%);
-	-moz-transform: translateY(-65%);
-	-o-transform: translateY(-65%);
-	transform: translateY(-65%);
+	-webkit-transform: translateY(-55%);
+	-ms-transform: translateY(-55%);
+	-moz-transform: translateY(-55%);
+	-o-transform: translateY(-55%);
+	transform: translateY(-55%);
 	z-index: 1;
 }
 .tob_block_text{

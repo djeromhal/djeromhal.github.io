@@ -28,6 +28,7 @@
     right: 0;
     margin: auto;
     text-align: center;
+    z-index: 100;
 }
 .owl-carousel{
 	height: 100%;
