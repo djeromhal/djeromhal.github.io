@@ -84,6 +84,9 @@
 					<script type="text/javascript">
 						$(function(){
 							$(document).ready(function(){
+								// $('#owl1').on('initialized.owl.carousel',function(){
+								// 	$('#owl1 .owl-dots').remove();
+								// })
 								$('#owl1').owlCarousel({
 									lazyLoad: true,
 								    loop:true,
@@ -93,7 +96,8 @@
 								    items: 1,
 								    dots: true,
 								    mouseDrag: false,
-    								touchDrag: false
+    								touchDrag: false,
+    								callbacks: true
 								})
 							});
 						})

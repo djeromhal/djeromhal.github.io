@@ -8,7 +8,7 @@
     display: inline-block;
     width: 30px;
 }
-.owl-carousel .owl-dots .owl-dot span {
+.owl-dots .owl-dot span {
     display: inline-block;
     vertical-align: middle;
     width: 8px;
@@ -17,11 +17,11 @@
     border-radius: 100%;
     cursor: pointer;
 }
-.owl-carousel .owl-dots .owl-dot.active span {
+.owl-dots .owl-dot.active span {
     background-color: transparent;
     border: 4px solid #000;
 }
-.owl-carousel .owl-dots{
+.owl-dots{
     position: absolute;
     bottom: 20px;
     left: 0;
