@@ -103,27 +103,26 @@ body{
 }
 .block.next_item{
 	z-index: 1;
-	display:  block;
+	display:  none;
     transform-origin: 100% 50%;
-    transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-20deg);
-    -webkit-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-20deg);
-    -moz-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-20deg);
-    -ms-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-20deg);
-    -o-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-20deg);
+    transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-2deg);
+    -webkit-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-2deg);
+    -moz-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-2deg);
+    -ms-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-2deg);
+    -o-transform: perspective(500px) translateX(-2%) scale(.9) rotateY(-2deg);
     left: 0;
     opacity: 0;
     visibility: hidden;
 }
 .block.next_item.toActive{
-    transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
-    -webkit-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
-    -moz-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
-    -ms-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
-    -o-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg);
-    opacity: 1;
+    transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg) !important;
+    -webkit-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg) !important;
+    -moz-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg) !important;
+    -ms-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg) !important;
+    -o-transform: perspective(0px) translateX(0%) scale(1) rotateY(0deg) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     transition: all .5s linear;
-    opacity: 1;
-    visibility: visible;
 }
 .block.active_drag{
 	z-index: 3;
@@ -142,10 +141,10 @@ body{
 .block.prev_item{
 	z-index: 2;
 	left: -100%;
-	display: block;
+	display: none;
 }
 .block.prev_item.toActive{
-	left: 0;
+	left: 0 !important;
     transition: all .5s linear;
 }
 .block.toActiveForce{
