@@ -124,9 +124,31 @@ $(function(){
 				next();
 			});
 		})
-		// $('.block.active_drag').unbind('mousewheel').draggable("destroy").removeClass('active_drag').prev().removeClass('prev_item');
-		// item.next().addClass('next_item').addClass('toActive');
-		// item.draggable(draggableOptions).addClass('active_drag').bind('mousewheel', mouseWheelFunc).prev().addClass('prev_item');
+	}
+	var updateAxisYGalleryByVNav = function(item){
+		// $('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
+		// $('#main_page .active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
+		$('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
+		$('#main_page .active_inner').prev().removeClass('prev_inner_item');
+		item.next().addClass('next_inner_item', function(){
+			$(this).animate({top: 0}, function(){
+				$('#main_page .active_inner').removeClass('active_inner');
+				item.addClass('active_inner').prev().addClass('prev_inner_item');
+				
+			})
+		});
+		// item.addClass('active_inner').prev().addClass('prev_inner_item');
+		attr = item.attr('data-to-load');
+		// if(typeof attr !== typeof undefined && attr !== false){
+		// 	$('#ajaxloader').css({visibility: 'visible', opacity: '1', height: '100%'})
+		// 	item.load('ajax/' + attr, function(){
+		// 		$('#ajaxloader').fadeOut(function(){
+		// 			$('#ajaxloader').attr('style','');
+		// 		});
+		// 		$(this).removeAttr('data-to-load');
+		// 	});
+		// }
+		updateVNav();	
 	}
 	var checkItemOnContinue = function(item){
 		if(!item.prev().length){
@@ -186,23 +208,6 @@ $(function(){
 			// });
 		}
 		$('.popup').removeClass('active');
-	}
-	var updateAxisYGalleryByVNav = function(item){
-		$('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
-		$('#main_page .active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
-		item.next().addClass('next_inner_item');
-		item.addClass('active_inner').prev().addClass('prev_inner_item');
-		attr = item.attr('data-to-load');
-		if(typeof attr !== typeof undefined && attr !== false){
-			$('#ajaxloader').css({visibility: 'visible', opacity: '1', height: '100%'})
-			item.load('ajax/' + attr, function(){
-				$('#ajaxloader').fadeOut(function(){
-					$('#ajaxloader').attr('style','');
-				});
-				$(this).removeAttr('data-to-load');
-			});
-		}
-		updateVNav();	
 	}
 	var draggableOptions = { 
 		revert: false, 
