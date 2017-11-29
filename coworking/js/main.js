@@ -126,29 +126,37 @@ $(function(){
 		})
 	}
 	var updateAxisYGalleryByVNav = function(item){
+		var nexti = item.next();
+		var previ = item.prev();
 		// $('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
 		// $('#main_page .active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
-		$('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
-		$('#main_page .active_inner').prev().removeClass('prev_inner_item');
-		item.next().addClass('next_inner_item', function(){
-			$(this).animate({top: 0}, function(){
-				$('#main_page .active_inner').removeClass('active_inner');
-				item.addClass('active_inner').prev().addClass('prev_inner_item');
-				
+		var lastAI = $('#main_page .active_inner');
+		lastAI.next().removeClass('next_inner_item');
+		lastAI.prev().removeClass('prev_inner_item');
+		item.addClass('next_inner_item', function(){
+			$(this).addClass('innerToActive').delay(500).queue(function(next){
+				$(this).addClass('active_inner').removeClass('innerToActive next_inner_item');
+				previ.addClass('prev_inner_item');
+				nexti.addClass('next_inner_item');
+				updateVNav();	
+				next();
 			})
+		});
+		lastAI.addClass('toTop').delay(500).queue(function(next){
+			lastAI.scrollTop(0).removeClass('active_inner').removeClass('toTop');
+			next();
 		});
 		// item.addClass('active_inner').prev().addClass('prev_inner_item');
 		attr = item.attr('data-to-load');
-		// if(typeof attr !== typeof undefined && attr !== false){
-		// 	$('#ajaxloader').css({visibility: 'visible', opacity: '1', height: '100%'})
-		// 	item.load('ajax/' + attr, function(){
-		// 		$('#ajaxloader').fadeOut(function(){
-		// 			$('#ajaxloader').attr('style','');
-		// 		});
-		// 		$(this).removeAttr('data-to-load');
-		// 	});
-		// }
-		updateVNav();	
+		if(typeof attr !== typeof undefined && attr !== false){
+			$('#ajaxloader').css({'bottom':'0', 'top':'auto'}).addClass('fullHeight');
+			item.load('ajax/' + attr, function(){
+				$('#ajaxloader').fadeOut(function(){
+					$('#ajaxloader').removeClass('fullHeight').attr('style','');
+				});
+				$(this).removeAttr('data-to-load');
+			});
+		}
 	}
 	var checkItemOnContinue = function(item){
 		if(!item.prev().length){
