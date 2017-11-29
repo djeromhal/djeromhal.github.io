@@ -1653,6 +1653,7 @@ p{
 	text-align: center;
 }
 .calendar_page{
+	overflow: hidden;
 	padding-top: 40px;
 	padding-bottom: 80px;
     background: #fff;
@@ -3079,7 +3080,7 @@ footer{
     position: absolute;
     bottom: 0;
     left: 0;
-	padding: 30px 50px;
+	padding: 30px 0;
 	box-sizing: border-box;
 	text-align: center;
 }
@@ -4002,4 +4003,45 @@ footer{
 .br{
 	border-right: 4px solid #000;
 	box-sizing: border-box;
+}
+@media all and (max-width: 1340px){
+	.meeting_rooms{
+		width: 100%;
+		padding: 0 10px;
+		text-align: center;
+	}
+	.meeting_room:nth-child(3n+1){
+		margin-left: 10px;
+	}
+	.meeting_room:nth-child(3n){
+		margin-right: 10px;
+	}
+	.meeting_room:last-child{
+		margin-right: 10px;
+	}
+	.hall_rent_wrapper{
+		width: 100%;
+	}
+	.hall_rent_img, .hall_rent_block_wrapper{
+		width: 50%;
+	}
+	.hall_rent{
+		width: 60%;
+	}
+	.hall_rent.small{
+		width: 40%;
+	}
+	.footer_col:first-child, .footer_col:nth-child(2){
+		margin-right: 50px;
+	}
+	.faces_table{
+		width: 100%;
+	}
+	.face_img{
+		width: 150px;
+		height: 150px;
+	}
+	.faces_partners{
+		width: 100%;
+	}
 }
