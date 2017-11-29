@@ -495,7 +495,9 @@ $(function(){
 	$('.v_nav ul li').click(function(e){
 		e.preventDefault();
 		var href = $(this).find('a').attr('href');
-		updateAxisYGalleryByVNav($(href));
+		if('#' + $('.active_drag .active_inner').attr('id') != href){
+			updateAxisYGalleryByVNav($(href));
+		}
 	})
 
 	var isAttr = function(item) {
