@@ -344,22 +344,22 @@ $(function(){
 					case 'right':
 						prevItem.addClass('toActive').delay(500).queue(function(next){
 							$(this).attr('style','');
+							updateGalleryClasses(prevItem);
 							next();
 						});
 						$(this).animate({left: $(this).outerWidth() + 'px'},500, function(){
 							// nextItem.attr('style','');
-							updateGalleryClasses(prevItem);
 							// $(this).attr('style','');
 						});
 						break;
 					case 'left':
 						nextItem.addClass('toActive').delay(500).queue(function(next){
 							$(this).attr('style','');
+							updateGalleryClasses(nextItem);
 							next();
 						});
 						$(this).animate({left: '-' + $(this).outerWidth() + 'px'},500, function(){
 							// prevItem.attr('style','');
-							updateGalleryClasses(nextItem);
 							// $(this).attr('style','');
 						});
 						break;
@@ -499,7 +499,14 @@ $(function(){
 		var href = $(this).attr('href');
 		var block = $(href);
 		if($('.v_nav ul li').hasClass('active')){
-			updateAxisYGalleryByVNav($('#main_page_top'));
+			// updateAxisYGalleryByVNav($('#main_page_top'));
+			$('#main_page .active_inner').removeClass('active_inner');
+			$('#main_page .next_inner_item').next().removeClass('next_inner_item');
+			$('#main_page .prev_inner_item').prev().removeClass('prev_inner_item');
+			$('#main_page_top').addClass('active_inner');
+			$('#main_page_top').next().addClass('next_inner_item');
+			$('#main_page_top').prev().addClass('prev_inner_item');
+			updateVNav();	
 		}
 	})
 	// V NAV AVIMATION
@@ -521,7 +528,7 @@ $(function(){
 	}
 
 	var ajaxloader_flag = true;
-	var scrollSesitivity = 30;
+	var scrollSesitivity = 40;
 	var offsetActiveDrag;
 	var mouseWheelFunc = function(e) {
 		var active_drag = $(this);
