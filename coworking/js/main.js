@@ -162,34 +162,64 @@ $(function(){
 	var updateAxisYGalleryByVNav = function(item){
 		var nexti = item.next();
 		var previ = item.prev();
-		// $('#main_page .active_inner').scrollTop(0).next().removeClass('next_inner_item');
-		// $('#main_page .active_inner').removeClass('active_inner').prev().removeClass('prev_inner_item');
+		var aPos = $('#main_page .active_inner').index();
+		var nPos = item.index();
+			
 		var lastAI = $('#main_page .active_inner');
 		lastAI.next().removeClass('next_inner_item');
 		lastAI.prev().removeClass('prev_inner_item');
-		item.addClass('next_inner_item', function(){
-			$(this).addClass('innerToActive').delay(500).queue(function(next){
-				$(this).addClass('active_inner').removeClass('innerToActive next_inner_item');
-				previ.addClass('prev_inner_item');
-				nexti.addClass('next_inner_item');
-				updateVNav();	
-				next();
-			})
-		});
-		lastAI.addClass('toTop').delay(500).queue(function(next){
-			lastAI.scrollTop(0).removeClass('active_inner').removeClass('toTop');
-			next();
-		});
-		// item.addClass('active_inner').prev().addClass('prev_inner_item');
-		attr = item.attr('data-to-load');
-		if(typeof attr !== typeof undefined && attr !== false){
-			$('#ajaxloader').css({'bottom':'0', 'top':'auto'}).addClass('fullHeight');
-			item.load('ajax/' + attr, function(){
-				$('#ajaxloader').fadeOut(function(){
-					$('#ajaxloader').removeClass('fullHeight').attr('style','');
-				});
-				$(this).removeAttr('data-to-load');
+
+		if(nPos > aPos){
+			item.addClass('next_inner_item', function(){
+				$(this).addClass('innerToActive').delay(500).queue(function(next){
+					$(this).addClass('active_inner').removeClass('innerToActive next_inner_item');
+					previ.addClass('prev_inner_item');
+					nexti.addClass('next_inner_item');
+					updateVNav();	
+					next();
+				})
 			});
+			lastAI.addClass('toTop').delay(500).queue(function(next){
+				lastAI.scrollTop(0).removeClass('active_inner').removeClass('toTop');
+				next();
+			});
+			// item.addClass('active_inner').prev().addClass('prev_inner_item');
+			attr = item.attr('data-to-load');
+			if(typeof attr !== typeof undefined && attr !== false){
+				$('#ajaxloader').css({'bottom':'0', 'top':'auto'}).addClass('fullHeight');
+				item.load('ajax/' + attr, function(){
+					$('#ajaxloader').fadeOut(function(){
+						$('#ajaxloader').removeClass('fullHeight').attr('style','');
+					});
+					$(this).removeAttr('data-to-load');
+				});
+			}
+		}
+		if(nPos < aPos){
+			item.addClass('prev_inner_item', function(){
+				$(this).addClass('innerToActive').delay(500).queue(function(next){
+					$(this).addClass('active_inner').removeClass('innerToActive prev_inner_item');
+					previ.addClass('prev_inner_item');
+					nexti.addClass('next_inner_item');
+					updateVNav();	
+					next();
+				})
+			});
+			lastAI.addClass('toBottom').delay(500).queue(function(next){
+				lastAI.scrollTop(0).removeClass('active_inner').removeClass('toBottom');
+				next();
+			});
+			// item.addClass('active_inner').prev().addClass('prev_inner_item');
+			attr = item.attr('data-to-load');
+			if(typeof attr !== typeof undefined && attr !== false){
+				$('#ajaxloader').css({'top':'0'}).addClass('fullHeight');
+				item.load('ajax/' + attr, function(){
+					$('#ajaxloader').fadeOut(function(){
+						$('#ajaxloader').removeClass('fullHeight').attr('style','');
+					});
+					$(this).removeAttr('data-to-load');
+				});
+			}
 		}
 	}
 	var checkItemOnContinue = function(item){
@@ -547,14 +577,14 @@ $(function(){
 		var href = $(this).attr('href');
 		var block = $(href);
 		if($('.v_nav ul li').hasClass('active')){
-			// updateAxisYGalleryByVNav($('#main_page_top'));
-			$('#main_page .active_inner').removeClass('active_inner');
-			$('#main_page .next_inner_item').next().removeClass('next_inner_item');
-			$('#main_page .prev_inner_item').prev().removeClass('prev_inner_item');
-			$('#main_page_top').addClass('active_inner');
-			$('#main_page_top').next().addClass('next_inner_item');
-			$('#main_page_top').prev().addClass('prev_inner_item');
-			updateVNav();	
+			updateAxisYGalleryByVNav($('#main_page_top'));
+			// $('#main_page .active_inner').removeClass('active_inner');
+			// $('#main_page .next_inner_item').next().removeClass('next_inner_item');
+			// $('#main_page .prev_inner_item').prev().removeClass('prev_inner_item');
+			// $('#main_page_top').addClass('active_inner');
+			// $('#main_page_top').next().addClass('next_inner_item');
+			// $('#main_page_top').prev().addClass('prev_inner_item');
+			// updateVNav();	
 		}
 	})
 	// V NAV AVIMATION
