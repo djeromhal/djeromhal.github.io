@@ -531,6 +531,9 @@ body{
 	top: 100%;
 	transition: all .5s ease-in-out;
 }
+.active_drag.rightForbidden .inner_block.next_inner_item, .active_drag.rightForbidden .inner_block.prev_inner_item{
+	display: none;
+}
 .inner_block.next_inner_item{
 	top: 100%;
 }
