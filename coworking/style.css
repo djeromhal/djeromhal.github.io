@@ -148,11 +148,11 @@ body{
 }
 .block.active_drag.animForward{
     transform-origin: 100% 50%;
-    transform: perspective(500px) translateX(-2%) scale(.8) rotateY(-10deg);
-    -webkit-transform: perspective(500px) translateX(-2%) scale(.8) rotateY(-10deg);
-    -moz-transform: perspective(500px) translateX(-2%) scale(.8) rotateY(-10deg);
-    -ms-transform: perspective(500px) translateX(-2%) scale(.8) rotateY(-10deg);
-    -o-transform: perspective(500px) translateX(-2%) scale(.8) rotateY(-10deg);
+    transform: perspective(500px) scale(.9) rotateY(-10deg);
+    -webkit-transform: perspective(500px) scale(.9) rotateY(-10deg);
+    -moz-transform: perspective(500px) scale(.9) rotateY(-10deg);
+    -ms-transform: perspective(500px) scale(.9) rotateY(-10deg);
+    -o-transform: perspective(500px) scale(.9) rotateY(-10deg);
     opacity: .66;
     transition: all .5s ease-in-out;
 }
