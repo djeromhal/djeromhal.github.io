@@ -341,7 +341,7 @@ $(function(){
                 		})
 						// prevItem.attr('style', 'display:block; left: ' + calcPrevItem() + 'px').find('.active_inner').css('display','block');
 						// $(this).attr('style','display:block; transform: perspective(500px) translateX(' + calcNextItem(0, -2) + '%) scale(' + calcNextItem(1, 0.1, true) + ') rotateY(' + calcNextItem(2, -2) + 'deg); opacity: ' + calcNextItem(3, 0.33, true)).find('.active_inner').css('display','block');;
-						$(this).attr('style','transform: perspective(500px) translateX(' + (2 - calcNextItem(2)) + '%) scale(' + (1 + 0.7 - calcNextItem(0.3, 1, true)) + ') rotateY(' + (-10 + calcNextItem(10)) + 'deg); opacity: ' + (1 + 0.66 - calcNextItem(0.33, 3, true)));
+						$(this).attr('style','transform: perspective(500px) translateX(' + (-2 + calcNextItem(2)) + '%) scale(' + (1 + 0.8 - calcNextItem(0.2, 1, true)) + ') rotateY(' + (-10 + calcNextItem(10)) + 'deg); opacity: ' + (1 + 0.66 - calcNextItem(0.33, 3, true)));
 						// console.log(calcNextItem(0, -2))
 					}
 					break;
@@ -351,7 +351,7 @@ $(function(){
 						ui.position.left /= NOBLOCKONSIDESPEED;
 					}else{
 						nextItem.attr('style','display:block; visibility:visible; transform: perspective(500px) translateX(' + calcNextItem(-2, 0) + '%) scale(' + calcNextItem(0.1, 1, true) + ') rotateY(' + calcNextItem(-10, 2) + 'deg); opacity: ' + calcNextItem(0.33, 3, true)).find('.active_inner').css('display','block');
-						console.log(1 + 0.9 - calcNextItem(0.1, 1, true))
+						console.log(-2 + calcNextItem(2))
 					}
 					break;
 			}
