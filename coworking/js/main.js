@@ -39,6 +39,8 @@ $(function(){
 	var calcNextItem = function(i, a, reverse){
 		var dragProcent = (activeWidth - leftActive) * 100 / activeWidth;
 		var css = reverse ? 1 - (i * dragProcent / 100) : i * dragProcent / 100;
+		console.log('activeWidth: ' + activeWidth)
+		console.log('leftActive: ' + leftActive)
 		return css;
 	}
 	var calcPrevItem = function(){
@@ -261,7 +263,8 @@ $(function(){
 			// ANIMATE WHILE DRAGGING
 			nextItem = $('.next_item');
 			prevItem = $('.prev_item');
-			leftActive = Math.abs(parseInt($(this).css('left')));
+			// leftActive = Math.abs(parseInt($(this).css('left')));
+			leftActive = Math.abs(parseInt(ui.position.left));
 			activeWidth = $(this).outerWidth();
 			sideToMoveX = (newPosition.left > 0) ? 'right' : (newPosition.left < 0) ? 'left' : false;
 			switch(sideToMoveX){
@@ -270,7 +273,14 @@ $(function(){
 					if(!prevItem.length){
 						ui.position.left /= NOBLOCKONSIDESPEED;
 					}else{
-						prevItem.attr('style', 'display:block; left: ' + calcPrevItem() + 'px').find('.active_inner').css('display','block');
+
+						$(this).addClass('rightForbidden').bind('drag', function(event, ui) {
+                			prevItem.css({display: 'block', zIndex: '5', left: ui.offset.left - activeWidth }).find('.active_inner').css({display:'block'});
+                		})
+						// prevItem.attr('style', 'display:block; left: ' + calcPrevItem() + 'px').find('.active_inner').css('display','block');
+						// $(this).attr('style','display:block; transform: perspective(500px) translateX(' + calcNextItem(0, -2) + '%) scale(' + calcNextItem(1, 0.1, true) + ') rotateY(' + calcNextItem(2, -2) + 'deg); opacity: ' + calcNextItem(3, 0.33, true)).find('.active_inner').css('display','block');;
+						$(this).attr('style','transform: perspective(500px) translateX(' + (2 - calcNextItem(2)) + '%) scale(' + (1 + 0.7 - calcNextItem(0.3, 1, true)) + ') rotateY(' + (-10 + calcNextItem(10)) + 'deg); opacity: ' + (1 + 0.66 - calcNextItem(0.33, 3, true)));
+						// console.log(calcNextItem(0, -2))
 					}
 					break;
 				// IF MOVE BLOCK TO left SIDE
@@ -278,7 +288,8 @@ $(function(){
 					if(!nextItem.length){
 						ui.position.left /= NOBLOCKONSIDESPEED;
 					}else{
-						nextItem.attr('style','display:block; visibility:visible; transform: perspective(500px) translateX(' + calcNextItem(-2, 0) + '%) scale(' + calcNextItem(0.1, 1, true) + ') rotateY(' + calcNextItem(-2, 2) + 'deg); opacity: ' + calcNextItem(0.33, 3, true)).find('.active_inner').css('display','block');;
+						nextItem.attr('style','display:block; visibility:visible; transform: perspective(500px) translateX(' + calcNextItem(-2, 0) + '%) scale(' + calcNextItem(0.1, 1, true) + ') rotateY(' + calcNextItem(-10, 2) + 'deg); opacity: ' + calcNextItem(0.33, 3, true)).find('.active_inner').css('display','block');
+						console.log(1 + 0.9 - calcNextItem(0.1, 1, true))
 					}
 					break;
 			}
@@ -342,15 +353,17 @@ $(function(){
 				console.log('1');
 				switch(sideToMoveX){
 					case 'right':
+						var p = $(this);
 						prevItem.addClass('toActive').delay(500).queue(function(next){
 							$(this).attr('style','');
 							updateGalleryClasses(prevItem);
+							p.removeClass('rightForbidden');
 							next();
 						});
-						$(this).animate({left: $(this).outerWidth() + 'px'},500, function(){
-							// nextItem.attr('style','');
-							// $(this).attr('style','');
-						});
+						// $(this).removeClass('rightForbidden').animate({left: $(this).outerWidth() + 'px'},500, function(){
+						// 	// nextItem.attr('style','');
+						// 	// $(this).attr('style','');
+						// });
 						break;
 					case 'left':
 						nextItem.addClass('toActive').delay(500).queue(function(next){
@@ -395,11 +408,15 @@ $(function(){
 				}
 			}else if(Math.abs(ui.position.left) <= OFFSETTOBLOCKCHANGE && Math.abs(ui.position.left) !== 0){
 				console.log('3');
-				$(this).animate({left: '0px'},500, function(){
-					$(this).attr('style','');
+				var p = $(this);
+				prevItem.animate({left: '-100%'},500, function(){
 					nextItem.attr('style','').find('.active_inner').attr('style','');
 					prevItem.attr('style','').find('.active_inner').attr('style','');
 				});
+				p.addClass('animBack').delay(500).queue(function(next){
+					$(this).attr('style','').removeClass('animBack rightForbidden');
+					next();
+				})
 			}else if(Math.abs(ui.position.top) <= OFFSETTOBLOCKCHANGE && Math.abs(ui.position.top) !== 0){
 				switch(sideToMoveY){
 					// IF MOVE BLOCK TO BOTTOM SIDE
