@@ -411,6 +411,7 @@ $(function(){
 			// Continue animate ACTIVE if drag and drop on > 300px
 			nextItem = $('.next_item');
 			prevItem = $('.prev_item');
+			prevItem.unbind('drag');
 			if(Math.abs(ui.position.left) > OFFSETTOBLOCKCHANGE){
 				console.log('1');
 				switch(sideToMoveX){
