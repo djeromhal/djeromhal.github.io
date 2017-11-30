@@ -91,7 +91,7 @@ $(function(){
 		if(item.hasClass('prev_item')){
 			item.find('.active_inner').attr('style','');
 			item.removeClass('prev_item toActive').addClass('active_drag').bind('mousewheel', mouseWheelFunc).draggable(draggableOptions).prev().addClass('prev_item');
-			item.next().attr('style','').removeClass('active_drag').unbind('mousewheel').draggable("destroy").addClass('next_item').next().attr('style','').removeClass('next_item');
+			item.next().attr('style','').removeClass('active_drag animForward').unbind('mousewheel').draggable("destroy").addClass('next_item').next().attr('style','').removeClass('next_item');
 		}else if(item.hasClass('next_item')){
 			item.find('.active_inner').attr('style','');
 			item.removeClass('next_item toActive').addClass('active_drag').bind('mousewheel', mouseWheelFunc).draggable(draggableOptions).next().addClass('next_item');
@@ -549,18 +549,22 @@ $(function(){
 
 	// GALLERY ARROWS CONTROLL
 	$('.top_gallery_arrow_right').click(function(){
-		$('.block.next_item .active_inner').show();
-		$('.block.next_item').addClass('toActive');
-		$('.block.active_drag').animate({left: '-' + $('.block.active_drag').outerWidth() + 'px'},500 ,function(){
-			updateGalleryClasses($('.block.next_item'));
-		})
+		// $('.block.next_item .active_inner').show();
+		// $('.block.next_item').show().addClass('toActive');
+		// $('.block.active_drag').animate({left: '-' + $('.block.active_drag').outerWidth() + 'px'},500 ,function(){
+		// 	updateGalleryClasses($('.block.next_item'));
+		// })
+
+		updateGalleryClassesByTopNav($('.block.next_item'));
 	})
 	$('.top_gallery_arrow_left').click(function(){
-		$('.block.prev_item .active_inner').show();
-		$('.block.prev_item').addClass('toActive');
-		$('.block.active_drag').animate({left: + $('.block.active_drag').outerWidth() + 'px'},500 ,function(){
-			updateGalleryClasses($('.block.prev_item'));
-		})
+		// $('.block.prev_item .active_inner').show();
+		// $('.block.prev_item').show().addClass('toActive');
+		// $('.block.active_drag').addClass('animForward').delay(500).queue(function(){
+		// 	updateGalleryClasses($('.block.prev_item'));
+		// })		
+
+		updateGalleryClassesByTopNav($('.block.prev_item'));
 	})
 
 	// TOP NAV AVIMATION
