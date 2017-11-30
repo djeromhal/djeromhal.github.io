@@ -677,7 +677,7 @@ $(function(){
 			    	scrollSesitivity = scrollConst; speedOfActive = 0;
 			    	ajaxloader_flag = true;
 				}
-				speedOfActive += (i+=5) * -scrollSesitivity;
+				speedOfActive += (i++) * -scrollSesitivity;
 				var	speedOfOther = speedOfActive + thisInnerItem.height();
 				if(isAttr(nextInnerItem) && !showBlock){
 					var ajaxloader;
@@ -762,7 +762,7 @@ $(function(){
 			    	scrollSesitivity = scrollConst; speedOfActive = 0;
 			    	ajaxloader_flag = true;
 			    }
-				speedOfActive += (i+=5) * scrollSesitivity;
+				speedOfActive += (i++) * scrollSesitivity;
 				var	speedOfOther = speedOfActive - thisInnerItem.height();
 
 				if(isAttr(prevInnerItem) && !showBlock){
