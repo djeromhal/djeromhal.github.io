@@ -101,31 +101,63 @@ $(function(){
 	}
 	var updateGalleryClassesByTopNav = function(item) {
 		checkItemOnContinue(item);
-		$('.block.active_drag').next().removeClass('next_item');
-		$('.block.active_drag').prev().removeClass('prev_item');
-		$('.block.active_drag').unbind('mousewheel').draggable("destroy").addClass('toActive').delay(500).queue(function(next){
-			$(this).attr('style','').removeClass('active_drag toActive');
-			next();
-		})
-		item.show().addClass('next_item',function(){
-			$(this).find('.active_inner').show();
-			$(this).addClass('toActive').delay(500).queue(function(next){
-				$(this).draggable(draggableOptions).addClass('active_drag').bind('mousewheel', mouseWheelFunc).removeClass('next_item toActive');
-				$(this).next().addClass('next_item');
-				$(this).prev().addClass('prev_item');
-				$(this).attr('style','').find('.active_inner').attr('style','');
-				updateNavs();
-				// update H Nav
-				if($(this).find('.top_block').hasClass('active_inner')){
-					// $('.h_nav_dot').fadeIn();
-					$('.top_gallery_arrows').fadeIn();
-				}else{
-					// $('.h_nav_dot').fadeOut();
-					$('.top_gallery_arrows').fadeOut();
-				}
+		var aPos = $('.active_drag').index();
+		var nPos = item.index();
+
+		if(nPos > aPos){
+			$('.block.active_drag').next().removeClass('next_item');
+			$('.block.active_drag').prev().removeClass('prev_item');
+			$('.block.active_drag').unbind('mousewheel').draggable("destroy").addClass('toActive').delay(500).queue(function(next){
+				$(this).attr('style','').removeClass('active_drag toActive');
 				next();
-			});
-		})
+			})
+			item.show().addClass('next_item',function(){
+				$(this).find('.active_inner').show();
+				$(this).addClass('toActive').delay(500).queue(function(next){
+					$(this).draggable(draggableOptions).addClass('active_drag').bind('mousewheel', mouseWheelFunc).removeClass('next_item toActive');
+					$(this).next().addClass('next_item');
+					$(this).prev().addClass('prev_item');
+					$(this).attr('style','').find('.active_inner').attr('style','');
+					updateNavs();
+					// update H Nav
+					if($(this).find('.top_block').hasClass('active_inner')){
+						// $('.h_nav_dot').fadeIn();
+						$('.top_gallery_arrows').fadeIn();
+					}else{
+						// $('.h_nav_dot').fadeOut();
+						$('.top_gallery_arrows').fadeOut();
+					}
+					next();
+				});
+			})
+		}
+		if(nPos < aPos){
+			$('.block.active_drag').next().removeClass('next_item');
+			$('.block.active_drag').prev().removeClass('prev_item');
+			$('.block.active_drag').unbind('mousewheel').draggable("destroy").addClass('animForward').delay(500).queue(function(next){
+				$(this).attr('style','').removeClass('active_drag animForward');
+				next();
+			})
+			item.show().addClass('prev_item',function(){
+				$(this).find('.active_inner').show();
+				$(this).addClass('toActive').delay(500).queue(function(next){
+					$(this).draggable(draggableOptions).addClass('active_drag').bind('mousewheel', mouseWheelFunc).removeClass('prev_item toActive');
+					$(this).next().addClass('next_item');
+					$(this).prev().addClass('prev_item');
+					$(this).attr('style','').find('.active_inner').attr('style','');
+					updateNavs();
+					// update H Nav
+					if($(this).find('.top_block').hasClass('active_inner')){
+						// $('.h_nav_dot').fadeIn();
+						$('.top_gallery_arrows').fadeIn();
+					}else{
+						// $('.h_nav_dot').fadeOut();
+						$('.top_gallery_arrows').fadeOut();
+					}
+					next();
+				});
+			})
+		}
 	}
 	var updateAxisYGalleryByVNav = function(item){
 		var nexti = item.next();

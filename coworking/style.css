@@ -170,6 +170,7 @@ body{
 }
 .block.prev_item.toActive{
 	left: 0 !important;
+	z-index: 5 !important;
     transition: all .5s linear;
 }
 .block.toActiveForce{
