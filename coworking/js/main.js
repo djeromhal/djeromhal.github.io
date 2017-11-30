@@ -357,9 +357,12 @@ $(function(){
 						prevItem.addClass('toActive').delay(500).queue(function(next){
 							$(this).attr('style','');
 							updateGalleryClasses(prevItem);
-							p.removeClass('rightForbidden');
 							next();
 						});
+						p.addClass('animForward').delay(500).queue(function(next){
+							$(this).attr('style','').removeClass('animForward rightForbidden');
+							next();
+						})
 						// $(this).removeClass('rightForbidden').animate({left: $(this).outerWidth() + 'px'},500, function(){
 						// 	// nextItem.attr('style','');
 						// 	// $(this).attr('style','');
