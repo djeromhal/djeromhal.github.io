@@ -810,7 +810,7 @@ $(function(){
 					prevInnerItem.css({transform: 'translateY(' + speedOfActive + 'px)', display:'block', overflow: 'hidden'});
 				}
 			}
-		// }
+		// }/
 	}
 
 	var i = 0;
