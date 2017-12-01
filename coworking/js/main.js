@@ -742,7 +742,7 @@ $(function(){
 			    	scrollSesitivity = scrollConst; speedOfActive = 0;
 			    	ajaxloader_flag = true;
 				}
-				speedOfActive += d*2;
+				speedOfActive += d*10;
 				var	speedOfOther = speedOfActive + thisInnerItem.height();
 				if(isAttr(nextInnerItem) && !showBlock){
 					var ajaxloader;
@@ -841,7 +841,7 @@ $(function(){
 			    	scrollSesitivity = scrollConst; speedOfActive = 0;
 			    	ajaxloader_flag = true;
 			    }
-				speedOfActive += d*2;
+				speedOfActive += d*10;
 				var	speedOfOther = speedOfActive - thisInnerItem.height();
 
 				if(isAttr(prevInnerItem) && !showBlock){
