@@ -618,10 +618,11 @@ $(function(){
 			if(!hasnext && scrollSide >= 0 && y <= 0 || !hasprev && scrollSide < 0 && y >= 0 ){
 				return false;
 			}
-			var element = document.getElementById(thisInnerItem.attr('id'));
-			console.log(speedOfActive)
-		    console.log(i)
-			if (element.scrollTop === 0 && scrollSide < 0 || element.scrollHeight - element.scrollTop === element.clientHeight && scrollSide >= 0){
+			// var element = document.getElementById(thisInnerItem.attr('id'));
+		    var scrollHeight = thisInnerItem.height();
+			var scrollPosition = thisInnerItem.children('div').height() + thisInnerItem.children('div').scrollTop();
+
+			if (thisInnerItem.scrollTop() === 0 && scrollSide < 0 || (scrollHeight - scrollPosition) / scrollHeight === 0 && scrollSide >= 0){
 			    
 				if(Math.abs(scrollSide) < 1){
 			    	i = 0;
