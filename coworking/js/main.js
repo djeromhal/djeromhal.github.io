@@ -580,14 +580,6 @@ $(function(){
 		}
 	})
 
-	var isAttr = function(item) {
-		attr = item.attr('data-to-load');
-		if(typeof attr !== typeof undefined && attr !== false){
-			return true;
-		}else{
-			return false;
-		}
-	}
 
 	var ajaxloader_flag = true;
 	var scrollConst = 3;
@@ -920,55 +912,68 @@ $(function(){
 	    return normalized;
 	}
 	// Reasonable defaults
-var PIXEL_STEP  = 10;
-var LINE_HEIGHT = 40;
-var PAGE_HEIGHT = $(document).height();
+	var PIXEL_STEP  = 10;
+	var LINE_HEIGHT = 40;
+	var PAGE_HEIGHT = $(document).height();
 
-function normalizeWheel(/*object*/ event) /*object*/ {
-  var sX = 0, sY = 0,       // spinX, spinY
-      pX = 0, pY = 0;       // pixelX, pixelY
+	function normalizeWheel(/*object*/ event) /*object*/ {
+	  var sX = 0, sY = 0,       // spinX, spinY
+	      pX = 0, pY = 0;       // pixelX, pixelY
 
-  // Legacy
-  if ('detail'      in event) { sY = event.detail; }
-  if ('wheelDelta'  in event) { sY = -event.wheelDelta / 120; }
-  if ('wheelDeltaY' in event) { sY = -event.wheelDeltaY / 120; }
-  if ('wheelDeltaX' in event) { sX = -event.wheelDeltaX / 120; }
+	  // Legacy
+	  if ('detail'      in event) { sY = event.detail; }
+	  if ('wheelDelta'  in event) { sY = -event.wheelDelta / 120; }
+	  if ('wheelDeltaY' in event) { sY = -event.wheelDeltaY / 120; }
+	  if ('wheelDeltaX' in event) { sX = -event.wheelDeltaX / 120; }
 
-  // side scrolling on FF with DOMMouseScroll
-  if ( 'axis' in event && event.axis === event.HORIZONTAL_AXIS ) {
-    sX = sY;
-    sY = 0;
-  }
+	  // side scrolling on FF with DOMMouseScroll
+	  if ( 'axis' in event && event.axis === event.HORIZONTAL_AXIS ) {
+	    sX = sY;
+	    sY = 0;
+	  }
 
-  pX = sX * PIXEL_STEP;
-  pY = sY * PIXEL_STEP;
+	  pX = sX * PIXEL_STEP;
+	  pY = sY * PIXEL_STEP;
 
-  if ('deltaY' in event) { pY = event.deltaY; }
-  if ('deltaX' in event) { pX = event.deltaX; }
+	  if ('deltaY' in event) { pY = event.deltaY; }
+	  if ('deltaX' in event) { pX = event.deltaX; }
 
-  if ((pX || pY) && event.deltaMode) {
-    if (event.deltaMode == 1) {          // delta in LINE units
-      pX *= LINE_HEIGHT;
-      pY *= LINE_HEIGHT;
-    } else {                             // delta in PAGE units
-      pX *= PAGE_HEIGHT;
-      pY *= PAGE_HEIGHT;
-    }
-  }
+	  if ((pX || pY) && event.deltaMode) {
+	    if (event.deltaMode == 1) {          // delta in LINE units
+	      pX *= LINE_HEIGHT;
+	      pY *= LINE_HEIGHT;
+	    } else {                             // delta in PAGE units
+	      pX *= PAGE_HEIGHT;
+	      pY *= PAGE_HEIGHT;
+	    }
+	  }
 
-  // Fall-back if spin cannot be determined
-  if (pX && !sX) { sX = (pX < 1) ? -1 : 1; }
-  if (pY && !sY) { sY = (pY < 1) ? -1 : 1; }
+	  // Fall-back if spin cannot be determined
+	  if (pX && !sX) { sX = (pX < 1) ? -1 : 1; }
+	  if (pY && !sY) { sY = (pY < 1) ? -1 : 1; }
 
-  return { spinX  : sX,
-           spinY  : sY,
-           pixelX : pX,
-           pixelY : pY };
-}
+	  return { spinX  : sX,
+	           spinY  : sY,
+	           pixelX : pX,
+	           pixelY : pY };
+	}
+
+	var isAttr = function(item) {
+		attr = item.attr('data-to-load');
+		if(typeof attr !== typeof undefined && attr !== false){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	var actDragM = document.querySelector('.active_drag');
 	var distance = 0;
 	var antidist = 0;
 	var neg = 1;
 	var down = true;
+	var ajaxloader;
+	var ajaxloader_flag = true;
 	var handleScroll = function(event){
 		delta = -normalizeWheel(event).spinY;
 			var actDrag = $(this);
@@ -987,7 +992,36 @@ function normalizeWheel(/*object*/ event) /*object*/ {
 		if(!hasnext && delta < 0) return false;
 
 		distance += delta * 50;
-		// antidist += delta * 30 * neg;
+
+		if(isAttr(nextInnerItem) && ajaxloader_flag){
+			ajaxloader = nextInnerItem.html('<div class="ajaxloader_bg"></div>');
+
+			ajaxloader = nextInnerItem.find('.ajaxloader_bg');
+			var heightAjaxloader = Math.abs(distance) + $('.top_nav').height();
+			ajaxloader.css({height: heightAjaxloader});
+			if(Math.abs(distance)>150){
+				actDragM.removeEventListener('DOMMouseScroll',handleScroll); // For Firefox
+				actDragM.removeEventListener('mousewheel',handleScroll);     // Everyone else
+				ajaxloader_flag = false;
+				nextInnerItem.addClass('anim_ajax', function(){
+					$(this).load('ajax/' + attr, function(){
+						$(this).removeAttr('data-to-load');
+						thisInnerItem.addClass('tyt');
+						$(this).removeClass('anim_ajax').addClass('tyt').delay(500).queue(function(next){
+							thisInnerItem.attr('style', '').removeClass('active_inner').addClass('prev_inner_item');
+							prevInnerItem.removeClass('prev_inner_item').attr('style', '');
+							nextInnerItem.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
+							$(this).removeClass('tyt');
+							thisInnerItem.removeClass('tyt');
+
+							actDragM.addEventListener('DOMMouseScroll',handleScroll); // For Firefox
+							actDragM.addEventListener('mousewheel',handleScroll);     // Everyone else
+						});
+					});
+				})
+			}
+		}
+
 		thisInnerItem.css({transform: 'translateY(' + distance + 'px)'});
 		// if(delta < 0){
 			nextInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
@@ -1003,33 +1037,20 @@ function normalizeWheel(/*object*/ event) /*object*/ {
 					thisInnerItem.attr('style', '').removeClass('active_inner').addClass('prev_inner_item');
 					prevInnerItem.removeClass('prev_inner_item').attr('style', '');
 					nextInnerItem.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
-					distance = 0;
-					toNext = false;
 				}else{
 					thisInnerItem.attr('style', '').removeClass('active_inner').addClass('next_inner_item');
 					nextInnerItem.removeClass('next_inner_item').attr('style', '');
 					prevInnerItem.attr('style', '').removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
-					distance = 0;
-					toNext = false;
+				}
+				distance = 0;
+				toNext = false;
+				if(isAttr(nextInnerItem)){
+					ajaxloader_flag = true;
 				}
 			}
-		// }
-		// if(delta > 0){
-		// 	prevInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
-		// 	nextInnerItem.css({transform: 'translateY(' + distance + 'px)'});
-		// 	if(toNext && antidist > 0){
-		// 		thisInnerItem.attr('style', '').removeClass('active_inner').addClass('next_inner_item');
-		// 		nextInnerItem.removeClass('next_inner_item').attr('style', '');
-		// 		prevInnerItem.attr('style', '').removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
-		// 		distance = 0;
-		// 		antidist = 0;
-		// 		neg = -1;
-		// 		toNext = false;
-		// 	}
-		// }
 	}
-	document.querySelector('.active_drag').addEventListener('DOMMouseScroll',handleScroll,false); // For Firefox
-	document.querySelector('.active_drag').addEventListener('mousewheel',handleScroll,false);     // Everyone else
+	actDragM.addEventListener('DOMMouseScroll',handleScroll,false); // For Firefox
+	actDragM.addEventListener('mousewheel',handleScroll,false);     // Everyone else
 	$('.inner_block').on('click','.popup_activator',function(e){
 		e.preventDefault();
 		var popupLink = $(this).attr('href');
