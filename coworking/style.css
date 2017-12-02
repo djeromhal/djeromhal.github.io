@@ -457,6 +457,9 @@ body{
 	overflow: auto;
 	display: none;
 }
+::-webkit-scrollbar { 
+    display: none; 
+}
 #ajaxloader {
   position: fixed;
   left: 0;
