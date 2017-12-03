@@ -975,6 +975,9 @@ $(function(){
 	var ajaxloader;
 	var ajaxloader_flag = true;
 	var handleScroll = function(event){
+	    if(event.deltaY % 1 !== 0) {
+	        event.preventDefault();
+	    }
 		delta = -normalizeWheel(event).spinY;
 		var actDrag = $(this);
 		thisInnerItem = actDrag.find('.active_inner');
@@ -1023,14 +1026,14 @@ $(function(){
 			toNext = false;
 		}
 
-		if(isAttr(nextInnerItem) && delta > 0){
+		if(isAttr(nextInnerItem) && delta < 0){
 			ajaxloader_flag = true;
 		}
-		if(isAttr(prevInnerItem) && delta < 0){
+		if(isAttr(prevInnerItem) && delta > 0){
 			ajaxloader_flag = true;
 		}
 
-		// ajax load 
+		// ajax load
 		if(ajaxloader_flag && isAttr(nextInnerItem) || ajaxloader_flag && isAttr(prevInnerItem)){
 			var nextToAnim;
 			var heightAjaxloader;
@@ -1039,12 +1042,14 @@ $(function(){
 			var ADDCLASSCONST1;
 			var ADDCLASSCONST2;
 			if(isAttr(nextInnerItem) && distance <= 0){
+				console.log('next')
 				nextToAnim = nextInnerItem;
 				ANIMFORACTIVELOAD = 'anim_ajax_top';
 				ANIMTY = 'tyt';
 				ADDCLASSCONST1 = 'prev_inner_item';
 				ADDCLASSCONST2 = 'next_inner_item';
 			}else if(isAttr(prevInnerItem) && distance > 0){
+				console.log('prev')
 				nextToAnim = prevInnerItem;
 				ANIMFORACTIVELOAD = 'anim_ajax_bottom';
 				ANIMTY = 'tyb';
@@ -1078,7 +1083,7 @@ $(function(){
 								nextToAnim.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
 							}
 							if(nextToAnim.hasClass('prev_inner_item')){
-								prevInnerItem.removeClass('next_inner_item').attr('style', '');
+								nextInnerItem.removeClass('next_inner_item').attr('style', '');
 								nextToAnim.attr('style', '').removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
 							}
 
