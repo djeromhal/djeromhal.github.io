@@ -497,7 +497,7 @@ body{
   width: 100%;
   height: 100px;
   overflow: visible;
-  background-color: #ccc;
+  background-color: #fff;
   background-image: url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif');
   background-repeat: no-repeat;
   background-position: center center;
@@ -505,9 +505,20 @@ body{
   visibility: visible;
 }
 .next_inner_item.anim_ajax{
-	z-index: 5;
-	transform: translateY(-250px) !important;
-	transition: all .5s cubic-bezier(.52,.41,.69,1.49);
+	transform: translateY(-150px) !important;
+	transition: all 500ms cubic-bezier(.52,.41,.69,1.49);
+}
+.active_inner.anim_ajax_top{
+	transform: translateY(-150px) !important;
+	transition: all 500ms cubic-bezier(.52,.41,.69,1.49);
+}
+.prev_inner_item.anim_ajax{
+	transform: translateY(150px) !important;
+	transition: all 500ms cubic-bezier(.52,.41,.69,1.49);
+}
+.active_inner.anim_ajax_bottom{
+	transform: translateY(150px) !important;
+	transition: all 500ms cubic-bezier(.52,.41,.69,1.49);
 }
 .prev_inner_item .ajaxloader_bg{
 	top: auto;
@@ -525,22 +536,23 @@ body{
 .inner_block.active_inner{
 	top: 0;
 	z-index: 4;
+	overflow: hidden;
 }
 
 .inner_block.active_inner.ty0, .inner_block.next_inner_item.ty0, .inner_block.prev_inner_item.ty0{
 	transform: translateY(0) !important;
-	-webkit-transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	transition:         all 500ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+	-webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
 }
 .inner_block.active_inner.tyt, .inner_block.next_inner_item.tyt{
 	transform: translateY(-100%) !important;
-	-webkit-transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	transition:         all 500ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+	-webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
 }
 .inner_block.active_inner.tyb, .inner_block.prev_inner_item.tyb{
 	transform: translateY(100%) !important;
-	-webkit-transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	transition:         all 500ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+	-webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
 }
 
 .inner_block.active_inner.toTop{

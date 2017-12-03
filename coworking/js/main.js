@@ -976,78 +976,129 @@ $(function(){
 	var ajaxloader_flag = true;
 	var handleScroll = function(event){
 		delta = -normalizeWheel(event).spinY;
-			var actDrag = $(this);
+		var actDrag = $(this);
 		thisInnerItem = actDrag.find('.active_inner');
 		nextInnerItem = thisInnerItem.next('.next_inner_item');
 		prevInnerItem = thisInnerItem.prev('.prev_inner_item');
 		var hasnext = nextInnerItem.length;
 		var hasprev = prevInnerItem.length;
 		toNext = true;
-		// if(actDrag.scrollTop() == 0 && delta > 0){
-		// 	if(actDrag.hasClass('oa'))
-		// 		actDrag.removeClass('oa');
-		// 	return false;
-		// }
+
 		if(!hasprev && delta > 0 && distance >= 0) return false;
 		if(!hasnext && delta < 0) return false;
 
+		// CHECK FOR SCROLLABILITY
+		var aH = thisInnerItem;
+		var aCH = aH.children('div');
+		// if(aH.height() < aCH.height()){
+		// 	if(aH.scrollTop() !== 0 && aH.scrollTop() + aH.height() !== aCH.height())
+		// 		return false;
+		// }
+
 		distance += delta * 50;
 
-		if(isAttr(nextInnerItem) && ajaxloader_flag){
-			ajaxloader = nextInnerItem.html('<div class="ajaxloader_bg"></div>');
+		thisInnerItem.css({transform: 'translateY(' + distance + 'px)'});
 
-			ajaxloader = nextInnerItem.find('.ajaxloader_bg');
-			var heightAjaxloader = Math.abs(distance) + $('.top_nav').height();
+		if(distance > 0)
+			prevInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
+		else
+			nextInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
+
+		if(delta > 0)
+			down = false;
+		else
+			down = true;
+
+		if(toNext && Math.abs(distance) >= thisInnerItem.height()){
+			if(down){
+				thisInnerItem.attr('style', '').removeClass('active_inner').addClass('prev_inner_item');
+				prevInnerItem.removeClass('prev_inner_item').attr('style', '');
+				nextInnerItem.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
+			}else{
+				thisInnerItem.attr('style', '').removeClass('active_inner').addClass('next_inner_item');
+				nextInnerItem.removeClass('next_inner_item').attr('style', '');
+				prevInnerItem.attr('style', '').removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
+			}
+			distance = 0;
+			toNext = false;
+		}
+
+		if(isAttr(nextInnerItem) && delta > 0){
+			ajaxloader_flag = true;
+		}
+		if(isAttr(prevInnerItem) && delta < 0){
+			ajaxloader_flag = true;
+		}
+
+		// ajax load 
+		if(ajaxloader_flag && isAttr(nextInnerItem) || ajaxloader_flag && isAttr(prevInnerItem)){
+			var nextToAnim;
+			var heightAjaxloader;
+			var ANIMFORACTIVELOAD;
+			var ANIMTY;
+			var ADDCLASSCONST1;
+			var ADDCLASSCONST2;
+			if(isAttr(nextInnerItem) && distance <= 0){
+				nextToAnim = nextInnerItem;
+				ANIMFORACTIVELOAD = 'anim_ajax_top';
+				ANIMTY = 'tyt';
+				ADDCLASSCONST1 = 'prev_inner_item';
+				ADDCLASSCONST2 = 'next_inner_item';
+			}else if(isAttr(prevInnerItem) && distance > 0){
+				nextToAnim = prevInnerItem;
+				ANIMFORACTIVELOAD = 'anim_ajax_bottom';
+				ANIMTY = 'tyb';
+				ADDCLASSCONST1 = 'next_inner_item';
+				ADDCLASSCONST2 = 'prev_inner_item';
+			}
+
+			ajaxloader = nextToAnim.html('<div class="ajaxloader_bg"></div>');
+			ajaxloader = nextToAnim.find('.ajaxloader_bg');
+			heightAjaxloader = Math.abs(distance);
 			ajaxloader.css({height: heightAjaxloader});
-			if(Math.abs(distance)>150){
-				actDragM.removeEventListener('DOMMouseScroll',handleScroll); // For Firefox
-				actDragM.removeEventListener('mousewheel',handleScroll);     // Everyone else
+
+			// if > 100 - freeze document and load next page
+			if(Math.abs(distance)>100){
+				actDragM.removeEventListener('DOMMouseScroll',handleScroll);
+				actDragM.removeEventListener('mousewheel',handleScroll);
 				ajaxloader_flag = false;
-				nextInnerItem.addClass('anim_ajax', function(){
+
+				thisInnerItem.addClass(ANIMFORACTIVELOAD);
+				nextToAnim.addClass('anim_ajax').delay(500).queue(function(next){
 					$(this).load('ajax/' + attr, function(){
 						$(this).removeAttr('data-to-load');
-						thisInnerItem.addClass('tyt');
-						$(this).removeClass('anim_ajax').addClass('tyt').delay(500).queue(function(next){
-							thisInnerItem.attr('style', '').removeClass('active_inner').addClass('prev_inner_item');
-							prevInnerItem.removeClass('prev_inner_item').attr('style', '');
-							nextInnerItem.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
-							$(this).removeClass('tyt');
-							thisInnerItem.removeClass('tyt');
+						thisInnerItem.addClass(ANIMTY).removeClass(ANIMFORACTIVELOAD);
+						$(this).removeClass('anim_ajax').addClass(ANIMTY).delay(800).queue(function(nextt){
+							thisInnerItem.attr('style', '').removeClass('active_inner').addClass(ADDCLASSCONST1);
+							$(this).removeClass(ANIMTY);
+							thisInnerItem.removeClass(ANIMTY);
 
-							actDragM.addEventListener('DOMMouseScroll',handleScroll); // For Firefox
-							actDragM.addEventListener('mousewheel',handleScroll);     // Everyone else
+							if(nextToAnim.hasClass('next_inner_item')){
+								prevInnerItem.removeClass('prev_inner_item').attr('style', '');
+								nextToAnim.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
+							}
+							if(nextToAnim.hasClass('prev_inner_item')){
+								prevInnerItem.removeClass('next_inner_item').attr('style', '');
+								nextToAnim.attr('style', '').removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
+							}
+
+							actDragM.addEventListener('DOMMouseScroll',handleScroll);
+							actDragM.addEventListener('mousewheel',handleScroll);
+
+							distance = 0;
+							toNext = false;
+							if(isAttr(actDrag.find('.' + ADDCLASSCONST2))){
+								ajaxloader_flag = true;
+							}
+							nextt();
 						});
 					});
+					next();
+					return false;
 				})
 			}
 		}
 
-		thisInnerItem.css({transform: 'translateY(' + distance + 'px)'});
-		// if(delta < 0){
-			nextInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
-			prevInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
-
-			if(delta > 0)
-				down = false;
-			else
-				down = true;
-
-			if(toNext && Math.abs(distance) >= thisInnerItem.height()){
-				if(down){
-					thisInnerItem.attr('style', '').removeClass('active_inner').addClass('prev_inner_item');
-					prevInnerItem.removeClass('prev_inner_item').attr('style', '');
-					nextInnerItem.attr('style', '').removeClass('next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
-				}else{
-					thisInnerItem.attr('style', '').removeClass('active_inner').addClass('next_inner_item');
-					nextInnerItem.removeClass('next_inner_item').attr('style', '');
-					prevInnerItem.attr('style', '').removeClass('prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
-				}
-				distance = 0;
-				toNext = false;
-				if(isAttr(nextInnerItem)){
-					ajaxloader_flag = true;
-				}
-			}
 	}
 	actDragM.addEventListener('DOMMouseScroll',handleScroll,false); // For Firefox
 	actDragM.addEventListener('mousewheel',handleScroll,false);     // Everyone else
