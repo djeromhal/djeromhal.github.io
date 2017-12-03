@@ -466,9 +466,9 @@ body{
 	overflow: auto;
 	display: none;
 }
-::-webkit-scrollbar { 
+/*::-webkit-scrollbar { 
     display: none; 
-}
+}*/
 #ajaxloader {
   position: fixed;
   left: 0;
@@ -545,7 +545,7 @@ body{
 .inner_block.active_inner{
 	top: 0;
 	z-index: 4;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .inner_block.active_inner.ty0, .inner_block.next_inner_item.ty0, .inner_block.prev_inner_item.ty0{
