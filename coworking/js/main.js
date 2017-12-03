@@ -975,9 +975,6 @@ $(function(){
 	var ajaxloader;
 	var ajaxloader_flag = true;
 	var handleScroll = function(event){
-	    if(event.deltaY % 1 !== 0) {
-	        event.preventDefault();
-	    }
 		delta = -normalizeWheel(event).spinY;
 		var actDrag = $(this);
 		thisInnerItem = actDrag.find('.active_inner');

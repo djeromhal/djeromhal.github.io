@@ -176,6 +176,8 @@ body{
 	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 100%;
 	height: 100%;
 	padding-top: 50px;
@@ -192,9 +194,16 @@ body{
 	padding-left: 0;
 }
 .block_wrapper{
-	width: 100%;
+	/*width: 100%;
 	height: 100%;
-	position: relative;
+	position: relative;*/
+    width: 100%;
+    height: calc(100% - 50px);
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .h_nav_dot{
 	position: absolute;
