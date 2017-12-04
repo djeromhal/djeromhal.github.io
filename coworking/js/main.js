@@ -1015,7 +1015,7 @@ $(function(){
 		aH = $('.active_drag').find('.active_inner');
 		aCH = aH.children('div');
 		if(aH.height() < aCH.height()){
-			if(aH.scrollTop() === 0 && delta < 0 || aH.scrollTop() + aH.height() === aCH.height() && delta > 0){
+			if(aH.scrollTop() === 0 && delta < 0 || aH.scrollTop() + aH.outerHeight() === aCH.outerHeight() && delta > 0){
 				aH.attr('style','');
 				noscroll = true;
 			}
@@ -1028,7 +1028,6 @@ $(function(){
 			noscroll = false;
 		}
 	}
-
 	var handleScroll = function(event){
 		delta = -normalizeWheel(event).spinY;
 		// delta = normalizeWheelSpeed(event);
