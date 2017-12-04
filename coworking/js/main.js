@@ -1092,22 +1092,22 @@ $(function(){
 			if(timer){
 				if(Math.abs(distance) > thisInnerItem.height() / 2){
 					if(distance > 0){
-						thisInnerItem.addClass('tyb').delay(800).queue(function(next){
+						thisInnerItem.addClass('tyb').delay(510).queue(function(next){
 							$(this).attr('style','').removeClass('tyb active_inner').addClass('next_inner_item');
 							next();
 						})
-						prevInnerItem.addClass('tyb').delay(800).queue(function(next){
+						prevInnerItem.addClass('tyb').delay(510).queue(function(next){
 							$(this).attr('style','').removeClass('tyb prev_inner_item').addClass('active_inner').prev().addClass('prev_inner_item');
 							checkForContinue();
 							updateVNav();
 							next();
 						})
 					}else{
-						thisInnerItem.addClass('tyt').delay(800).queue(function(next){
+						thisInnerItem.addClass('tyt').delay(510).queue(function(next){
 							$(this).attr('style','').removeClass('tyt active_inner').addClass('prev_inner_item');
 							next();
 						})
-						nextInnerItem.addClass('tyt').delay(800).queue(function(next){
+						nextInnerItem.addClass('tyt').delay(510).queue(function(next){
 							$(this).attr('style','').removeClass('tyt next_inner_item').addClass('active_inner').next().addClass('next_inner_item');
 							checkForContinue();
 							updateVNav();
@@ -1115,15 +1115,15 @@ $(function(){
 						})
 					}
 				}else{
-					thisInnerItem.addClass('ty0').delay(800).queue(function(next){
+					thisInnerItem.addClass('ty0').delay(510).queue(function(next){
 						$(this).attr('style','').removeClass('ty0');
 						next();
 					})
-					prevInnerItem.addClass('ty0').delay(800).queue(function(next){
+					prevInnerItem.addClass('ty0').delay(510).queue(function(next){
 						$(this).attr('style','').removeClass('ty0');
 						next();
 					})
-					nextInnerItem.addClass('ty0').delay(800).queue(function(next){
+					nextInnerItem.addClass('ty0').delay(510).queue(function(next){
 						$(this).attr('style','').removeClass('ty0');
 						delta = delta > 0 ? -Math.abs(delta) : Math.abs(delta);
 						checkForContinue();

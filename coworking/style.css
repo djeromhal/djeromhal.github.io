@@ -550,18 +550,18 @@ body{
 
 .inner_block.active_inner.ty0, .inner_block.next_inner_item.ty0, .inner_block.prev_inner_item.ty0{
 	transform: translateY(0) !important;
-	-webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+	-webkit-transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition:         all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .inner_block.active_inner.tyt, .inner_block.next_inner_item.tyt{
 	transform: translateY(-100%) !important;
-	-webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+	-webkit-transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition:         all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .inner_block.active_inner.tyb, .inner_block.prev_inner_item.tyb{
 	transform: translateY(100%) !important;
-	-webkit-transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	transition:         all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); 
+	-webkit-transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition:         all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .inner_block.active_inner.toTop{
