@@ -1015,10 +1015,11 @@ $(function(){
 		aH = $('.active_drag').find('.active_inner');
 		aCH = aH.children('div');
 		if(aH.height() < aCH.height()){
-			if(aH.scrollTop() === 0 && delta < 0 || aH.scrollTop() + aH.outerHeight() === aCH.outerHeight() && delta > 0){
-				noscroll = true;
-				aH.attr('style','');
-			}
+			noscroll = true;
+			aH.attr('style','');
+			// if(aH.scrollTop() === 0 && delta < 0 || aH.scrollTop() + aH.outerHeight() === aCH.outerHeight() && delta > 0){
+				
+			// }
 		}
 	}
 	var endItemOnScroll = function(delta){
@@ -1041,23 +1042,28 @@ $(function(){
 
 		if(!hasprev && delta > 0 && distance >= 0) return false;
 		if(!hasnext && delta < 0) return false;
+
+		var aH = thisInnerItem;
+		var aCH = aH.children('div');
+		if(aH.height() >= aCH.height()){
+			noscroll = false;
+		}
 		endItemOnScroll(delta);
 		if(noscroll){
 			return false;
 		}
 
 		// CHECK FOR SCROLLABILITY
-		var aH = thisInnerItem;
-		var aCH = aH.children('div');
 		checkForContinue();
 		distance += delta * 40;
 
 		thisInnerItem.css({transform: 'translateY(' + distance + 'px)', overflow: 'hidden'});
 
-		if(distance > 0)
+		if(distance > 0){
 			prevInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
-		else
+		}else{
 			nextInnerItem.css({transform: 'translateY(' + distance + 'px)', display: 'block', overflow: 'hidden'});
+		}
 
 		if(delta > 0)
 			down = false;
