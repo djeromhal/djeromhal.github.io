@@ -540,7 +540,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #fff;
+	background: #000;
 	overflow: hidden;
 }
 .inner_block.active_inner{
@@ -611,7 +611,8 @@ body{
 	background: red;
 }
 #main_page .top_block{
-	background: url(img/main_image.jpg) no-repeat center center;
+	/*background: url(img/main_image.jpg) no-repeat center center;*/
+	background-color: #000;
 	background-size: cover;
 }
 #owl1{
