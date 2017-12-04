@@ -466,9 +466,9 @@ body{
 	overflow: auto;
 	display: none;
 }
-/*::-webkit-scrollbar { 
+::-webkit-scrollbar { 
     display: none; 
-}*/
+}
 #ajaxloader {
   position: fixed;
   left: 0;
@@ -1122,11 +1122,17 @@ p{
 	position: relative;
 	cursor: pointer;
 	border: 4px solid #000;
+	border-right: none;
+	float: left;
+	height: 383px;
 	border-top: none;
 	box-sizing: border-box;
 }
 .space_wrapper:first-child{
 	border-left: none;
+}
+.space_wrapper:last-child{
+	border-right: 4px solid #000;
 }
 .space_wrapper:before{
 	content: '';
