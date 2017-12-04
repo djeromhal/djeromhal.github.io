@@ -1015,10 +1015,9 @@ $(function(){
 		aH = $('.active_drag').find('.active_inner');
 		aCH = aH.children('div');
 		if(aH.height() < aCH.height()){
-			noscroll = true;
-			aH.attr('style','');
 			if(aH.scrollTop() === 0 && delta < 0 || aH.scrollTop() + aH.outerHeight() === aCH.outerHeight() && delta > 0){
-				
+				noscroll = true;
+				aH.attr('style','');
 			}
 		}
 	}
