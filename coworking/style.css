@@ -92,7 +92,7 @@ body{
 	font-family: 'TT Norms';
 }
 .block{
-	background-color: #fff;
+	background-color: #000;
 	z-index: 50;
 	width: 100%;
 	height: 100%;
@@ -188,7 +188,8 @@ body{
 	overflow: hidden;
 }
 #main_page>.inner_block{
-	padding-left: 50px;
+	margin-left: 50px;
+	width: calc(100% - 50px);
 	box-sizing: border-box;
 }
 .top_gallery.no_v_nav{
@@ -540,7 +541,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #000;
+	background: #fff;
 	overflow: hidden;
 }
 .inner_block.active_inner{
@@ -611,8 +612,7 @@ body{
 	background: red;
 }
 #main_page .top_block{
-	/*background: url(img/main_image.jpg) no-repeat center center;*/
-	background-color: #000;
+	background: url(img/main_image.jpg) no-repeat center center;
 	background-size: cover;
 }
 #owl1{
