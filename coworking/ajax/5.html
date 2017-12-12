@@ -10,73 +10,178 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body> -->
+
+	<script type="text/javascript">
+		$(function(){
+			$(document).ready(function(){
+				$('#face_carousel').owlCarousel({
+					lazyLoad: true,
+				    loop:true,
+				    margin:0,
+				    dots: false,
+				    nav: true,
+  					navText: ["<img src='left_arrow.svg'>","<img src='right_arrow.svg'>"],
+				    mouseDrag: false,
+					touchDrag: false,
+				    responsiveClass:true,
+				    responsive:{
+				        0:{
+				            items:1
+				        },
+				        400:{
+				            items:2
+				        },
+				        650:{
+				            items:3
+				        },
+				        1000:{
+				            items:4
+				        },
+				        1200:{
+				            items:5
+				        },
+				        1400:{
+				            items:6
+				        }
+					}
+				});
+			});
+		});
+	</script>
 	<div class="white_page overflow_auto dotted_bg footer_page">
 		<center>
 			<div class="faces_table">
 				<h2>Лица Таблицы</h2>
-				<div class="face_wrapper">
-					<div class="face_img">
-						<img src="img/01-faces-06/1.jpg">
+				<div class="owl-carousel" id="face_carousel">
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/1.jpg">
+						</div>
+						<h3>Иван<br>Дружелюбов</h3>
+						<p class="faces_job">Yandex</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+						</div>
 					</div>
-					<h3>Иван<br>Дружелюбов</h3>
-					<p class="faces_job">Yandex</p>
-					<div class="faces_soc">
-						<a href="#"><img src="img/01-faces-06/f.jpg"></a>
-						<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
-						<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/2.jpg">
+						</div>
+						<h3>Лариса<br>Хабибулина</h3>
+						<p class="faces_job">Сбербанк</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+						</div>
 					</div>
-				</div>
-				<div class="face_wrapper">
-					<div class="face_img">
-						<img src="img/01-faces-06/2.jpg">
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/3.jpg">
+						</div>
+						<h3>Артём<br>Маслобойников</h3>
+						<p class="faces_job">Google</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+						</div>
 					</div>
-					<h3>Лариса<br>Хабибулина</h3>
-					<p class="faces_job">Сбербанк</p>
-					<div class="faces_soc">
-						<a href="#"><img src="img/01-faces-06/f.jpg"></a>
-						<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/4.jpg">
+						</div>
+						<h3>Михаил<br>Хабибулин</h3>
+						<p class="faces_job">Yandex</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+						</div>
 					</div>
-				</div>
-				<div class="face_wrapper">
-					<div class="face_img">
-						<img src="img/01-faces-06/3.jpg">
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/1.jpg">
+						</div>
+						<h3>Георгий<br>Клуни</h3>
+						<p class="faces_job">Uber</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+						</div>
 					</div>
-					<h3>Артём<br>Маслобойников</h3>
-					<p class="faces_job">Google</p>
-					<div class="faces_soc">
-						<a href="#"><img src="img/01-faces-06/f.jpg"></a>
-						<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/2.jpg">
+						</div>
+						<h3>Маргарита<br>Кудряшкина</h3>
+						<p class="faces_job">Yandex</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+						</div>
 					</div>
-				</div>
-				<div class="face_wrapper">
-					<div class="face_img">
-						<img src="img/01-faces-06/4.jpg">
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/1.jpg">
+						</div>
+						<h3>Иван<br>Дружелюбов</h3>
+						<p class="faces_job">Yandex</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+						</div>
 					</div>
-					<h3>Михаил<br>Хабибулин</h3>
-					<p class="faces_job">Yandex</p>
-					<div class="faces_soc">
-						<a href="#"><img src="img/01-faces-06/f.jpg"></a>
-						<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/2.jpg">
+						</div>
+						<h3>Лариса<br>Хабибулина</h3>
+						<p class="faces_job">Сбербанк</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+						</div>
 					</div>
-				</div>
-				<div class="face_wrapper">
-					<div class="face_img">
-						<img src="img/01-faces-06/1.jpg">
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/3.jpg">
+						</div>
+						<h3>Артём<br>Маслобойников</h3>
+						<p class="faces_job">Google</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/inst.jpg"></a>
+						</div>
 					</div>
-					<h3>Георгий<br>Клуни</h3>
-					<p class="faces_job">Uber</p>
-					<div class="faces_soc">
-						<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/4.jpg">
+						</div>
+						<h3>Михаил<br>Хабибулин</h3>
+						<p class="faces_job">Yandex</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+							<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+						</div>
 					</div>
-				</div>
-				<div class="face_wrapper">
-					<div class="face_img">
-						<img src="img/01-faces-06/2.jpg">
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/1.jpg">
+						</div>
+						<h3>Георгий<br>Клуни</h3>
+						<p class="faces_job">Uber</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/tw.jpg"></a>
+						</div>
 					</div>
-					<h3>Маргарита<br>Кудряшкина</h3>
-					<p class="faces_job">Yandex</p>
-					<div class="faces_soc">
-						<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+					<div class="face_wrapper">
+						<div class="face_img">
+							<img src="img/01-faces-06/2.jpg">
+						</div>
+						<h3>Маргарита<br>Кудряшкина</h3>
+						<p class="faces_job">Yandex</p>
+						<div class="faces_soc">
+							<a href="#"><img src="img/01-faces-06/f.jpg"></a>
+						</div>
 					</div>
 				</div>
 			</div>

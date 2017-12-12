@@ -10,23 +10,77 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body> -->
+	<script type="text/javascript">
+		$(function(){
+			$(document).ready(function(){
+				$('#event-carousel').on('initialized.owl.carousel', function(e){
+			        idx = e.item.index;
+			        $('#event-carousel .owl-item').eq(idx).addClass('big');
+			        $('#event-carousel .owl-item').eq(idx-1).addClass('medium');
+			        $('#event-carousel .owl-item').eq(idx+1).addClass('medium');
+			        $('#event-carousel .owl-item').eq(idx-2).addClass('small');
+			        $('#event-carousel .owl-item').eq(idx+2).addClass('small mf');
+			    });
+				$('#event-carousel').owlCarousel({
+				    loop:true,
+				    margin:0,
+				    dots: false,
+				    nav: false,
+				    center:true,
+				    mouseDrag: false,
+					touchDrag: false,
+				    responsiveClass:true,
+				    items: 5,
+				    slideSpeed: 500
+				});
+				$('#event-carousel').on('translate.owl.carousel', function(e){
+			        idx = e.item.index;
+			        $('#event-carousel .owl-item.big').removeClass('big');
+			        $('#event-carousel .owl-item.medium').removeClass('medium');
+			        $('#event-carousel .owl-item.small').removeClass('small mf');
+			        $('#event-carousel .owl-item').eq(idx).addClass('big');
+			        $('#event-carousel .owl-item').eq(idx-1).addClass('medium');
+			        $('#event-carousel .owl-item').eq(idx+1).addClass('medium');
+			        $('#event-carousel .owl-item').eq(idx-2).addClass('small');
+			        $('#event-carousel .owl-item').eq(idx+2).addClass('small mf');
+			    });
+			    $('#event-carousel .owl-item').on('click',function(e){
+			    	var idx = $(this).index();
+			    	var idxBig = $('#event-carousel .big').index();
+			    	console.log(idx, idxBig)
+			    	if(idx > idxBig){
+    					$('#event-carousel').trigger('next.owl.carousel');
+			    	}else if(idx < idxBig){
+    					$('#event-carousel').trigger('prev.owl.carousel');			    		
+			    	}
+
+			    })
+			});
+		});
+	</script>
 	<div class="white_page overflow_auto dotted_bg">
 		<center><h3 class="white_bg_title no_margin_bottom">Фото с прошедших мероприятий</h3></center>
-		<div class="event_gallery">
+		<div class="event_gallery owl-carousel" id="event-carousel">
 			<div class="gallery_img">
 				<img src="img/06-events-03/1.jpg">
 			</div>
 			<div class="gallery_img">
 				<img src="img/06-events-03/2.jpg">
 			</div>
-			<div class="gallery_img active">
-				<img src="img/06-events-03/3.jpg">
+			<div class="gallery_img">
+				<img src="img/06-events-03/1.jpg">
 			</div>
 			<div class="gallery_img">
-				<img src="img/06-events-03/4.jpg">
+				<img src="img/06-events-03/2.jpg">
 			</div>
 			<div class="gallery_img">
-				<img src="img/06-events-03/5.jpg">
+				<img src="img/06-events-03/2.jpg">
+			</div>
+			<div class="gallery_img">
+				<img src="img/06-events-03/1.jpg">
+			</div>
+			<div class="gallery_img">
+				<img src="img/06-events-03/2.jpg">
 			</div>
 		</div>
 		<div class="application_wrapper">

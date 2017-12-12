@@ -10,6 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body> -->
+	<script type="text/javascript">
+		$('.hall_rent').click(function(){
+			if($(this).hasClass('small')){
+				$(this).parent().find('.hall_rent').addClass('small');
+				$(this).removeClass('small');
+			}
+			return false;
+		})
+	</script>
 	<div class="meeting_page white_page overflow_auto dotted_bg">
 		<div class="hall_rent_wrapper">
 			<div class="hall_rent_img">
@@ -43,17 +52,20 @@
 							<li class="tree">оптимально для небольших закрытых мероприятий</li>
 						</ul>
 					</div>
+					<div class="hall_rent_bottom">
+						<a href="#" class="big_more_space more_space yellow"><div class="more_space_inner">оставить заявку</div><div class="more_space_arrow"></div></a>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="inner_bottom_60 m70">
-			<div class="space_dop_service_wrapper three_col">
+			<div class="space_dop_service_wrapper three_col center">
 				<center><h4>Дополнительные услуги</h4></center>
 				<div class="space_dop_service_col_wrapper">
 					<div class="space_dop_service_col">
 						<div class="space_dop_service">
 							<img src="img/06-events-02/5.svg">
-							<p>кофе-брейк</p>
+							<p class="nowrap">кофе-брейк</p>
 						</div>
 					</div><!--
 					--><div class="space_dop_service_col">

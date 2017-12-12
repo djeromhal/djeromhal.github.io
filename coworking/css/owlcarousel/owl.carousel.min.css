@@ -28,29 +28,58 @@
     right: 0;
     margin: auto;
     text-align: center;
-    z-index: 100;
+    z-index: 1000;
 }
 .owl-carousel{
 	height: 100%;
+}
+.owl_wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+.owl_wrapper .owl-carousel{
+    width: 102%;
+    height: 102%;
+}
+.top_block .owl-carousel{
+    width: 102%;
 }
 .owl-stage-outer, .owl-carousel .owl-stage{
 	height: 100%;
 }
 .owl-carousel .owl-item{
-	height: 100vh;
+	height: 100%;
 }
 .owl-carousel .owl-item .img{
 	position: relative;
 	height: 100%;
 	width: 100%;
+    display: flex;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
 }
 .owl-carousel .owl-item img{
-    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /*position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);*/
+}
+.owl-carousel.owl-hidden{
+    opacity: 1;
 }

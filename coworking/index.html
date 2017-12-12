@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
 	<script src="js/jquery.ui.touch-punch.min.js"></script>
@@ -19,6 +20,10 @@
 		    $('#preloader').fadeOut('slow', function() {
 		    	if($('.top_block').hasClass('active_inner')){
 		    		$('.anim_top_block_wrapper>div').addClass('anim');
+		    		$('#contacts').show().find('.active_inner').show();
+		    		// setTimeout(function(){
+		    		// 	$('#contacts').hide().find('.active_inner').hide();
+		    		// },1000);
 		    	}
 		    });
 		  });
@@ -36,9 +41,9 @@
 		  background: #fff url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
 		}
 	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
@@ -60,7 +65,8 @@
 	</nav>
 	<nav class="v_nav">
 		<ul>
-		   <li><a href="#space">Пространство</a></li><!--
+		   <li><a href="#services">Услуги</a></li><!--
+		--><li><a href="#space">Пространство</a></li><!--
 		--><li><a href="#park">Парк</a></li><!--
 		--><li><a href="#cafe">Кафе</a></li><!--
 		--><li><a href="#events">Мероприятия</a></li><!--
@@ -89,7 +95,7 @@
 								// 	$('#owl1 .owl-dots').remove();
 								// })
 								$('#owl1').owlCarousel({
-									lazyLoad: true,
+									// lazyLoad: true,
 								    loop:true,
 								    margin:0,
 								    responsiveClass:true,
@@ -103,13 +109,7 @@
 							});
 						})
 					</script>
-					<div class="owl-carousel" id="owl1">
-						<div class="img"><img src="img/main_image.jpg"></div>
-						<div class="img"><img src="img/main_image.jpg"></div>
-						<div class="img"><img src="img/main_image.jpg"></div>
-						<div class="img"><img src="img/main_image.jpg"></div>
-					</div>
-					<div class="anim_top_block_wrapper">
+					<div class="anim_top_block_wrapper" style="z-index: 999;">
 						<div id="anim_block_1">
 							<div></div>
 							<div></div>
@@ -180,15 +180,22 @@
 							</svg>
 						</div>
 					</div>
-					<div class="top_block_center">
+					<div class="top_block_center" style="z-index: 999;">
 						<div class="tob_block_text">
 							<div class="top_block_title"><img src="img/logo.svg"></div>
 							<p>новое рабочее пространство в центре Москвы, созданное с тщательным подходом к оформлению и планировкам</p>
 							<p>это новый уровень офиса, где хочется создавать, работать и развиваться</p>
 						</div>
 					</div>
+					<div class="owl-carousel" id="owl1">
+						<div class="img"><img src="img/main_image.jpg"></div>
+						<div class="img"><img src="img/main_image.jpg"></div>
+						<div class="img"><img src="img/main_image.jpg"></div>
+						<div class="img"><img src="img/main_image.jpg"></div>
+					</div>
 				</div>
-				<div id="space" class="inner_block next_inner_item" data-to-load="1.html">
+				<div id="services" class="inner_block next_inner_item" data-to-load="1.html"></div>
+				<div id="space" class="inner_block" data-to-load="1_dop.html">
 				</div>
 				<div id="park" class="inner_block overflow_hidden" data-to-load="2.html">
 				</div>
@@ -222,11 +229,13 @@
 										});
 									})
 								</script>
-								<div class="owl-carousel" id="owl2">
-									<div class="img"><img src="img/main_image.jpg"></div>
-									<div class="img"><img src="img/main_image.jpg"></div>
-									<div class="img"><img src="img/main_image.jpg"></div>
-									<div class="img"><img src="img/main_image.jpg"></div>
+								<div class="owl_wrapper">
+									<div class="owl-carousel" id="owl2">
+										<div class="img"><img src="img/main_image.jpg"></div>
+										<div class="img"><img src="img/main_image.jpg"></div>
+										<div class="img"><img src="img/main_image.jpg"></div>
+										<div class="img"><img src="img/main_image.jpg"></div>
+									</div>
 								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
@@ -299,11 +308,13 @@
 										});
 									})
 								</script>
-								<div class="owl-carousel" id="owl3">
-									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
-									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
-									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
-									<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+								<div class="owl_wrapper">
+									<div class="owl-carousel" id="owl3">
+										<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+										<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+										<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+										<div class="img"><img src="img/03-meeting-01/1.jpg"></div>
+									</div>
 								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
@@ -375,11 +386,13 @@
 										});
 									})
 								</script>
-								<div class="owl-carousel" id="owl4">
-									<div class="img"><img src="img/04-office-01/1.jpg"></div>
-									<div class="img"><img src="img/04-office-01/1.jpg"></div>
-									<div class="img"><img src="img/04-office-01/1.jpg"></div>
-									<div class="img"><img src="img/04-office-01/1.jpg"></div>
+								<div class="owl_wrapper">
+									<div class="owl-carousel" id="owl4">
+										<div class="img"><img src="img/04-office-01/1.jpg"></div>
+										<div class="img"><img src="img/04-office-01/1.jpg"></div>
+										<div class="img"><img src="img/04-office-01/1.jpg"></div>
+										<div class="img"><img src="img/04-office-01/1.jpg"></div>
+									</div>
 								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
@@ -454,11 +467,13 @@
 										});
 									})
 								</script>
-								<div class="owl-carousel" id="owl5">
-									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
-									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
-									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
-									<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+								<div class="owl_wrapper">
+									<div class="owl-carousel" id="owl5">
+										<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+										<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+										<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+										<div class="img"><img src="img/05-virt-office-01/1.jpg"></div>
+									</div>
 								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
@@ -527,11 +542,13 @@
 										});
 									})
 								</script>
-								<div class="owl-carousel" id="owl6">
-									<div class="img"><img src="img/06-events-01/1.jpg"></div>
-									<div class="img"><img src="img/06-events-01/1.jpg"></div>
-									<div class="img"><img src="img/06-events-01/1.jpg"></div>
-									<div class="img"><img src="img/06-events-01/1.jpg"></div>
+								<div class="owl_wrapper">
+									<div class="owl-carousel" id="owl6">
+										<div class="img"><img src="img/06-events-01/1.jpg"></div>
+										<div class="img"><img src="img/06-events-01/1.jpg"></div>
+										<div class="img"><img src="img/06-events-01/1.jpg"></div>
+										<div class="img"><img src="img/06-events-01/1.jpg"></div>
+									</div>
 								</div>
 								<div class="top_block_center">
 									<div class="no_anim_top_block_wrapper">
