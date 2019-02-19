@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bulma-carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+        <header class="header">
+                <div class="header__info" >
+                    <div class="column is-1" ></div>
+                    <div class="column is-10 " >
+                        <div class="level ">
+                            <div class="level-left ">
+                                <div class="level-item">
+                                    <div class="icon fas fa-phone "></div>
+                                    <p class="header__text">+1 234 567 890</p>
+                                </div>
+                                <div class="header__divider">
+                                    |
+                                </div>                          
+                                <div class="level-item">
+                                    <div class="icon far fa-envelope"></div>
+                                    <p class="header__text"></p>info@company.com</p>
+                                </div>
+                            </div>
+                            <div class="level-right social" >
+                                <div class="icon fab fa-facebook-f"></div>
+                                <div class="icon fab fa-twitter"></div>
+                                <div class="icon fab fa-instagram"></div>
+                                <div class="icon fab fa-linkedin-in"></div>
+                                <div class="icon fab fa-behance"></div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="container is-10">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="#">
+                            nameshop
+                            </a>
+                        </div>
+                        <div id="navbar" class="navbar-menu">
+                            <div class="navbar-start">
+                            <a class="navbar-item">
+                                Главная
+                            </a>
+                            <a class="navbar-item">
+                                Женщинам
+                            </a>
+                            <a class="navbar-item">
+                                Мужчинам
+                            </a>
+                            <a class="navbar-item">
+                                Детям
+                            </a>
+                            <a class="navbar-item">
+                                Каталог
+                            </a>
+                            <a class="navbar-item">
+                                Информация
+                            </a>
+                            </div>
+    
+                            <div class="navbar-end">
+                                <div class="navbar-item">
+                                    <div class="buttons">
+                                        <div class="icon fas fa-shopping-cart"></div>
+                                        <div class="icon fas fa-search"></div>
+                                        <div class="icon fas fa-bars"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+        </header>
+        <div class="columns " >
+            <div class="column is-1" ></div>
+            <div class="column is-10 " >
+                <div class="columns sidebar-template" >
+                    <div class="column is-4 sn-sidebar" >
+                        <div class="sn-sidebar__category type" >
+                            <a class="sn-sidebar__title"><p>Категории</p></a> 
+                            <div class="type__checkbox">                   
+                                    <input type="checkbox" id="type__check">
+                                    <label for="type__check">
+                                            Джинсы (15)
+                                    </label> 
+                                </div> 
+                                <div class="type__checkbox">                                
+                                    <input type="checkbox" id="type__check2">
+                                    <label for="type__check2">
+                                            Худи (50)
+                                    </label> 
+                                </div>
+                                <div class="type__checkbox">                              
+                                    <input type="checkbox" id="type__check3">
+                                    <label for="type__check3">
+                                            Майки (150)
+                                    </label>
+                                </div>  
+                                <div class="type__checkbox">                              
+                                    <input type="checkbox" id="type__check4">
+                                    <label for="type__check4">
+                                            Поло (150)
+                                    </label> 
+                                </div>
+                                <div class="type__checkbox">                              
+                                    <input type="checkbox" id="type__check5">
+                                    <label for="type__check5">
+                                            Туфли (150)
+                                    </label> 
+                                </div>
+                                <div class="type__checkbox">                              
+                                    <input type="checkbox" id="type__check4">
+                                    <label for="type__check4">
+                                            Кроссовки (150)
+                                    </label> 
+                                </div>
+                                <div class="type__checkbox">                              
+                                    <input type="checkbox" id="material__check5">
+                                    <label for="material__check5">
+                                            Кеды (150)
+                                    </label> 
+                                </div>                           
+                        </div>
+                        <hr>
+                        <div class="sn-sidebar__category prise" >
+                            <a class="sn-sidebar__title"><p>Цена</p></a>
+                            <div class="control">
+                                    <input type="text" class="js-range-slider" name="my_range" value="" />
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="sn-sidebar__category size" >
+                                <a class="sn-sidebar__title"><p>Размер</p></a>
+                                <div class="size__wrapper">
+                                    <div class="size__checkbox size__checkbox_xs">                   
+                                        <input type="checkbox" id="size__check" >
+                                        <label class="" for="size__check">
+                                            
+                                        </label> 
+                                    </div> 
+                                    <div class="size__checkbox size__checkbox_s">                                
+                                        <input type="checkbox" id="size__check2">
+                                        <label class="" for="size__check2">
+                                        
+                                        </label> 
+                                    </div>
+                                    <div class="size__checkbox size__checkbox_m">                              
+                                        <input type="checkbox" id="size__check3">
+                                        <label class="" for="size__check3">
+                                            
+                                        </label>
+                                    </div>  
+                                    <div class="size__checkbox size__checkbox_l">                              
+                                        <input type="checkbox" id="size__check4">
+                                        <label class="" for="size__check4">
+                                            
+                                        </label> 
+                                    </div>
+                                    <div class="size__checkbox size__checkbox_xl">                              
+                                        <input type="checkbox" id="size__check5">
+                                        <label class="" for="size__check5">
+                                            
+                                        </label> 
+                                    </div>
+                            </div>   
+                                                
+                        </div>
+                        <hr>
+                        <div class="sn-sidebar__category" >
+                            <a class="sn-sidebar__title"><p>Цвета</p></a> 
+                                <div class="checkbox">                   
+                                    <input type="checkbox" id="check">
+                                    <label for="check">
+                                        Черный
+                                    </label> 
+                                </div> 
+                                <div class="checkbox">                                
+                                    <input type="checkbox" id="check2">
+                                    <label for="check2">
+                                        Серый
+                                    </label> 
+                                </div>
+                                <div class="checkbox">                              
+                                    <input type="checkbox" id="check3">
+                                    <label for="check3">
+                                        Синий
+                                    </label>
+                                </div>  
+                                <div class="checkbox">                              
+                                    <input type="checkbox" id="check4">
+                                    <label for="check4">
+                                        Оранжевый
+                                    </label> 
+                                </div>
+                                <div class="checkbox">                              
+                                    <input type="checkbox" id="check5">
+                                    <label for="check5">
+                                        Фиолетовый
+                                    </label> 
+                                </div>                                                                        
+                        </div>
+                            <hr>
+                            <div class="sn-sidebar__category material" >
+                                <a class="sn-sidebar__title"><p>Материал</p></a>  
+                                    <div class="checkbox">                   
+                                        <input type="checkbox" id="material__check">
+                                        <label for="material__check">
+                                            Кожа
+                                        </label> 
+                                    </div> 
+                                    <div class="checkbox">                                
+                                        <input type="checkbox" id="material__check2">
+                                        <label for="material__check2">
+                                            Синтетика
+                                        </label> 
+                                    </div>
+                                    <div class="checkbox">                              
+                                        <input type="checkbox" id="material__check3">
+                                        <label for="material__check3">
+                                            Замша
+                                        </label>
+                                    </div>  
+                                    <div class="checkbox">                              
+                                        <input type="checkbox" id="material__check4">
+                                        <label for="material__check4">
+                                            Хлопок
+                                        </label> 
+                                    </div>
+                                    <div class="checkbox">                              
+                                        <input type="checkbox" id="material__check5">
+                                        <label for="material__check5">
+                                            Катон
+                                        </label> 
+                                    </div>                     
+                            </div>   
+                            <hr>                       
+                        </div>
+                    <div class="column is-8" >
+                            <div class="columns">
+                                    <div class="navbar-menu">
+                                        <div class="navbar-start">                                    
+                                            <a class="navbar-item navbar-item_page">
+                                                Мужчинам
+                                            </a>
+                                            <a class="navbar-item navbar-item_page">
+                                                Женщинам
+                                            </a>
+                                            <a class="navbar-item navbar-item_page">
+                                                Детям
+                                            </a>                                     
+                                            </div>
+                                        </div>              
+                            </div>
+                            <div class="columns product-card">
+                                    <div class="column product-card__item">
+                                        <figure class="product-card__image image is-2by3">
+                                            300X450
+                                        </figure>
+                                        <p class="product-card__name">Джемпер Supreme</p>
+                                        <p class="product-card__price">250.00$</p>
+                                        <div class="product-card__rate">
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon far fa-star"></div>
+                                        </div>
+                                    </div>
+                                    <div class="column product-card__item">
+                                        <figure class="product-card__image image is-2by3">
+                                            300X450
+                                        </figure>
+                                        <p class="product-card__name">Джемпер Supreme</p>
+                                        <p class="product-card__price">250.00$</p>
+                                        <div class="product-card__rate">
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon far fa-star"></div>
+                                        </div>
+                                    </div>
+                                    <div class="column product-card__item">
+                                        <figure class="product-card__image image is-2by3">
+                                            300X450
+                                        </figure>
+                                        <p class="product-card__name">Джемпер Supreme</p>
+                                        <p class="product-card__price">250.00$</p>
+                                        <div class="product-card__rate">
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon fas fa-star"></div>
+                                            <div class="icon far fa-star"></div>
+                                        </div>
+                                    </div>
+                                                      
+                                </div>
+
+
+
+                                <div class="columns product-card">
+                                        <div class="column product-card__item">
+                                            <figure class="product-card__image image is-2by3">
+                                                300X450
+                                            </figure>
+                                            <p class="product-card__name">Джемпер Supreme</p>
+                                            <p class="product-card__price">250.00$</p>
+                                            <div class="product-card__rate">
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon far fa-star"></div>
+                                            </div>
+                                        </div>
+                                        <div class="column product-card__item">
+                                            <figure class="product-card__image image is-2by3">
+                                                300X450
+                                            </figure>
+                                            <p class="product-card__name">Джемпер Supreme</p>
+                                            <p class="product-card__price">250.00$</p>
+                                            <div class="product-card__rate">
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon far fa-star"></div>
+                                            </div>
+                                        </div>
+                                        <div class="column product-card__item">
+                                            <figure class="product-card__image image is-2by3">
+                                                300X450
+                                            </figure>
+                                            <p class="product-card__name">Джемпер Supreme</p>
+                                            <p class="product-card__price">250.00$</p>
+                                            <div class="product-card__rate">
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon fas fa-star"></div>
+                                                <div class="icon far fa-star"></div>
+                                            </div>
+                                        </div>
+                                                          
+                                    </div>
+
+                                    <div class="columns product-card">
+                                            <div class="column product-card__item">
+                                                <figure class="product-card__image image is-2by3">
+                                                    300X450
+                                                </figure>
+                                                <p class="product-card__name">Джемпер Supreme</p>
+                                                <p class="product-card__price">250.00$</p>
+                                                <div class="product-card__rate">
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon far fa-star"></div>
+                                                </div>
+                                            </div>
+                                            <div class="column product-card__item">
+                                                <figure class="product-card__image image is-2by3">
+                                                    300X450
+                                                </figure>
+                                                <p class="product-card__name">Джемпер Supreme</p>
+                                                <p class="product-card__price">250.00$</p>
+                                                <div class="product-card__rate">
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon far fa-star"></div>
+                                                </div>
+                                            </div>
+                                            <div class="column product-card__item">
+                                                <figure class="product-card__image image is-2by3">
+                                                    300X450
+                                                </figure>
+                                                <p class="product-card__name">Джемпер Supreme</p>
+                                                <p class="product-card__price">250.00$</p>
+                                                <div class="product-card__rate">
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon fas fa-star"></div>
+                                                    <div class="icon far fa-star"></div>
+                                                </div>
+                                            </div>
+                                                              
+                                    </div>
+
+                    </div>
+
+                </div>
+                <div clacc="columns pagination">
+                        <nav class="pagination is-centered" role="navigation" aria-label="pagination">                          
+                                <ul class="pagination-list">
+                                  <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                                  <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                  <li><a class="pagination-link" aria-label="Goto page 5">5</a></li>
+                                  <li><a class="pagination-link is-current" aria-label="Page 6" aria-current="page">6</a></li>
+                                  <li><a class="pagination-link" aria-label="Goto page 7">7</a></li>
+                                  <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                  <li><a class="pagination-link" aria-label="Goto page 12">12</a></li>
+                                </ul>
+                              </nav>
+                </div>
+            </div>
+            <div class="column is-1" ></div>           
+        </div>
+
+        
+        <footer class="footer">
+                <div class="columns footer_slogan" >
+                    <div class="column is-2" ></div>
+                    <div class="column is-8 " >
+                        <div class="level ">
+                            <div class="level-left ">
+                                <p class="footer__text">We're confident we've provided all the best for you. </p>
+                            </div>
+                            <div class="level-right social" >
+                                <div class="icon fab fa-facebook-f"></div>
+                                <div class="icon fab fa-twitter"></div>
+                                <div class="icon fab fa-instagram"></div>
+                                <div class="icon fab fa-linkedin-in"></div>
+                                <div class="icon fab fa-behance"></div>
+                            </div>
+                        </div>
+                    </div>                      
+                </div>
+                
+                <div class="columns" >
+                    <div class="column is-2" ></div>
+                    <div class="column is-2 " >
+                        <div class="footer__menu">
+                            <p class="footer__title">информация</p>
+                            <p class="footer__list">Доставка</p>
+                            <p class="footer__list">Скидки</p>
+                            <p class="footer__list">Карта сайта</p>
+                            <p class="footer__list">Конфиденциальность</p>
+                        </div>
+                    </div>
+                    <div class="column is-2 " >
+                        <div class="footer__menu">
+                            <p class="footer__title">наша компания</p>
+                            <p class="footer__list">Карьера в NAME</p>
+                            <p class="footer__list">О группе компаний NAME</p>
+                            <p class="footer__list">Пресса</p>
+                            <p class="footer__list">Для инвесторов</p>
+                        </div>
+                    </div>
+                    <div class="column is-2 " >
+                        <div class="footer__menu">
+                            <p class="footer__title">помощь</p>
+                            <p class="footer__list">F.A.Q.</p>
+                            <p class="footer__list">Связь с нами</p>
+                            <p class="footer__list">Рассылка</p>
+                            <p class="footer__list">Найти магазин</p>
+                        </div>
+                    </div>
+                    <div class="column is-2 " >
+                        <div class="footer__menu">
+                            <p class="footer__title">контакты</p>
+                            <div class="footer__wrapper"> <div class="icon fas fa-globe-asia"></div><p class="footer__list">Your adress</p></div>
+                            <div class="footer__wrapper"> <div class="icon fas fa-phone"></div><p class="footer__list">+1 234 56 78 90</p></div>
+                            <div class="footer__wrapper"> <div class="icon far fa-envelope"></div><p class="footer__list"><a href="">mail@domain.com</a></p></div>
+                        </div>
+                    </div>
+                    <div class="column is-2 " ></div>
+                    
+                    </div>                       
+            </div>
+        
+                </footer>
+        <div class=" copyright " >
+                <p >Copyright 2019 NAME all rights reserved</p>
+        </div>
+        <script src="js/bulma-carousel.min.js"></script>
+        <!--Plugin CSS file with desired skin-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+        
+        <!--jQuery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!--Plugin JavaScript file-->
+        <script src="js/ion.rangeSlider.min.js"></script>
+        <script>
+            $(".js-range-slider").ionRangeSlider({
+            type: "double",
+            min: 20,
+            max: 1000,
+            from: 200,
+            to: 500,
+            grid: true,
+            skin: "square"
+    });
+        </script>
+        <script>
+                var carousels = bulmaCarousel.attach();
+                </script>
+                <script>
+                    window.onload = () => {
+              var tabs = document.getElementsByClassName('tabs')
+              
+              for(let i = 0; i < tabs.length; i++) {
+                for(let x = 0; x< tabs[i].children[0].children.length; x++ ) {
+                  tabs[i].children[0].children[x].addEventListener('click', function(e) {
+                      for(let z = 0; z < tabs[i].children[0].children.length;z++) {
+                         tabs[i].children[0].children[z].className=""
+                      }
+                      for(let y = 0; y < tabs[i].nextElementSibling.children.length; y++) {
+                          tabs[i].nextElementSibling.children[y].className="tab-pane"
+                          if(tabs[i].nextElementSibling.children[y].id == this.children[0].id) {
+                             this.className="is-active"
+                             tabs[i].nextElementSibling.children[y].className="tab-pane is-active"
+                          }
+                      }
+                  })
+                }
+              }
+            }
+                </script>
+  </body>
+</html>

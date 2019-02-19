@@ -7,78 +7,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="css/bulma-carousel.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
         <header class="header">
-            <div class="header__info" >
-                <div class="column is-1" ></div>
-                <div class="column is-10 " >
-                    <div class="level ">
-                        <div class="level-left ">
-                            <div class="level-item">
-                                <div class="icon fas fa-phone "></div>
-                                +1 234 567 890
+                <div class="header__info" >
+                    <div class="column is-1" ></div>
+                    <div class="column is-10 " >
+                        <div class="level ">
+                            <div class="level-left ">
+                                <div class="level-item">
+                                    <div class="icon fas fa-phone "></div>
+                                    <p class="header__text">+1 234 567 890</p>
+                                </div>
+                                <div class="header__divider">
+                                    |
+                                </div>                          
+                                <div class="level-item">
+                                    <div class="icon far fa-envelope"></div>
+                                    <p class="header__text"></p>info@company.com</p>
+                                </div>
                             </div>
-                            <div class="level-item">
-                                <div class="icon far fa-envelope"></div>
-                                info@company.com
+                            <div class="level-right social" >
+                                <div class="icon fab fa-facebook-f"></div>
+                                <div class="icon fab fa-twitter"></div>
+                                <div class="icon fab fa-instagram"></div>
+                                <div class="icon fab fa-linkedin-in"></div>
+                                <div class="icon fab fa-behance"></div>
                             </div>
-                        </div>
-                        <div class="level-right social" >
-                            <div class="icon fab fa-facebook-f"></div>
-                            <div class="icon fab fa-twitter"></div>
-                            <div class="icon fab fa-instagram"></div>
-                            <div class="icon fab fa-linkedin-in"></div>
-                            <div class="icon fab fa-behance"></div>
-                        </div>
+                        </div> 
                     </div> 
-                </div> 
-            </div>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="container is-10">
-                    <div class="navbar-brand">
-                        <a class="navbar-item is-size-3 has-text-weight-bold" href="#">
-                        nameshop
-                        </a>
-                    </div>
-                    <div id="navbar" class="navbar-menu">
-                        <div class="navbar-start">
-                        <a class="navbar-item">
-                            Главная
-                        </a>
-                        <a class="navbar-item">
-                            Женщинам
-                        </a>
-                        <a class="navbar-item">
-                            Мужчинам
-                        </a>
-                        <a class="navbar-item">
-                            Детям
-                        </a>
-                        <a class="navbar-item">
-                            Каталог
-                        </a>
-                        <a class="navbar-item">
-                            Информация
-                        </a>
+                </div>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="container is-10">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="#">
+                            nameshop
+                            </a>
                         </div>
-
-                        <div class="navbar-end">
-                            <div class="navbar-item">
-                                <div class="buttons">
-                                    <div class="icon fas fa-shopping-cart"></div>
-                                    <div class="icon fas fa-search"></div>
-                                    <div class="icon fas fa-bars"></div>
+                        <div id="navbar" class="navbar-menu">
+                            <div class="navbar-start">
+                            <a class="navbar-item">
+                                Главная
+                            </a>
+                            <a class="navbar-item">
+                                Женщинам
+                            </a>
+                            <a class="navbar-item">
+                                Мужчинам
+                            </a>
+                            <a class="navbar-item">
+                                Детям
+                            </a>
+                            <a class="navbar-item">
+                                Каталог
+                            </a>
+                            <a class="navbar-item">
+                                Информация
+                            </a>
+                            </div>
+    
+                            <div class="navbar-end">
+                                <div class="navbar-item">
+                                    <div class="buttons">
+                                        <div class="icon fas fa-shopping-cart"></div>
+                                        <div class="icon fas fa-search"></div>
+                                        <div class="icon fas fa-bars"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </header>
-        
-
+                </nav>
+            </header>
         
         <div class="columns" >
                 <div class="column is-1" ></div>
@@ -134,7 +136,7 @@
                                     <div class="icon far fa-star"></div>
                                 </div>
                             </div>
-                            <p class="shop-product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam repellat quaerat eum inventore unde. Est sint pariatur quis facere alias voluptatibus tenetur totam sit quia, asperiores, adipisci, illum accusantium.</p>
+                            <p class="shop-product__description">orem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam repellat quaerat eum inventore unde. Est sint pariatur quis facere alias voluptatibus tenetur totam sit quia, asperiores, adipisci, illum accusantium.</p>
                             <hr>
                             <div class="columns">
                                 <div class="column field">
@@ -180,7 +182,7 @@
                             </div>
 
                             <div class="control">
-                                <button class="button add-to-cart">добавить в корзину</button>
+                                <a class="button add-to-cart">добавить в корзину</a>
                             </div>
 
                         </div>
@@ -206,8 +208,14 @@
                               </div>
                               
                               <div class="tab-content">
-                                <div class="tab-pane is-active" id="1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur commodi mollitia enim quas nisi alias quod repellat? Fuga incidunt vero minima eum corporis assumenda, sapiente sunt reprehenderit temporibus aut.</div>
-                                <div class="tab-pane" id="2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum iste sed nihil cumque nemo in aliquid, magnam ratione tempora accusamus ipsam quam perspiciatis unde? Consequuntur, consequatur delectus? Maxime, vel culpa?</div>
+                                <div class="tab-pane is-active" id="1">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur commodi mollitia enim quas nisi alias quod repellat? Fuga incidunt vero minima eum corporis assumenda, sapiente sunt reprehenderit temporibus aut.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam repellat quaerat eum inventore unde. Est sint pariatur quis facere alias voluptatibus tenetur totam sit quia, asperiores, adipisci, illum accusantium.</p>
+                                    <p class="shop-product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam repellat quaerat eum inventore unde. Est sint pariatur quis facere alias voluptatibus tenetur totam sit quia, asperiores, adipisci, illum accusantium.</p>
+                                </div>
+                                <div class="tab-pane" id="2">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum iste sed nihil cumque nemo in aliquid, magnam ratione tempora accusamus ipsam quam perspiciatis unde? Consequuntur, consequatur delectus? Maxime, vel culpa?</p>
+                                </div>
                               </div>                             
                 </div>
         </div>
@@ -220,17 +228,10 @@
                     </div>
                     <div class="column"></div>
                     <div class="column is-one-quarter hot-sale__text">
-                        <div class='carousel' >
-                            <div class="carousel-navigation is-right">
-                                <div class="carousel-nav-left">
-                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                                </div>
-                                <div class="carousel-nav-right">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                </div>
-                            </div> 
-                        </div> 
-                        
+                            <nav class="pagination" role="navigation" aria-label="pagination">
+                                    <a class="pagination-previous "><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                                    <a class="pagination-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>                              
+                            </nav>                                         
                     </div>
                 </div>
                 <div class="columns product-card">
@@ -297,35 +298,7 @@
 
 
 <footer class="footer">
-        <div class="columns" >
-            <div class="column is-1" ></div>
-            <div class="column is-10 " >
-                <div class="columns " >
-                    <div class="column footer__item">
-                        <div class="icon fas fa-gem"></div>
-                        <p class="footer__heading">выгодные предложения</p>
-                        <p class="footer__subheading">Самые выгодные предложения по VIP-карте магазина</p>
-                    </div>
-                    <div class="column footer__item">
-                        <div class="icon fas fa-paper-plane"></div>
-                        <p class="footer__heading">экспресс доставка</p>
-                        <p class="footer__subheading">На заказы больше 99$</p>
-                    </div>
-                    <div class="column footer__item">
-                        <div class="icon fas fa-exchange-alt"></div>
-                        <p class="footer__heading">возможность возврата</p>
-                        <p class="footer__subheading">В течение 30 дней можно вернуть товар</p>
-                    </div>
-                    <div class="column footer__item">
-                        <div class="icon fas fa-rocket"></div>
-                        <p class="footer__heading">быстрая доставка</p>
-                        <p class="footer__subheading">Самая быстрая доставка</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr >
-        <div class="columns" >
+        <div class="columns footer_slogan" >
             <div class="column is-2" ></div>
             <div class="column is-8 " >
                 <div class="level ">
@@ -340,9 +313,9 @@
                         <div class="icon fab fa-behance"></div>
                     </div>
                 </div>
-            </div>                       
+            </div>                      
         </div>
-        <hr>
+        
         <div class="columns" >
             <div class="column is-2" ></div>
             <div class="column is-2 " >
@@ -377,7 +350,7 @@
                     <p class="footer__title">контакты</p>
                     <div class="footer__wrapper"> <div class="icon fas fa-globe-asia"></div><p class="footer__list">Your adress</p></div>
                     <div class="footer__wrapper"> <div class="icon fas fa-phone"></div><p class="footer__list">+1 234 56 78 90</p></div>
-                    <div class="footer__wrapper"> <div class="icon far fa-envelope"></div><p class="footer__list">mail@domain.com</p></div>
+                    <div class="footer__wrapper"> <div class="icon far fa-envelope"></div><p class="footer__list"><a href="">mail@domain.com</a></p></div>
                 </div>
             </div>
             <div class="column is-2 " ></div>
@@ -389,31 +362,50 @@
         <div class=" copyright " >
                 <p >Copyright 2019 NAME all rights reserved</p>
         </div>
-    <script src="js/bulma-carousel.min.js"></script>
-    <script>
-    var carousels = bulmaCarousel.attach();
-    </script>
-    <script>
-        window.onload = () => {
-  var tabs = document.getElementsByClassName('tabs')
-  
-  for(let i = 0; i < tabs.length; i++) {
-    for(let x = 0; x< tabs[i].children[0].children.length; x++ ) {
-      tabs[i].children[0].children[x].addEventListener('click', function(e) {
-          for(let z = 0; z < tabs[i].children[0].children.length;z++) {
-             tabs[i].children[0].children[z].className=""
-          }
-          for(let y = 0; y < tabs[i].nextElementSibling.children.length; y++) {
-              tabs[i].nextElementSibling.children[y].className="tab-pane"
-              if(tabs[i].nextElementSibling.children[y].id == this.children[0].id) {
-                 this.className="is-active"
-                 tabs[i].nextElementSibling.children[y].className="tab-pane is-active"
+        <script src="js/bulma-carousel.min.js"></script>
+        <!--Plugin CSS file with desired skin-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+        
+        <!--jQuery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!--Plugin JavaScript file-->
+        <script src="js/ion.rangeSlider.min.js"></script>
+        <script>
+            $(".js-range-slider").ionRangeSlider({
+            type: "double",
+            min: 20,
+            max: 1000,
+            from: 200,
+            to: 500,
+            grid: true,
+            skin: "square"
+    });
+        </script>
+        <script>
+                var carousels = bulmaCarousel.attach();
+                </script>
+                <script>
+                    window.onload = () => {
+              var tabs = document.getElementsByClassName('tabs')
+              
+              for(let i = 0; i < tabs.length; i++) {
+                for(let x = 0; x< tabs[i].children[0].children.length; x++ ) {
+                  tabs[i].children[0].children[x].addEventListener('click', function(e) {
+                      for(let z = 0; z < tabs[i].children[0].children.length;z++) {
+                         tabs[i].children[0].children[z].className=""
+                      }
+                      for(let y = 0; y < tabs[i].nextElementSibling.children.length; y++) {
+                          tabs[i].nextElementSibling.children[y].className="tab-pane"
+                          if(tabs[i].nextElementSibling.children[y].id == this.children[0].id) {
+                             this.className="is-active"
+                             tabs[i].nextElementSibling.children[y].className="tab-pane is-active"
+                          }
+                      }
+                  })
+                }
               }
-          }
-      })
-    }
-  }
-}
-    </script>
+            }
+                </script>
     </body>
 </html>
