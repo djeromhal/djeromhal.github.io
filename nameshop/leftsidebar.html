@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.css"/>   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bulma-carousel.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -134,8 +136,19 @@
                         <hr>
                         <div class="sn-sidebar__category prise" >
                             <a class="sn-sidebar__title"><p>Цена</p></a>
-                            <div class="control">
-                                    <input type="text" class="js-range-slider" name="my_range" value="" />
+                                <div class="range-slider">
+                                    <input type="text" class="js-range-slider" value="" />
+                                </div>
+                                
+                            <div class="extra-controls field has-addons prise__wrapper ">        
+                                    <div class="control">
+                                        <input class="input prise__input js-input-from" value="0" type="text">
+                                    </div>
+                                    <div class="control">
+                                        <input class="input prise__input js-input-to" value="0" type="text">
+                                    </div>
+                                    
+                                    <a class="button prise__button"><i class="fas fa-search"></i></a>                                    
                             </div>
                         </div>
                         <hr>
@@ -487,29 +500,93 @@
         <div class=" copyright " >
                 <p >Copyright 2019 NAME all rights reserved</p>
         </div>
-        <script src="js/bulma-carousel.min.js"></script>
-        <!--Plugin CSS file with desired skin-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
-        
         <!--jQuery-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
+        <script src="js/owl.carousel.min.js"></script>
         <!--Plugin JavaScript file-->
         <script src="js/ion.rangeSlider.min.js"></script>
         <script>
-            $(".js-range-slider").ionRangeSlider({
-            type: "double",
-            min: 20,
-            max: 1000,
-            from: 200,
-            to: 500,
-            grid: true,
-            skin: "square"
-    });
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    }
+                }
+                
+            });
+
         </script>
-        <script>
-                var carousels = bulmaCarousel.attach();
-                </script>
+
+<script>
+    var $range = $(".js-range-slider"),
+    $inputFrom = $(".js-input-from"),
+    $inputTo = $(".js-input-to"),
+    instance,
+    min = 0,
+    max = 1000,
+    from = 0,
+    to = 0;
+
+$range.ionRangeSlider({
+    skin: "square",
+    type: "double",
+    grid: true,
+    min: min,
+    max: max,
+    from: 200,
+    to: 800,
+    onStart: updateInputs,
+    onChange: updateInputs
+});
+instance = $range.data("ionRangeSlider");
+
+function updateInputs (data) {
+	from = data.from;
+    to = data.to;
+    
+    $inputFrom.prop("value", from);
+    $inputTo.prop("value", to);	
+}
+
+$inputFrom.on("input", function () {
+    var val = $(this).prop("value");
+    
+    // validate
+    if (val < min) {
+        val = min;
+    } else if (val > to) {
+        val = to;
+    }
+    
+    instance.update({
+        from: val
+    });
+});
+
+$inputTo.on("input", function () {
+    var val = $(this).prop("value");
+    
+    // validate
+    if (val < from) {
+        val = from;
+    } else if (val > max) {
+        val = max;
+    }
+    
+    instance.update({
+        to: val
+    });
+});
+</script>
+
+
+
                 <script>
                     window.onload = () => {
               var tabs = document.getElementsByClassName('tabs')
@@ -532,5 +609,5 @@
               }
             }
                 </script>
-  </body>
+    </body>
 </html>

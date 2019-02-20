@@ -22,9 +22,9 @@ body, button, input, select, textarea {
     font-size: 0.9rem;
 }
 .navbar{
-    -webkit-box-shadow: 0px 4px 5px 0px rgba(50, 50, 50, 0.1);
-    -moz-box-shadow:    0px 4px 5px 0px rgba(50, 50, 50, 0.1);
-    box-shadow:         0px 4px 5px 0px rgba(50, 50, 50, 0.1);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(50, 50, 50, 0.05);
+    -moz-box-shadow:    0px 4px 5px 0px rgba(50, 50, 50, 0.05);
+    box-shadow:         0px 4px 5px 0px rgba(50, 50, 50, 0.05);
 }
 .navbar-brand .navbar-item{
     font-family: 'Poppins';
@@ -254,13 +254,11 @@ a:hover{
 }
 .shop-product__rate{
     color: #e1af27;
+    margin-left: 20px;
 }
 .shop-product__wrapper{
     display: flex;
     align-items: center;
-}
-.shop-product__rate{
-    margin-left: 20px;
 }
 .add-to-cart{
     background-color: #e1af27;
@@ -272,6 +270,9 @@ a:hover{
     text-transform: uppercase;
     font-size: 1rem;
     padding: 25px;
+}
+.add-to-cart span{
+    margin-left: 10px;
 }
 .select select, .input, .button{
     border-radius: 0px;
@@ -408,13 +409,11 @@ font-size: 0.9rem;
 .pagination-link{
     border: none;
 }
-
-
 .prise{
     width: 70%;
 }
-.input{
-    width: 3rem;
+.shop-product__input{
+    width: 80px;
 }
 .sn-sidebar__title p{
     text-transform: uppercase;
@@ -602,4 +601,155 @@ font-size: 0.9rem;
 }
 a {
     color: #4a4a4a;
+}
+.irs--square .irs-bar {
+    top: 31px;
+    height: 4px;
+    background-color: #232323;
+}
+.irs--square .irs-handle {
+    border-color: #232323;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
+.prise__wrapper{
+    margin-top: 20px;
+}
+.prise__input{
+    margin-right: 10px;
+    width: 90%;
+}
+.prise__button{
+    background-color: #e1af27;
+    border:none;
+    color:#fff;
+    border-radius: 0px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 18px;
+}
+.select select:focus, .select select.is-focused, .select select:active, .select select.is-active {
+    border-color: #e1af27;
+    box-shadow: none;
+  }
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: #e1af27;
+  }
+.owl-dots{
+    display: none;
+}
+.owl-prev span, .owl-next span{
+    font-size: 50px;
+    display: none;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: #FFF;
+    color: #e1af27;
+    outline: none;
+}
+.owl-theme .owl-nav [class*='owl-']:focus {
+    outline: none;
+}
+.owl-theme .owl-nav {
+    margin-top: -10px;
+    z-index: 1000;
+}
+#sync1 .item {
+      background:  #e1af27;
+      margin: 5px;
+      color: #FFF;
+      text-align: center;
+} 
+.sync2{
+    display: flex;
+    justify-content: center ;
+}
+.sync2 .owl-carousel{
+    margin-top: 20px;
+    width:  80%;
+}
+#sync2 .item {
+      background: #C9C9C9;
+      padding: 5px 0px;
+      margin: 5px;
+      color: #FFF;
+      text-align: center;
+      cursor: pointer;
+}
+  #sync2 .item h1 {
+        font-size: 18px;
+}
+
+#sync2 .current .item{
+      background:  #e1af27;
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+        transition: all .3s ease;
+}        
+        
+.owl-theme .owl-nav [class*='owl-'] &.disabled:hover {
+         background-color: #D6D6D6;
+}   
+#sync1.owl-theme {
+    position: relative;
+}
+#sync1.owl-theme .owl-next, .owl-prev {
+      width: 22px;
+      height: 40px;
+      position: absolute;
+      top: 110%;
+}
+#sync1.owl-theme .owl-prev {
+      left: 10px;
+}
+#sync1.owl-theme .owl-next {
+      right: 10px;
+}
+.black{
+    color: black;
+}
+.shop-product__select.has-icons-left .input:focus ~ .icon,
+.shop-product__select.has-icons-left .select:focus ~ .icon, .shop-product__select.has-icons-right .input:focus ~ .icon,
+.shop-product__select.has-icons-right .select:focus ~ .icon {
+  color: #7a7a7a;
+}
+
+.shop-product__select.has-icons-left .input.is-small ~ .icon,
+.shop-product__select.has-icons-left .select.is-small ~ .icon, .shop-product__select.has-icons-right .input.is-small ~ .icon,
+.shop-product__select.has-icons-right .select.is-small ~ .icon {
+  font-size: 0.75rem;
+}
+
+.shop-product__select.has-icons-left .input.is-medium ~ .icon,
+.shop-product__select.has-icons-left .select.is-medium ~ .icon, .shop-product__select.has-icons-right .input.is-medium ~ .icon,
+.shop-product__select.has-icons-right .select.is-medium ~ .icon {
+  font-size: 1.25rem;
+}
+
+.shop-product__select.has-icons-left .input.is-large ~ .icon,
+.shop-product__select.has-icons-left .select.is-large ~ .icon, .shop-product__select.has-icons-right .input.is-large ~ .icon,
+.shop-product__select.has-icons-right .select.is-large ~ .icon {
+  font-size: 1.5rem;
+}
+
+.shop-product__select.has-icons-left .icon, .shop-product__select.has-icons-right .icon {
+  color: #dbdbdb;
+  height: 2.25em;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 2.25em;
+  z-index: 4;
+}
+
+.shop-product__select.has-icons-left .input,
+.shop-product__select.has-icons-left .select select {
+  padding-left: 2.25em;
+}
+
+.shop-product__select.has-icons-left .icon.is-left {
+  left: 0;
 }
