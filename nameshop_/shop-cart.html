@@ -120,7 +120,7 @@
                                 <td>
                                     <div class="shop-cart-page__total-wrapper">
                                         $120
-                                            <a href="">
+                                            <a href="" class="shop-cart-page__remove">
                                                 <i class="far fa-times-circle"></i>
                                             </a>     
                                     </div>
@@ -149,7 +149,7 @@
                                 <td>
                                         <div class="shop-cart-page__total-wrapper">
                                             $120
-                                                <a href="">
+                                                <a href="" class="shop-cart-page__remove">
                                                     <i class="far fa-times-circle"></i>
                                                 </a>     
                                         </div>
@@ -178,7 +178,7 @@
                                 <td>
                                         <div class="shop-cart-page__total-wrapper">
                                             $120
-                                                <a href="">
+                                                <a href="" class="shop-cart-page__remove">
                                                     <i class="far fa-times-circle"></i>
                                                 </a>     
                                         </div>
@@ -261,6 +261,9 @@
         <!--Plugin JavaScript file-->
         <script src="js/ion.rangeSlider.min.js"></script>
         <script>
+            $('a.navbar-burger.burger').click(function(e){
+                $('#navbar .navbar-start').slideToggle();
+            });
             $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,

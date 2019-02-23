@@ -13,6 +13,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
+        <div class="sidebar-arrow">
+            <span>&rarr;</span>
+        </div>
         <header class="header">
                 <div class=" header__info" >
                         <div class="level header__wrapper">
@@ -260,7 +263,7 @@
                         </div>
                     <div class="column is-8 sn-page" >
                             <div class="columns">
-                                    <div class="navbar-menu">
+                                    <div class="navbar-menu sub-catalog">
                                         <div class="navbar-start">                                    
                                             <a class="navbar-item sn-page__navbar-item">
                                                 Мужчинам
@@ -496,6 +499,15 @@
         <!--Plugin JavaScript file-->
         <script src="js/ion.rangeSlider.min.js"></script>
         <script>
+            $('.sidebar-arrow').click(function(e){
+                $('.sn-sidebar').toggleClass('opened');
+                $(this).toggleClass('opened');
+            });
+
+            $('a.navbar-burger.burger').click(function(e){
+                $('#navbar .navbar-start').slideToggle();
+            });
+
             $('.owl-carousel').owlCarousel({
                 loop:true,
                 margin:10,
