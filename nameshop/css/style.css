@@ -584,12 +584,14 @@ font-size: 1.3rem;
 }
 .type__checkbox input[type=checkbox]:checked + label:after {
 	outline:1px solid #e1af27;
-	border:5px solid #e1af27;
+	/*border:5px solid #e1af27;*/
 	width:0.4rem;
 	height:0.4rem;
 	background-color:#e1af27;
 }
-
+.type__checkbox input[type=checkbox]:checked + label{
+    color: #e1af27;
+}
 .size__checkbox_xs label:after {
     content: 'XS';
 }
@@ -704,6 +706,19 @@ font-size: 1.3rem;
 }
 a {
     color: #4a4a4a;
+}
+.irs--square .irs-handle, .irs--square .irs-handle.state_hover, .irs--square .irs-handle:hover{
+    background-color: #000;
+}
+span.irs-handle:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    top: -5px;
+    left: -5px;
 }
 .irs-from, .irs-to{
     display: none;
@@ -1207,6 +1222,9 @@ a {
     }
     
 }
+.sidebar-arrow{
+    display: none;
+}
 @media all and (max-width: 768px){
     body{
         overflow: hidden;
@@ -1303,6 +1321,7 @@ a {
         visibility: visible;
     }
     .sidebar-arrow{
+        display: block;
         cursor: pointer;
         position: fixed;
         top: 50%;
