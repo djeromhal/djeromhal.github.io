@@ -14,32 +14,28 @@
   </head>
   <body>
         <header class="header">
-                <div class="header__info" >
-                    <div class="column is-1" ></div>
-                    <div class="column is-10 " >
-                        <div class="level ">
+                <div class=" header__info" >
+                        <div class="level header__wrapper">
                             <div class="level-left ">
-                                <div class="level-item">
-                                    <div class="icon fas fa-phone "></div>
-                                    <p class="header__text">+1 234 567 890</p>
+                                <div class="level-item header__text">
+                                        <a href="tel:+1 234 56 78 90"> <i class="icon fas fa-phone"></i>+1 234 56 78 90</a>
                                 </div>
                                 <div class="header__divider">
                                     |
                                 </div>                          
-                                <div class="level-item">
-                                    <div class="icon far fa-envelope"></div>
-                                    <p class="header__text"></p>info@company.com</p>
+                                <div class="level-item header__text">
+                                        <a href="info@company.com"> <i class="icon far fa-envelope"></i>info@company.comm</a>
                                 </div>
                             </div>
                             <div class="level-right social" >
-                                <div class="icon fab fa-facebook-f"></div>
-                                <div class="icon fab fa-twitter"></div>
-                                <div class="icon fab fa-instagram"></div>
-                                <div class="icon fab fa-linkedin-in"></div>
-                                <div class="icon fab fa-behance"></div>
+                                    <a href=""><i class="icon fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="icon fab fa-twitter"></i></a>
+                                    <a href=""><i class="icon fab fa-instagram"></i></a>
+                                    <a href=""><i class="icon fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="icon fab fa-behance"></i></a>
                             </div>
                         </div> 
-                    </div> 
+                    
                 </div>
                 <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="container is-10">
@@ -47,6 +43,11 @@
                             <a class="navbar-item" href="#">
                             nameshop
                             </a>
+                            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+                                    <span aria-hidden="true"></span>
+                                    <span aria-hidden="true"></span>
+                                    <span aria-hidden="true"></span>
+                                  </a>
                         </div>
                         <div id="navbar" class="navbar-menu">
                             <div class="navbar-start">
@@ -72,24 +73,23 @@
     
                             <div class="navbar-end">
                                 <div class="navbar-item">
-                                    <div class="buttons">
-                                        <div class="icon fas fa-shopping-cart"></div>
-                                        <div class="icon fas fa-search"></div>
-                                        <div class="icon fas fa-bars"></div>
-                                    </div>
+                                        <div class="buttons">
+                                               <a href=""> <i class="icon fas fa-shopping-cart"></i></a>
+                                               <a href=""><i class="icon fas fa-search"></i></a> 
+                                            </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </nav>
-            </header>
+        </header>
         
         <div class="columns" >
                 <div class="column is-1" ></div>
                 <div class="column is-10 shop-product" >
                     <div class="columns" >
                         <div class="column is-5 ">
-                            
+                                
                             <div id="sync1" class="owl-carousel owl-theme">
                                         <div class="item"><img src="img/1.jpg"></div>
                                         <div class="item"><img src="img/2.jpg"></div>
@@ -117,13 +117,13 @@
                                     <div class="icon far fa-star"></div>
                                 </div>
                             </div>
-                            <p class="shop-product__description">orem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam repellat quaerat eum inventore unde. Est sint pariatur quis facere alias voluptatibus tenetur totam sit quia, asperiores, adipisci, illum accusantium.</p>
+                            <p class="shop-product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam repellat quaerat eum inventore unde. Est sint pariatur quis facere alias voluptatibus tenetur totam sit quia, asperiores, adipisci, illum accusantium.</p>
                             <hr>
                             <div class="columns">
                                 <div class="column field">
                                     <div class="control">
-                                        <div class="select">
-                                        <select>
+                                        <div class="select select_size">
+                                        <select >
                                             <option>Select size</option>
                                             <option>XS</option>
                                             <option>S</option>
@@ -135,17 +135,15 @@
                                     </div>
                                 </div>
                                 <div class="column field">
-                                    <div class="control has-icons-left ">
-                                        <div class="select shop-product__select">
+                                    <div class="control  ">
+                                        <div class="select select_color">
                                         <select>                                   
-                                            <option ></option>
+                                            <option >Select color</option>
                                             <option ></option>                                      
                                             <option ></option>
                                         </select>
                                         </div>
-                                        <div class="icon is-small is-left">
-                                                <i class="fas fa-square-full black"></i>
-                                              </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -156,8 +154,8 @@
                                                 -
                                             </a>
                                         </div>    
-                                        <div class="control">
-                                            <input id="input" class="input shop-product__input" type="text" value="3" disabled >
+                                        <div class="control shop-product__wrapper">
+                                            <input id="input" class="input shop-product__input" type="text" value="3"  >
                                             <label for="input"></label>
                                         </div>
                                         <div class="control">
@@ -211,17 +209,15 @@
         </div>
         <div class="columns" >
             <div class="column is-1" ></div>
-            <div class="column is-10 " >
-                <div class="columns hot-sale" >
-                    <div class="column is-one-third">
-                            <p>Похожие товары</p>
+            <div class="column is-10" >
+                <div class=" hot-sale" >
+                    <div class=" ">
+                            <h4 class="hot-sale__title"> Похожие товары</h4>
                     </div>
-                    <div class="column"></div>
-                    <div class="column is-one-quarter hot-sale__text">
-                            <nav class="pagination" role="navigation" aria-label="pagination">
-                                    <a class="pagination-previous "><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                                    <a class="pagination-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>                              
-                            </nav>                                         
+                    <div class="  hot-sale__pagination">                          
+                        <a class="hot-sale__pagination-previous "><i class="fas fa-long-arrow-alt-left"></i></a>
+                        <a class="hot-sale__pagination-next"><i class="fas fa-long-arrow-alt-right"></i></a>                              
+                                         
                     </div>
                 </div>
                 <div class="columns product-card">
@@ -287,84 +283,63 @@
 
 
 
-<footer class="footer">
-        <div class="columns footer_slogan" >
-            <div class="column is-2" ></div>
-            <div class="column is-8 " >
-                <div class="level ">
-                    <div class="level-left ">
-                        <p class="footer__text">We're confident we've provided all the best for you. </p>
+        <footer class="footer">
+                <div class="footer__slogan" >
+                        <div class="footer__slogan-1"><p class="footer__text">We're confident we've provided all the best for you. </p></div>
+                        <div class="footer__slogan-2 "> 
+                            <a href=""><i class="icon fab fa-facebook-f"></i></a>
+                            <a href=""><i class="icon fab fa-twitter"></i></a>
+                            <a href=""><i class="icon fab fa-instagram"></i></a>
+                            <a href=""><i class="icon fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="icon fab fa-behance"></i></a>
+                        </div>
+                        <div class="footer__slogan-3"></div>
+            </div>
+                
+            <div class=" footer__menu-wrapper" >
+                    <div class="footer__menu">
+                        <p class="footer__title">информация</p>
+                        <a class="footer__wrapper" href="">Доставка</a>
+                        <a class="footer__wrapper" href="">Скидки</a>
+                        <a class="footer__wrapper" href="">Карта сайта</a>
+                        <a class="footer__wrapper" href="">Конфиденциальность</a>
                     </div>
-                    <div class="level-right social" >
-                        <div class="icon fab fa-facebook-f"></div>
-                        <div class="icon fab fa-twitter"></div>
-                        <div class="icon fab fa-instagram"></div>
-                        <div class="icon fab fa-linkedin-in"></div>
-                        <div class="icon fab fa-behance"></div>
+                    <div class="footer__menu">
+                        <p class="footer__title">наша компания</p>
+                        <a class="footer__wrapper" href="">Карьера в NAME</a>
+                        <a class="footer__wrapper" href="">О группе компаний NAME</a>
+                        <a class="footer__wrapper" href="">Пресса</a>
+                        <a class="footer__wrapper" href="">Для инвесторов</a>
                     </div>
-                </div>
-            </div>                      
-        </div>
+                    <div class="footer__menu">
+                        <p class="footer__title">помощь</p>
+                        <a class="footer__wrapper" href="">F.A.Q.</a>
+                        <a class="footer__wrapper" href="">Связь с нами</a>
+                        <a class="footer__wrapper" href="">Рассылка</a>
+                        <a class="footer__wrapper" href="">Найти магазин</a>
+                    </div>
+                    <div class="footer__menu">
+                        <p class="footer__title">контакты</p>
+                        <a class="footer__wrapper " href=""> <i class="icon fas fa-globe-asia"></i>Your adress</a>
+                        <a class="footer__wrapper " href="tel:+1 234 56 78 90"> <i class="icon fas fa-phone"></i>+1 234 56 78 90</a>
+                        <a class="footer__wrapper " href="mail@domain.com"> <i class="icon far fa-envelope"></i>mail@domain.com</a>
+                    </div>
+        </div>    
         
-        <div class="columns" >
-            <div class="column is-2" ></div>
-            <div class="column is-2 " >
-                <div class="footer__menu">
-                    <p class="footer__title">информация</p>
-                    <p class="footer__list">Доставка</p>
-                    <p class="footer__list">Скидки</p>
-                    <p class="footer__list">Карта сайта</p>
-                    <p class="footer__list">Конфиденциальность</p>
-                </div>
-            </div>
-            <div class="column is-2 " >
-                <div class="footer__menu">
-                    <p class="footer__title">наша компания</p>
-                    <p class="footer__list">Карьера в NAME</p>
-                    <p class="footer__list">О группе компаний NAME</p>
-                    <p class="footer__list">Пресса</p>
-                    <p class="footer__list">Для инвесторов</p>
-                </div>
-            </div>
-            <div class="column is-2 " >
-                <div class="footer__menu">
-                    <p class="footer__title">помощь</p>
-                    <p class="footer__list">F.A.Q.</p>
-                    <p class="footer__list">Связь с нами</p>
-                    <p class="footer__list">Рассылка</p>
-                    <p class="footer__list">Найти магазин</p>
-                </div>
-            </div>
-            <div class="column is-2 " >
-                <div class="footer__menu">
-                    <p class="footer__title">контакты</p>
-                    <div class="footer__wrapper"> <div class="icon fas fa-globe-asia"></div><p class="footer__list">Your adress</p></div>
-                    <div class="footer__wrapper"> <div class="icon fas fa-phone"></div><p class="footer__list">+1 234 56 78 90</p></div>
-                    <div class="footer__wrapper"> <div class="icon far fa-envelope"></div><p class="footer__list"><a href="">mail@domain.com</a></p></div>
-                </div>
-            </div>
-            <div class="column is-2 " ></div>
-            
-            </div>                       
-        </div>
-
-        </footer>
+                </footer>
         <div class="columns footer__info" >
-                <div class="column is-2" ></div>
-                <div class="column is-8 " >
-                    <div class="level ">
+                <div class="level ">
                         <div class="level-left ">
                             <p >Copyright 2019 NAME all rights reserved</p>
                         </div>
                         <div class="level-right footer__card" >
-                            <img src="img/card.jpg" alt="">
-                            <img src="img/card.jpg" alt="">
-                            <img src="img/card.jpg" alt="">
-                            <img src="img/card.jpg" alt="">
-                            <img src="img/card.jpg" alt="">
+                                <img src="img/card1.jpg" alt="">
+                                <img src="img/card2.jpg" alt="">
+                                <img src="img/card3.jpg" alt="">
+                                <img src="img/card4.jpg" alt="">
+                                <img src="img/card5.jpg" alt="">
                         </div>
                     </div>
-                </div>
         </div>
 
 
@@ -397,6 +372,7 @@ sync2
   })
   .owlCarousel({
   items : 3,
+  margin: 40,
   dots: true,
   nav: true,
   smartSpeed: 200,
