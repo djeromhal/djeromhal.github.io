@@ -141,13 +141,13 @@ a:hover{
     text-transform: uppercase;
     font-size: 56px;
     font-weight: 900;
-    font-family: 'Gilroy';
+    font-family: 'Poppins';
 }
 .hero__subtitle{
     color: #e1af27;
     text-transform: uppercase;
     font-size: 56px;
-    font-family: 'Gilroy';
+    font-family: 'Poppins';
 }
 .call-to-action{
     background-color: #e1af27;
