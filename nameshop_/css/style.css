@@ -432,6 +432,9 @@ font-size: 1.3rem;
 .sidebar-template{
     margin-top: 100px;
 }
+.sn-sidebar{
+    padding-right: 100px;
+}
 .pagination-link {
     border-color: #dbdbdb;
     color: #363636;
@@ -466,7 +469,7 @@ font-size: 1.3rem;
     border: none;
 }
 .prise{
-    width: 70%;
+    width: 100%;
 }
 .shop-product__input{
     width: 80px;
@@ -1063,6 +1066,9 @@ span.irs-handle:before {
 }
 }
 @media all and (max-width: 1070px){
+    .sn-sidebar{
+        padding-right: 0;
+    }
     .hot-sale{
         flex-direction: column;
     }
@@ -1088,6 +1094,9 @@ span.irs-handle:before {
 
 
 @media all and (max-width: 1087px){
+    .container{
+        padding: 0 15px;
+    }
     .navbar {
         display: flex;
         align-items: center;
@@ -1201,6 +1210,8 @@ span.irs-handle:before {
     #navbar .navbar-start{
         position: absolute;
         top: 67px;
+        left: 0;
+        right: 0;
         background: #fff;
         width: 100%;
         padding-bottom: 10px;
@@ -1226,6 +1237,9 @@ span.irs-handle:before {
     display: none;
 }
 @media all and (max-width: 768px){
+    .container{
+        padding: 0;
+    }
     body{
         overflow: hidden;
     }
@@ -1262,7 +1276,7 @@ span.irs-handle:before {
         margin-right: 40px;
     }
     .hot-sale {
-        margin-top: 0px;
+        /*margin-top: 0px;*/
         margin-left: 40px;
         margin-right: 40px;
     }
