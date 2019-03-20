@@ -332,6 +332,7 @@ template {
   .container {
     width: 970px;
   }
+
 }
 @media (min-width: 1200px) {
   .container {
@@ -2521,9 +2522,9 @@ Build date: 2018-12-12 00:07:25
   *display: inline;
 }
 .owl-theme .owl-dots .owl-dot span {
-  width: 10px;
-  height: 10px;
-  margin: 5px 7px;
+  width: 7px;
+  height: 7px;
+  margin: 5px;
   background: #D6D6D6;
   display: block;
   -webkit-backface-visibility: visible;
@@ -2928,8 +2929,8 @@ Build date: 2018-12-12 00:07:25
           transform: rotate(50deg);
 }
 .bg-pic7:after {
-  top: 57% !important;
-  left: 65% !important;
+  top: 67% !important;
+  left: 75% !important;
   position: absolute !important;
   z-index: 9999 !important;
   content: "" !important;
@@ -2937,10 +2938,11 @@ Build date: 2018-12-12 00:07:25
   background-size: 90% !important;
   width: 230px !important;
   height: 230px !important;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 .hero__carousel-block-wrapper {
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2960,9 +2962,10 @@ Build date: 2018-12-12 00:07:25
   width: 100%;
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .owl-dots {
+  bottom: 25px;
   text-align: left !important;
   margin-left: 50px;
-  margin-top: 75px;
+  margin-top: 25px;
   position: absolute;
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .owl-dots .owl-dot.active span {
@@ -2973,23 +2976,41 @@ Build date: 2018-12-12 00:07:25
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .owl-nav {
   margin-top: -150px !important;
+  display: none;
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .hero__slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px;
-  padding-top: 0px;
+  padding: 75px 50px 70px 50px;
   width: 100%;
   font-weight: bold;
   font-style: normal;
   position: absolute;
   background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .hero__slide:before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 100%;
+  background-color: #ffc408;
+  right: -270px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .hero__slide img {
   display: -webkit-box;
@@ -2997,8 +3018,10 @@ Build date: 2018-12-12 00:07:25
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 300px;
+  width: 350px;
   margin-right: 30px;
+  position: relative;
+  z-index: 2;
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .hero__slide .hero__text h1 {
   font-size: 24px;
@@ -3007,6 +3030,9 @@ Build date: 2018-12-12 00:07:25
   -webkit-margin-before: 0px;
           margin-block-start: 0px;
   font-size: 14px;
+}
+.hero__text{
+  z-index: 1;
 }
 .hero__carousel-block-wrapper .hero__carousel-wrapper .owl-carousel .hero__slide .hero__text .hero__button-carousel {
   margin-top: 20px;
@@ -3303,7 +3329,8 @@ Build date: 2018-12-12 00:07:25
   border-radius: 15px;
   background-color: #fdfbf9;
   padding: 15px;
-  min-width: 250px !important;
+  box-sizing: border-box;
+  min-width: 300px !important;
 }
 .tabs__content__wrapper .tabs__content__item .tabs__content__img {
   display: -webkit-box;
@@ -3590,7 +3617,7 @@ Build date: 2018-12-12 00:07:25
 }
 .bg-pic .grills-types__wrapper .grills-types__tiles {
   margin-top: 30px;
-  display: -webkit-box;
+  /*display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -3601,23 +3628,30 @@ Build date: 2018-12-12 00:07:25
       flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: space-between;*/
+  display: block;
 }
 .bg-pic .grills-types__wrapper .grills-types__tiles .grills-types__tiles-item {
   margin-bottom: 70px;
   position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 31px;
 }
 .bg-pic .grills-types__wrapper .grills-types__tiles .grills-types__tiles-item img {
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 15px;
+  margin: 0;
   border-radius: 25px;
-  width: 250px;
+  width: 305px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
+}
+.leading-brands__item-wrapper{
+  width: 16%;
 }
 .bg-pic .grills-types__wrapper .grills-types__tiles .grills-types__tiles-item .grills-types__description {
   position: absolute;
@@ -3741,7 +3775,7 @@ Build date: 2018-12-12 00:07:25
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 45px;
+  margin-bottom: 27px;
 }
 .wrapper-bgc .header__wrapper-info .header__right .header__tel-cart-button .header__tel {
   display: -webkit-box;
@@ -4162,6 +4196,28 @@ Build date: 2018-12-12 00:07:25
   font-style: normal;
   margin-bottom: 90px;
 }
+.request-block__img{
+  position: relative;
+  z-index: 2;
+}
+.request-block__img-wrapper{
+  position: relative;
+}
+.request-block__img-wrapper:before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 100%;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
 .leading-brands__wrapper .leading-brands__tiles {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4180,7 +4236,7 @@ Build date: 2018-12-12 00:07:25
   -ms-flex-item-align: center;
       align-self: center;
   margin-bottom: 70px;
-  margin-left: 15px;
+  margin-left: 0;
   margin-right: 15px;
 }
 .news {
@@ -4225,7 +4281,7 @@ Build date: 2018-12-12 00:07:25
   margin-bottom: 20px;
   margin-left: 15px;
   margin-right: 15px;
-  min-width: 250px;
+  min-width: 315px;
 }
 .news .news__wrapper .news__content__item:first-child {
   margin-left: 0px;
@@ -4259,7 +4315,7 @@ Build date: 2018-12-12 00:07:25
 .news .news__wrapper .news__content__item h5 {
   -webkit-margin-after: 0px;
           margin-block-end: 0px;
-  margin-left: 15px;
+  margin-left: 30px;
   margin-right: 15px;
   margin-bottom: 15px;
   font-size: 24px;
@@ -4267,7 +4323,7 @@ Build date: 2018-12-12 00:07:25
 .news .news__wrapper .news__content__item p {
   -webkit-margin-before: 0px;
           margin-block-start: 0px;
-  margin-left: 15px;
+  margin-left: 30px;
   margin-right: 15px;
   margin-bottom: 15px;
 }
@@ -4336,10 +4392,13 @@ Build date: 2018-12-12 00:07:25
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #fdfbf9;
-  padding-top: 40px;
+  padding-top: 0px;
   padding-bottom: 40px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+button{
+  outline: none;
 }
 .promotions__wrapper .promotions__item {
   font-weight: 500;
@@ -4374,7 +4433,7 @@ Build date: 2018-12-12 00:07:25
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+      justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -4390,7 +4449,7 @@ Build date: 2018-12-12 00:07:25
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 250px;
+  width: 300px;
 }
 .padding-bottom .request-block__wrapper .request-block__text {
   margin-left: 50px;
@@ -4401,7 +4460,8 @@ Build date: 2018-12-12 00:07:25
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 40%;
+  margin-right: 100px;
 }
 .padding-bottom .request-block__wrapper .request-block__text h3 {
   color: #fff;
@@ -4839,6 +4899,16 @@ a.navbar-item:hover, a.navbar-item.is-active,
     }
     .navbar-menu.is-active {
         display: block;
+        position: absolute;
+        z-index: 777;
+        background: #fff;
+        width: 100%;
+        text-align: center;
+    }
+    .header__wrapper-nav .navbar .header__button-dealer{
+      display: inline-block;
+      text-align: center;
+      border: none;
     }
 }
 
@@ -5004,10 +5074,22 @@ a.navbar-item:hover, a.navbar-item.is-active,
 }
 @media (max-width: 999px){
     .navbar-end{
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     .navbar-item:first-child{
-     margin-left: 24px  !important;
- }
+     margin-left: 0 !important;
+   }
+   .header__wrapper-nav .navbar .navbar-item{
+    padding: 10px !important;
+   }
+   .leading-brands__wrapper .leading-brands__tiles .leading-brands__item-wrapper .leading-brands__item{
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+    width: 40px;
+   }
+   .leading-brands__wrapper h2{
+    margin-bottom: 30px;
+   }
 }
