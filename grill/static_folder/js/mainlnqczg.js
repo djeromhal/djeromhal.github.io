@@ -8257,6 +8257,10 @@ $(document).ready(function () {
   });
   $(".owl-prev").html('<i class="fas fa-long-arrow-alt-left"></i>');
   $(".owl-next").html('<i class="fas fa-long-arrow-alt-right"></i>');
+
+  $('.hero__sidebar-header').on('click', function(e){
+    $('.hero__sidebar-wrapper ul').toggleClass('opened');
+  })
 });
 
 function openCity(evt, cityName) {

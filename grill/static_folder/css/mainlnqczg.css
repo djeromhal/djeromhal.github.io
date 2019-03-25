@@ -2573,8 +2573,10 @@ Build date: 2018-12-12 00:07:25
   padding-right: 24px;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
 }
 .catalog-page__content.col-lg-8.col-lg-offset-1 .catalog-page__sort .catalog-page__sort-left .catalog-page__sort-item:hover {
   background-color: #fff;
@@ -3045,7 +3047,7 @@ Build date: 2018-12-12 00:07:25
   background-color: #ffc70a;
   width: 160px;
 }
-.bg-pic6:after {
+/*.bg-pic6:after {
   top: -30% !important;
   left: -80% !important;
   position: absolute !important;
@@ -3057,7 +3059,7 @@ Build date: 2018-12-12 00:07:25
   height: 200px !important;
   -webkit-transform: rotate(170deg);
           transform: rotate(170deg);
-}
+}*/
 .hero__sidebar-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3071,7 +3073,13 @@ Build date: 2018-12-12 00:07:25
           justify-content: flex-start;
   padding-left: 0px;
 }
+.hero__sidebar-wrapper ul.opened{
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
 .hero__sidebar-wrapper ul {
+  z-index: 777;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3089,6 +3097,15 @@ Build date: 2018-12-12 00:07:25
   -webkit-margin-after: 0px;
           margin-block-end: 0px;
   background-color: #fff;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all .5s ease-out;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 .hero__sidebar-wrapper ul li {
   padding-top: 0.8rem;
@@ -3488,7 +3505,7 @@ Build date: 2018-12-12 00:07:25
     justify-content: center;
 }
 .cart .cart__table {
-  display: block;
+  /*display: block;*/
   width: 100%;
   overflow: auto;
   font-weight: bold;
@@ -3575,6 +3592,7 @@ Build date: 2018-12-12 00:07:25
   border: 5px solid#fff;
   top: 0;
   left: 0;
+  text-align: center;
 }
 
 .bg-pic4 {
@@ -3910,6 +3928,7 @@ Build date: 2018-12-12 00:07:25
           justify-content: space-between;
   padding-top: 4px;
   padding-bottom: 4px;
+  cursor: pointer;
 }
 .header__wrapper-info .header__left .hero__sidebar-header p {
   -webkit-margin-before: 0.8em;
