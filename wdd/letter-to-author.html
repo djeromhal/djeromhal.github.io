@@ -2,24 +2,53 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Intro</title>
+	<title>Account Settings</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/intro.css">
 </head>
 <body>
-	<div class="main-page">
+	<div class="account-settings-page">
 		<div class="top-nav">
 			<div class="top-nav-burger"><span></span><span></span><span></span></div>
+			<h2 class="top-nav-title">Написать авторам</h2>
 			<div class="top-nav-logo">
 				<a href="#"><img src="img/logo.png"></a>
 			</div>
 			<a href="account-serttings.html" class="top-nav-settings hidden"></a>
 		</div>
-		<div class="main-page-options">
-			<a href="#" class="main-page-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Сериал</span></a>
-			<a href="#" class="main-page-option option-anim yellow"><span class="helper"></span><span class="main-page-option-title">Комикс</span></a>
+		<div class="settings-wrap">
+			<form class="settings-form">
+				<div class="settings-row">
+					<div class="settings-label-wrapper">
+						<label class="settings-label" for="input-1">E-mail</label>
+					</div>
+					<div class="settings-input-wrapper">
+						<input class="settings-input" id="input-1" type="text" name="" placeholder="Введите вашу эл.почту">
+					</div>
+				</div>
+				<div class="settings-row">
+					<div class="settings-label-wrapper">
+						<label class="settings-label" for="input-2">Тема</label>
+					</div>
+					<div class="settings-input-wrapper">
+						<input class="settings-input" id="input-2" type="text" name="" placeholder="Введите условную тему">
+					</div>
+				</div>
+				<div class="settings-row">
+					<div class="settings-label-wrapper">
+						<label class="settings-label" for="input-3">Письмо</label>
+					</div>
+					<div class="settings-input-wrapper">
+						<textarea class="settings-input" id="input-2" type="text" name="" placeholder="Введите текст письма"></textarea>
+					</div>
+				</div>
+				<div class="settings-row last">
+					<div class="settings-button-wrapper">
+						<button class="settings-button settings-submit option-anim white" type="submit"><span class="helper"></span><span class="main-page-option-title">Отправить</span></button>
+					</div>
+				</div>
+			</form>
 		</div>
-
 		<div class="main-menu">
 			<div class="main-menu-bg"></div>
 			<div class="main-menu-options">

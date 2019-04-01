@@ -1,3 +1,6 @@
+html, body{
+	overflow: hidden;
+}
 body{
 	background: #000000;
 	font-family: 'Geometria';
@@ -16,6 +19,11 @@ body{
         url('../fonts/Geometria-Light.svg#Geometria-Light') format('svg');
     font-weight: 300;
     font-style: normal;
+}
+p{
+	font-family: Geometria;
+	font-size: 14px;
+	color: #fff;
 }
 .intro-bg{
 	width: 100%;
@@ -70,7 +78,7 @@ body{
 	width: 100%;
 	height: 100px;
 	border: 1px solid #fff;
-	background-color: transparent;
+    background-color: rgba(0,0,0,.5);
 	color: #fff;
     font-family: Geometria;
     padding: 25px;
@@ -86,7 +94,7 @@ body{
 	width: 100%;
 	height: 100%;
 	border: 1px solid #fff;
-	background-color: transparent;
+    background-color: rgba(0,0,0,.5);
 	color: #fff;
     padding: 25px;
     font-size: 50px;
@@ -132,11 +140,110 @@ body{
 	height: 27px;
 	background: url(../img/eye-open.png) no-repeat center center;
 }
-.top-nav-logo{
+.intro-text{
+	max-width: 1020px;
+	width: 100%;
+	margin: 0 auto;
 	position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+.intro-text p{
+    font-size: 35px;
+    line-height: 37px;
+    color: #fff;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.top-nav{
+    padding-top: 35px;
+    padding-left: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.top-nav-settings{
+	width: 24px;
+	height: 26px;
+	background: url(../img/settings.png) no-repeat center center;
+    position: absolute;
+    top: 35px;
+    right: 50px;
+    background-size: contain;
+    cursor: pointer;
+	transition: all .5s ease;
+}
+.top-nav-settings.hidden{
+    right: -50px;
+    opacity: 0;
+    visibility: hidden;
+}
+.top-nav-burger{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+}
+.top-nav-burger span {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    display: block;
+    position: absolute;
+	left: 0;
+	transition: all .5s ease;
+}
+.top-nav-burger span:first-child{
+	top: 0;
+}
+.top-nav-burger span:nth-child(2){
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.top-nav-burger span:last-child{
+	bottom: 0;
+}
+.top-nav-burger.open span{
+    transform-origin: 0 0;
+}
+.top-nav-burger.open span:first-child{
+    transform: rotate(45deg);
+    width: 27px;
+}
+.top-nav-burger.open span:nth-child(2){
+    width: 0;
+}
+.top-nav-burger.open span:last-child{
+    transform: rotate(-45deg);
+    width: 27px;
+}
+
+.top-nav-logo{
+	position: fixed;
 	top: 20px;
 	right: 45px;
+	width: 137px;
+	transition: all .5s ease;
+    max-width: 640px;
 }
+.top-nav-logo img{
+	width: 100%;
+    max-width: 640px;
+}
+.top-nav-logo.menu-open{
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    width: 40%;
+}
+
 .main-page{
 	padding: 120px;
 	position: absolute;
@@ -148,7 +255,7 @@ body{
 	background-size: auto 100%;
 }
 .main-page-options{
-	width: 50%;
+	width: 40%;
 	height: 100%;
 }
 .main-page-option{
@@ -159,6 +266,8 @@ body{
     line-height: 100%;
     position: relative;
     transition: all .3s ease;
+    font-size: 70px;
+    display: block;
 }
 .main-page-option:last-child{
     margin-top: -2px;
@@ -174,7 +283,11 @@ body{
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-.main-page-option .helper{
+
+.option-anim{
+	position: relative;
+}
+.option-anim .helper{
 	display: block;
 	position: absolute;
 	top: 5%;
@@ -183,27 +296,37 @@ body{
 	height: 90%;
 	overflow: hidden;
 }
-.main-page-option:first-child:hover{
+.option-anim.blue:hover{
 	border: 2px solid #00a7fb;
 	z-index: 1;
 }
-.main-page-option:first-child .helper:before{
+.option-anim.blue .helper:before{
     background-color: #00a7ff;
 }
-.main-page-option:first-child:after{
+.option-anim.blue:after{
     background-color: #00a7ff;
 }
-.main-page-option:last-child:hover{
+.option-anim.yellow:hover{
 	border: 2px solid #ffcc00;
 	z-index: 1;
 }
-.main-page-option:last-child .helper:before{
+.option-anim.yellow .helper:before{
     background-color: #ffcc00;
 }
-.main-page-option:last-child:after{
+.option-anim.yellow:after{
     background-color: #ffcc00;
 }
-.main-page-option .helper:before {
+.option-anim.white:hover{
+	border: 2px solid #fff;
+	z-index: 1;
+}
+.option-anim.white .helper:before{
+    background-color: #fff;
+}
+.option-anim.white:after{
+    background-color: #fff;
+}
+.option-anim .helper:before {
     content: '';
     display: block;
     position: absolute;
@@ -213,10 +336,10 @@ body{
     height: 100%;
     transition: all .3s ease;
 }
-.main-page-option:hover .helper:before {
+.option-anim:hover .helper:before {
 	top: 0%;
 }
-.main-page-option:after {
+.option-anim:after {
     content: '';
     display: block;
     position: absolute;
@@ -229,10 +352,10 @@ body{
     filter: blur(70px);
     transition: all .3s ease;
 }
-.main-page-option:hover:after {
+.option-anim:hover:after {
 	opacity: 0.7;
 }
-.main-page-option.active .main-page-option-title{
+.option-anim.active .main-page-option-title{
   animation-name: optionActive1;
   animation-duration:0.3s;
   animation-iteration-count: 1;
@@ -241,17 +364,17 @@ body{
 }
 @keyframes optionActive1{
 	0%{
-		font-size: 70px; 
+		font-size: 1em; 
 	}
 	50%{
-		font-size: 90px; 
+		font-size: 1.3em; 
 	}
 	100%{
-		font-size: 70px; 
+		font-size: 1em; 
 	}
 }
 
-.main-page-option.active:after{
+.option-anim.active:after{
   animation-name: optionActive2;
   animation-duration:0.3s;
   animation-iteration-count: 1;
@@ -272,7 +395,7 @@ body{
 		filter: blur(70px);
 	}
 }
-.main-page-option.active .helper{
+.option-anim.active .helper{
   animation-name: optionActive3;
   animation-duration:0.3s;
   animation-iteration-count: 1;
@@ -292,4 +415,237 @@ body{
 		left: 0;
 		width: 0;
 	}
+}
+.main-menu{
+	padding: 120px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    background: #000;
+    transition: all .5s ease;
+}
+.main-menu.active{
+	opacity: 1;
+	visibility: visible;
+}
+.main-menu .main-menu-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+    background: url(../img/menu-dots-doc-bg.png) no-repeat;
+    background-position: 200% center;
+    background-size: auto 100%;
+    transition: all .5s ease;
+    transition-delay: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.main-menu.active .main-menu-bg{
+    background-position: 100% center;
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-menu-options{
+	width: 40%;
+	height: 100%;
+    z-index: 2;
+    position: relative;
+}
+.main-menu-option{
+	cursor: pointer;
+	width: 100%;
+	height: 16.6%;
+	border: 2px solid #fff;
+    line-height: 100%;
+    position: relative;
+    transition: all .3s ease;
+    text-align: left;
+    margin-top: -2px;
+    font-size: 30px;
+    display: block;
+
+    left: -100%;
+	opacity: 0;
+	visibility: hidden;
+}
+.main-menu-options.shown .main-menu-option{
+	left: 0;
+	opacity: 1;
+	visibility: visible;
+}
+.main-menu-options.delay .main-menu-option:nth-child(1){
+    transition-delay: 0.5s;
+}
+.main-menu-options.delay .main-menu-option:nth-child(2){
+    transition-delay: 0.6s;
+}
+.main-menu-options.delay .main-menu-option:nth-child(3){
+    transition-delay: 0.7s;
+}
+.main-menu-options.delay .main-menu-option:nth-child(4){
+    transition-delay: 0.8s;
+}
+.main-menu-options.delay .main-menu-option:nth-child(5){
+    transition-delay: 0.9s;
+}
+.main-menu-options.delay .main-menu-option:nth-child(6){
+    transition-delay: 1s;
+}
+.main-menu-option:first-child{
+	margin-top: 0;
+}
+.main-menu-option:last-child{
+    margin-top: -2px;
+}
+.main-menu-option span.main-page-option-title{
+    font-family: Geometria;
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 45px;
+    white-space: nowrap;
+}
+
+
+.account-settings-page{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.top-nav-title{
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 34px;
+    line-height: 24px;
+    margin-left: 50px;
+}
+
+.settings-wrap{
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 125px 185px 125px 125px;
+}
+.settings-row {
+    /*height: 77px;*/
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+.settings-row.last{
+	padding-left: 370px;
+	padding-right: 80px;
+}
+.settings-label{
+	color: #808080;
+	font-size: 40px;
+	text-transform: uppercase;
+    line-height: 77px;
+}
+.settings-label-wrapper{
+	width: 370px;
+	min-width: 370px;
+}
+.settings-input-wrapper{
+	width: 100%;
+	height: 77px;
+	line-height: 77px;
+	padding-right: 80px;
+	position: relative;
+}
+.settings-label-wrapper, .settings-input-wrapper{
+	display: table-cell;
+	vertical-align: top;
+}
+
+.settings-input {
+    width: 100%;
+    height: 77px;
+    line-height: 77px;
+    box-sizing: border-box;
+    background: transparent;
+    padding: 20px;
+    font-size: 40px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family: Geometria;
+}
+textarea.settings-input{
+	height: 300px;
+	line-height: 42px;
+}
+.settings-input.on{
+    color: rgba(255,255,255,.5);
+}
+.settings-input[disabled]{
+    border: 1px solid #808080;
+    color: #fff;
+}
+
+.settings-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 0.5; /* Firefox */
+}
+
+.settings-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+  opacity: 0.5;
+}
+
+.settings-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #fff;
+  opacity: 0.5;
+}
+
+.settings-input-edit{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 45px;
+	height: 44px;
+	cursor: pointer;
+	opacity: 0.5;
+	background-size: contain;
+	background: url(../img/pencil-white.png) no-repeat center center;
+}
+.settings-input-edit:hover, .settings-input-edit.on{
+	opacity: 1;
+}
+.settings-button-wrapper{
+    width: 50%;
+    float: left;
+}
+.settings-button-wrapper:first-child{
+    padding-right: 10px;
+}
+.settings-button-wrapper:nth-child(2){
+    padding-left: 10px;
+}
+.settings-button {
+    height: 77px;
+    line-height: 77px;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    font-family: Geometria;
+    font-size: 40px;
+    text-transform: uppercase;
 }
