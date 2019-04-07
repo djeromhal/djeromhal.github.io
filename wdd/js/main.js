@@ -53,19 +53,101 @@ $(function(){
 		}
 	})
 
+	var SETTINGS_CHANGE_FLAG = false;
+	var prev_settings_value = '';
 	$('.settings-input-edit').on('click', function(e){
 		e.preventDefault();
 		_this = $(this);
 		var p = _this.closest('.settings-input-wrapper');
 		var input = p.find('input');
 
+		$('.settings-input.on').removeClass('on');
+		$(".settings-input-edit.on").removeClass('on');
+
 		if(input.is(':disabled')){
 			input.prop('disabled','')
 			input.addClass('on')
 			input.focus()
+			$(this).addClass('on');
+			prev_settings_value = input.val();
 		}else{
-			input.prop('disabled','disabled')
-			input.removeClass('on')
+
+			if(input.prop('name') == 'name'){
+				if(input.val() == ''){
+					input.addClass('error');
+					input.focus();
+					return false;
+				}
+			}else if(input.prop('name') == 'phone'){
+				if(input.val().length != 16){
+					input.addClass('error');
+					input.focus();
+					return false;
+				}
+				
+			}else if(input.prop('name') == 'mail'){
+				if(!validateEmail(input.val())){
+					input.addClass('error');
+					input.focus();
+					return false;
+				}
+				
+			}else if(input.prop('name') == 'password'){
+				if(input.val() == ''){
+					input.addClass('error');
+					input.focus();
+					return false;
+				}
+			}
+			$('.settings-input').removeClass('error');
+	    	disableInput(input,$(this));
+			SETTINGS_CHANGE_FLAG = checkToShowSubmit(input, SETTINGS_CHANGE_FLAG, prev_settings_value);
 		}
 	})
+
+	$("[name='phone']").mask("+7(999)999-99-99");
+	// $(document).click(function(e) {
+	// 		var input = $('.settings-input.on');
+	// 		var pencil = $(".settings-input-edit.on");
+
+	//     if (!pencil.is(e.target) && pencil.has(e.target).length === 0 && !input.is(e.target) && input.has(e.target).length === 0) {
+	// 	    if(input.length){
+	// 	    	disableInput(input,pencil);
+	// 			SETTINGS_CHANGE_FLAG = checkToShowSubmit(input, SETTINGS_CHANGE_FLAG, prev_settings_value);
+	// 	    }
+	//     }
+	// });
+	$('.owl-carousel').owlCarousel({
+	    loop:true,
+	    margin:60,
+	    responsiveClass:true,
+	    responsive:{
+	        0:{
+	            items:4,
+	            nav:false
+	        }
+	    }
+	})
 })
+function disableInput(input,pencil){
+	input.prop('disabled','disabled')
+	input.removeClass('on')
+	pencil.removeClass('on')
+}
+function checkToShowSubmit(input, set_change_flag, prev_set_val){
+	var cur_settings_value = input.val();
+	if(!set_change_flag && cur_settings_value !== prev_set_val){
+		$('.show-on-change').addClass('on');
+		return true;
+	}else{
+		return false;
+	}
+}
+function validateEmail(val) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(val).toLowerCase());
+}
+function validatePhone(val) {
+    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    return re.test(String(val).toLowerCase());
+}

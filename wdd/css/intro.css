@@ -20,6 +20,19 @@ body{
     font-weight: 300;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Geometria';
+    src: url('../fonts/Geometria-Bold.eot');
+    src: url('../fonts/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-Bold.woff2') format('woff2'),
+        url('../fonts/Geometria-Bold.woff') format('woff'),
+        url('../fonts/Geometria-Bold.ttf') format('truetype'),
+        url('../fonts/Geometria-Bold.svg#Geometria-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 p{
 	font-family: Geometria;
 	font-size: 14px;
@@ -470,7 +483,7 @@ p{
     transition: all .3s ease;
     text-align: left;
     margin-top: -2px;
-    font-size: 30px;
+    font-size: 50px;
     display: block;
 
     left: -100%;
@@ -537,7 +550,15 @@ p{
 }
 
 .settings-wrap{
-	position: absolute;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 125px 185px 125px 125px;
+}
+.page-wrap{
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -585,7 +606,7 @@ p{
     padding: 20px;
     font-size: 40px;
     color: #fff;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     font-family: Geometria;
 }
 textarea.settings-input{
@@ -596,8 +617,11 @@ textarea.settings-input{
     color: rgba(255,255,255,.5);
 }
 .settings-input[disabled]{
-    border: 1px solid #808080;
+    border: 2px solid #808080;
     color: #fff;
+}
+.settings-input.error{
+    border: 2px solid #ffb602;
 }
 
 .settings-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -629,6 +653,12 @@ textarea.settings-input{
 .settings-input-edit:hover, .settings-input-edit.on{
 	opacity: 1;
 }
+.show-on-change.on{
+	display: block;
+}
+.show-on-change{
+	display: none;
+}
 .settings-button-wrapper{
     width: 50%;
     float: left;
@@ -648,4 +678,161 @@ textarea.settings-input{
     font-family: Geometria;
     font-size: 40px;
     text-transform: uppercase;
+}
+.top-nav-links{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    padding-left: 20px;
+}
+.top-nav-links-li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 33%;
+    text-align: center;
+    padding: 0 30px;
+    position: relative;
+}
+.top-nav-links-a{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 34px;
+    line-height: 24px;
+    text-decoration: none;
+}
+.top-nav-links-a.active:before {
+    content: '';
+    display: block;
+    width: auto;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    position: absolute;
+    top: -2px;
+    bottom: 5px;
+    left: 18%;
+    right: 18%;
+}
+.top-nav-links-a.active:after {
+    content: '';
+    display: block;
+    width: auto;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    right: 30px;
+}
+.top-nav-links-a span {
+    background: #000;
+    z-index: 2;
+    position: relative;
+    padding: 0 10px;
+}
+.serial-wrap{
+    padding-top: 90px;
+    padding-right: 0;
+}
+.f-left{
+    float: left;
+}
+.f-right{
+    float: right;
+}
+.w50p{
+    width: 50%;
+}
+.serial-desc{
+    margin-bottom: 56px;
+}
+.serial-desc-left{
+    padding-top: 35px;
+    width: 45%
+}
+.serial-desc-right{
+    height: 536px;
+    position: relative;
+    width: 55%
+}
+.serial-desc-right img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.serial-desc-right:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    background: linear-gradient(to right, #000 0%, transparent 100% );
+}
+.serial-desc-left p{
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.serial-desc-button{
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-family: Geometria;
+    font-size: 80px;
+    line-height: 100px;
+    height: 130px;
+    text-transform: uppercase;
+    padding: 20px 100px;
+    width: 620px;
+    z-index: 1;
+}
+.serial-desc-button .main-page-option-title{
+    position: relative;
+    z-index: 1;
+}
+.serial-title{
+    color: #fff;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.serial-nav{
+    padding-right: 185px;
+}
+.serial-nav-img{
+    border: 2px solid #fff;
+}
+.serial-nav-title {
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.serial-nav-time {
+    font-size: 30px;
+}
+.serial-nav .owl-stage-outer{
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-right: 10px;
+}
+.agreement-title{
+    text-transform: uppercase;
+}
+.yellow-color{
+    color: #ffb602;
+}
+.agreement p{
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 80px;
 }
