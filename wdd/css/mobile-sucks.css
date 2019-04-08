@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Geometria';
+    src: url('../fonts/Geometria-Light.eot');
+    src: url('../fonts/Geometria-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-Light.woff2') format('woff2'),
+        url('../fonts/Geometria-Light.woff') format('woff'),
+        url('../fonts/Geometria-Light.ttf') format('truetype'),
+        url('../fonts/Geometria-Light.svg#Geometria-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geometria';
+    src: url('../fonts/Geometria-Bold.eot');
+    src: url('../fonts/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-Bold.woff2') format('woff2'),
+        url('../fonts/Geometria-Bold.woff') format('woff'),
+        url('../fonts/Geometria-Bold.ttf') format('truetype'),
+        url('../fonts/Geometria-Bold.svg#Geometria-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+*{
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	max-width: 600px;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+	font-family: Geometria;
+	background: linear-gradient(to bottom, #000 50%, #651d02);
+	background-attachment: fixed;
+}
+.wrap{
+	width: 100%;
+	/*height: 100%;*/
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.btn{
+	display: inline-block;
+	border: 2px solid #fff;
+	color: #fff;
+	text-transform: uppercase;
+	width: auto;
+	padding: 10px;
+	font-size: 20px;
+	line-height: 20px;
+	margin-bottom: 70px;
+}
+.img{
+	width: 55%;
+	display: inline-block;
+	position: relative;
+}
+.img span{
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    right: 0;
+    width: 320px;
+    font-size: 14px;
+}
+.img img{
+	width: 100%;
+}

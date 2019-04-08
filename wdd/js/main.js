@@ -1,4 +1,32 @@
 $(function(){
+	var maxWidth  = $('#outer').outerWidth();
+	var maxHeight = $('#outer').outerHeight();
+	var $window = $(window);
+    var scale;
+    var width = $window.width();
+    var height = $window.height();
+	$(window).resize(function(evt) {
+	    width = $window.outerWidth();
+	    height = $window.outerHeight();
+
+	    // early exit
+	    if(width >= maxWidth && height >= maxHeight) {
+	        $('#outer').css({'-webkit-transform': ''});
+	        $('#wrap').css({ width: '', height: '' });
+	        return;
+	    }
+
+	    scale = Math.min(width/maxWidth, height/maxHeight);
+
+	    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+	    $('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
+	});
+
+    scale = Math.min(width/maxWidth, height/maxHeight);
+
+    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+    $('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
+
 	$('.change-pass-visibility').on('click',function(e){
 		var _this = $(this);
 		var p = _this.closest('.intro-form-input-with-icon');
