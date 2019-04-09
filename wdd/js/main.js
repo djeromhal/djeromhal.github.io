@@ -43,17 +43,18 @@ $(function(){
 		}
 	})
 
-
-	setTimeout(function(){
-		$('#intro-name').focus().typetype("Program").delay(1500).backspace(7).typetype('Robot').delay(1000).backspace(5).typetype('Human', {
-			callback: function() {
-				$('#intro-pass').focus().typetype("robot-pussy").delay(500).backspace(5).typetype('buddy-777');
-				setTimeout(function(){
-					$('.change-pass-visibility').click();
-				},500)
-			}
-    	});
-	},1000);
+	if($('#intro-name').length){
+		setTimeout(function(){
+			$('#intro-name').focus().typetype("Program").delay(1500).backspace(7).typetype('Robot').delay(1000).backspace(5).typetype('Human', {
+				callback: function() {
+					$('#intro-pass').focus().typetype("robot-pussy").delay(500).backspace(5).typetype('buddy-777');
+					setTimeout(function(){
+						$('.change-pass-visibility').click();
+					},500)
+				}
+	    	});
+		},1000);
+	}
 
 	$('.option-anim').on('click',function(e){
 		e.preventDefault();
@@ -132,8 +133,9 @@ $(function(){
 			SETTINGS_CHANGE_FLAG = checkToShowSubmit(input, SETTINGS_CHANGE_FLAG, prev_settings_value);
 		}
 	})
-
-	$("[name='phone']").mask("+7(999)999-99-99");
+	if($("[name='phone']").length){
+		$("[name='phone']").mask("+7(999)999-99-99");
+	}
 	// $(document).click(function(e) {
 	// 		var input = $('.settings-input.on');
 	// 		var pencil = $(".settings-input-edit.on");
@@ -145,7 +147,7 @@ $(function(){
 	// 	    }
 	//     }
 	// });
-	$('.owl-carousel').owlCarousel({
+	$('.serial-carousel').owlCarousel({
 	    loop:true,
 	    margin:60,
 	    responsiveClass:true,
@@ -156,6 +158,44 @@ $(function(){
 	        }
 	    }
 	})
+	$('.buy-page-car').owlCarousel({
+	    loop:true,
+	    margin:60,
+	    responsiveClass:true,
+	    responsive:{
+	        0:{
+	            items:4,
+	            nav:false
+	        }
+	    }
+	})
+	$('.feedback-car').owlCarousel({
+	    loop:true,
+	    margin:0,
+	    dots: false,
+		nav: true,
+		navText: ["<img src='img/nav-left.png'>","<img src='img/nav-right.png'>"],
+	    responsiveClass:true,
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav:true
+	        }
+	    }
+	})
+	$(window).on('scroll',function(){
+		console.log($('.top-nav').offset().top)
+		if($('.top-nav').offset().top > 10){
+			$('.top-nav-logo').addClass('scroll');
+		}else{
+			$('.top-nav-logo').removeClass('scroll');
+		}
+	})
+	if($('.top-nav').offset().top > 10){
+		$('.top-nav-logo').addClass('scroll');
+	}else{
+		$('.top-nav-logo').removeClass('scroll');
+	}
 })
 function disableInput(input,pencil){
 	input.prop('disabled','disabled')
