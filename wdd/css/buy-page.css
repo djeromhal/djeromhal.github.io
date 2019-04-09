@@ -617,6 +617,7 @@ footer{
 }
 @media all and (max-width: 1919px){
     .buy-page{
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 } 
