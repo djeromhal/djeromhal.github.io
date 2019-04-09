@@ -62,3 +62,26 @@ p{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+#wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*bottom: 0;*/
+    margin: auto;
+    width: 1920px;
+    height: 1080px;
+}
+#outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*bottom: 0;*/
+    margin: auto;
+    width: 1920px !important;
+    height: 1080px !important;
+    /*padding: 125px 185px 125px 125px;
+    box-sizing: border-box;*/
+    -webkit-transform-origin: top left;
+}

@@ -542,6 +542,10 @@ p{
 	width: 100%;
 	height: 100%;
 }
+.collections-page #outer{
+    background: url(../img/coll-bg.png) no-repeat center 90px;
+    background-size: cover;
+}
 .top-nav-title{
     display: inline-block;
     vertical-align: top;
@@ -551,7 +555,15 @@ p{
     line-height: 24px;
     margin-left: 50px;
 }
-
+.settings-wrap.scroll{
+    position: absolute;
+    top: 125px;
+    left: 125px;
+    bottom: 125px;
+    right: 185px;
+    overflow: auto;
+    padding: 0;
+}
 .settings-wrap{
     position: absolute;
     top: 0;
@@ -912,4 +924,169 @@ textarea.settings-input{
     transform: translate(-50%, -50%);
     z-index: 1;
     white-space: nowrap;
+}
+.collections-content{
+    /*width: 100%;
+    display: block;*/
+}
+.collections-wrap{
+    /*padding-top: 35px;*/
+}
+.collections-left{
+    width: 50%;
+}
+.collections-desc{
+    width: 100%;
+    padding-top: 35px;
+    margin-bottom: 140px;
+}
+.collections-desc p{
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 35px;
+}
+.collections-content{
+    height: 200px;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.simplebar-track.simplebar-vertical{
+    width: 2px;
+    background: #fff;
+    /*position: relative;*/
+    right: 11px;
+    top: 10px;
+    bottom: 10px;
+}
+.simplebar-track.simplebar-vertical:before{
+    content: '';
+    display: block;
+    width: 24px;
+    height: 13px;
+    position: absolute;
+    top: -10px;
+    right: -11px;
+    background: url(../img/scroll-top.png) no-repeat center center;
+}
+.simplebar-track.simplebar-vertical:after{
+    content: '';
+    display: block;
+    width: 24px;
+    height: 13px;
+    position: absolute;
+    bottom: -10px;
+    right: -11px;
+    background: url(../img/scroll-bottom.png) no-repeat center center;
+}
+.simplebar-scrollbar{
+    background: #000 url(../img/scroll-burger.png) repeat center center;
+    width: 24px;
+    right: -11px;
+    top: 20px;
+}
+.simplebar-scrollbar:before{
+    display: none;
+}
+.collections-btn-wrapper{
+    width: 437px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.collections-btn{
+    width: 100%;
+    outline: none;
+    border: 2px solid #fff;
+    height: 100%;
+    background: transparent;
+    color: #fff;
+    font-size: 40px;
+    font-family: Geometria;
+    text-transform: uppercase;
+}
+.collections-btn:not(:first-child){
+    margin-top: -2px;
+}
+.collections-btn .main-page-option-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    line-height: 40px;
+    transform: translate(-50%,-50%);
+}
+.collections-icon-wrapper{
+    width: 340px;
+    height: 300px;
+}
+.collections-icon-table{
+    width: 340px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-right: 40px;
+}
+.collections-icon-row {
+    display: flex;
+    justify-content: flex-start;
+}
+.collections-icon-row:not(:first-child){
+    margin-top: -2px;
+}
+.collections-icon{
+    width: 100px;
+    height: 101.5px;
+    border: 2px solid #fff;
+}
+
+.collections-icon img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.collections-icon:not(:first-child){
+    margin-left: -2px;
+}
+.collections-right{
+    width: 50%;
+    height: 755px;
+    position: relative;
+}
+.collections-right img{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.collections-progress-bar{
+    border: 2px solid #fff;
+    height: 30px;
+    width: 520px;
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+}
+.collections-progress{
+    width: 100%;
+    margin-top: 75px;
+}
+.collections-progress p{
+    font-size: 35px;
+    display: inline-block;
+    vertical-align: bottom;
+    text-transform: uppercase;
+}
+.collections-progress-line{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 50%;
+    bottom: 2px;
+    background: #fff;
 }
