@@ -5,19 +5,24 @@
 	<title>Account Settings</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/intro.css">
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1">
 </head>
 <body>
+	<div id="nav-wrap">
+		<div id="nav-outer">
+			<div class="top-nav">
+				<div class="top-nav-burger"><span></span><span></span><span></span></div>
+					<h2 class="top-nav-title">Настройки аккаунта</h2>
+				<div class="top-nav-logo">
+					<a href="#"><img src="img/logo.png"></a>
+				</div>
+				<a href="account-serttings.html" class="top-nav-settings hidden"></a>
+			</div>
+		</div>
+	</div>
 	<div class="account-settings-page">
 		<div id="wrap">
 			<div id="outer">
-				<div class="top-nav">
-					<div class="top-nav-burger"><span></span><span></span><span></span></div>
-					<h2 class="top-nav-title">Настройки аккаунта</h2>
-					<div class="top-nav-logo">
-						<a href="#"><img src="img/logo.png"></a>
-					</div>
-					<a href="account-serttings.html" class="top-nav-settings hidden"></a>
-				</div>
 				<div class="settings-wrap">
 					<form class="settings-form">
 						<div class="settings-row">
@@ -27,6 +32,14 @@
 							<div class="settings-input-wrapper">
 								<input class="settings-input" value="Пример Примерыч" disabled id="input-1" type="text" name="name" placeholder="Введите ваше имя">
 								<span class="settings-input-edit"></span>
+								<div class="settings-row-change clearfix">
+									<div class="settings-button-wrapper">
+										<button class="settings-button settings-submit option-anim white" type="submit"><span class="helper"></span><span class="main-page-option-title">Применить</span></button>
+									</div>
+									<div class="settings-button-wrapper">
+										<button class="settings-button settings-cancell option-anim white"><span class="helper"></span><span class="main-page-option-title">Отменить</span></button>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="settings-row">
@@ -36,6 +49,14 @@
 							<div class="settings-input-wrapper">
 								<input class="settings-input" value="+7(916)-045-35-35" disabled id="input-2" type="text" name="phone" placeholder="Введите ваш телефон">
 								<span class="settings-input-edit"></span>
+								<div class="settings-row-change clearfix">
+									<div class="settings-button-wrapper">
+										<button class="settings-button settings-submit option-anim white" type="submit"><span class="helper"></span><span class="main-page-option-title">Применить</span></button>
+									</div>
+									<div class="settings-button-wrapper">
+										<button class="settings-button settings-cancell option-anim white"><span class="helper"></span><span class="main-page-option-title">Отменить</span></button>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="settings-row">
@@ -45,6 +66,22 @@
 							<div class="settings-input-wrapper">
 								<input class="settings-input" value="example@mail.ru" disabled id="input-3" type="text" name="mail" placeholder="Введите вашу эл.почту">
 								<span class="settings-input-edit"></span>
+								<div class="settings-row-change clearfix">
+									<div class="settings-change-input-wrapper">
+										<input class="settings-input change" type="text" name="new-mail" placeholder="НОВЫЙ E-MAIL">
+									</div>
+									<div class="settings-change-input-wrapper">
+										<input class="settings-input change" type="text" name="cur-pass" placeholder="ТЕКУЩИЙ ПАРОЛЬ">
+									</div>
+									<div class="settings-row-change-submit">
+										<div class="settings-button-wrapper">
+											<button class="settings-button settings-submit option-anim white" type="submit"><span class="helper"></span><span class="main-page-option-title">Применить</span></button>
+										</div>
+										<div class="settings-button-wrapper">
+											<button class="settings-button settings-cancell option-anim white"><span class="helper"></span><span class="main-page-option-title">Отменить</span></button>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="settings-row">
@@ -54,14 +91,22 @@
 							<div class="settings-input-wrapper">
 								<input class="settings-input" value="88888888" disabled id="input-4" type="password" name="password" placeholder="********">
 								<span class="settings-input-edit"></span>
-							</div>
-						</div>
-						<div class="settings-row last show-on-change">
-							<div class="settings-button-wrapper">
-								<button class="settings-button settings-submit option-anim white" type="submit"><span class="helper"></span><span class="main-page-option-title">Применить</span></button>
-							</div>
-							<div class="settings-button-wrapper">
-								<button class="settings-button settings-cancell option-anim white"><span class="helper"></span><span class="main-page-option-title">Отменить</span></button>
+								<div class="settings-row-change clearfix">
+									<div class="settings-change-input-wrapper">
+										<input class="settings-input change" type="text" name="new-pass" placeholder="НОВЫЙ ПАРОЛЬ">
+									</div>
+									<div class="settings-change-input-wrapper">
+										<input class="settings-input change" type="text" name="rep-new-pass" placeholder="ПОВТОР НОВОГО ПАРОЛЯ">
+									</div>
+									<div class="settings-row-change-submit">
+										<div class="settings-button-wrapper">
+											<button class="settings-button settings-submit option-anim white" type="submit"><span class="helper"></span><span class="main-page-option-title">Применить</span></button>
+										</div>
+										<div class="settings-button-wrapper">
+											<button class="settings-button settings-cancell option-anim white"><span class="helper"></span><span class="main-page-option-title">Отменить</span></button>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>

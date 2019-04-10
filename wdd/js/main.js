@@ -1,31 +1,85 @@
 $(function(){
-	var maxWidth  = $('#outer').outerWidth();
-	var maxHeight = $('#outer').outerHeight();
+	// Content scaling
+	var maxWidth  = 1920;
+	var maxHeight = 1080;
 	var $window = $(window);
     var scale;
     var width = $window.width();
     var height = $window.height();
+    var transformMethod = $('#wrap').hasClass('zoom') ? 'zoom' : '-webkit-transform';
+
+	// Nav scaling
+	var maxWidthNav  = 1920;
+	var maxHeightNav = 100;
+	var $windowNav = $(window);
+    var scaleNav;
+    var widthNav = $windowNav.width();
+    var heightNav = $windowNav.height();
+
 	$(window).resize(function(evt) {
+		// content scaling ===============================
 	    width = $window.outerWidth();
 	    height = $window.outerHeight();
 
-	    // early exit
-	    if(width >= maxWidth && height >= maxHeight) {
-	        $('#outer').css({'-webkit-transform': ''});
-	        $('#wrap').css({ width: '', height: '' });
-	        return;
+		    console.log(width)
+	    if(width < 768){
+	        $('#outer').attr({'style':''});
+	        $('#wrap').attr({'style':''});
+	        $('#nav-outer').attr({'style':''});
+	        $('#nav-wrap').attr({'style':''});
+	    }else{
+		    if(width >= maxWidth && height >= maxHeight) {
+		        $('#outer').css({transformMethod: ''});
+		        $('#wrap').css({ width: '', height: '' });
+		        return;
+		    }
+		    console.log(width)
+		    scale = Math.min(width/maxWidth, height/maxHeight);
+			$('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
+		    if(transformMethod === 'zoom'){
+			    $('#outer').css({'zoom': scale});
+		    }else{
+			    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+		    }
+
+			// nav scaling ===============================
+		    widthNav = $windowNav.outerWidth();
+		    heightNav = $windowNav.outerHeight();
+
+		    if(widthNav >= maxWidthNav && heightNav >= maxHeightNav) {
+		        $('#nav-outer').css({'zoom': ''});
+		        $('#nav-wrap').css({ width: '', height: '' });
+		        return;
+		    }
+
+		    scaleNav = Math.min(widthNav/maxWidthNav, heightNav/maxHeightNav);
+			$('#nav-wrap').css({ width: maxWidthNav * scaleNav, height: maxHeightNav * scaleNav });
+			$('#nav-outer').css({'zoom': scaleNav});
 	    }
-
-	    scale = Math.min(width/maxWidth, height/maxHeight);
-
-	    $('#outer').css({'zoom': scale});
-	    $('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
 	});
 
-    scale = Math.min(width/maxWidth, height/maxHeight);
 
-    $('#outer').css({'zoom': scale});
-    $('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
+	if(width < 768){
+        $('#outer').attr({'style':''});
+        $('#wrap').attr({'style':''});
+        $('#nav-outer').attr({'style':''});
+        $('#nav-wrap').attr({'style':''});
+	}else{
+		// content scaling ===============================
+	    scale = Math.min(width/maxWidth, height/maxHeight);
+	    if(transformMethod === 'zoom'){
+		    $('#outer').css({'zoom': scale});
+	    }else{
+		    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+	    }
+		$('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
+
+		// nav scaling ===============================
+	    scaleNav = Math.min(widthNav/maxWidthNav, heightNav/maxHeightNav);
+		$('#nav-outer').css({'zoom': scaleNav});
+		$('#nav-wrap').css({ width: maxWidthNav * scaleNav, height: maxHeightNav * scaleNav });
+	}
+
 
 	$('.change-pass-visibility').on('click',function(e){
 		var _this = $(this);
@@ -91,50 +145,68 @@ $(function(){
 		e.preventDefault();
 		_this = $(this);
 		var p = _this.closest('.settings-input-wrapper');
-		var input = p.find('input');
+		var input = p.find('.settings-input:first-child').eq(0);
+		var rowChange = p.find('.settings-row-change');
 
-		$('.settings-input.on').removeClass('on');
-		$(".settings-input-edit.on").removeClass('on');
+		// $('.settings-input.on').removeClass('on');
+		// $(".settings-input-edit.on").removeClass('on');
 
-		if(input.is(':disabled')){
-			input.prop('disabled','')
-			input.addClass('on')
-			input.focus()
+		// if(input.is(':disabled')){
+			$('.settings-input:not(.change)').prop('disabled','disabled');
+			$('.settings-input').removeClass('on');
+			$('.settings-input-edit').removeClass('on');
+			$('.settings-row-change').removeClass('opened');
+
+			input.prop('disabled','');
+			input.addClass('on');
+			input.focus();
 			$(this).addClass('on');
-			prev_settings_value = input.val();
-		}else{
+			rowChange.addClass('opened');
+			// prev_settings_value = input.val();
+		// }else{
 
-			if(input.prop('name') == 'name'){
-				if(input.val() == ''){
-					input.addClass('error');
-					input.focus();
-					return false;
-				}
-			}else if(input.prop('name') == 'phone'){
-				if(input.val().length != 16){
-					input.addClass('error');
-					input.focus();
-					return false;
-				}
+			// if(input.prop('name') == 'name'){
+			// 	if(input.val() == ''){
+			// 		input.addClass('error');
+			// 		input.focus();
+			// 		return false;
+			// 	}
+			// }else if(input.prop('name') == 'phone'){
+			// 	if(input.val().length != 16){
+			// 		input.addClass('error');
+			// 		input.focus();
+			// 		return false;
+			// 	}
 				
-			}else if(input.prop('name') == 'mail'){
-				if(!validateEmail(input.val())){
-					input.addClass('error');
-					input.focus();
-					return false;
-				}
+			// }else if(input.prop('name') == 'mail'){
+			// 	if(!validateEmail(input.val())){
+			// 		input.addClass('error');
+			// 		input.focus();
+			// 		return false;
+			// 	}
 				
-			}else if(input.prop('name') == 'password'){
-				if(input.val() == ''){
-					input.addClass('error');
-					input.focus();
-					return false;
-				}
-			}
-			$('.settings-input').removeClass('error');
-	    	disableInput(input,$(this));
-			SETTINGS_CHANGE_FLAG = checkToShowSubmit(input, SETTINGS_CHANGE_FLAG, prev_settings_value);
-		}
+			// }else if(input.prop('name') == 'password'){
+			// 	if(input.val() == ''){
+			// 		input.addClass('error');
+			// 		input.focus();
+			// 		return false;
+			// 	}
+			// }
+			// $('.settings-input').removeClass('error');
+	  //   	disableInput(input,$(this));
+			// SETTINGS_CHANGE_FLAG = checkToShowSubmit(input, SETTINGS_CHANGE_FLAG, prev_settings_value);
+
+			// function checkToShowSubmit(input, set_change_flag, prev_set_val){
+			// 	var cur_settings_value = input.val();
+			// 	if(!set_change_flag && cur_settings_value !== prev_set_val){
+			// 		$('.show-on-change').addClass('on');
+			// 		return true;
+			// 	}else{
+			// 		return false;
+			// 	}
+			// }
+
+		// }
 	})
 	if($("[name='phone']").length){
 		$("[name='phone']").mask("+7(999)999-99-99");
@@ -154,11 +226,17 @@ $(function(){
 		$('.serial-carousel').owlCarousel({
 		    loop:true,
 		    margin:60,
+		    nav:false,
 		    responsiveClass:true,
 		    responsive:{
 		        0:{
-		            items:4,
-		            nav:false
+		            items:1
+		        },
+		        400:{
+		            items:2
+		        },
+		        768:{
+		            items:4
 		        }
 		    }
 		})
@@ -248,15 +326,6 @@ function disableInput(input,pencil){
 	input.prop('disabled','disabled')
 	input.removeClass('on')
 	pencil.removeClass('on')
-}
-function checkToShowSubmit(input, set_change_flag, prev_set_val){
-	var cur_settings_value = input.val();
-	if(!set_change_flag && cur_settings_value !== prev_set_val){
-		$('.show-on-change').addClass('on');
-		return true;
-	}else{
-		return false;
-	}
 }
 function validateEmail(val) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

@@ -173,7 +173,7 @@ p{
 .top-nav{
     padding-top: 35px;
     padding-left: 50px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -201,7 +201,8 @@ p{
     height: 20px;
     cursor: pointer;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
+    /*background: url(../img/burger.svg) no-repeat center center;*/
 }
 .top-nav-burger span {
     width: 100%;
@@ -301,7 +302,16 @@ p{
 }
 
 .option-anim{
+    text-decoration: none;
 	position: relative;
+    outline: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 .option-anim .helper{
 	display: block;
@@ -591,6 +601,17 @@ p{
     width: 100%;
     height: 100%;
 }
+.settings-row-change{
+    margin-top: 15px;
+    display: none;
+}
+.settings-row-change.opened{
+    display: block;
+}
+.settings-change-input-wrapper{
+    margin-bottom: 15px;
+    width: 100%;
+}
 .settings-row {
     /*height: 77px;*/
     width: 100%;
@@ -613,8 +634,8 @@ p{
 }
 .settings-input-wrapper{
 	width: 100%;
-	height: 77px;
-	line-height: 77px;
+	/*height: 77px;
+	line-height: 77px;*/
 	padding-right: 80px;
 	position: relative;
 }
@@ -638,6 +659,9 @@ p{
 textarea.settings-input{
 	height: 300px;
 	line-height: 42px;
+}
+.settings-input.change{
+    border: 2px solid #fff;
 }
 .settings-input.on{
     color: rgba(255,255,255,.5);
@@ -776,7 +800,7 @@ textarea.settings-input{
 }
 .top-nav-links{
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     width: 70%;
     padding-left: 20px;
     position: relative;
@@ -800,21 +824,29 @@ textarea.settings-input{
     color: #fff;
     text-transform: uppercase;
     font-size: 34px;
-    line-height: 24px;
+    line-height: 20px;
+    height: 24px;
     text-decoration: none;
+    display: flex;
+    justify-content: space-between;
 }
 .top-nav-links-a.active:before {
     content: '';
     display: block;
-    width: auto;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    position: absolute;
-    top: -2px;
-    bottom: 5px;
-    left: 18%;
-    right: 18%;
+    height: 100%;
+    width: 100%;
+    background:  url(../img/tri.svg) no-repeat left center;
+    background-size: contain;
 }
+.top-nav-links-a.active:after {
+    transform: rotate(180deg);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background:  url(../img/tri.svg) no-repeat left center;
+    background-size: contain;
+}/*
 .top-nav-links-a.active:after {
     content: '';
     display: block;
@@ -825,12 +857,13 @@ textarea.settings-input{
     top: 8px;
     left: 30px;
     right: 30px;
-}
+}*/
 .top-nav-links-a span {
     background: #000;
     z-index: 2;
     position: relative;
     padding: 0 10px;
+    line-height: 28px;
 }
 .serial-wrap{
     padding-top: 90px;
@@ -939,12 +972,35 @@ textarea.settings-input{
     line-height: 40px;
     margin-bottom: 80px;
 }
-#wrap{
+#nav-wrap{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     /*bottom: 0;*/
+    margin: auto;
+    width: 1920px;
+    height: 100px;
+}
+#nav-outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*bottom: 0;*/
+    margin: auto;
+    width: 1920px !important;
+    height: 100px !important;
+    /*padding: 125px 185px 125px 125px;
+    box-sizing: border-box;*/
+    -webkit-transform-origin: top left;
+}
+#wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: auto;
     width: 1920px;
     height: 1080px;
@@ -1014,6 +1070,7 @@ textarea.settings-input{
 .collections-content{
     /*width: 100%;
     display: block;*/
+    padding-right: 30px;
 }
 .collections-wrap{
     /*padding-top: 35px;*/
@@ -1103,7 +1160,7 @@ textarea.settings-input{
     transform: translate(-50%,-50%);
 }
 .collections-icon-wrapper{
-    width: 340px;
+    width: 350px;
     height: 300px;
 }
 .collections-icon-table{
@@ -1176,4 +1233,279 @@ textarea.settings-input{
     right: 50%;
     bottom: 2px;
     background: #fff;
+}
+
+@media all and (max-width: 767px){
+    .top-nav-logo{
+        width: 80px;
+        right: 15px;
+        top: 10px;
+    }
+    .top-nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+    .main-menu {
+        padding: 150px 20px 20px;
+    }
+    .top-nav-logo.menu-open {
+        right: 50%;
+        top: 70px;
+        transform: translateX(50%);
+        width: 200px;
+    }
+    .main-menu-options {
+        width: 100%;
+    }
+    .main-menu-option {
+        font-size: 20px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+    }
+    .main-menu-option {
+        height: 70px;
+    }
+    .top-nav-settings{
+        top: 13px;
+        right: 15px;
+    }
+    #nav-wrap{
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    #nav-outer{
+        position: relative;
+        width: 100% !important;
+        height: 50px !important;
+    }
+    .main-page{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #000 url(../img/main-page-doc.png) no-repeat 70% center;
+        background-size: cover;
+    }
+    #wrap{
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    .main-page #outer{
+        padding: 15px;
+    }
+    #outer{
+        position: static;
+        width: 100% !important;
+        height:  auto !important;
+    }
+    .main-page-options{
+        position: absolute;
+        top: 50px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        width: auto;
+        height: auto;
+    }
+    .main-page-option, .main-page-option span.main-page-option-title{
+        font-size: 50px;
+    }
+    .main-menu-option span.main-page-option-title{
+        position: static;
+        transform: none;
+    }
+    .main-menu.active .main-menu-bg {
+        background-position: 58% center;
+    }
+    .settings-label-wrapper{
+        display: none;
+    }
+    .account-settings-page{
+        position: static;
+    }
+    html, body{
+        overflow: visible;
+    }
+    .settings-wrap{
+        padding: 15px;
+        position: static;
+    }
+    .settings-input-wrapper {
+        width: 100%;
+        display: block;
+        padding-right: 50px;
+    }
+    .top-nav-title{
+        font-size: 13px;
+        margin-left: 10px;
+    }
+    .settings-input{
+        font-size: 20px;
+    }
+    .settings-input{
+        height: 50px;
+    }
+    .settings-input-edit{
+        width: 35px;
+        height: 35px;
+        background-size: 100%;
+    }
+    .settings-button {
+        height: 50px;
+        line-height: 50px;
+        font-size: 15px;
+    }
+    .settings-button-wrapper:first-child{
+        padding-right: 5px;
+    }
+    .settings-button-wrapper:last-child{
+        padding-left: 5px;
+    }
+    .top-nav{
+        background: #000;
+    }
+    .top-nav-links{
+        padding-left: 20px;
+        /*float: left;*/
+        width: 60%;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    .top-nav-links-li{
+        width: auto;
+        padding: 0;
+    }
+    .top-nav-links-a{
+        font-size: 20px;
+    }
+    .page-wrap{
+        padding: 15px;
+        position: static;
+        transform: none;
+    }
+    .collections-left{
+        width: 100%;
+        float: none;
+    }
+    .collections-right{
+        width: 100%;
+        float: none;
+        height: auto;
+    }
+    .collections-desc{
+        padding-top: 0;
+        margin-bottom: 30px;
+    }
+    .serial-title{
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .collections-content{
+        height: 90px;
+    }
+    .collections-desc p{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .collections-btn{
+        font-size: 20px;
+    }
+    .collections-btn-wrapper{
+        width: 100%;
+        height: 116px;
+        width: 50%;
+    }
+    .collections-icon-wrapper{
+        width: 50%;
+        height: 116px;
+    }
+    .collections-icon{
+        height: 40px;
+        width: 40px;
+    }
+    .collections-icon img{
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .collections-icon-table{
+        width: 100%;
+        height: 116px;
+        padding-right: 30px;
+    }
+    .simplebar-scrollbar{
+        top: 0;
+        width: 14px;
+        right: -6px;
+        background-size: contain;
+    }
+    .simplebar-track.simplebar-vertical:before{
+        width: 14px;
+        right: -6px;
+    }
+    .simplebar-track.simplebar-vertical:after{
+        width: 14px;
+        right: -6px;
+    }
+    .collections-icon-row{
+        justify-content: flex-end;
+    }
+    .collections-progress{
+        margin-top: 30px;
+        float: none;
+    }
+    .collections-progress p{
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .collections-progress-bar{
+        width: 100%;
+        height: 15px;
+    }
+    .collections-right{
+        padding-top: 30px;
+        text-align: center;
+    }
+    .collections-right img{
+        position: static;
+        max-width: 60%;
+    }
+    .serial-desc-left p {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+    .serial-desc-button {
+        font-size: 30px;
+        line-height: 60px;
+        padding: 0 10px;
+        height: 60px;
+        width: 100%;
+        margin-top: 110px;
+    }
+    .serial-desc-left {
+        padding-top: 0;
+        width: 100%;
+    }
+    .serial-desc-right {
+        height: 100px;
+        width: 100%;
+        margin-left: 15px;
+        margin-top: -178px;
+    }
+    .serial-nav {
+        padding-right: 0;
+    }
+    .serial-desc {
+        margin-bottom: 20px;
+    }
+    .serial-nav-title{
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .serial-nav-time {
+        font-size: 20px;
+    }
 }
