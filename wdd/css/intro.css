@@ -1112,12 +1112,13 @@ textarea.settings-input{
     height: 300px;
 }
 .collections-icon-table{
-    width: 340px;
+    width: 350px;
     height: 300px;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
     padding-right: 40px;
+    padding-left: 10px;
 }
 .collections-icon-row {
     display: flex;
