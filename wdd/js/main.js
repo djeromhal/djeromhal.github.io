@@ -72,6 +72,9 @@ $(function(){
 		$('.main-menu').toggleClass('active');
 		$('.top-nav-logo').toggleClass('menu-open');
 		$('.top-nav-settings').toggleClass('hidden');
+		$('.top-nav-links').toggleClass('hidden');
+		$('.top-nav-title').toggleClass('hidden');
+
 		if($('.main-menu-options').hasClass('shown')){
 			$('.main-menu-options').removeClass('shown delay');
 		}else{
@@ -147,48 +150,50 @@ $(function(){
 	// 	    }
 	//     }
 	// });
-	$('.serial-carousel').owlCarousel({
-	    loop:true,
-	    margin:60,
-	    responsiveClass:true,
-	    responsive:{
-	        0:{
-	            items:4,
-	            nav:false
-	        }
-	    }
-	})
-	$('.buy-page-car').owlCarousel({
-	    loop:true,
-	    margin:60,
-	    nav:false,
-	    responsiveClass:true,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        768:{
-	        	items: 2
-	        },
-	        1024:{
-	        	items: 4
-	        }
-	    }
-	})
-	$('.feedback-car').owlCarousel({
-	    loop:true,
-	    margin:0,
-	    dots: false,
-		nav: true,
-		navText: ["<img src='img/nav-left.png'>","<img src='img/nav-right.png'>"],
-	    responsiveClass:true,
-	    responsive:{
-	        0:{
-	            items:1,
-	            nav:true
-	        }
-	    }
-	})
+	if($('.owl-carousel').length){
+		$('.serial-carousel').owlCarousel({
+		    loop:true,
+		    margin:60,
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:4,
+		            nav:false
+		        }
+		    }
+		})
+		$('.buy-page-car').owlCarousel({
+		    loop:true,
+		    margin:60,
+		    nav:false,
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        768:{
+		        	items: 2
+		        },
+		        1024:{
+		        	items: 4
+		        }
+		    }
+		})
+		$('.feedback-car').owlCarousel({
+		    loop:true,
+		    margin:0,
+		    dots: false,
+			nav: true,
+			navText: ["<img src='img/nav-left.png'>","<img src='img/nav-right.png'>"],
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:true
+		        }
+		    }
+		})
+	}
 	$(window).on('scroll',function(){
 		console.log($('.top-nav').offset().top)
 		if($('.top-nav').offset().top > 10){
@@ -202,6 +207,42 @@ $(function(){
 	}else{
 		$('.top-nav-logo').removeClass('scroll');
 	}
+
+	$('.arrow-open').on('click', function(e){
+		var _this = $(this);
+		var p = _this.closest('.select-wrapper');
+		var select = p.find('.select');
+		var input = p.find('.select-input');
+
+		input.toggleClass('opened');
+		select.toggleClass('opened');
+	})
+	$('.select-option').on('click', function(e){
+		var _this = $(this);
+		var p = _this.closest('.select-wrapper');
+		var select = p.find('.select');
+		var input = p.find('.select-input');
+
+		var text = _this.text();
+
+		input.val(text)
+		input.toggleClass('opened');
+		select.toggleClass('opened');
+	})
+	$('.collections-btn').on('click', function(e){
+		var _this = $(this);
+		var id = _this.attr('href');
+
+		$('.tab-content.active').removeClass('active');
+		$(id).addClass('active');
+	})
+	$('.collections-icon').on('click', function(e){
+		var _this = $(this);
+		var img = _this.find('img');
+		var src = img.attr('data-src');
+
+		$('#collections-main-img').find('img').attr('src', src);
+	})
 })
 function disableInput(input,pencil){
 	input.prop('disabled','disabled')
