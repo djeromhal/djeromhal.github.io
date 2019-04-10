@@ -582,11 +582,14 @@ p{
 }
 .page-wrap{
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     bottom: 0;
     right: 0;
     padding: 125px 185px 125px 125px;
+    width: 100%;
+    height: 100%;
 }
 .settings-row {
     /*height: 77px;*/
@@ -935,14 +938,6 @@ textarea.settings-input{
     font-size: 30px;
     line-height: 40px;
     margin-bottom: 80px;
-}
-.page-wrap{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 120px;
 }
 #wrap{
     position: absolute;

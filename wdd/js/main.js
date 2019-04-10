@@ -18,13 +18,13 @@ $(function(){
 
 	    scale = Math.min(width/maxWidth, height/maxHeight);
 
-	    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+	    $('#outer').css({'zoom': scale});
 	    $('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
 	});
 
     scale = Math.min(width/maxWidth, height/maxHeight);
 
-    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+    $('#outer').css({'zoom': scale});
     $('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
 
 	$('.change-pass-visibility').on('click',function(e){
