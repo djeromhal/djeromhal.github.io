@@ -2,6 +2,7 @@ body{
 	background: #000000;
 	font-family: 'Geometria';
 	font-weight: 300;
+    overflow-x: hidden;
 }
 *{
 	box-sizing: border-box;
