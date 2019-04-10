@@ -494,6 +494,7 @@ p{
 .buy-page-car-img{
     border: 2px solid #fff;
     margin-bottom: 30px;
+    position: relative;
 }
 .buy-page-car-img:before{
     content: '+';
@@ -537,6 +538,9 @@ p{
 }
 .f-right{
     float: right;
+}
+.buy-page-recommends-item{
+    text-align: center;
 }
 .buy-page-recommends-item img{
     max-width: 100%;
@@ -620,4 +624,317 @@ footer{
         padding-left: 0;
         padding-right: 0;
     }
+    .main-menu-options{
+        width: 50%;
+    }
+    .buy-page-logo{
+        left: -47px;
+    }
 } 
+@media all and (max-width: 1679px){
+    .buy-page .container {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .container{
+        width: 100%;
+    }
+    .buy-page-start{
+        font-size: 60px;
+        line-height: 60px;
+        padding: 15px 50px 5px;
+    }
+    .buy-page-price{
+        font-size: 30px;
+        line-height: 30px;
+        padding: 15px 30px;
+    }
+    .title-style-1{
+        font-size: 60px;
+    }
+    .title-style-2 {
+        font-size: 35px;
+    }
+    .buy-page-car-img:before {
+        font-size: 40px;
+    }
+    .buy-page-car-title{
+        line-height: 30px;
+        font-size: 30px;
+    }
+    .buy-page-car-info {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .buy-page-recommends-item img {
+        max-width: 80%;
+    }
+    .buy-page-recommends-title{
+        font-size: 25px;
+    }
+    .feedback-car-text {
+        height: 330px;
+        line-height: 330px;
+        font-size: 30px;
+    }   
+    .feedback-car .owl-prev {
+        top: 135px;
+        left: -40px;
+    }
+    .feedback-car .owl-next {
+        top: 135px;
+        right: -40px;
+    }
+    .feedback-car-author{
+        font-size: 35px;
+    }
+    .production{
+        font-size: 20px;
+    }
+    img{
+        max-width: 100%;
+    }
+    .footer-links a {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .main-menu-option{
+        font-size: 35px;
+    }
+    .main-menu-options {
+        width: 60%;
+    }
+    .top-nav-logo.menu-open {
+        right: 5%;
+        width: 30%;
+    }
+}
+@media all and (max-width: 1023px){
+    .buy-page .container{
+        padding-left: 15px; 
+        padding-right: 15px; 
+    }
+    .buy-page-logo {
+        left: 0;
+    }
+    .buy-page {
+        background: url(../img/doc.png) no-repeat calc(100% + 350px) 250px, url(../img/buy-page-multiple-bg.png) no-repeat center 1200px;
+        padding-top: 130px;
+        background-size: 700px, auto;
+    }
+    .buy-page-start {
+        font-size: 30px;
+        line-height: 30px;
+        padding: 15px 50px 10px;
+    }
+    .buy-page-price {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 10px 20px;
+    }
+    .title-style-1 {
+        font-size: 40px;
+        margin-bottom: 70px;
+    }
+    .title-style-2 {
+        font-size: 25px;
+        margin-bottom: 45px;
+    }
+    .section-2 {
+        margin-bottom: 100px;
+    }
+    .section-4 {
+        margin-bottom: 100px;
+    }
+    .feedback-car {
+        padding: 0 50px;
+    }
+    .feedback-car-text {
+        height: 230px;
+        line-height: 230px;
+        font-size: 20px;
+    }
+    .feedback-car .owl-prev {
+        top: 105px;
+        left: 10px;
+        height: 30px;
+    }
+    .feedback-car .owl-next {
+        top: 105px;
+        right: 10px;
+        height: 30px;
+    }
+    .feedback-car .owl-next img, .feedback-car .owl-prev img{
+        height: 100%;
+    }
+    .feedback-car-author {
+        font-size: 25px;
+    }
+    .top-nav-logo.menu-open {
+        right: 50%;
+        top: 70px;
+        transform: translateX(50%);
+        width: 200px;
+    }
+    .main-menu-options {
+        width: 100%;
+    }
+    .main-menu {
+        padding: 150px 20px 20px;
+    }
+}
+@media all and (max-width: 767px){
+    .buy-page p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .buy-page-recommends{
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .top-nav-logo{
+        width: 80px;
+        right: 15px;
+        top: 10px;
+    }
+    .top-nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+    .buy-page{
+        padding-top: 70px;
+        background: url(../img/doc.png) no-repeat calc(100% + 250px) 150px, url(../img/buy-page-multiple-bg.png) no-repeat center 1200px;
+        background-size: 500px, auto;
+    }
+    .buy-page-logo{
+        margin-bottom: 30px;
+    }
+    .buy-page-desc {
+        margin-bottom: 30px;
+    }
+    .buy-page-start {
+        font-size: 20px;
+        line-height: 25px;
+        padding: 10px 30px 7px;
+    }
+    .buy-page-price {
+        font-size: 16px;
+        line-height: 18px;
+        padding: 8px 10px;
+        margin-left: 10px;
+    }
+    .buy-page-price span:nth-child(2) {
+        top: 4px;
+        left: 4px;
+    }
+    .buy-page-price span:nth-child(3) {
+        top: 8px;
+        left: 8px;
+    }
+    .buy-page-price span:nth-child(4) {
+        top: 12px;
+        left: 12px;
+    }
+    .section-1 {
+        margin-bottom: 100px;
+    }
+    .title-style-1 {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    .title-style-2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .section-2 {
+        margin-bottom: 50px;
+    }
+    .buy-page-car {
+        margin-bottom: 40px;
+    }
+    .section-3 {
+        margin-bottom: 70px;
+    }
+    .buy-page-recommends-item{
+        margin-bottom: 40px;
+    }
+    .buy-page-recommends-item img {
+        max-width: 200px;
+        margin-bottom: 30px;
+    }
+    .buy-page-recommends-item {
+        width: 100%;
+    }
+    .buy-page-recommends-title {
+        font-size: 16px;
+    }
+    .section-3 .title-style-2 {
+        margin-bottom: 30px;
+    }
+    .buy-page-watch{
+        margin-bottom: 30px;
+    }
+    .section-4{
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .feedback-car-text {
+        height: auto;
+        line-height: 20px;
+        font-size: 16px;
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+    .feedback-car .owl-prev, .feedback-car .owl-next {
+        top: 50%;
+        margin-top: -25px;
+    }
+    .feedback-car {
+        padding: 0 30px;
+    }
+    .feedback-car .owl-prev{
+        left: 0;
+    }
+    .feedback-car .owl-prev{
+        right: 0;
+    }
+    .feedback-car-author {
+        font-size: 16px;
+    }
+    .section-5 {
+        margin-bottom: 100px;
+    }
+    footer{
+        text-align: center;
+    }
+    footer img{
+        max-width: 150px;
+    }
+    .footer-item{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .production {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .footer-links a {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .censor{
+        text-align: center;
+    }
+    .main-menu-option {
+        font-size: 20px;
+    }
+    .main-menu-option {
+        height: 70px;
+    }
+    .top-nav-settings{
+        top: 13px;
+        right: 15px;
+    }
+}

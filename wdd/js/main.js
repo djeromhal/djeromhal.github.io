@@ -161,11 +161,17 @@ $(function(){
 	$('.buy-page-car').owlCarousel({
 	    loop:true,
 	    margin:60,
+	    nav:false,
 	    responsiveClass:true,
 	    responsive:{
 	        0:{
-	            items:4,
-	            nav:false
+	            items:1
+	        },
+	        768:{
+	        	items: 2
+	        },
+	        1024:{
+	        	items: 4
 	        }
 	    }
 	})
