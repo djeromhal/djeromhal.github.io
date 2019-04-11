@@ -115,7 +115,7 @@ $(function(){
 	}
 
 	$('.option-anim').on('click',function(e){
-		e.preventDefault();
+		// e.preventDefault();
 		var _this = $(this);
 		$(this).addClass('active');
 		setTimeout(function(){
@@ -226,6 +226,124 @@ $(function(){
 	// 	    }
 	//     }
 	// });
+	$('#form-authors').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var mail = form.find('#input-1');
+		var subj = form.find('#input-2');
+		var mess = form.find('#input-3');
+		var IS_VALID = true;
+		if(subj.val().trim() == ''){
+			subj.addClass('error');
+			IS_VALID = false;
+		}else{
+			subj.removeClass('error');
+		}
+		if(mess.val().trim() == ''){
+			mess.addClass('error');
+			IS_VALID = false;
+		}else{
+			mess.removeClass('error');
+		}
+		if(!validateEmail(mail.val())){
+			mail.addClass('error');
+			IS_VALID = false;
+		}else{
+			mail.removeClass('error');
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: "test.ru",
+				data: 'hello=buy',
+				cache: false,
+				success: function(data){
+					alert('never');
+				}
+			});
+		}
+	})
+	$('#form-account').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+
+		var input = form.find('.settings-input.on');
+		var parent = input.closest('.settings-input-wrapper');
+		var IS_VALID = true;
+
+		if(input.attr('name') == 'name'){
+			if(input.val().trim() == ''){
+				validFalse();
+			}else{
+				validTrue();
+			}
+		}
+		if(input.attr('name') == 'phone'){
+			if(input.val().length != 16){
+				validFalse();
+			}else{
+				validTrue();
+			}
+		}
+
+		if(input.attr('name') == 'mail'){
+			if(!validateEmail(input.val())){
+				validFalse();
+			}else{
+				validTrue();
+			}
+		}
+		if(input.attr('name') == 'password'){
+			if(input.val().trim() == '' || input.val().trim().length < 6){
+				validFalse();
+			}else{
+				validTrue();
+			}
+		}
+
+		function validTrue(){
+			input.attr('data-value', input.val())
+			
+			input.removeClass('error')
+			input.prop('disabled','disabled');
+			input.removeClass('on');
+			parent.find('.settings-input-edit').removeClass('on');
+			parent.find('.settings-row-change').removeClass('opened');
+		}
+		function validFalse(){
+			input.addClass('error');
+			input.focus();
+			IS_VALID = false;
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: "test.ru",
+				data: 'hello=buy',
+				cache: false,
+				success: function(data){
+					alert('never');
+				}
+			});
+		}
+	})
+	$('.settings-cancell').on('click',function(e){
+		e.preventDefault();
+		var _this = $(this);
+
+		var parent = _this.closest('.settings-input-wrapper');
+		var input = parent.find('.settings-input.on');
+
+		input.val(input.attr('data-value'));
+		input.removeClass('error');
+		input.prop('disabled','disabled');
+		input.removeClass('on');
+		parent.find('.settings-input-edit').removeClass('on');
+		parent.find('.settings-row-change').removeClass('opened');
+	})
+
 	if($('.owl-carousel').length){
 		$('.serial-carousel').owlCarousel({
 		    loop:true,

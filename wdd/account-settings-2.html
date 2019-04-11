@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Intro</title>
+	<title>Account Settings</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/intro.css">
 	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1">
@@ -11,7 +11,8 @@
 	<div id="nav-wrap">
 		<div id="nav-outer">
 			<div class="top-nav">
-				<div class="top-nav-burger"></div>
+				<div class="top-nav-burger"><span></span><span></span><span></span></div>
+					<h2 class="top-nav-title">Управление подпиской</h2>
 				<div class="top-nav-logo">
 					<a href="#"><img src="img/logo.png"></a>
 				</div>
@@ -19,14 +20,28 @@
 			</div>
 		</div>
 	</div>
-	<div class="main-page">
-		<div id="wrap" class="zoom">
+	<div class="account-settings-page">
+		<div id="wrap">
 			<div id="outer">
-				<div class="main-page-options">
-					<a href="#" class="main-page-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Сериал</span></a>
-					<a href="#" class="main-page-option option-anim yellow"><span class="helper"></span><span class="main-page-option-title">Комикс</span></a>
+				<div class="settings-wrap">
+					<div class="subs-man">
+						<div class="subs-man-item">
+							<h3>ДОСТУП К ОСНОВНОМУ ПАКЕТУ</h3>
+							<h4>БУДЕТ ОТКЛЮЧЕН 18.05.2020</h4>
+							<p>Стоимость: 400 &#x20bd;</p>
+							<p>Оформлен: 18.04.2019</p>
+						</div>
+						<div class="subs-man-item">
+							<h3>ПОДПИСКА НА ИНТЕРАКТИВНЫЙ КОМИКС</h3>
+							<h4>ПОДКЛЮЧЕНА</h4>
+							<p>Стоимость: 250 Я в месяц</p>
+							<p>Оформлена: 18.04.2019</p>
+							<p>Следующий платёж: 18.05.2019, 23:59 (GMT+2)</p>
+						</div>
+						<a href="" class="subs-man-disable option-anim blue"><span class="helper"></span><span class="main-page-option-title">Отключить</span></a>
+					</div>
 				</div>
-
+				<a href="#" class="back"><i class="icon-back"></i><span>Назад в настройки</span></a>
 				<div class="main-menu">
 					<div class="main-menu-bg"></div>
 					<div class="main-menu-options">
@@ -42,6 +57,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.maskedinput.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

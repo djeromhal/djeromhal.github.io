@@ -208,10 +208,15 @@ p{
     height: 20px;
     cursor: pointer;
     display: inline-block;
-    vertical-align: middle;
-    /*background: url(../img/burger.svg) no-repeat center center;*/
+    vertical-align: top;
+    background: url(../img/burger.svg) no-repeat center center;
+    transition: all .5s ease;
 }
-.top-nav-burger span {
+.top-nav-burger.open{
+    transform: rotate(360deg);
+    background: url(../img/x.svg) no-repeat center center;
+}
+/*.top-nav-burger span {
     width: 100%;
     height: 1px;
     background: #fff;
@@ -230,8 +235,8 @@ p{
 }
 .top-nav-burger span:last-child{
 	bottom: 0;
-}
-.top-nav-burger.open span{
+}*/
+/*.top-nav-burger.open span{
     transform-origin: 0 0;
 }
 .top-nav-burger.open span:first-child{
@@ -244,7 +249,7 @@ p{
 .top-nav-burger.open span:last-child{
     transform: rotate(-45deg);
     width: 27px;
-}
+}*/
 
 .top-nav-logo{
 	position: fixed;
@@ -265,17 +270,30 @@ p{
     width: 40%;
 }
 
+.main-settings-page{
+    /*padding: 120px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000 url(../img/main-settings-bg.png) no-repeat calc(100% - 120px) 120px;
+    background-size: auto 90%;
+}
 .main-page{
-	/*padding: 120px;*/
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #000 url(../img/main-page-doc.png) no-repeat right center;
-	background-size: auto 100%;
+    /*padding: 120px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000 url(../img/main-page-doc.png) no-repeat right center;
+    background-size: auto 100%;
 }
 .main-page #outer{
+    padding: 120px;
+}
+.main-settings-page #outer{
     padding: 120px;
 }
 .main-page-options{
@@ -559,9 +577,10 @@ p{
 	width: 100%;
 	height: 100%;
 }
-.collections-page #outer{
-    background: url(../img/coll-bg.png) no-repeat center 90px;
-    background-size: cover;
+.collections-page{
+    background: url(../img/sqr.png) repeat center center, linear-gradient(to bottom, #000 60%, #03223f);
+    background-size: 8px;
+    /*background-size: cover;*/
 }
 .top-nav-title{
     display: inline-block;
@@ -584,9 +603,9 @@ p{
     position: absolute;
     top: 125px;
     left: 125px;
-    bottom: 125px;
+    bottom: 100px;
     right: 185px;
-    overflow: auto;
+    overflow: hidden;
     padding: 0;
 }
 .settings-wrap{
@@ -807,7 +826,7 @@ textarea.settings-input{
 }
 .top-nav-links{
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     width: 70%;
     padding-left: 20px;
     position: relative;
@@ -836,25 +855,29 @@ textarea.settings-input{
     text-decoration: none;
 }
 .top-nav-links-a.active{
-    display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 .top-nav-links-a.active:before {
     content: '';
     display: block;
-    height: 100%;
-    width: 100%;
+    height: 28px;
+    width: 75px;
     background:  url(../img/tri.svg) no-repeat left center;
     background-size: contain;
+    position: absolute;
+    top: 0;
+    left: -75px;
 }
 .top-nav-links-a.active:after {
-    transform: rotate(180deg);
     content: '';
     display: block;
-    height: 100%;
-    width: 100%;
-    background:  url(../img/tri.svg) no-repeat left center;
+    height: 28px;
+    width: 75px;
+    background:  url(../img/tri2.svg) no-repeat left center;
     background-size: contain;
+    position: absolute;
+    top: 0;
+    right: -75px;
 }/*
 .top-nav-links-a.active:after {
     content: '';
@@ -883,6 +906,37 @@ textarea.settings-input{
 }
 .f-right{
     float: right;
+}
+.text-center{
+    text-align: center;
+}
+.fs100{
+    font-size: 100px !important;
+    line-height: 120px !important;
+}
+.back{
+    color: #fff;
+    font-size: 34px;
+    line-height: 34px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 120px;
+    bottom: 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+.back .icon-back{
+    position: absolute;
+    top: 2px;
+    left: -60px;
+}
+.icon-back:before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 26px;
+    background: url('../img/back-arrow.png') no-repeat center center;
+    background-size: contain;
 }
 .w50p{
     width: 50%;
@@ -973,6 +1027,12 @@ textarea.settings-input{
 .agreement-title{
     text-transform: uppercase;
 }
+.agreement-scroll{
+    padding-right: 40px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
 .yellow-color{
     color: #ffb602;
 }
@@ -989,7 +1049,12 @@ textarea.settings-input{
     /*bottom: 0;*/
     margin: auto;
     width: 1920px;
-    height: 100px;
+    height: 90px;
+}
+.bg-black{
+    background-color: #000;
+    z-index: 1;
+    height: 90px;
 }
 #nav-outer{
     position: absolute;
@@ -1243,8 +1308,65 @@ textarea.settings-input{
     bottom: 2px;
     background: #fff;
 }
-
+.subs-man-item{
+    margin-bottom: 50px;
+    color: #fff;
+}
+.subs-man-item h3{
+    font-size: 40px;
+    line-height: 44px;
+    margin-bottom: 10px;
+}
+.subs-man-item h4{
+    font-size: 40px;
+    line-height: 44px;
+    color: #ffb608;
+    margin-bottom: 10px;
+}
+.subs-man-item p{
+    font-size: 35px;
+    line-height: 39px;
+    color: #fff;
+    opacity: .5;
+    margin-bottom: 5px;
+}
+.subs-man-disable {
+    padding: 0;
+    height: 90px;
+    line-height: 94px;
+    display: inline-block;
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 50%;
+    border: 2px solid #fff;
+}
+.subs-man-disable .main-page-option-title{
+    z-index: 1;
+    position: relative;
+}
 @media all and (max-width: 767px){
+    .subs-man-disable {
+        font-size: 30px;
+        height: 50px;
+        line-height: 52px;
+        width: 100%;
+    }
+    .subs-man-item h3,.subs-man-item h4{
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    .subs-man-item p {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+    .main-settings-page{
+        background: #000 url(../img/main-settings-bg.png) no-repeat center center;
+        background-size: 80%;
+    }
     .top-nav-logo{
         width: 80px;
         right: 15px;
@@ -1333,7 +1455,10 @@ textarea.settings-input{
         display: none;
     }
     .account-settings-page{
-        position: static;
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        height: auto;
     }
     html, body{
         overflow: visible;
@@ -1530,8 +1655,12 @@ textarea.settings-input{
         margin-bottom: 20px;
     }
     .ending-page-item .main-page-option-title {
-        position: static;
-        transform: none;
+        /*position: static;
+        transform: none;*/
+    }
+    .fs100{
+        font-size: 20px !important;
+        line-height: 22px !important;
     }
     .ending-page-item {
         font-size: 18px;
@@ -1546,8 +1675,24 @@ textarea.settings-input{
         padding-left: 10px;
     }
     .settings-wrap.scroll {
-        position: static;
+        position: absolute;
+        top: 0;
         padding: 15px;
+        left: 0;
+        right: 0;
+        bottom: 50px;
+        overflow:hidden;
+    }
+    .back{
+        font-size: 20px;
+        left: 35px;
+    }
+    .back .icon-back {
+        top: 8px;
+        left: -20px;
+    }
+    .icon-back:before{
+        height: 16px;
     }
     .agreement p {
         font-size: 16px;
@@ -1626,5 +1771,14 @@ textarea.settings-input{
     }
     .select-input[disabled] {
         padding-right: 50px;
+    }
+    .agreement-scroll{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .bg-black{
+        height: auto;
     }
 }

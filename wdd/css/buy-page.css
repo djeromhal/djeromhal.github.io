@@ -29,7 +29,32 @@ body{
     font-weight: bold;
     font-style: normal;
 }
-
+.zipper{
+    position: relative;
+    display: inline-block;
+}
+.zipper:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -28px;
+    left: -50px;
+    width: 43px;
+    height: 130px;
+    background: url('../img/m1.png') no-repeat center center;
+    background-size: contain;
+}
+.zipper:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -28px;
+    right: -50px;
+    width: 43px;
+    height: 130px;
+    background: url('../img/m2.png') no-repeat center center;
+    background-size: contain;
+}
 .clearfix:after {
   content: "";
   display: table;
@@ -620,6 +645,17 @@ footer{
 .censor{
     text-align: right;
 }
+.soc{
+    margin-top: 75px;
+}
+.soc a{
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 40px;
+}
+.soc a:last-child{
+    margin-right: 0;
+}
 @media all and (max-width: 1919px){
     .buy-page{
         padding-left: 0;
@@ -655,6 +691,9 @@ footer{
     }
     .title-style-2 {
         font-size: 35px;
+    }
+    .zipper:before, .zipper:after{
+        height: 105px;
     }
     .buy-page-car-img:before {
         font-size: 40px;
@@ -709,6 +748,14 @@ footer{
         right: 5%;
         width: 30%;
     }
+    .soc a{
+        margin-right: 20px;
+    }
+    .soc a img{
+        max-height: 24px;
+        height: auto;
+        max-width: 20px;
+    }
 }
 @media all and (max-width: 1023px){
     .buy-page .container{
@@ -740,6 +787,12 @@ footer{
     .title-style-2 {
         font-size: 25px;
         margin-bottom: 45px;
+    }
+    .zipper:before, .zipper:after{
+        height: 90px;
+    }
+    .zipper{
+        margin-left: 50px;
     }
     .section-2 {
         margin-bottom: 100px;
@@ -785,6 +838,9 @@ footer{
     }
 }
 @media all and (max-width: 767px){
+    .zipper{
+        width: 200px;
+    }
     .buy-page p {
         font-size: 20px;
         line-height: 30px;
@@ -865,6 +921,12 @@ footer{
         max-width: 200px;
         margin-bottom: 30px;
     }
+    .buy-page-recommends-item:nth-child(2) img{
+        max-width: 300px;
+    }
+    .buy-page-recommends-item:nth-child(3) img{
+        max-height: 300px;
+    }
     .buy-page-recommends-item {
         width: 100%;
     }
@@ -937,5 +999,8 @@ footer{
     .top-nav-settings{
         top: 13px;
         right: 15px;
+    }
+    .soc{
+        margin-top: 20px;
     }
 }
