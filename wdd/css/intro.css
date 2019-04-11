@@ -1141,6 +1141,9 @@ textarea.settings-input{
     display: block;
     color: #fff;
     text-transform: uppercase;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
 }
 .ending-page-item .main-page-option-title{
     position: absolute;
