@@ -834,6 +834,8 @@ textarea.settings-input{
     line-height: 20px;
     height: 24px;
     text-decoration: none;
+}
+.top-nav-links-a.active{
     display: flex;
     justify-content: space-between;
 }
