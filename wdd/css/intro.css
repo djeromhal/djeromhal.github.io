@@ -925,16 +925,23 @@ textarea.settings-input{
     text-decoration: none;
     display: inline-block;
 }
+.back span{
+    height: 35px;
+    line-height: 35px;
+}
 .back .icon-back{
     position: absolute;
-    top: 2px;
+    top: 0;
     left: -60px;
+    height: 35px;
+    line-height: 35px;
 }
 .icon-back:before{
     content: '';
     display: block;
+    line-height: 35px;
     width: 10px;
-    height: 26px;
+    height: 35px;
     background: url('../img/back-arrow.png') no-repeat center center;
     background-size: contain;
 }
