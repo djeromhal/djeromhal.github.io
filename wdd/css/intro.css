@@ -1545,7 +1545,8 @@ textarea.settings-input{
         padding-left: 0px;
         /*float: left;*/
         width: 55%;
-        overflow: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
         white-space: nowrap;
     }
     .top-nav-links-li{
