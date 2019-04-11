@@ -101,6 +101,10 @@ p{
     text-decoration: none;
     text-align: center;
 }
+.intro-form-submit .main-page-option-title{
+    position: relative;
+    z-index: 1;
+}
 .intro-form-input-wrapper{
 	width: 550px;
 	height: 100px;
