@@ -1078,6 +1078,9 @@ textarea.settings-input{
     margin: auto;
     width: 1920px;
     height: 1080px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
 }
 #outer{
     position: absolute;
@@ -1091,6 +1094,9 @@ textarea.settings-input{
     /*padding: 125px 185px 125px 125px;
     box-sizing: border-box;*/
     -webkit-transform-origin: top left;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
 }
 .ending-page{
     padding: 120px;

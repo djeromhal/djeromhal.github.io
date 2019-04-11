@@ -6,7 +6,7 @@ $(function(){
     var scale;
     var width = $window.width();
     var height = $window.height();
-    var transformMethod = $('#wrap').hasClass('zoom') ? 'zoom' : '-webkit-transform';
+    var transformMethod = $('#wrap').hasClass('zoom') ? 'zoom' : 'transform';
 
 	// Nav scaling
 	var maxWidthNav  = 1920;
@@ -39,7 +39,7 @@ $(function(){
 		    if(transformMethod === 'zoom'){
 			    $('#outer').css({'zoom': scale});
 		    }else{
-			    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+			    $('#outer').css({'transform': 'scale(' + scale + ')'});
 		    }
 
 			// nav scaling ===============================
@@ -70,7 +70,7 @@ $(function(){
 	    if(transformMethod === 'zoom'){
 		    $('#outer').css({'zoom': scale});
 	    }else{
-		    $('#outer').css({'-webkit-transform': 'scale(' + scale + ')'});
+		    $('#outer').css({'transform': 'scale(' + scale + ')'});
 	    }
 		$('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
 
