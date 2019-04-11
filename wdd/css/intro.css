@@ -204,11 +204,11 @@ p{
 }
 .top-nav-burger{
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     background: url(../img/burger.svg) no-repeat center center;
     transition: all .5s ease;
 }
@@ -826,7 +826,7 @@ textarea.settings-input{
 }
 .top-nav-links{
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     width: 70%;
     padding-left: 20px;
     position: relative;
@@ -853,6 +853,7 @@ textarea.settings-input{
     line-height: 20px;
     height: 24px;
     text-decoration: none;
+    display: inline-block;
 }
 .top-nav-links-a.active{
     position: relative;
@@ -896,6 +897,7 @@ textarea.settings-input{
     position: relative;
     padding: 0 10px;
     line-height: 28px;
+    display: block;
 }
 .serial-wrap{
     padding-top: 90px;
@@ -986,7 +988,7 @@ textarea.settings-input{
     color: #fff;
     font-family: Geometria;
     font-size: 80px;
-    line-height: 100px;
+    line-height: 80px;
     height: 130px;
     text-transform: uppercase;
     padding: 20px 100px;
