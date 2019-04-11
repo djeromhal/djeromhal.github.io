@@ -385,10 +385,17 @@ $(function(){
 		    }
 		})
 		owlComics.on('changed.owl.carousel', function(e) {
+			// if(e.find('.owl-item'))
+		    console.log(e.item)
 		    if(e.item.index != 0){
 		    	$('.comics-carousel .owl-prev').show();
 		    }else{
 		    	$('.comics-carousel .owl-prev').hide();
+		    }
+		    if(e.item.index != e.item.count-4){
+		    	$('.comics-carousel .owl-next').show();
+		    }else{
+		    	$('.comics-carousel .owl-next').hide();
 		    }
 		})
 		$('.buy-page-car').owlCarousel({
