@@ -97,6 +97,9 @@ p{
     padding: 25px;
     font-size: 50px;
     text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    text-align: center;
 }
 .intro-form-input-wrapper{
 	width: 550px;
@@ -1303,7 +1306,7 @@ textarea.settings-input{
     }
     .main-page-options{
         position: absolute;
-        top: 50px;
+        top: 65px;
         left: 15px;
         right: 15px;
         bottom: 15px;
@@ -1581,5 +1584,41 @@ textarea.settings-input{
         color: #fff;
         text-align: justify;
         text-align-last: center;
+    }
+    .no-changes .settings-input-wrapper{
+        padding-right: 0;
+    }
+    .last .settings-button-wrapper{
+        padding: 0 !important;
+    }
+    .settings-row.last {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .select-wrapper .arrow-open {
+        right: 0;
+    }
+    .arrow-open {
+        height: 50px;
+        line-height: 50px;
+    }
+    .arrow-open:before {
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+        background-size: 20px;
+    }
+    .select-option {
+        font-size: 20px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+    }
+    .select {
+        top: 50px;
+        padding-right: 0;
+    }
+    .select-input[disabled] {
+        padding-right: 50px;
     }
 }
