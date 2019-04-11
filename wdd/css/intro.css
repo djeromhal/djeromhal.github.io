@@ -90,7 +90,7 @@ p{
 .intro-form-submit{
 	width: 100%;
 	height: 100px;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
     background-color: rgba(0,0,0,.5);
 	color: #fff;
     font-family: Geometria;
@@ -106,7 +106,7 @@ p{
 .intro-form-input{
 	width: 100%;
 	height: 100%;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
     background-color: rgba(0,0,0,.5);
 	color: #fff;
     padding: 25px;
@@ -1341,6 +1341,9 @@ textarea.settings-input{
     .top-nav-title{
         font-size: 13px;
         margin-left: 10px;
+        width: 55%;
+        white-space: nowrap;
+        overflow: auto;
     }
     .settings-input{
         font-size: 20px;
@@ -1368,9 +1371,9 @@ textarea.settings-input{
         background: #000;
     }
     .top-nav-links{
-        padding-left: 20px;
+        padding-left: 0px;
         /*float: left;*/
-        width: 60%;
+        width: 55%;
         overflow: auto;
         white-space: nowrap;
     }
@@ -1379,7 +1382,7 @@ textarea.settings-input{
         padding: 0;
     }
     .top-nav-links-a{
-        font-size: 20px;
+        font-size: 13px;
     }
     .page-wrap{
         padding: 15px;
@@ -1507,5 +1510,76 @@ textarea.settings-input{
     }
     .serial-nav-time {
         font-size: 20px;
+    }
+    .ending-page{
+        padding: 0;
+        height: auto;
+    }
+    .ending-page-row{
+        height: 150px;
+        padding: 0 !important;
+        margin-bottom: 20px;
+    }
+    .ending-page-item .main-page-option-title {
+        position: static;
+        transform: none;
+    }
+    .ending-page-item {
+        font-size: 18px;
+        line-height: 150px;
+        text-align: center;
+        background-size: cover !important;
+    }
+    .ending-page-row-item:first-child {
+        padding-right: 10px;
+    }
+    .ending-page-row-item:last-child {
+        padding-left: 10px;
+    }
+    .settings-wrap.scroll {
+        position: static;
+        padding: 15px;
+    }
+    .agreement p {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 15px;
+    }
+    .intro-container{
+        padding: 15px;
+    }
+    .intro-form-submit {
+        height: auto;
+        padding: 10px;
+        font-size: 20px;
+    }
+    .intro-form-row{
+        margin-bottom: 0;
+    }
+    .intro-form-input-wrapper{
+        width: 100%;
+        float: none;
+        height: auto;
+    }
+    .intro-form-input {
+        height: auto;
+        padding: 10px;
+        font-size: 20px;
+    }
+    .intro-form-row{
+        display: block;
+    }
+    .intro-form-input-wrapper{
+        margin-bottom: 15px;
+    }
+    .intro-text{
+        padding: 0 15px;
+    }
+    .intro-text p {
+        font-size: 14px;
+        line-height: 16px;
+        color: #fff;
+        text-align: justify;
+        text-align-last: center;
     }
 }

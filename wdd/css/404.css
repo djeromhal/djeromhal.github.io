@@ -93,3 +93,179 @@ a{
     box-sizing: border-box;*/
     -webkit-transform-origin: top left;
 }
+
+.option-anim{
+    text-decoration: none;
+    position: relative;
+    outline: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.option-anim .helper{
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: -8px;
+    width: 14px;
+    height: 90%;
+    overflow: hidden;
+}
+.option-anim.blue:hover{
+    border: 2px solid #00a7fb;
+    z-index: 1;
+}
+.option-anim.blue .helper:before{
+    background-color: #00a7ff;
+}
+.option-anim.blue:after{
+    background-color: #00a7ff;
+}
+.option-anim.yellow:hover{
+    border: 2px solid #ffcc00;
+    z-index: 1;
+}
+.option-anim.yellow .helper:before{
+    background-color: #ffcc00;
+}
+.option-anim.yellow:after{
+    background-color: #ffcc00;
+}
+.option-anim.white:hover{
+    border: 2px solid #fff;
+    z-index: 1;
+}
+.option-anim.white .helper:before{
+    background-color: #fff;
+}
+.option-anim.white:after{
+    background-color: #fff;
+}
+.option-anim .helper:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+}
+.option-anim:hover .helper:before {
+    top: 0%;
+}
+.option-anim:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 100%;
+    filter: blur(70px);
+    transition: all .3s ease;
+}
+.option-anim:hover:after {
+    opacity: 0.7;
+}
+.option-anim.active .main-page-option-title{
+  animation-name: optionActive1;
+  animation-duration:0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes optionActive1{
+    0%{
+        font-size: 1em; 
+    }
+    50%{
+        font-size: 1.3em; 
+    }
+    100%{
+        font-size: 1em; 
+    }
+}
+
+.option-anim.active:after{
+  animation-name: optionActive2;
+  animation-duration:0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes optionActive2{
+    0%{
+        opacity: 0.7;
+        filter: blur(70px);
+    }
+    50%{
+        opacity: 1;
+        filter: blur(50px);
+    }
+    100%{
+        opacity: 0;
+        filter: blur(70px);
+    }
+}
+.option-anim.active .helper{
+  animation-name: optionActive3;
+  animation-duration:0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes optionActive3{
+    0%{
+        left: -8px;
+        width: 14px;
+    }
+    50%{
+        left: -14px;
+        width: 24px;
+    }
+    100%{
+        left: 0;
+        width: 0;
+    }
+}
+.main-menu-option .main-page-option-title{
+    z-index: 1;
+    position: relative;
+}
+@media all and (max-width: 767px){
+    body{
+        padding: 0;
+    }
+    #wrap{
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    #outer{
+        position: static;
+        width: 100% !important;
+        height: auto !important;
+    }
+    .wrap{
+        position: static;
+        padding: 50px 15px 15px;
+        transform: none;
+    }
+    p {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 30px;
+    }
+    a{
+        font-size: 20px;
+        line-height: 20px;
+        padding: 10px 20px;
+    }
+}
