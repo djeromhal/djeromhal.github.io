@@ -879,7 +879,8 @@ textarea.settings-input{
     position: absolute;
     top: 0;
     right: -75px;
-}/*
+}
+/*
 .top-nav-links-a.active:after {
     content: '';
     display: block;
@@ -1032,6 +1033,17 @@ textarea.settings-input{
     padding-left: 10px;
     margin-left: -10px;
     padding-right: 10px;
+}
+.comics-carousel .owl-prev{
+    position: absolute;
+    top: 75px;
+    left: -80px;
+    display: none;
+}
+.comics-carousel .owl-next{
+    position: absolute;
+    top: 75px;
+    right: -80px;
 }
 .agreement-title{
     text-transform: uppercase;
@@ -1215,8 +1227,9 @@ textarea.settings-input{
     background: url(../img/scroll-bottom.png) no-repeat center center;
 }
 .simplebar-scrollbar{
-    background: #000 url(../img/scroll-burger.png) repeat center center;
+    background: url(../img/scroll-burger.png) no-repeat center center;
     width: 24px;
+    /*height: 30px !important;*/
     right: -11px;
     top: 20px;
 }
@@ -1365,6 +1378,12 @@ textarea.settings-input{
     position: relative;
 }
 @media all and (max-width: 767px){
+    .top-nav-links-a.active:before {
+        display: none;
+    }
+    .top-nav-links-a.active:after {
+        display: none;
+    }
     .subs-man-disable {
         font-size: 30px;
         height: 50px;

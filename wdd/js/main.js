@@ -229,6 +229,7 @@ $(function(){
 	$('#form-authors').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
+		var url = form.attr('action');
 		var mail = form.find('#input-1');
 		var subj = form.find('#input-2');
 		var mess = form.find('#input-3');
@@ -255,7 +256,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
-				url: "test.ru",
+				url: url,
 				data: 'hello=buy',
 				cache: false,
 				success: function(data){
@@ -267,6 +268,7 @@ $(function(){
 	$('#form-account').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
+		var url = form.attr('action');
 
 		var input = form.find('.settings-input.on');
 		var parent = input.closest('.settings-input-wrapper');
@@ -320,7 +322,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
-				url: "test.ru",
+				url: url,
 				data: 'hello=buy',
 				cache: false,
 				success: function(data){
@@ -360,6 +362,33 @@ $(function(){
 		        768:{
 		            items:4
 		        }
+		    }
+		})
+		owlComics = $('.comics-carousel')
+		owlComics.owlCarousel({
+		    loop:false,
+		    margin:60,
+		    dots: false,
+			nav: true,
+		    responsiveClass:true,
+			navText: ["<img src='img/nav-left.png'>","<img src='img/nav-right.png'>"],
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        400:{
+		            items:2
+		        },
+		        768:{
+		            items:4
+		        }
+		    }
+		})
+		owlComics.on('changed.owl.carousel', function(e) {
+		    if(e.item.index != 0){
+		    	$('.comics-carousel .owl-prev').show();
+		    }else{
+		    	$('.comics-carousel .owl-prev').hide();
 		    }
 		})
 		$('.buy-page-car').owlCarousel({
@@ -445,7 +474,33 @@ $(function(){
 
 		$('#collections-main-img').find('img').attr('src', src);
 	})
+	$('.copy-link').on('click', function(e){
+		e.preventDefault();
+		copyToClipboard($(this).attr('href'));
+		alert("Вы скопировали " + $(this).attr('href') + '. Делитесь где хотите!')
+	})
 })
+function copyToClipboard(text) {
+    if (window.clipboardData && window.clipboardData.setData) {
+        // IE specific code path to prevent textarea being shown while dialog is visible.
+        return clipboardData.setData("Text", text); 
+
+    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+        } catch (ex) {
+            console.warn("Copy to clipboard failed.", ex);
+            return false;
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    }
+}
 function disableInput(input,pencil){
 	input.prop('disabled','disabled')
 	input.removeClass('on')
