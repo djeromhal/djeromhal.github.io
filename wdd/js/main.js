@@ -149,7 +149,7 @@ $(function(){
 		e.preventDefault();
 		_this = $(this);
 		var p = _this.closest('.settings-input-wrapper');
-		var input = p.find('.settings-input:first-child').eq(0);
+		var input = p.find('.settings-input.dis');
 		var rowChange = p.find('.settings-row-change');
 
 		// $('.settings-input.on').removeClass('on');
