@@ -115,13 +115,16 @@ $(function(){
 	}
 
 	$('.option-anim').on('click',function(e){
-		// e.preventDefault();
 		var _this = $(this);
+		if(_this.prop('href') !== undefined){
+			e.preventDefault();
+		}
 		$(this).addClass('active');
 		setTimeout(function(){
 			_this.removeClass('active');
-			if(_this.prop('href') !== undefined)
+			if(_this.prop('href') !== undefined){
 				window.location = _this.prop('href')
+			}
 		},500)
 	})
 
