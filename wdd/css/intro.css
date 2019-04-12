@@ -1250,6 +1250,9 @@ textarea.settings-input{
     z-index: 2;
     height: 90px;
 }
+.bg-black.hidden{
+    background-color: transparent;
+}
 #nav-outer{
     position: absolute;
     top: 0;

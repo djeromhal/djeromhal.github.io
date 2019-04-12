@@ -135,6 +135,7 @@ $(function(){
 		$('.top-nav-settings').toggleClass('hidden');
 		$('.top-nav-links').toggleClass('hidden');
 		$('.top-nav-title').toggleClass('hidden');
+		$('.top-nav.bg-black').toggleClass('hidden');
 
 		if($('.main-menu-options').hasClass('shown')){
 			$('.main-menu-options').removeClass('shown delay');
