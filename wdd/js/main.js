@@ -97,11 +97,11 @@ $(function(){
 		}
 	})
 
-	if($('#intro-name').length){
+	if($('#intro-name.auto').length){
 		setTimeout(function(){
 			$('#intro-name').focus().typetype("Program").delay(1500).backspace(7).typetype('Robot').delay(1000).backspace(5).typetype('Human', {
 				callback: function() {
-					$('#intro-pass').focus().typetype("robot-pussy").delay(500).backspace(5).typetype('buddy-777', {
+					$('#intro-pass.auto').focus().typetype("robot-pussy").delay(500).backspace(5).typetype('buddy-777', {
 						callback: function(){
 							$('.intro-form-submit')[0].click();
 						}
