@@ -1,4 +1,65 @@
 $(function(){
+	if($('.option-anim').length){
+		// $('.option-anim').each(function(i,v){
+		// 	$(this).append('<audio id="beep-' + i + '" controls preload="auto"><source src="audio/beep.mp3" controls><source src="audio/beep.ogg" controls>Your browser is not invited for super fun time.</audio>');
+		// 	$(this).find('audio')[0].load();
+		// })
+		// $('.option-anim').attr('onmouseover','new Audio("audio/beep.mp3").play();')
+		$('body').append('<audio id="hover-audio"><source src="audio/Cursor.mp3">Your browser is not invited for super fun time.</audio>')
+		$('body').append('<audio id="click-audio"><source src="audio/Click.mp3">Your browser is not invited for super fun time.</audio>')
+		$('body').append('<audio id="burger-off-audio"><source src="audio/Choose_Click_OFF.mp3">Your browser is not invited for super fun time.</audio>')
+		$('body').append('<audio id="burger-on-audio"><source src="audio/Choose_Click_ON.mp3">Your browser is not invited for super fun time.</audio>')
+		$('#hover-audio')[0].load()
+		$('#click-audio')[0].load()
+		$('#burger-off-audio')[0].load()
+		$('#burger-on-audio')[0].load()
+		$('body').append('<div id="audio-hack"></div>')
+		// setTimeout(function(){
+		// 	$('body')[0].click()
+		// },1000)
+		// $('body').on('mousemove',function(){
+		// 	// alert()
+		// })
+	}
+	$('.option-anim').on('click',function(e){
+		var _this = $(this);
+		if(_this.prop('href') !== undefined){
+			e.preventDefault();
+		}
+		$(this).addClass('active');
+		setTimeout(function(){
+			$('audio').trigger('pause');
+			$('audio').prop("currentTime",0);
+			$('#click-audio').trigger('play');
+		},0)
+
+		// var media = $(this).find('audio')[0];
+		// media.load();
+		// const playPromise = media.play();
+		// if (playPromise !== null){
+		//     playPromise.catch(() => { media.play(); })
+		// }
+		setTimeout(function(){
+			_this.removeClass('active');
+			if(_this.prop('href') !== undefined){
+				window.location = _this.prop('href')
+			}
+		},500)
+	})
+	$('.option-anim').on('mouseenter', function(e){
+		// var media = $(this).find('audio')[0];
+		// media.load();
+		// const playPromise = media.play();
+		// if (playPromise !== null){
+		//     playPromise.catch(() => { media.play(); })
+		// }
+		setTimeout(function(){
+			$('audio').trigger('pause');
+			$('audio').prop("currentTime",0);
+			$('#hover-audio').trigger('play');
+		},0)
+
+	})
 	// Content scaling
 	var maxWidth  = 1920;
 	var maxHeight = 1080;
@@ -113,42 +174,6 @@ $(function(){
 	    	});
 		},1000);
 	}
-	if($('.option-anim').length){
-		$('.option-anim').each(function(i,v){
-			$(this).append('<audio id="beep-' + i + '" controls preload="auto"><source src="audio/beep.mp3" controls><source src="audio/beep.ogg" controls>Your browser is not invited for super fun time.</audio>');
-			$(this).find('audio')[0].load();
-		})
-		// $('.option-anim').attr('onmouseover','event.stopPropagation(); new Audio("audio/beep.mp3").play();')
-	}
-	$('.option-anim').on('click',function(e){
-		var _this = $(this);
-		if(_this.prop('href') !== undefined){
-			e.preventDefault();
-		}
-		$(this).addClass('active');
-
-		var media = $(this).find('audio')[0];
-		media.load();
-		const playPromise = media.play();
-		if (playPromise !== null){
-		    playPromise.catch(() => { media.play(); })
-		}
-		setTimeout(function(){
-			_this.removeClass('active');
-			if(_this.prop('href') !== undefined){
-				window.location = _this.prop('href')
-			}
-		},500)
-	})
-	$('.option-anim').on('mouseenter', function(e){
-		var media = $(this).find('audio')[0];
-		media.load();
-		const playPromise = media.play();
-		if (playPromise !== null){
-		    playPromise.catch(() => { media.play(); })
-		}
-
-	})
 
 	$('.top-nav-burger').on('click',function(e){
 		$(this).toggleClass('open');
@@ -166,6 +191,20 @@ $(function(){
 			setTimeout(function(){
 				$('.main-menu-options').removeClass('delay');
 			},1500)
+		}
+
+		if($(this).hasClass('open')){
+			setTimeout(function(){
+				$('audio').trigger('pause');
+				$('audio').prop("currentTime",0);
+				$('#burger-on-audio').trigger('play');
+			},0)
+		}else{
+			setTimeout(function(){
+				$('audio').trigger('pause');
+				$('audio').prop("currentTime",0);
+				$('#burger-off-audio').trigger('play');
+			},0)
 		}
 	})
 

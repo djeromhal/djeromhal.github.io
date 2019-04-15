@@ -928,7 +928,13 @@ textarea.settings-input{
 .intro-form-input.error{
     border: 2px solid #ffb602;
 }
-
+#audio-hack{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+}
 .settings-input::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 0.5; /* Firefox */
