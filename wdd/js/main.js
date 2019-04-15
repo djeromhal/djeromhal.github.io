@@ -113,19 +113,41 @@ $(function(){
 	    	});
 		},1000);
 	}
-
+	if($('.option-anim').length){
+		$('.option-anim').each(function(i,v){
+			$(this).append('<audio id="beep-' + i + '" controls preload="auto"><source src="audio/beep.mp3" controls><source src="audio/beep.ogg" controls>Your browser is not invited for super fun time.</audio>');
+			$(this).find('audio')[0].load();
+		})
+		// $('.option-anim').attr('onmouseover','event.stopPropagation(); new Audio("audio/beep.mp3").play();')
+	}
 	$('.option-anim').on('click',function(e){
 		var _this = $(this);
 		if(_this.prop('href') !== undefined){
 			e.preventDefault();
 		}
 		$(this).addClass('active');
+
+		var media = $(this).find('audio')[0];
+		media.load();
+		const playPromise = media.play();
+		if (playPromise !== null){
+		    playPromise.catch(() => { media.play(); })
+		}
 		setTimeout(function(){
 			_this.removeClass('active');
 			if(_this.prop('href') !== undefined){
 				window.location = _this.prop('href')
 			}
 		},500)
+	})
+	$('.option-anim').on('mouseenter', function(e){
+		var media = $(this).find('audio')[0];
+		media.load();
+		const playPromise = media.play();
+		if (playPromise !== null){
+		    playPromise.catch(() => { media.play(); })
+		}
+
 	})
 
 	$('.top-nav-burger').on('click',function(e){
@@ -259,6 +281,41 @@ $(function(){
 		}else{
 			mail.removeClass('error');
 			data += mail.attr('name') + '=' + mail.val()
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
+	$('#form-intro').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		var name = form.find('#intro-name');
+		var pass = form.find('#intro-pass');
+		var data = '';
+		var IS_VALID = true;
+		if(name.val().trim() == ''){
+			name.addClass('error');
+			IS_VALID = false;
+		}else{
+			name.removeClass('error');
+			data += name.attr('name') + '=' + name.val() + '&'
+		}
+		if(pass.val().trim() == ''){
+			pass.addClass('error');
+			IS_VALID = false;
+		}else{
+			pass.removeClass('error');
+			data += pass.attr('name') + '=' + pass.val()
 		}
 
 		if(IS_VALID){

@@ -376,7 +376,13 @@ p{
             transform: translate(-50%, -50%);
     z-index: 1;
 }
-
+.option-anim audio{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    display: none;
+}
 .option-anim{
     text-decoration: none;
     position: relative;
@@ -917,6 +923,9 @@ textarea.settings-input{
     opacity: .5;
 }
 .settings-input.error{
+    border: 2px solid #ffb602;
+}
+.intro-form-input.error{
     border: 2px solid #ffb602;
 }
 
