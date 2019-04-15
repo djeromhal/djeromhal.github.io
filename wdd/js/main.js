@@ -237,34 +237,38 @@ $(function(){
 		var mail = form.find('#input-1');
 		var subj = form.find('#input-2');
 		var mess = form.find('#input-3');
+		var data = '';
 		var IS_VALID = true;
 		if(subj.val().trim() == ''){
 			subj.addClass('error');
 			IS_VALID = false;
 		}else{
 			subj.removeClass('error');
+			data += subj.attr('name') + '=' + subj.val() + '&'
 		}
 		if(mess.val().trim() == ''){
 			mess.addClass('error');
 			IS_VALID = false;
 		}else{
 			mess.removeClass('error');
+			data += mess.attr('name') + '=' + mess.val() + '&'
 		}
 		if(!validateEmail(mail.val())){
 			mail.addClass('error');
 			IS_VALID = false;
 		}else{
 			mail.removeClass('error');
+			data += mail.attr('name') + '=' + mail.val()
 		}
 
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
 				url: url,
-				data: 'hello=buy',
+				data: data,
 				cache: false,
 				success: function(data){
-					alert('never');
+					console.log(data)
 				}
 			});
 		}
@@ -277,6 +281,8 @@ $(function(){
 		var input = form.find('.settings-input.on');
 		var parent = input.closest('.settings-input-wrapper');
 		var IS_VALID = true;
+		var key = '';
+		var val = '';
 
 		if(input.attr('name') == 'name'){
 			if(input.val().trim() == ''){
@@ -309,6 +315,9 @@ $(function(){
 		}
 
 		function validTrue(){
+			key = input.attr('name');
+			val = input.val();
+
 			input.attr('data-value', input.val())
 			
 			input.removeClass('error')
@@ -324,13 +333,14 @@ $(function(){
 		}
 
 		if(IS_VALID){
+			console.log(key + '=' + val)
 			$.ajax({
 				type: "POST",
 				url: url,
-				data: 'hello=buy',
+				data: key + '=' + val,
 				cache: false,
 				success: function(data){
-					alert('never');
+					console.log(data)
 				}
 			});
 		}

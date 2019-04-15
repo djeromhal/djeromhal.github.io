@@ -1166,11 +1166,18 @@ textarea.settings-input{
     height: 130px;
     text-transform: uppercase;
     padding: 20px 100px;
-    width: 620px;
+    width: 550px;
+    display: inline-block;
+    text-align: center;
     z-index: 1;
 }
 .serial-desc-button .main-page-option-title{
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     z-index: 1;
 }
 .serial-title{
