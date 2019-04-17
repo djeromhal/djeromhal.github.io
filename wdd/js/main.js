@@ -1,4 +1,9 @@
 $(function(){
+	var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+                   navigator.userAgent &&
+                   navigator.userAgent.indexOf('CriOS') == -1 &&
+                   navigator.userAgent.indexOf('FxiOS') == -1;
+
 	if($('.option-anim').length){
 		// $('.option-anim').each(function(i,v){
 		// 	$(this).append('<audio id="beep-' + i + '" controls preload="auto"><source src="audio/beep.mp3" controls><source src="audio/beep.ogg" controls>Your browser is not invited for super fun time.</audio>');
@@ -178,7 +183,12 @@ $(function(){
 	$('.top-nav-burger').on('click',function(e){
 		$(this).toggleClass('open');
 		$('.main-menu').toggleClass('active');
-		$('.top-nav-logo').toggleClass('menu-open');
+		if(!isSafari){
+			$('.top-nav-logo').toggleClass('menu-open');
+		}else{
+			$('.top-nav-logo').toggleClass('menu-open-safari');
+			// $('.main-menu-bg').toggleClass('safari');
+		}
 		$('.top-nav-settings').toggleClass('hidden');
 		$('.top-nav-links').toggleClass('hidden');
 		$('.top-nav-title').toggleClass('hidden');
@@ -590,6 +600,11 @@ $(function(){
 		var src = img.attr('data-src');
 
 		$('#collections-main-img').find('img').attr('src', src);
+
+		var textId = _this.data('text-id');
+
+		$('.icon-text.active').removeClass('active');
+		$(textId).addClass('active');
 	})
 	$('.copy-link').on('click', function(e){
 		e.preventDefault();
