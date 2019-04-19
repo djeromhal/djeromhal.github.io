@@ -420,7 +420,6 @@ $(function(){
 			reppass.removeClass('error');
 			data += reppass.attr('name') + '=' + reppass.val()
 		}
-
 		if(newpass.val().trim() !== reppass.val().trim()){
 			newpass.addClass('error');
 			reppass.addClass('error');
@@ -429,7 +428,6 @@ $(function(){
 			newpass.removeClass('error');
 			reppass.removeClass('error');
 		}
-
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
@@ -438,6 +436,9 @@ $(function(){
 				cache: false,
 				success: function(data){
 					console.log(data)
+					if(data.redir !== undefined){
+						document.location.href = data.redir;
+					}
 				}
 			});
 		}
@@ -558,6 +559,9 @@ $(function(){
 				cache: false,
 				success: function(data){
 					console.log(data)
+					if(data.redir !== undefined){
+						document.location.href = data.redir;
+					}
 				}
 			});
 		}
