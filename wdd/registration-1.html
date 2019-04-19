@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account Settings</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/intro.css">
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1">
+</head>
+<body>
+	<div class="main-menu">
+		<div class="main-menu-bg"></div>
+		<div class="main-menu-options">
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Личный кабинет</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">О проекте</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Написать авторам</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Соглашение</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Техподдержка</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Рассказать друзьям</span></a>
+		</div>
+	</div> 
+	<div id="nav-wrap">
+		<div id="nav-outer">
+			<div class="top-nav">
+				<div class="top-nav-burger"><span></span><span></span><span></span></div>
+				<h2 class="top-nav-title">Регистрация</h2>
+				<div class="top-nav-logo">
+					<a href="#"><img src="img/logo.png"></a>
+				</div>
+				<a href="account-serttings.html" class="top-nav-settings hidden"></a>
+			</div>
+		</div>
+	</div>
+	<div class="account-settings-page">
+		<div id="wrap">
+			<div id="outer">
+				<div class="settings-wrap">
+					<form class="settings-form no-changes" id="form-register-1" action="test.php">
+						<div class="settings-row">
+							<div class="settings-label-wrapper">
+								<label class="settings-label yellow-color" for="input-1">Ваше имя</label>
+							</div>
+							<div class="settings-input-wrapper registration-input-wrapper">
+								<input class="settings-input" id="input-1" type="text" name="mail" placeholder="Введите ваше имя">
+							</div>
+						</div>
+						<div class="settings-row">
+							<div class="settings-label-wrapper">
+								<label class="settings-label yellow-color" for="input-2">Телефон</label>
+							</div>
+							<div class="settings-input-wrapper registration-input-wrapper">
+								<input class="settings-input" id="input-2" type="text" name="phone" placeholder="Введите ваш телефон">
+							</div>
+						</div>
+						<div class="settings-row">
+							<div class="settings-label-wrapper">
+								<label class="settings-label yellow-color" for="input-3">E-mail*</label>
+							</div>
+							<div class="settings-input-wrapper registration-input-wrapper">
+								<input class="settings-input" id="input-3" type="text" name="mail" placeholder="Введите вашу эл.почту">
+							</div>
+						</div>
+						<div class="settings-row">
+							<div class="settings-label-wrapper">
+								<label class="settings-label yellow-color" for="input-4">Пароль*</label>
+							</div>
+							<div class="settings-input-wrapper registration-input-wrapper">
+								<input class="settings-input" id="input-4" type="password" name="new-pass" placeholder="Введите ваш пароль">
+							</div>
+						</div>
+						<div class="settings-row">
+							<div class="settings-label-wrapper">
+								<label class="settings-label yellow-color" for="input-5">Повтор пароля*</label>
+							</div>
+							<div class="settings-input-wrapper registration-input-wrapper">
+								<input class="settings-input" id="input-5" type="password" name="repeat-pass" placeholder="Введите повтор пароля">
+							</div>
+						</div>
+						<div class="settings-row last">
+						    <div class="registration-checkbox-wrapper clearfix">
+						      <input type="checkbox" id="checkbox-1">
+						      <label for="checkbox-1" class="yellow-color">Я принимаю условия <a href="#" class="yellow-color">пользовательского соглашения</a>*</label>
+						    </div>
+						    <div class="registration-checkbox-wrapper clearfix">
+						      <input type="checkbox" id="checkbox-2">
+						      <label for="checkbox-2" class="yellow-color">Я согласен (-на) <a href="#" class="yellow-color">с политикой конфиденциальности</a>*</label>
+						    </div>
+						    <div class="registration-checkbox-wrapper clearfix">
+						      <input type="checkbox" id="checkbox-3">
+						      <label for="checkbox-3" class="yellow-color">Мне есть 18 лет*</label>
+						    </div>
+							<div>
+								<p class="yellow-color registration-info-text">* – обязательные поля</p>
+							</div>
+							<div class="registration-button-wrapper bottom">
+								<button class="settings-button registration-submit option-anim blue" type="submit"><span class="helper"></span><span class="main-page-option-title">Зарегистрироваться</span></button>
+								<div class="registration-progress">
+									<span class="registration-progress-item fill"></span>
+									<span class="registration-progress-item"></span>
+									<span class="registration-progress-item"></span>
+									<span class="registration-progress-item"></span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.maskedinput.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

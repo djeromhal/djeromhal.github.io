@@ -940,7 +940,7 @@ p{
 }
 .settings-label{
     color: #808080;
-    font-size: 40px;
+    font-size: 35px;
     text-transform: uppercase;
     line-height: 77px;
 }
@@ -999,6 +999,7 @@ textarea.settings-input{
 }
 .select-wrapper{
     position: relative;
+    z-index: 2;
 }
 .select-wrapper:before{
     top: 0;
@@ -1383,7 +1384,7 @@ textarea.settings-input{
     overflow-x: hidden;
 }
 .yellow-color{
-    color: #ffb602;
+    color: #ffb602 !important;
 }
 .agreement p{
     font-size: 30px;
@@ -1728,7 +1729,267 @@ textarea.settings-input{
     z-index: 1;
     position: relative;
 }
+.center-form{
+    position: absolute;
+    width: 930px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.center-form-horizontal{
+    position: absolute;
+    width: 930px;
+    top: 125px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.register-row{
+    margin-bottom: 20px;
+}
+.register-row.last{
+    margin-top: 40px;
+}
+.register-link{
+    color: #fff;
+    font-size: 30px;
+}
+.register-row p{
+    font-size: 35px;
+    line-height: 45px;
+}
+.registration-checkbox-wrapper{
+    margin-bottom: 15px;
+}
+.registration-checkbox-wrapper input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+.registration-checkbox-wrapper label {
+    position: relative;
+    color: #ffb600;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+    padding-left: 40px;
+    float: left;
+}
+.registration-info-text{
+    font-size: 20px;
+}
+.registration-checkbox-wrapper label:before {
+    content: '';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: -4px;
+    margin-bottom: 10px;
+}
+.registration-checkbox-wrapper input:checked + label:before {
+    border: 2px solid #ffb600;
+}
+.registration-checkbox-wrapper input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #ffb600;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.registration-button-wrapper.bottom{
+    position: absolute;
+    bottom: 30px;
+    width: 930px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.registration-input-wrapper{
+    width: 930px;
+    padding-right: 0;
+}
+.registration-progress{
+    text-align: center;
+    margin-top: 60px;
+}
+.registration-progress-item {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    position: relative;
+}
+.registration-progress-item.fill{
+    background-color: #fff;
+}
+.registration-progress-item:not(:last-child){
+    margin-right: 35px;
+}
+.registration-progress-item:not(:last-child):before{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 9px;
+    right: -42px;
+}
+.cool-doc-img{
+    text-align: center;
+    margin-top: 60px;
+}
+.cool-doc-img img{
+    max-width: 100%;
+}
+.mb-45{
+    margin-bottom: 45px;
+}
+.register-price-left{
+    width: 435px;
+    float: left;
+}
+.register-price-right{
+    width: 495px;
+    float: right;
+}
+.register-price-title{
+    font-size: 30px;
+    line-height: 35px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.register-price-title.center-title{
+    margin: 0;
+    line-height: 77px;
+}
+.mb-60{
+    margin-bottom: 60px;
+}
+.register-price{
+    width: 100%;
+    border: 2px solid #ffb602;
+    font-size: 50px;
+    text-align: center;
+    height: 115px;
+    line-height: 115px;
+}
+.register-price-wrapper {
+    margin-bottom: 20px;
+}
+.upper-case{
+    text-transform: uppercase;
+}
+.error-text{
+    display: none;
+}
 @media all and (max-width: 767px){
+    .register-price-wrapper {
+        margin-bottom: 10px;
+    }
+    .register-price-title.center-title {
+        line-height: 24px;
+    }
+    .register-price {
+        font-size: 40px;
+        height: 70px;
+        line-height: 70px;
+    }
+    .register-price-left, .register-price-right {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+    .register-price-title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .mb-45{
+        margin-bottom: 15px;
+    }
+    img{
+        max-width: 100%;
+    }
+    .cool-doc-img{
+        margin-top: 10px;
+        padding: 0 50px;
+    }
+    .center-form-horizontal {
+        position: static;
+        padding: 15px;
+        width: 100%;
+    }
+    .registration-progress {
+        margin-top: 20px;
+    }
+    .registration-checkbox-wrapper input:checked + label:after {
+        top: 0;
+        left: 6px;
+        width: 3px;
+        height: 10px;
+    }
+    .registration-checkbox-wrapper label:before{
+        padding: 6px;
+        margin-top: 0;
+    }
+    .registration-info-text {
+        font-size: 14px;
+    }
+    .registration-checkbox-wrapper {
+        margin-bottom: 8px;
+    }
+    .registration-checkbox-wrapper label{
+        padding-left: 30px;
+        font-size: 14px;
+    }
+    .registration-button-wrapper.bottom {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .register-row p {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .register-row {
+        margin-bottom: 10px;
+    }
+    .register-link {
+        font-size: 16px;
+    }
+    .settings-label{
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .center-form {
+        position: static;
+        width: 100%;
+        transform: none;
+        padding: 0 15px;
+    }
     .comics-carousel .owl-prev, .comics-carousel .owl-next{
         display: none;
     }
@@ -2180,5 +2441,8 @@ textarea.settings-input{
     }
     .bg-black{
         height: auto;
+    }
+    .mb-60{
+        margin-bottom: 20px;
     }
 }

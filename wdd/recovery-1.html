@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account Settings</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/intro.css">
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1">
+</head>
+<body>
+	<div class="main-menu">
+		<div class="main-menu-bg"></div>
+		<div class="main-menu-options">
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Личный кабинет</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">О проекте</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Написать авторам</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Соглашение</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Техподдержка</span></a>
+			<a href="" class="main-menu-option option-anim blue"><span class="helper"></span><span class="main-page-option-title">Рассказать друзьям</span></a>
+		</div>
+	</div>
+	<div id="nav-wrap">
+		<div id="nav-outer">
+			<div class="top-nav">
+				<div class="top-nav-burger"><span></span><span></span><span></span></div>
+				<h2 class="top-nav-title">Восстановление пароля</h2>
+				<div class="top-nav-logo">
+					<a href="#"><img src="img/logo.png"></a>
+				</div>
+				<a href="account-serttings.html" class="top-nav-settings hidden"></a>
+			</div>
+		</div>
+	</div>
+	<div class="account-settings-page">
+		<div id="wrap">
+			<div id="outer">
+				<form class="center-form no-changes" id="form-recovery-1" action="test.php">
+					<div class="register-row">
+						<p>Введите адрес электронной почты, указанный при регистрации.<br>
+							Вам будет отправлена инструкция<br>по восстановлению пароля. </p>
+					</div>
+					<div class="register-row">
+						<div class="register-label-wrapper">
+							<label class="settings-label yellow-color" for="input-1">E-MAIL</label>
+						</div>
+						<div class="register-input-wrapper">
+							<input class="settings-input" id="input-1" type="text" name="mail" placeholder="Введите вашу эл.почту">
+						</div>
+					</div>
+					<div class="register-row last">
+						<div class="register-button-wrapper">
+							<button class="settings-button register-submit option-anim blue" type="submit"><span class="helper"></span><span class="main-page-option-title">Восстановить</span></button>
+						</div>
+					</div>
+					<div class="register-row">
+						<p>Письмо отправлено на ваш e-mail</p>
+					</div>
+					<div class="register-row">
+						<p class="yellow-color">Такой пользователь не найден</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

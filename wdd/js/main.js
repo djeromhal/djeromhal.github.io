@@ -301,6 +301,195 @@ $(function(){
 	// 	    }
 	//     }
 	// });
+	$('#form-register-1').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		var name = form.find('#input-1');
+		var phone = form.find('#input-2');
+		var mail = form.find('#input-3');
+		var newpass = form.find('#input-4');
+		var reppass = form.find('#input-5');
+		var data = '';
+		var IS_VALID = true;
+		
+		if(name.val().trim() === ''){
+			name.addClass('error');
+			IS_VALID = false;
+		}else{
+			name.removeClass('error');
+			data += name.attr('name') + '=' + name.val() + '&'
+		}
+		if(phone.val().length != 16){
+			phone.addClass('error');
+			IS_VALID = false;
+		}else{
+			phone.removeClass('error');
+			data += phone.attr('name') + '=' + phone.val() + '&'
+		}
+		if(!validateEmail(mail.val())){
+			mail.addClass('error');
+			IS_VALID = false;
+		}else{
+			mail.removeClass('error');
+			data += mail.attr('name') + '=' + mail.val()
+		}
+		if(newpass.val().trim() === ''){
+			newpass.addClass('error');
+			IS_VALID = false;
+		}else{
+			newpass.removeClass('error');
+			data += newpass.attr('name') + '=' + newpass.val() + '&'
+		}
+		if(reppass.val() === ''){
+			reppass.addClass('error');
+			IS_VALID = false;
+		}else{
+			reppass.removeClass('error');
+			data += reppass.attr('name') + '=' + reppass.val()
+		}
+
+		if(newpass.val().trim() !== reppass.val().trim()){
+			newpass.addClass('error');
+			reppass.addClass('error');
+			IS_VALID = false;
+		}else{
+			newpass.removeClass('error');
+			reppass.removeClass('error');
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
+	$('#form-recovery-1').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		var mail = form.find('#input-1');
+		var data = '';
+		var IS_VALID = true;
+		
+		if(!validateEmail(mail.val())){
+			mail.addClass('error');
+			IS_VALID = false;
+		}else{
+			mail.removeClass('error');
+			data += mail.attr('name') + '=' + mail.val()
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
+	$('#form-recovery-2').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var error = form.find('.error-text');
+		var url = form.attr('action');
+		var mail = form.find('#input-1');
+		var newpass = form.find('#input-2');
+		var reppass = form.find('#input-3');
+		var data = '';
+		var IS_VALID = true;
+		
+		if(!validateEmail(mail.val())){
+			mail.addClass('error');
+			IS_VALID = false;
+		}else{
+			mail.removeClass('error');
+			data += mail.attr('name') + '=' + mail.val() + '&'
+		}
+		if(newpass.val().trim() === ''){
+			newpass.addClass('error');
+			IS_VALID = false;
+		}else{
+			newpass.removeClass('error');
+			data += newpass.attr('name') + '=' + newpass.val() + '&'
+		}
+		if(reppass.val() === ''){
+			reppass.addClass('error');
+			IS_VALID = false;
+		}else{
+			reppass.removeClass('error');
+			data += reppass.attr('name') + '=' + reppass.val()
+		}
+
+		if(newpass.val().trim() !== reppass.val().trim()){
+			newpass.addClass('error');
+			reppass.addClass('error');
+			error.show();
+			IS_VALID = false;
+		}else{
+			newpass.removeClass('error');
+			reppass.removeClass('error');
+			error.hide();
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
+	$('#form-auth').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		var mail = form.find('#input-1');
+		var pass = form.find('#input-2');
+		var data = '';
+		var IS_VALID = true;
+		
+		if(pass.val().trim() == ''){
+			pass.addClass('error');
+			IS_VALID = false;
+		}else{
+			pass.removeClass('error');
+			data += pass.attr('name') + '=' + pass.val() + '&'
+		}
+		if(!validateEmail(mail.val())){
+			mail.addClass('error');
+			IS_VALID = false;
+		}else{
+			mail.removeClass('error');
+			data += mail.attr('name') + '=' + mail.val()
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
 	$('#form-authors').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
