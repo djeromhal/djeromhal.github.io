@@ -1894,6 +1894,9 @@ textarea.settings-input{
     text-align: center;
     height: 115px;
     line-height: 115px;
+    outline: none;
+    background: transparent;
+    font-family: Geometria;
 }
 .register-price-wrapper {
     margin-bottom: 20px;
