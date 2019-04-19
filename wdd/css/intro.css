@@ -1907,6 +1907,9 @@ textarea.settings-input{
 .error-text{
     display: none;
 }
+.settings-link{
+    display: block;
+}
 @media all and (max-width: 767px){
     .register-price-wrapper {
         margin-bottom: 10px;
