@@ -875,6 +875,8 @@ $(function(){
 		e.preventDefault();
 		copyToClipboard($(this).attr('href'));
 		alert("Вы скопировали " + $(this).attr('href') + '. Делитесь где хотите!')
+
+		return false;
 	})
 })
 function copyToClipboard(text) {
