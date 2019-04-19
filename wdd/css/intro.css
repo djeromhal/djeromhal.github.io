@@ -1834,6 +1834,9 @@ textarea.settings-input{
     margin-top: -4px;
     margin-bottom: 10px;
 }
+.registration-checkbox-wrapper input.error + label:before{
+    border: 2px solid #ffb600;
+}
 .registration-checkbox-wrapper input:checked + label:before {
     border: 2px solid #ffb600;
 }

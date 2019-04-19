@@ -382,9 +382,30 @@ $(function(){
 		var mail = form.find('#input-3');
 		var newpass = form.find('#input-4');
 		var reppass = form.find('#input-5');
+		var checkbox1 = form.find('#checkbox-1');
+		var checkbox2 = form.find('#checkbox-2');
+		var checkbox3 = form.find('#checkbox-3');
 		var data = '';
 		var IS_VALID = true;
 		
+		if(!checkbox1.is(':checked')){
+			checkbox1.addClass('error');
+			IS_VALID = false;
+		}else{
+			checkbox1.removeClass('error');
+		}
+		if(!checkbox2.is(':checked')){
+			checkbox2.addClass('error');
+			IS_VALID = false;
+		}else{
+			checkbox2.removeClass('error');
+		}
+		if(!checkbox3.is(':checked')){
+			checkbox3.addClass('error');
+			IS_VALID = false;
+		}else{
+			checkbox3.removeClass('error');
+		}
 		if(name.val().trim() === ''){
 			name.addClass('error');
 			IS_VALID = false;
@@ -404,7 +425,7 @@ $(function(){
 			IS_VALID = false;
 		}else{
 			mail.removeClass('error');
-			data += mail.attr('name') + '=' + mail.val()
+			data += mail.attr('name') + '=' + mail.val() + '&'
 		}
 		if(newpass.val().trim() === ''){
 			newpass.addClass('error');
