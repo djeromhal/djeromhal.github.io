@@ -301,34 +301,34 @@ $(function(){
 	// 	    }
 	//     }
 	// });
-	$('#form-register-3').submit(function(e){
-		e.preventDefault();
-		var form = $(this);
-		var url = form.attr('action');
-		var price = form.find('#input-1');
-		var data = '';
-		var IS_VALID = true;
+	// $('#form-register-3').submit(function(e){
+	// 	e.preventDefault();
+	// 	var form = $(this);
+	// 	var url = form.attr('action');
+	// 	var price = form.find('#input-1');
+	// 	var data = '';
+	// 	var IS_VALID = true;
 		
-		if(price.val().trim() === ''){
-			price.addClass('error');
-			IS_VALID = false;
-		}else{
-			price.removeClass('error');
-			data += price.attr('name') + '=' + price.val();
-		}
+	// 	if(price.val().trim() === ''){
+	// 		price.addClass('error');
+	// 		IS_VALID = false;
+	// 	}else{
+	// 		price.removeClass('error');
+	// 		data += price.attr('name') + '=' + price.val();
+	// 	}
 
-		if(IS_VALID){
-			$.ajax({
-				type: "POST",
-				url: url,
-				data: data,
-				cache: false,
-				success: function(data){
-					console.log(data)
-				}
-			});
-		}
-	})
+	// 	if(IS_VALID){
+	// 		$.ajax({
+	// 			type: "POST",
+	// 			url: url,
+	// 			data: data,
+	// 			cache: false,
+	// 			success: function(data){
+	// 				console.log(data)
+	// 			}
+	// 		});
+	// 	}
+	// })
 	$('#form-register-1').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
