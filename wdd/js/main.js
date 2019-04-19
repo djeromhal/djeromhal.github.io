@@ -328,7 +328,51 @@ $(function(){
 	// 			}
 	// 		});
 	// 	}
-	// })
+	// })form-support
+	$('#form-support').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		var mail = form.find('#input-1');
+		var subj = form.find('#input-2');
+		var mess = form.find('#input-3');
+		var data = '';
+		var IS_VALID = true;
+		
+		if(!validateEmail(mail.val())){
+			mail.addClass('error');
+			IS_VALID = false;
+		}else{
+			mail.removeClass('error');
+			data += mail.attr('name') + '=' + mail.val()
+		}
+		if(subj.val().trim() === ''){
+			subj.addClass('error');
+			IS_VALID = false;
+		}else{
+			subj.removeClass('error');
+			data += subj.attr('name') + '=' + subj.val() + '&'
+		}
+		if(mess.val().trim() === ''){
+			mess.addClass('error');
+			IS_VALID = false;
+		}else{
+			mess.removeClass('error');
+			data += mess.attr('name') + '=' + mess.val()
+		}
+
+		if(IS_VALID){
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
 	$('#form-register-1').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
