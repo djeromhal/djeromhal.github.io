@@ -402,7 +402,7 @@ p{
     overflow: visible;
     height: 100%;
     background: url(../img/doc.png) no-repeat right top, url(../img/buy-page-multiple-bg.png) no-repeat center 1200px;
-    padding-top: 170px;
+    padding-top: 100px;
     background-size: auto, auto;
 }
 .buy-page .container{
@@ -669,6 +669,9 @@ footer{
     }
 } 
 @media all and (max-width: 1679px){
+    .buy-page{
+        background-size: 70%, auto;
+    }
     .buy-page p {
         font-size: 24px;
         line-height: 32px;
@@ -760,6 +763,12 @@ footer{
         height: auto;
         max-width: 20px;
     }
+}
+@media all and (max-width: 1300px){
+    .buy-page{
+        background-size: 50%, auto;
+    }
+
 }
 @media all and (max-width: 1023px){
     .buy-page .container{

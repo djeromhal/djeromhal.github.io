@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bannery',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '37a70332d2733b14f041f49e6efe500b',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'd5d00750151bf5da4bcbe7e8147379ab',
+  'native_key' => 'bannery_media_source',
+  'object' => '{"key":"bannery_media_source","value":"","xtype":"numberfield","namespace":"bannery","area":"bannery_main","editedon":null}',
+);

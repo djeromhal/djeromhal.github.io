@@ -1,0 +1,23 @@
+<?php
+$_lang['customurls'] = 'Personnalisation des URLs';
+$_lang['customurls.menu_desc'] = 'Créez vos prores modèles d\'alias et d\'URI';
+$_lang['customurls.customurls_err_nf'] = 'Entrée introuvable';
+$_lang['customurls.customurls_err_ns'] = 'Entrée non spécifiée.';
+$_lang['customurls.customurls_err_nfs'] = 'Entrée introuvable ou non spécifiée.';
+$_lang['customurls.customurls_err_generate'] = 'Une erreur est survenue lors de la régénration des URLs';
+$_lang['customurls.customurls_err_remove'] = 'Une erreur est survenue lors de la suppression de l\'entrée';
+$_lang['customurls.customurl_create'] = 'Ajouter';
+$_lang['customurls.customurl_generate'] = 'Regénérer les URLs';
+$_lang['customurls.customurl_generate_confirm'] = 'Êtes-vous sûr de vouloir régéner les URLs existantes ?';
+$_lang['customurls.customurl_update'] = 'Mettre à jour';
+$_lang['customurls.customurl_remove'] = 'Supprimer';
+$_lang['customurls.customurl_remove_confirm'] = 'Êtes-vous sûr de vouloir supprimer cette entrée ?';
+$_lang['customurls.management'] = 'Personnalisation des URLs';
+$_lang['customurls.management_desc'] = 'Cet extra vous permet de définir des modèles d\'alias ou d\'URI pour vos ressources. CustomURLs supporte les extra translit et Redirector pour les translitération et les redirections. Documentation : http://rtfm.modx.com/display/ADDON/CustomUrls';
+$_lang['customurls.pattern'] = 'Modèle';
+$_lang['customurls.criteria_key'] = 'Champ de la contrainte';
+$_lang['customurls.criteria_value'] = 'Contrainte';
+$_lang['customurls.usergroup'] = 'Groupe d\'utilisateurs';
+$_lang['customurls.uri'] = 'URI';
+$_lang['customurls.override'] = 'Override';
+$_lang['customurls.active'] = 'Active';

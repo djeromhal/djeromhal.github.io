@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bannery',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'cbc1df1cca4a38e669b391a0f60e39b2',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '34a24aa06af5e6893cc845c96d9b33ca',
+  'native_key' => 'bannery_click',
+  'object' => '{"key":"bannery_click","value":"bannerclick","xtype":"textfield","namespace":"bannery","area":"bannery_main","editedon":null}',
+);
