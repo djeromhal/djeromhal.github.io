@@ -365,6 +365,7 @@ $(function(){
 			$.ajax({
 				type: "POST",
 				url: url,
+				dataType: 'JSON',
 				data: data,
 				cache: false,
 				success: function(data){
@@ -452,11 +453,13 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: data,
 				cache: false,
 				success: function(data){
 					console.log(data)
+					console.log(data.redir)
 					if(data.redir !== undefined){
 						document.location.href = data.redir;
 					}
@@ -483,6 +486,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: data,
 				cache: false,
@@ -539,6 +543,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: data,
 				cache: false,
@@ -575,6 +580,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: data,
 				cache: false,
@@ -621,6 +627,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: data,
 				cache: false,
@@ -656,6 +663,7 @@ $(function(){
 		if(IS_VALID){
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: data,
 				cache: false,
@@ -728,6 +736,7 @@ $(function(){
 			console.log(key + '=' + val)
 			$.ajax({
 				type: "POST",
+				dataType: 'JSON',
 				url: url,
 				data: key + '=' + val,
 				cache: false,
