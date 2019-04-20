@@ -491,6 +491,12 @@ $(function(){
 				data: data,
 				cache: false,
 				success: function(data){
+					if(data.response == "USER_NOT_FOUND"){
+						$('.error-text').show();
+					}else if(data.response == "MESS_SENT"){
+						$('.success-text').show();
+						$('.error-text').hide();
+					}
 					console.log(data)
 				}
 			});
@@ -548,6 +554,12 @@ $(function(){
 				data: data,
 				cache: false,
 				success: function(data){
+					if(data.response == "PASSWORDS_NOT_MATCHES"){
+						$('.error-text').show();
+					}else if(data.response == "MESS_SENT"){
+						$('.success-text').show();
+						$('.error-text').hide();
+					}
 					console.log(data)
 				}
 			});

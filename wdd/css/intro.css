@@ -1942,7 +1942,7 @@ textarea.settings-input{
 .upper-case{
     text-transform: uppercase;
 }
-.error-text{
+.error-text, .success-text{
     display: none;
 }
 .settings-link{
