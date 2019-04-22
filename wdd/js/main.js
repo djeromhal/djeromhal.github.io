@@ -236,7 +236,9 @@ $(function(){
 			$('.settings-input-edit').removeClass('on');
 			$('.settings-row-change').removeClass('opened');
 
-			input.prop('disabled','');
+			if(!input.hasClass('disabled')){
+				input.prop('disabled','');
+			}
 			input.addClass('on');
 			input.focus();
 			$(this).addClass('on');
@@ -301,34 +303,35 @@ $(function(){
 	// 	    }
 	//     }
 	// });
-	// $('#form-register-3').submit(function(e){
-	// 	e.preventDefault();
-	// 	var form = $(this);
-	// 	var url = form.attr('action');
-	// 	var price = form.find('#input-1');
-	// 	var data = '';
-	// 	var IS_VALID = true;
+	$('#form-register-3').submit(function(e){
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		var price = form.find('#input-1');
+		var data = '';
+		var IS_VALID = true;
 		
-	// 	if(price.val().trim() === ''){
-	// 		price.addClass('error');
-	// 		IS_VALID = false;
-	// 	}else{
-	// 		price.removeClass('error');
-	// 		data += price.attr('name') + '=' + price.val();
-	// 	}
+		if(price.val().trim() === ''){
+			price.addClass('error');
+			IS_VALID = false;
+		}else{
+			price.removeClass('error');
+			data += price.attr('name') + '=' + price.val();
+		}
 
-	// 	if(IS_VALID){
-	// 		$.ajax({
-	// 			type: "POST",
-	// 			url: url,
-	// 			data: data,
-	// 			cache: false,
-	// 			success: function(data){
-	// 				console.log(data)
-	// 			}
-	// 		});
-	// 	}
-	// })form-support
+		if(IS_VALID){
+			console.log(data)
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				cache: false,
+				success: function(data){
+					console.log(data)
+				}
+			});
+		}
+	})
 	$('#form-support').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
@@ -691,44 +694,71 @@ $(function(){
 		var url = form.attr('action');
 
 		var input = form.find('.settings-input.on');
+		var newMail = form.find('[name="new-mail"]');
+		var curPass = form.find('[name="cur-pass"]');
+		var newPass = form.find('[name="new-pass"]');
+		var repNewPass = form.find('[name="rep-new-pass"]');
 		var parent = input.closest('.settings-input-wrapper');
 		var IS_VALID = true;
 		var key = '';
 		var val = '';
+		var data = '';
 
 		if(input.attr('name') == 'name'){
 			if(input.val().trim() == ''){
-				validFalse();
+				validFalse(input);
 			}else{
-				validTrue();
+				data = input.attr('name') + '=' + input.val()
 			}
 		}
 		if(input.attr('name') == 'phone'){
 			if(input.val().length != 16){
-				validFalse();
+				validFalse(input);
 			}else{
-				validTrue();
+				data = input.attr('name') + '=' + input.val()
 			}
 		}
 
 		if(input.attr('name') == 'mail'){
 			if(!validateEmail(input.val())){
-				validFalse();
+				validFalse(input);
 			}else{
-				validTrue();
+				if(!validateEmail(newMail.val())){
+					validFalse(newMail);
+				}else{
+					newMail.removeClass('error');
+					data = newMail.attr('name') + '=' + newMail.val() + '&'
+				}
+				if(curPass.val().trim() === ''){
+					validFalse(curPass);
+				}else{
+					curPass.removeClass('error');
+					data += curPass.attr('name') + '=' + curPass.val()
+				}
 			}
 		}
 		if(input.attr('name') == 'password'){
 			if(input.val().trim() == '' || input.val().trim().length < 6){
-				validFalse();
+				validFalse(input);
 			}else{
-				validTrue();
+				if(newPass.val().trim() === '' || newPass.val().trim().length < 6){
+					validFalse(newPass);
+				}else{
+					newPass.removeClass('error');
+					data = newPass.attr('name') + '=' + newPass.val() + '&'
+				}
+				if(repNewPass.val().trim() === '' || repNewPass.val().trim().length < 6){
+					validFalse(repNewPass);
+				}else{
+					repNewPass.removeClass('error');
+					data += repNewPass.attr('name') + '=' + repNewPass.val()
+				}
 			}
 		}
 
-		function validTrue(){
-			key = input.attr('name');
-			val = input.val();
+		function validTrue(selector){
+			// key = input.attr('name');
+			// val = input.val();
 
 			input.attr('data-value', input.val())
 			
@@ -738,19 +768,30 @@ $(function(){
 			parent.find('.settings-input-edit').removeClass('on');
 			parent.find('.settings-row-change').removeClass('opened');
 		}
-		function validFalse(){
+		function validFalse(input){
 			input.addClass('error');
 			input.focus();
 			IS_VALID = false;
 		}
 
 		if(IS_VALID){
-			console.log(key + '=' + val)
+			validTrue();
+			if(input.attr('name') == 'mail'){
+				input.val(newMail.val());
+				newMail.val('');
+				curPass.val('');
+			}
+			if(input.attr('name') == 'password'){
+				input.val(newPass.val());
+				newPass.val('');
+				repNewPass.val('');
+			}
+			console.log(data)
 			$.ajax({
 				type: "POST",
 				dataType: 'JSON',
 				url: url,
-				data: key + '=' + val,
+				data: data,
 				cache: false,
 				success: function(data){
 					console.log(data)
@@ -765,12 +806,17 @@ $(function(){
 		var parent = _this.closest('.settings-input-wrapper');
 		var input = parent.find('.settings-input.on');
 
+		parent.find('input:not(.on)').val('')
+
 		input.val(input.attr('data-value'));
 		input.removeClass('error');
 		input.prop('disabled','disabled');
 		input.removeClass('on');
 		parent.find('.settings-input-edit').removeClass('on');
 		parent.find('.settings-row-change').removeClass('opened');
+
+
+
 	})
 
 	if($('.owl-carousel').length){
