@@ -53,7 +53,7 @@ $(function(){
 			}
 		},500)
 	})
-	$('.option-anim, .top-nav-links-a').on('mouseenter', function(e){
+	$('.option-anim').on('mouseenter', function(e){
 		// var media = $(this).find('audio')[0];
 		// media.load();
 		// const playPromise = media.play();
@@ -412,20 +412,16 @@ $(function(){
 		}else{
 			checkbox3.removeClass('error');
 		}
-		// if(name.val().trim() === ''){
-		// 	name.addClass('error');
-		// 	IS_VALID = false;
-		// }else{
-		// 	name.removeClass('error');
-		// 	data += name.attr('name') + '=' + name.val() + '&'
-		// }
-		// if(phone.val().length != 16){
-		// 	phone.addClass('error');
-		// 	IS_VALID = false;
-		// }else{
-		// 	phone.removeClass('error');
-		// 	data += phone.attr('name') + '=' + phone.val() + '&'
-		// }
+		if(name.val().trim() === ''){
+		}else{
+			name.removeClass('error');
+			data += name.attr('name') + '=' + name.val() + '&'
+		}
+		if(phone.val().length != 16){
+		}else{
+			phone.removeClass('error');
+			data += phone.attr('name') + '=' + phone.val() + '&'
+		}
 		if(!validateEmail(mail.val())){
 			mail.addClass('error');
 			IS_VALID = false;
@@ -456,6 +452,7 @@ $(function(){
 			reppass.removeClass('error');
 		}
 		if(IS_VALID){
+			console.log(data)
 			$.ajax({
 				type: "POST",
 				dataType: 'JSON',
