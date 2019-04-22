@@ -26,17 +26,27 @@ $(function(){
 		// 	// alert()
 		// })
 	}
+	
+	$('.main-menu-options .option-anim').on('click',function(e){
+		setTimeout(function(){
+			$('audio').trigger('pause');
+			$('audio').prop("currentTime",0);
+			$('#click-audio').trigger('play');
+		},0)
+	})
+	$('.main-menu-options .option-anim').on('mouseenter',function(e){
+		setTimeout(function(){
+			$('audio').trigger('pause');
+			$('audio').prop("currentTime",0);
+			$('#hover-audio').trigger('play');
+		},0)
+	})
 	$('.option-anim').on('click',function(e){
 		var _this = $(this);
 		if(_this.prop('href') !== undefined){
 			e.preventDefault();
 		}
 		$(this).addClass('active');
-		setTimeout(function(){
-			$('audio').trigger('pause');
-			$('audio').prop("currentTime",0);
-			$('#click-audio').trigger('play');
-		},0)
 
 		// var media = $(this).find('audio')[0];
 		// media.load();
@@ -51,20 +61,15 @@ $(function(){
 			}
 		},500)
 	})
-	$('.option-anim').on('mouseenter', function(e){
-		// var media = $(this).find('audio')[0];
-		// media.load();
-		// const playPromise = media.play();
-		// if (playPromise !== null){
-		//     playPromise.catch(() => { media.play(); })
-		// }
-		setTimeout(function(){
-			$('audio').trigger('pause');
-			$('audio').prop("currentTime",0);
-			$('#hover-audio').trigger('play');
-		},0)
+	// $('.option-anim').on('mouseenter', function(e){
+	// 	// var media = $(this).find('audio')[0];
+	// 	// media.load();
+	// 	// const playPromise = media.play();
+	// 	// if (playPromise !== null){
+	// 	//     playPromise.catch(() => { media.play(); })
+	// 	// }
 
-	})
+	// })
 	// Content scaling
 	var maxWidth  = 1920;
 	var maxHeight = 1080;
@@ -303,35 +308,35 @@ $(function(){
 	// 	    }
 	//     }
 	// });
-	$('#form-register-3').submit(function(e){
-		e.preventDefault();
-		var form = $(this);
-		var url = form.attr('action');
-		var price = form.find('#input-1');
-		var data = '';
-		var IS_VALID = true;
+	// $('#form-register-3').submit(function(e){
+	// 	e.preventDefault();
+	// 	var form = $(this);
+	// 	var url = form.attr('action');
+	// 	var price = form.find('#input-1');
+	// 	var data = '';
+	// 	var IS_VALID = true;
 		
-		if(price.val().trim() === ''){
-			price.addClass('error');
-			IS_VALID = false;
-		}else{
-			price.removeClass('error');
-			data += price.attr('name') + '=' + price.val();
-		}
+	// 	if(price.val().trim() === ''){
+	// 		price.addClass('error');
+	// 		IS_VALID = false;
+	// 	}else{
+	// 		price.removeClass('error');
+	// 		data += price.attr('name') + '=' + price.val();
+	// 	}
 
-		if(IS_VALID){
-			console.log(data)
-			$.ajax({
-				type: "POST",
-				url: url,
-				data: data,
-				cache: false,
-				success: function(data){
-					console.log(data)
-				}
-			});
-		}
-	})
+	// 	if(IS_VALID){
+	// 		console.log(data)
+	// 		$.ajax({
+	// 			type: "POST",
+	// 			url: url,
+	// 			data: data,
+	// 			cache: false,
+	// 			success: function(data){
+	// 				console.log(data)
+	// 			}
+	// 		});
+	// 	}
+	// })
 	$('#form-support').submit(function(e){
 		e.preventDefault();
 		var form = $(this);
