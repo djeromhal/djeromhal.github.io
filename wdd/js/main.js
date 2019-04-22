@@ -410,20 +410,20 @@ $(function(){
 		}else{
 			checkbox3.removeClass('error');
 		}
-		if(name.val().trim() === ''){
-			name.addClass('error');
-			IS_VALID = false;
-		}else{
-			name.removeClass('error');
-			data += name.attr('name') + '=' + name.val() + '&'
-		}
-		if(phone.val().length != 16){
-			phone.addClass('error');
-			IS_VALID = false;
-		}else{
-			phone.removeClass('error');
-			data += phone.attr('name') + '=' + phone.val() + '&'
-		}
+		// if(name.val().trim() === ''){
+		// 	name.addClass('error');
+		// 	IS_VALID = false;
+		// }else{
+		// 	name.removeClass('error');
+		// 	data += name.attr('name') + '=' + name.val() + '&'
+		// }
+		// if(phone.val().length != 16){
+		// 	phone.addClass('error');
+		// 	IS_VALID = false;
+		// }else{
+		// 	phone.removeClass('error');
+		// 	data += phone.attr('name') + '=' + phone.val() + '&'
+		// }
 		if(!validateEmail(mail.val())){
 			mail.addClass('error');
 			IS_VALID = false;
