@@ -1953,7 +1953,69 @@ textarea.settings-input{
 .settings-link{
     display: block;
 }
+.copy-link-wrapper{
+    position: absolute;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity,visibility .5s ease;
+}
+.copy-link-wrapper.show{
+    opacity: 1;
+    visibility: visible;
+}
+.copy-link-push{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    padding: 30px 40px;
+    text-align: center;
+    z-index: 7;
+    background-color: #000;
+}
+.copy-link-push h3{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #fff;
+}
+.copy-link-push p{
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    white-space: nowrap;
+}
+.copy-link-ok{
+    height: 90px;
+    line-height: 90px;
+    background-color: transparent;
+    display: inline-block;
+    text-align: center;
+    padding: 0 60px;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #fff;
+    border: 2px solid #fff;
+    font-family: Geometria;
+}
+.copy-link-ok .main-page-option-title{
+    line-height: 90px;
+}
 @media all and (max-width: 767px){
+    .copy-link-push p{
+        white-space: normal;
+    }
     .register-price-wrapper {
         margin-bottom: 10px;
     }

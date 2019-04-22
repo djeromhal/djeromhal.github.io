@@ -964,9 +964,13 @@ $(function(){
 	$('.copy-link').on('click', function(e){
 		e.preventDefault();
 		copyToClipboard($(this).attr('href'));
-		alert("Вы скопировали " + $(this).attr('href') + '. Делитесь где хотите!')
+		$('.copy-link-wrapper').addClass('show');
 
 		return false;
+	})
+	$('.copy-link-ok').on('click', function(e){
+		e.preventDefault();
+		$('.copy-link-wrapper').removeClass('show');
 	})
 })
 function copyToClipboard(text) {
