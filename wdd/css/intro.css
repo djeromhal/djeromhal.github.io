@@ -1381,6 +1381,9 @@ textarea.settings-input{
 .serial-nav-img{
     border: 2px solid #fff;
 }
+.serial-nav-img.opacity img{
+    opacity: .5;
+}
 .serial-nav-title {
     font-size: 35px;
     color: #fff;
@@ -1692,6 +1695,7 @@ textarea.settings-input{
     width: 50%;
     height: 755px;
     position: relative;
+    margin-top: 80px;
 }
 .collections-right img{
     position: absolute;
@@ -1699,6 +1703,7 @@ textarea.settings-input{
     left: 0;
     right: 0;
     margin: auto;
+    max-height: 100%;
 }
 .collections-progress-bar{
     border: 2px solid #fff;
@@ -2155,7 +2160,7 @@ textarea.settings-input{
         display: none;
     }
     .account-settings-page{
-        position: absolute;
+        position: static;
         top: 50px;
         bottom: 0;
         height: auto;
@@ -2234,6 +2239,7 @@ textarea.settings-input{
         width: 100%;
         float: none;
         height: auto;
+        margin-top: 0;
     }
     .collections-desc{
         padding-top: 0;
@@ -2381,7 +2387,7 @@ textarea.settings-input{
     }
     .settings-wrap.scroll {
         position: absolute;
-        top: 0;
+        top: 50px;
         padding: 15px;
         left: 0;
         right: 0;
