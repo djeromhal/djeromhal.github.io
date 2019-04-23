@@ -415,7 +415,7 @@ $(function(){
 		if(name.val().trim() === ''){
 		}else{
 			name.removeClass('error');
-			data += name.attr('name') + '=' + name.val() + '&'
+			data += name.attr('name') + '=' + encodeURIComponent(name.val()) + '&'
 		}
 		if(phone.val().length != 16){
 		}else{
@@ -434,14 +434,14 @@ $(function(){
 			IS_VALID = false;
 		}else{
 			newpass.removeClass('error');
-			data += newpass.attr('name') + '=' + newpass.val() + '&'
+			data += newpass.attr('name') + '=' + encodeURIComponent(newpass.val()) + '&'
 		}
 		if(reppass.val() === ''){
 			reppass.addClass('error');
 			IS_VALID = false;
 		}else{
 			reppass.removeClass('error');
-			data += reppass.attr('name') + '=' + reppass.val()
+			data += reppass.attr('name') + '=' + encodeURIComponent(reppass.val())
 		}
 		if(newpass.val().trim() !== reppass.val().trim()){
 			newpass.addClass('error');
