@@ -1,10 +1,5 @@
 html, body{
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
 }
 body{
     background: #000000;
@@ -952,7 +947,7 @@ p{
 
 
 .account-settings-page{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
