@@ -965,26 +965,26 @@ $(function(){
 		input.toggleClass('opened');
 		select.toggleClass('opened');
 	})
-	$('.collections-btn').on('click', function(e){
-		var _this = $(this);
-		console.log(_this)
-		var id = _this.attr('href');
+	// $('.collections-btn').on('click', function(e){
+	// 	var _this = $(this);
+	// 	console.log(_this)
+	// 	var id = _this.attr('href');
 
-		$('.tab-content.active').removeClass('active');
-		$(id).addClass('active');
-	})
-	$('.collections-icon').on('click', function(e){
-		var _this = $(this);
-		var img = _this.find('img');
-		var src = img.attr('data-src');
+	// 	$('.tab-content.active').removeClass('active');
+	// 	$(id).addClass('active');
+	// })
+	// $('.collections-icon').on('click', function(e){
+	// 	var _this = $(this);
+	// 	var img = _this.find('img');
+	// 	var src = img.attr('data-src');
 
-		$('#collections-main-img').find('img').attr('src', src);
+	// 	$('#collections-main-img').find('img').attr('src', src);
 
-		var textId = _this.data('text-id');
+	// 	var textId = _this.data('text-id');
 
-		$('.icon-text.active').removeClass('active');
-		$(textId).addClass('active');
-	})
+	// 	$('.icon-text.active').removeClass('active');
+	// 	$(textId).addClass('active');
+	// })
 	$('.copy-link').on('click', function(e){
 		e.preventDefault();
 		copyToClipboard($(this).attr('href'));
