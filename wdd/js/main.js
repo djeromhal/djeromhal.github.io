@@ -967,6 +967,7 @@ $(function(){
 	})
 	$('.collections-btn').on('click', function(e){
 		var _this = $(this);
+		console.log(_this)
 		var id = _this.attr('href');
 
 		$('.tab-content.active').removeClass('active');
