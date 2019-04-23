@@ -3,6 +3,8 @@ $(function(){
                    navigator.userAgent &&
                    navigator.userAgent.indexOf('CriOS') == -1 &&
                    navigator.userAgent.indexOf('FxiOS') == -1;
+    var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
 
 	if($('.option-anim').length){
 		// $('.option-anim').each(function(i,v){
@@ -76,6 +78,7 @@ $(function(){
     var height = $window.height();
     var transformMethod = $('#wrap').hasClass('zoom') ? 'zoom' : 'transform';
 
+
 	// Nav scaling
 	var maxWidthNav  = 1920;
 	var maxHeightNav = 100;
@@ -97,7 +100,8 @@ $(function(){
 	        $('#nav-wrap').attr({'style':''});
 	    }else{
 		    if(width >= maxWidth && height >= maxHeight) {
-		        $('#outer').css({transformMethod: ''});
+		        // $('#outer').css({transformMethod: ''});
+	        	$('#outer').attr({'style':''});
 		        $('#wrap').css({ width: '', height: '' });
 		        return;
 		    }
@@ -105,9 +109,15 @@ $(function(){
 		    scale = Math.min(width/maxWidth, height/maxHeight);
 			$('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
 		    if(transformMethod === 'zoom'){
-			    $('#outer').css({'zoom': scale});
+			    // $('#outer').css({'zoom': scale});
+			    if(!isFirefox){
+					$('#outer').attr('style','zoom:' + scale + ';');
+			    }else{
+					$('#outer').attr('style','-moz-transform: scale(' + scale + ');');
+			    }
 		    }else{
-			    $('#outer').css({'transform': 'scale(' + scale + ')'});
+			    // $('#outer').css({'transform': 'scale(' + scale + ')'});
+			    $('#outer').attr('style','transform:scale('+scale+');-moz-transform:scale('+scale+');-webkit-transform:scale('+scale+');-ms-transform:scale('+scale+');');
 		    }
 
 			// nav scaling ===============================
@@ -115,14 +125,18 @@ $(function(){
 		    heightNav = $windowNav.outerHeight();
 
 		    if(widthNav >= maxWidthNav && heightNav >= maxHeightNav) {
-		        $('#nav-outer').css({'zoom': ''});
+		        $('#nav-outer').attr('style', '');
 		        $('#nav-wrap').css({ width: '', height: '' });
 		        return;
 		    }
 
 		    scaleNav = Math.min(widthNav/maxWidthNav, heightNav/maxHeightNav);
 			$('#nav-wrap').css({ width: maxWidthNav * scaleNav, height: maxHeightNav * scaleNav });
-			$('#nav-outer').css({'zoom': scaleNav});
+		    if(!isFirefox){
+				$('#nav-outer').attr('style','zoom:' + scaleNav + ';');
+		    }else{
+				$('#nav-outer').attr('style','-moz-transform: scale(' + scaleNav + ');');
+		    }
 	    }
 	});
 
@@ -136,15 +150,27 @@ $(function(){
 		// content scaling ===============================
 	    scale = Math.min(width/maxWidth, height/maxHeight);
 	    if(transformMethod === 'zoom'){
-		    $('#outer').css({'zoom': scale});
+		    // $('#outer').css({'zoom': scale});
+		    if(!isFirefox){
+				$('#outer').attr('style','zoom:' + scale + ';');
+		    }else{
+				$('#outer').attr('style','-moz-transform: scale(' + scale + ');');
+		    }
 	    }else{
-		    $('#outer').css({'transform': 'scale(' + scale + ')'});
+		    // $('#outer').css({'transform': 'scale(' + scale + ')'});
+		   	$('#outer').attr('style','transform:scale('+scale+');-moz-transform:scale('+scale+');-webkit-transform:scale('+scale+');-ms-transform:scale('+scale+');');
+
 	    }
 		$('#wrap').css({ width: maxWidth * scale, height: maxHeight * scale });
 
 		// nav scaling ===============================
 	    scaleNav = Math.min(widthNav/maxWidthNav, heightNav/maxHeightNav);
-		$('#nav-outer').css({'zoom': scaleNav});
+		// $('#nav-outer').css({'zoom': scaleNav});
+	    if(!isFirefox){
+			$('#nav-outer').attr('style','zoom:' + scaleNav + ';');
+	    }else{
+			$('#nav-outer').attr('style','-moz-transform: scale(' + scaleNav + ');');
+	    }
 		$('#nav-wrap').css({ width: maxWidthNav * scaleNav, height: maxHeightNav * scaleNav });
 	}
 
@@ -185,11 +211,11 @@ $(function(){
 	$('.top-nav-burger').on('click',function(e){
 		$(this).toggleClass('open');
 		$('.main-menu').toggleClass('active');
-		if(!isSafari){
-			$('.top-nav-logo').toggleClass('menu-open');
-		}else{
+		if(isSafari || isFirefox){
 			$('.top-nav-logo').toggleClass('menu-open-safari');
+		}else{
 			// $('.main-menu-bg').toggleClass('safari');
+			$('.top-nav-logo').toggleClass('menu-open');
 		}
 		$('.top-nav-settings').toggleClass('hidden');
 		$('.top-nav-links').toggleClass('hidden');
