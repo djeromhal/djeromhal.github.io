@@ -607,7 +607,7 @@ $(function(){
 			IS_VALID = false;
 		}else{
 			pass.removeClass('error');
-			data += pass.attr('name') + '=' + pass.val() + '&'
+			data += pass.attr('name') + '=' + encodeURIComponent(pass.val()) + '&'
 		}
 		if(!validateEmail(mail.val())){
 			mail.addClass('error');

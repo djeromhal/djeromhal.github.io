@@ -2048,8 +2048,8 @@ textarea.settings-input{
     display: block;
 }
 .copy-link-wrapper{
-    position: absolute;
-    z-index: 7;
+    position: fixed;
+    z-index: 779;
     top: 0;
     left: 0;
     width: 100%;
