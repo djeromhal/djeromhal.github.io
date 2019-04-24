@@ -35,6 +35,7 @@ body{
 	height: 100%;
 	font-family: Geometria;
 	text-align: center;
+    overflow: hidden;
 }
 .img{
 	display: inline-block;
@@ -92,6 +93,9 @@ a{
     /*padding: 125px 185px 125px 125px;
     box-sizing: border-box;*/
     -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
 }
 
 .option-anim{
