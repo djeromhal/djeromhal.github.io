@@ -45,10 +45,10 @@ body{
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(to bottom, #000 50%, #651d02);
-	background: -webkit-linear-gradient(to bottom, #000 50%, #651d02);
-	background: -moz-linear-gradient(to bottom, #000 50%, #651d02);
-	background: -ms-linear-gradient(to bottom, #000 50%, #651d02);
-	background: -o-linear-gradient(to bottom, #000 50%, #651d02);
+	-webkit-background: linear-gradient(to bottom, #000 50%, #651d02);
+	-moz-background: linear-gradient(to bottom, #000 50%, #651d02);
+	-ms-background: linear-gradient(to bottom, #000 50%, #651d02);
+	-o-background: linear-gradient(to bottom, #000 50%, #651d02);
 	background-attachment: fixed;
     position: absolute;
     top: 0;
