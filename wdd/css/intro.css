@@ -545,6 +545,7 @@ p{
             border-radius: 100%;
     -webkit-filter: blur(70px);
             filter: blur(70px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='70');
 }
 .option-anim:hover:after {
     -webkit-transition: background-color .4s ease-in;
@@ -614,16 +615,19 @@ p{
         opacity: 0.7;
         -webkit-filter: blur(70px);
                 filter: blur(70px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='70');
     }
     50%{
         opacity: 1;
         -webkit-filter: blur(50px);
                 filter: blur(50px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='50');
     }
     100%{
         opacity: 0;
         -webkit-filter: blur(70px);
                 filter: blur(70px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='70');
     }
 }
 @keyframes optionActive2{
@@ -631,16 +635,19 @@ p{
         opacity: 0.7;
         -webkit-filter: blur(70px);
                 filter: blur(70px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='70');
     }
     50%{
         opacity: 1;
         -webkit-filter: blur(50px);
                 filter: blur(50px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='50');
     }
     100%{
         opacity: 0;
         -webkit-filter: blur(70px);
                 filter: blur(70px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='70');
     }
 }
 .option-anim.active .helper{
