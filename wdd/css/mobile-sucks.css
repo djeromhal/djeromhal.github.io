@@ -36,6 +36,13 @@ body{
 	font-family: Geometria;
 	background: linear-gradient(to bottom, #000 50%, #651d02);
 	background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 .wrap{
 	width: 100%;
