@@ -1072,6 +1072,10 @@ textarea.settings-input{
     height: 300px;
     line-height: 42px;
 }
+input[type="password"]{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .settings-input.change{
     border: 2px solid #fff;
 }
