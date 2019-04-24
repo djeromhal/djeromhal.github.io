@@ -1069,6 +1069,8 @@ p{
     font-family: Geometria;
 }
 textarea.settings-input{
+    padding-top: 20px;
+    padding-bottom: 20px;
     height: 300px;
     line-height: 42px;
 }
