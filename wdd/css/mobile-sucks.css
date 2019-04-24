@@ -24,16 +24,17 @@
 	box-sizing: border-box;
 }
 html{
-	height: 100%;
+	/*height: 100%;*/
 	width: 100%;
 }
 body{
 	max-width: 600px;
 	width: 100%;
-	height: 100%;
+	/*height: 100%;*/
 	margin: auto;
 	text-align: center;
 	font-family: Geometria;
+	overflow: visible;
 }
 .bg{
 	width: 100%;
