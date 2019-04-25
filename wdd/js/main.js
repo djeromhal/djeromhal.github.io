@@ -401,6 +401,9 @@ $(function(){
 				cache: false,
 				success: function(data){
 					console.log(data)
+					if(data.response == "MESS_RESP"){
+						$('.response-text p').html(data.message);
+					}
 				}
 			});
 		}
@@ -519,11 +522,8 @@ $(function(){
 				data: data,
 				cache: false,
 				success: function(data){
-					if(data.response == "USER_NOT_FOUND"){
-						$('.error-text').show();
-					}else if(data.response == "MESS_SENT"){
-						$('.success-text').show();
-						$('.error-text').hide();
+					if(data.response == "MESS_RESP"){
+						$('.response-text p').html(data.message);
 					}
 					console.log(data)
 				}
@@ -582,11 +582,8 @@ $(function(){
 				data: data,
 				cache: false,
 				success: function(data){
-					if(data.response == "PASSWORDS_NOT_MATCHES"){
-						$('.error-text').show();
-					}else if(data.response == "MESS_SENT"){
-						$('.success-text').show();
-						$('.error-text').hide();
+					if(data.response == "MESS_RESP"){
+						$('.response-text p').html(data.message);
 					}
 					console.log(data)
 				}
@@ -673,6 +670,9 @@ $(function(){
 				cache: false,
 				success: function(data){
 					console.log(data)
+					if(data.response == "MESS_RESP"){
+						$('.response-text p').html(data.message);
+					}
 				}
 			});
 		}

@@ -509,7 +509,7 @@ p{
 .option-anim.white:after{
     background-color: rgba(255,255,255,0);
 }
-.option-anim .helper:before {
+.option-anim:not(.not-anim) .helper:before {
     content: '';
     display: block;
     position: absolute;
@@ -524,6 +524,12 @@ p{
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
+}
+.option-anim.not-anim .helper:before{
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+
 }
 .option-anim:hover .helper:before {
     /*top: 0%;*/
@@ -547,11 +553,17 @@ p{
             filter: blur(70px);
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='70');
 }
-.option-anim:hover:after {
+.option-anim:not(.not-anim):hover:after {
     -webkit-transition: background-color .4s ease-in;
     -o-transition: background-color .4s  ease-in;
     -webkit-transition: background-color .4s  ease-in;
     transition: background-color .4s  ease-in;
+}
+.option-anim.not-anim:hover:after {
+    -webkit-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
 }
 .option-anim.blue:hover:after {
     background-color: rgba(0,167,255,0.7);
@@ -1908,7 +1920,7 @@ input[type="password"]{
     color: #fff;
     font-size: 30px;
 }
-.register-row p{
+.register-row p, .response-text p{
     font-size: 35px;
     line-height: 45px;
 }
@@ -2203,7 +2215,7 @@ input[type="password"]{
         width: 100%;
         margin-top: 20px;
     }
-    .register-row p {
+    .register-row p, .response-text p{
         font-size: 16px;
         line-height: 18px;
     }
