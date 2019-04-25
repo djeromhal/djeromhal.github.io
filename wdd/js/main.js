@@ -401,8 +401,8 @@ $(function(){
 				cache: false,
 				success: function(data){
 					console.log(data)
-					if(data.response == "MESS_RESP"){
-						$('.response-text p').html(data.message);
+					if(data.response !== undefined){
+						$('.response-text p').html(data.response);
 					}
 				}
 			});
@@ -522,8 +522,8 @@ $(function(){
 				data: data,
 				cache: false,
 				success: function(data){
-					if(data.response == "MESS_RESP"){
-						$('.response-text p').html(data.message);
+					if(data.response !== undefined){
+						$('.response-text p').html(data.response);
 					}
 					console.log(data)
 				}
@@ -582,8 +582,8 @@ $(function(){
 				data: data,
 				cache: false,
 				success: function(data){
-					if(data.response == "MESS_RESP"){
-						$('.response-text p').html(data.message);
+					if(data.response !== undefined){
+						$('.response-text p').html(data.response);
 					}
 					console.log(data)
 				}
@@ -670,8 +670,8 @@ $(function(){
 				cache: false,
 				success: function(data){
 					console.log(data)
-					if(data.response == "MESS_RESP"){
-						$('.response-text p').html(data.message);
+					if(data.response !== undefined){
+						$('.response-text p').html(data.response);
 					}
 				}
 			});
