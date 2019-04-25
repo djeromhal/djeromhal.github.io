@@ -375,7 +375,7 @@ $(function(){
 			IS_VALID = false;
 		}else{
 			mail.removeClass('error');
-			data += mail.attr('name') + '=' + mail.val()
+			data += mail.attr('name') + '=' + mail.val() + '&'
 		}
 		if(subj.val().trim() === ''){
 			subj.addClass('error');
