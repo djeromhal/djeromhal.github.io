@@ -897,7 +897,7 @@ $(function(){
 		    }
 		})
 		$('.buy-page-car').owlCarousel({
-		    loop:true,
+		    loop:false,
 		    margin:60,
 		    nav:false,
 		    responsiveClass:true,
