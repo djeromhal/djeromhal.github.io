@@ -207,7 +207,9 @@ $(function(){
 	    	});
 		},1000);
 	}
-
+ 	if(isSafari){
+ 		$('.option-anim').addClass('not-anim');
+ 	}
 	$('.top-nav-burger').on('click',function(e){
 		$(this).toggleClass('open');
 		$('.main-menu').toggleClass('active');
