@@ -8,6 +8,16 @@
   <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
+	<div class="modal">
+		<form class="contacts-map-form">
+			<div class="cross"><span></span><span></span></div>
+			<h3>Свяжитесь с нами!</h3>
+			<input class="contacts-map-form-input" type="text" name="name" placeholder="Имя">
+			<input class="contacts-map-form-input" type="tel" name="tel" placeholder="Телефон">
+			<textarea class="contacts-map-form-textarea" placeholder="Здравствуйте! Меня заинтересовали Ваши услуги. Свяжитесь со мной по телефону."></textarea>
+			<button type="submit" class="button button-style-5">Позвонить мне</button>
+		</form>
+	</div>
 	<div class="header-top-line">
 		<div class="container">
 			<div class="row">
@@ -19,31 +29,38 @@
 	</div>
 	<div class="container header-top">
 		<div class="row">
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-sm-4 col-xs-12">
 				<a href="#" class="header-top-logo header-top-item"><img src="images/logo.png"></a>
 			</div>
-			<div class="col-lg-5 col-lg-offset-4 header-top-right">
+			<div class="col-lg-5 col-lg-offset-4 col-sm-6 col-sm-offset-2 header-top-right">
 				<a href="tel:84951044244" class="header-top-tel header-top-item"><i><img src="images/phone.png"></i>8 (495) 104-42-44</a>
 				<button class="button button-style-1 header-top-item">Обратный звонок</button>
 			</div>
 		</div>
 	</div>
-	<div class="container header-menu-line">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="header-catalog">
-					<div class="header-catalog-burger"><span></span><span></span><span></span></div>
-					<span>Каталог</span>
+	<div class="header-menu-line">
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-lg-2 header-logo-fixed header-top-logo"><img src="images/logo.png"></div> -->
+				<div class="col-lg-3 col-xs-6 header-catalog-wrapper">
+					<div class="header-catalog header-catalog--green">
+						<div class="header-catalog-burger"><span></span><span></span><span></span></div>
+						<span>Каталог</span>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-9">
-				<ul class="header-menu">
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Рассчитать под ключ</a></li>
-					<li><a href="#">Где купить</a></li>
-					<li><a href="#">Информация</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
+				<div class="col-lg-9 col-xs-6 header-catalog-wrapper">
+					<div class="header-catalog header-catalog--orange hidden-lg">
+						<div class="header-catalog-burger"><span></span><span></span><span></span></div>
+						<span>Меню</span>
+					</div>
+					<ul class="header-menu">
+						<li><a href="#">Главная</a></li>
+						<li><a href="#">Рассчитать под ключ</a></li>
+						<li><a href="#">Где купить</a></li>
+						<li><a href="#">Информация</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -51,20 +68,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="title-h2 title-h2-with-desc">Видео про септик кристалл</h2>
+					<h2 class="title-h2">Видео про септик кристалл</h2>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-sm-5">
 					<div class="navs">
-						<div class="navs-item"><a href="#content-1" class="navs-item-link active">Принцип работы септика</a></div>
-						<div class="navs-item"><a href="#content-2" class="navs-item-link">Документация</a></div>
-						<div class="navs-item"><a href="#content-3" class="navs-item-link">Монтаж септика кристалл 5</a></div>
-						<div class="navs-item"><a href="#content-4" class="navs-item-link">Септик Кристалл на выставке Загородный Дом Весна 2019, г.</a></div>
-						<div class="navs-item"><a href="#content-5" class="navs-item-link">Как мы производим Септик Кристалл</a></div>
+						<div class="navs-burger-mob"><span></span><span></span><span></span></div>
+						<div class="navs-inner">
+							<div class="navs-item active"><a href="#content-1" class="navs-item-link">Принцип работы септика</a></div>
+							<div class="navs-item"><a href="#content-2" class="navs-item-link">Документация</a></div>
+							<div class="navs-item"><a href="#content-3" class="navs-item-link">Монтаж септика кристалл 5</a></div>
+							<div class="navs-item"><a href="#content-4" class="navs-item-link">Септик Кристалл на выставке Загородный Дом Весна 2019, г.</a></div>
+							<div class="navs-item"><a href="#content-5" class="navs-item-link">Как мы производим Септик Кристалл</a></div>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-9">
+				<div class="col-lg-9 col-sm-7">
 					<div class="navs-content">
 						<div class="navs-content-item active" id="content-1">
 							<iframe width="100%" height="230" src="https://www.youtube.com/embed/62Er64fkKZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -107,32 +127,32 @@
 				<div class="col-lg-12">
 					<h2 class="title-h2">Наши партнеры</h2>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-xs-6">
 					<div class="partners-item">
 						<img src="images/partners-1.png">
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-xs-6">
 					<div class="partners-item">
 						<img src="images/partners-2.png">
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-xs-6">
 					<div class="partners-item">
 						<img src="images/partners-3.png">
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-xs-6">
 					<div class="partners-item">
 						<img src="images/partners-4.png">
 					</div>
 				</div>
-				<div class="col-lg-3 col-lg-offset-3">
+				<div class="col-lg-3 col-lg-offset-3 col-xs-6">
 					<div class="partners-item">
 						<img src="images/partners-5.png">
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-xs-6">
 					<div class="partners-item">
 						<img src="images/partners-6.png">
 					</div>
