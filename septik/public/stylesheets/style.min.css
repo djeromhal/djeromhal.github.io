@@ -2872,7 +2872,11 @@ a {
     .main-feedback .container {
       padding: 0 50px; }
     .main-feedback-inner {
-      height: auto; }
+      height: auto;
+      position: static;
+      top: 0;
+      left: 0;
+      transform: none; }
     .main-feedback-carousel {
       position: static;
       top: 0;
@@ -2988,7 +2992,7 @@ a {
       font-size: 38px;
       line-height: 70px; }
   .main-products {
-    padding: 25px;
+    padding: 25px 0;
     height: auto; }
     .main-products h3 {
       margin-bottom: 40px; }

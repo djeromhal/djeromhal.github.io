@@ -2825,6 +2825,10 @@ a{
 
       &-inner{
         height: auto;
+        position: static;
+        top: 0;
+        left: 0;
+        transform: none;
       }
 
       &-carousel{
@@ -3003,7 +3007,7 @@ a{
     }
 
     &-products{
-      padding: 25px;
+      padding: 25px 0;
       height: auto;
 
       h3{
