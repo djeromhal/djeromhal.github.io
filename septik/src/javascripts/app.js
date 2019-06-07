@@ -364,13 +364,51 @@ $(function(){
 		$('.modal').removeClass('show');
 	})
 
+	var offset = 80;
+	if($(window).width()<1199){
+		offset = 40;
+	}
 
-
-	$.scrollify({
+	var scrollifyData = {
 		section : ".main-section",
-		offset: -($('.header-menu-line').outerHeight()),
-		scrollSpeed: 700
-	});
+		offset: -(offset),
+		scrollSpeed: 700,
+		setHeights: true,
+	    before:function(e) {
+	    	console.log('before',e, this)
+	    	if(e == 0){
+	    		this.offset = 0;
+	    	}else{
+	    		this.offset = -offset;
+	    	}
+	    },
+	    after:function(e) {
+	    	console.log('after',e, this)
+	    },
+	    afterResize:function(e) {
+	    	console.log('afterResize',e, this)
+			if($(window).width()<1199){
+				this.offset = -40;
+			}else{
+				this.offset = -80;
+			}
+	    },
+	    afterRender:function(e) {
+	    	console.log('afterRender',e, this)
+	    }
+	}
+
+	if($(window).width()>767){
+		$.scrollify(scrollifyData);
+	}
+
+	$(window).on('resize', function(){
+		if($(this).width() < 768){
+			$.scrollify.destroy();
+		}else{
+			$.scrollify(scrollifyData);
+		}
+	})
 	// СТРАНИЦА ТОВАРА 
   var bigimage = $("#product-big-img");
   var thumbs = $("#product-thumbs");
@@ -410,7 +448,7 @@ $(function(){
     		margin: 2
     	},
     	767:{
-    		margin: 10
+    		margin: 5
     	}
     },
     slideBy: 4,
