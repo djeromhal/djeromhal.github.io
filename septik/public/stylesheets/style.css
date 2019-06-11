@@ -1083,9 +1083,16 @@ body {
         top: 20px;
         z-index: 778;
         transition: all .5s ease;
-        max-width: 200px; } }
+        max-width: 200px;
+        animation: logoDown .3s normal ease-in-out; }
+      @keyframes logoDown {
+        from {
+          transform: translateY(-100px); }
+        to {
+          transform: translateY(0); } } }
     .header-top-logo img {
-      max-width: 100%; }
+      max-width: 100%;
+      width: 100%; }
   .header-top-right {
     text-align: right; }
   .header-top-item {
@@ -1172,7 +1179,9 @@ body {
 .button {
   border: none;
   background: transparent;
-  outline: none; }
+  outline: none;
+  transition: all .5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
   .button-style-1 {
     background: #ff9d3c;
     color: #fff;
@@ -1181,6 +1190,11 @@ body {
     font-weight: 400;
     border-radius: 3px;
     padding: 0 20px; }
+    .button-style-1:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-1:active {
+      background: #ef7700; }
   .button-style-2 {
     background: #ff9d3c;
     color: #fff;
@@ -1190,6 +1204,11 @@ body {
     border-radius: 3px;
     padding: 0 20px;
     line-height: 19px; }
+    .button-style-2:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-2:active {
+      background: #ef7700; }
   .button-style-3 {
     color: #333333;
     height: 58px;
@@ -1199,6 +1218,11 @@ body {
     border: 2px solid #699952;
     padding: 0 100px;
     line-height: 19px; }
+    .button-style-3:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-3:active {
+      background: #ef7700; }
   .button-style-4 {
     background: #ff9d3c;
     color: #fff;
@@ -1208,6 +1232,11 @@ body {
     border-radius: 3px;
     padding: 0 60px;
     line-height: 19px; }
+    .button-style-4:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-4:active {
+      background: #ef7700; }
   .button-style-5 {
     background: #ff9d3c;
     color: #fff;
@@ -1218,6 +1247,11 @@ body {
     font-weight: 600;
     border-radius: 3px;
     padding: 0; }
+    .button-style-5:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-5:active {
+      background: #ef7700; }
   .button-style-6 {
     background: #ff9d3c;
     color: #fff;
@@ -1227,6 +1261,11 @@ body {
     border-radius: 3px;
     padding: 0 20px;
     line-height: 17px; }
+    .button-style-6:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-6:active {
+      background: #ef7700; }
   .button-style-7 {
     background: #699952;
     color: #fff;
@@ -1236,6 +1275,11 @@ body {
     border-radius: 3px;
     padding: 0 20px;
     line-height: 17px; }
+    .button-style-7:hover {
+      background: #527840;
+      color: #fff; }
+    .button-style-7:active {
+      background: #476737; }
   .button-style-8 {
     color: #333333;
     border: 1px solid #ff9d3c;
@@ -1244,6 +1288,11 @@ body {
     border-radius: 3px;
     padding: 0;
     line-height: 17px; }
+    .button-style-8:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-8:active {
+      background: #ef7700; }
   .button-style-9 {
     color: #333333;
     border: 1px solid #ff9d3c;
@@ -1254,6 +1303,11 @@ body {
     padding: 0;
     line-height: 19px;
     width: 340px; }
+    .button-style-9:hover {
+      background: #ff8309;
+      color: #fff; }
+    .button-style-9:active {
+      background: #ef7700; }
   .button-style-10 {
     background: #699952;
     color: #fff;
@@ -1263,6 +1317,11 @@ body {
     border-radius: 3px;
     padding: 0 20px;
     line-height: 17px; }
+    .button-style-10:hover {
+      background: #527840;
+      color: #fff; }
+    .button-style-10:active {
+      background: #476737; }
   .button-desc {
     border: 1px solid #ff9d3c;
     font-size: 17px;
@@ -1674,6 +1733,8 @@ body {
     line-height: 34px; }
   .main-creation-sign {
     margin-top: 80px; }
+    .main-creation-sign img {
+      margin-left: 50px; }
 
 .main-feedback {
   height: calc(100vh - 80px);
@@ -2142,6 +2203,9 @@ a {
         justify-content: flex-start; }
     .garanties-item-img {
       width: 120px;
+      min-width: 120px;
+      -ms-flex-preferred-size: 120px;
+          flex-basis: 120px;
       height: 120px;
       line-height: 120px;
       border: 1px solid #ff9d3c;
@@ -2429,6 +2493,19 @@ a {
           transform: rotate(45deg);
           transform-origin: 100% 0;
           right: 0; }
+
+.arrow-up {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 777;
+  cursor: pointer;
+  transition: all .5s ease; }
+  .arrow-up.show {
+    visibility: visible;
+    opacity: 1; }
 
 @media all and (min-width: 1200px) {
   .hidden-lg {

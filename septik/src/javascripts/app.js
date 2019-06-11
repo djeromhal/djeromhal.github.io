@@ -103,7 +103,7 @@ $(function(){
 	// ГЛАВНАЯ КАРУСЕЛЬ ОТЗЫВОВ
 	var $feedbackCarousel = $('.main-feedback-carousel');
 	if(
-		($(window).height() > 810 && $(window).width() > 767)
+		($(window).height() > 850 && $(window).width() > 767)
 		){
 		$feedbackCarousel.on('initialize.owl.carousel', function(e){
 			$feedbackCarousel.find('.item').each(function(index){
@@ -141,7 +141,7 @@ $(function(){
 	var flagRebuildUp = false;
 	$(window).on('resize', function(){
 		var w = $(this); //this = window
-		if ((w.width() < 768 || w.height() <= 810 && w.width() > 767) && !flagRebuildDown) {
+		if ((w.width() < 768 || w.height() <= 850 && w.width() > 767) && !flagRebuildDown) {
 			$feedbackCarousel.owlCarousel('destroy');
 			$feedbackCarousel.on('initialize.owl.carousel', function(e){
 				$feedbackCarousel.find('.item__col').contents().unwrap();
@@ -150,7 +150,7 @@ $(function(){
 
 			flagRebuildDown = true;
 			flagRebuildUp = false;
-		}else if((w.height() > 810 && w.width() > 767) && !flagRebuildUp){
+		}else if((w.height() > 850 && w.width() > 767) && !flagRebuildUp){
 			$feedbackCarousel.owlCarousel('destroy');
 			$feedbackCarousel.on('initialize.owl.carousel', function(e){
 				$feedbackCarousel.find('.item').each(function(index) {
@@ -373,7 +373,7 @@ $(function(){
 		section : ".main-section",
 		offset: -(offset),
 		scrollSpeed: 700,
-		setHeights: true,
+		setHeights: false,
 	    before:function(e) {
 	    	console.log('before',e, this)
 	    	if(e == 0){
@@ -409,6 +409,28 @@ $(function(){
 			$.scrollify(scrollifyData);
 		}
 	})
+
+	//Возврат на верх
+
+	if($(window).scrollTop() >= $(window).height()-80){
+		$('.arrow-up').addClass('show');
+	}else{
+		$('.arrow-up').removeClass('show');
+	}
+
+	$(window).on('scroll', function(e){
+		if($(window).scrollTop() >= $(window).height()-80){
+			$('.arrow-up').addClass('show');
+		}else{
+			$('.arrow-up').removeClass('show');
+		}
+	})
+
+	$('.arrow-up').on('click', function(e){
+		var body = $("html, body");
+		body.stop().animate({scrollTop:0}, 500, 'swing');
+	})
+
 	// СТРАНИЦА ТОВАРА 
   var bigimage = $("#product-big-img");
   var thumbs = $("#product-thumbs");

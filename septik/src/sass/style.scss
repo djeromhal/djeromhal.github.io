@@ -28,12 +28,23 @@ body{
           z-index: 778;
           transition: all .5s ease;
           max-width: 200px;
+          animation: logoDown .3s normal ease-in-out;
+        }
+
+        @keyframes logoDown {
+          from {
+            transform: translateY(-100px);
+          }
+          to{
+            transform: translateY(0);
+          }
         }
       }
 
 
       img{
         max-width: 100%;
+        width: 100%;
       }
     }
 
@@ -156,6 +167,9 @@ body{
   border: none;
   background: transparent;
   outline: none;
+  transition: all .5s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
 
   &-style{
     &-1{
@@ -166,6 +180,14 @@ body{
       font-weight: 400;
       border-radius: 3px;
       padding: 0 20px;
+
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-2{
       background: $color-3;
@@ -176,6 +198,14 @@ body{
       border-radius: 3px;
       padding: 0 20px;
       line-height: 19px;
+
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-3{
       color: $color-1;
@@ -186,6 +216,14 @@ body{
       border: 2px solid $color-5;
       padding: 0 100px;
       line-height: 19px;
+      
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-4{
       background: $color-3;
@@ -196,6 +234,14 @@ body{
       border-radius: 3px;
       padding: 0 60px;
       line-height: 19px;
+
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-5{
       background: $color-3;
@@ -207,6 +253,14 @@ body{
       font-weight: 600;
       border-radius: 3px;
       padding: 0;
+      
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-6{
       background: $color-3;
@@ -217,6 +271,14 @@ body{
       border-radius: 3px;
       padding: 0 20px;
       line-height: 17px;
+      
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-7{
       background: $color-5;
@@ -227,6 +289,14 @@ body{
       border-radius: 3px;
       padding: 0 20px;
       line-height: 17px;
+      
+      &:hover{
+        background: darken($color-5, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-5, 15%);
+      }
     }
     &-8{
       color: $color-1;
@@ -236,6 +306,14 @@ body{
       border-radius: 3px;
       padding: 0;
       line-height: 17px;
+
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-9{
       color: $color-1;
@@ -247,6 +325,14 @@ body{
       padding: 0;
       line-height: 19px;
       width: 340px;
+
+      &:hover{
+        background: darken($color-3, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-3, 15%);
+      }
     }
     &-10{
       background: $color-5;
@@ -257,6 +343,14 @@ body{
       border-radius: 3px;
       padding: 0 20px;
       line-height: 17px;
+
+      &:hover{
+        background: darken($color-5, 10%);
+        color: $color-4;
+      }
+      &:active{
+        background: darken($color-5, 15%);
+      }
     }
   }
 
@@ -879,6 +973,10 @@ body{
 
     &-sign{
       margin-top: 80px;
+
+      img{
+        margin-left: 50px;
+      }
     }
   }
 
@@ -1550,6 +1648,8 @@ a{
 
     &-img{
       width: 120px;
+      min-width: 120px;
+      flex-basis: 120px;
       height: 120px;
       line-height: 120px;
       border: 1px solid $color-3;
@@ -1970,6 +2070,22 @@ a{
         }
       }
     }
+}
+
+.arrow-up{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 777;
+  cursor: pointer;
+  transition: all .5s ease;
+
+  &.show{
+    visibility: visible;
+    opacity: 1;
+  }
 }
 @media all and (min-width: 1200px){
   .hidden-lg{
