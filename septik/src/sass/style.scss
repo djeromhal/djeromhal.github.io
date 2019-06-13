@@ -24,11 +24,11 @@ body{
       @media all and (min-width: 1200px){
         &.fixed{
           position: fixed;
-          top: 20px;
+          top: 23px;
           z-index: 778;
           transition: all .5s ease;
-          max-width: 200px;
-          animation: logoDown .3s normal ease-in-out;
+          max-width: 170px;
+          animation: logoDown .3s normal ease;
         }
 
         @keyframes logoDown {
@@ -876,6 +876,12 @@ body{
     background: $color-5 url(../images/main-order-bg.png) no-repeat center center;
     background-size: cover;
     height: calc(100vh - 80px);
+
+    &-img{
+      img{
+        max-height: 100%;
+      }
+    }
 
     .container{
       position: relative;
@@ -2100,6 +2106,13 @@ a{
       }
     }
     .main{
+      &-order{
+        &-img{
+          height: 60vh;
+          margin-top: 5vh;
+          text-align: right;
+        }
+      }
       &-creation{
         &-gallery{
           height: 50vh;

@@ -1080,11 +1080,11 @@ body {
     @media all and (min-width: 1200px) {
       .header-top-logo.fixed {
         position: fixed;
-        top: 20px;
+        top: 23px;
         z-index: 778;
         transition: all .5s ease;
-        max-width: 200px;
-        animation: logoDown .3s normal ease-in-out; }
+        max-width: 170px;
+        animation: logoDown .3s normal ease; }
       @keyframes logoDown {
         from {
           transform: translateY(-100px); }
@@ -1680,6 +1680,8 @@ body {
   background: #699952 url(../images/main-order-bg.png) no-repeat center center;
   background-size: cover;
   height: calc(100vh - 80px); }
+  .main-order-img img {
+    max-height: 100%; }
   .main-order .container {
     position: relative;
     height: 100%; }
@@ -2514,6 +2516,10 @@ a {
 @media all and (min-width: 1200px) and (max-height: 690px) {
   .delimeter-style-1 {
     margin: 5vh 0; }
+  .main-order-img {
+    height: 60vh;
+    margin-top: 5vh;
+    text-align: right; }
   .main-creation-gallery {
     height: 50vh;
     text-align: right; }
