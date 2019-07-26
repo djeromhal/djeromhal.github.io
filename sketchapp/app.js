@@ -10,8 +10,13 @@ $(function(e){
 	    nav: false,
 	    dots: false,
 	    loop: true,
-	    center: true, 
+	    // center: true, 
 	    responsiveClass:true,
-	    autoWidth: true
+	    autoWidth: true,
+	    responsive:{
+	        0:{
+	            items:9
+	        }
+	    }
 	})
 })
