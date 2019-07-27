@@ -105,12 +105,12 @@ body{
 .swiper-top.swiper-container{
     margin-bottom: -25px;
     position: relative;
-    top: 0;
+	transform: translateY(0);
     z-index: 7;
     transition: all .5s ease;
 }
 .swiper-top.swiper-container.touch{
-	top: -30px;
+	transform: translateY(-30px);
 }
 .swiper-bottom:after {
     content: '';
