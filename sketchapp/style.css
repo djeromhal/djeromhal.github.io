@@ -160,7 +160,7 @@ body{
 	height: 70px;
 	transition: all .2s ease;
 }
-.touch .ruler-slider-cur{
+.move .ruler-slider-cur{
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
     -ms-filter: blur(2px);

@@ -356,12 +356,15 @@
 	      loop: true,
 	      centeredSlides: true,
 	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
+	      	},
 	      	touchStart: function(e){
 	      		console.log(e)
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
-	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch');
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      }
 	    });
@@ -378,11 +381,14 @@
 	      centeredSlides: true,
 	      // effect: 'coverflow',
 	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
+	      	},
 	      	touchStart: function(e){
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
-	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch');
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      }
 	    });
@@ -402,11 +408,14 @@
 	      loop: true,
 	      centeredSlides: true,
 	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
+	      	},
 	      	touchStart: function(e){
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
-	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch');
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      }
 	    });
@@ -423,11 +432,14 @@
 	      centeredSlides: true,
 	      // effect: 'coverflow',
 	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
+	      	},
 	      	touchStart: function(e){
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
-	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch');
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      }
 	    });
@@ -447,11 +459,14 @@
 	      loop: true,
 	      centeredSlides: true,
 	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
+	      	},
 	      	touchStart: function(e){
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
-	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch');
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      }
 	    });
@@ -468,11 +483,14 @@
 	      centeredSlides: true,
 	      // effect: 'coverflow',
 	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
+	      	},
 	      	touchStart: function(e){
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
-	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch');
+	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      }
 	    });
