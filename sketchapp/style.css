@@ -61,10 +61,10 @@ body{
 }
 .ruler-slider-bg{
 	background: url(i/ruler-bg.png) repeat-x center top;
-	background-size: contain;
-	min-width: 40px;
-	width: 40px;
-	height: 60px;
+	background-size: 40px;
+	/*min-width: 40px;*/
+	width: 100%;
+	height: 65px;
 	position: relative;
 }
 .ruler-slider-value{
@@ -105,12 +105,12 @@ body{
 .swiper-top.swiper-container{
     margin-bottom: -25px;
     position: relative;
-	transform: translateY(0);
+	transform: translateY(0) scale(0.9);
     z-index: 7;
     transition: all .2s ease;
 }
 .swiper-top.swiper-container.touch{
-	transform: translateY(-30px);
+	transform: translateY(-30px) scale(1);
 }
 .swiper-bottom:after {
     content: '';
@@ -135,15 +135,33 @@ body{
 .ruler-slider{
 	margin-bottom: 50px;
 }
-.ruler-slider-cur-bg{
-	background: url(i/ruler-bg.png) repeat-x center -27px;
-	background-size: contain;
-	min-width: 70px;
-	width: 70px;
+.ruler-slider-cur{
+	/*min-width: 70px;*/
+	width: 100%;
 	height: 70px;
 	position: relative;
 }
+.ruler-slider-cur-bg{
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(i/ruler-bg.png) repeat-x center -27px;
+	background-size: contain;
+	width: 100%;
+	height: 70px;
+	transition: all .2s ease;
+}
+.touch .ruler-slider-cur-bg{
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
 .ruler-slider-cur-value{
+	z-index: 2;
     position: absolute;
     color: #fff;
     bottom: 7px;
@@ -155,4 +173,25 @@ body{
     background: darkblue;
     padding: 8px 0 0 0;
     box-sizing: border-box;
+}
+.ruler-slider-color {
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+.ruler-slider-cur-color-value{
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+}
+.ruler-slider-cur-color {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
