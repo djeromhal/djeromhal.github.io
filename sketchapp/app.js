@@ -1,4 +1,4 @@
-$(function(e){
+// $(function(e){
 	// $('.ruler-slider').on( "swipe", function( e, ui ) {
 	// 	console.log(e,ui)
 	// });
@@ -20,20 +20,22 @@ $(function(e){
 	//     //     }
 	//     // }
 	// })
-	$('.slick').slick({
-		dots: false,
-		arrows: false,
-		infinite: true,
-		speed: 100,
-		slidesToShow: 9,
-		adaptiveHeight: false,
-  		variableWidth: true,
-  		centerMode: true,
-  		cssEase: 'linear'
-  		// rtl: true	
-	});
+	// $('.slick').slick({
+	// 	dots: false,
+	// 	arrows: false,
+	// 	infinite: true,
+	// 	speed: 1500,
+	// 	slidesToShow: 4,
+	// 	adaptiveHeight: false,
+ //  		variableWidth: true,
+ //  		centerMode: true,
+ //  		// waitForAnimate: false
+ //  		// cssEase: 'linear'
+ //  		// rtl: true	
+	// });
 
-})
+
+// })
 // $(document).ready(function() {
 // 	var sync1 = $(".sync1");
 // 	var sync2 = $(".sync2");
