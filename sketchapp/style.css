@@ -75,3 +75,6 @@ body{
 	left: 0;
 	text-align: center;
 }
+.slick-arrow{
+	display: none !important;
+}
