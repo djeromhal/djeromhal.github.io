@@ -201,3 +201,12 @@ body{
     width: 100%;
     height: 100%;
 }
+.swiper3 .swiper-slide{
+	opacity: 0;
+	visibility: hidden;
+}
+
+.swiper3 .swiper-slide.swiper-slide-active{
+	opacity: 1;
+	visibility: visible;
+}

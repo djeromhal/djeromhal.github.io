@@ -408,7 +408,11 @@
 	      // effect: 'fade',
 	      loop: true,
 	      centeredSlides: true,
-	      allowTouchMove: false
+	      allowTouchMove: false,
+	      // slideClass: 'swiper-slide slide-hidden',
+	      // slideActiveClass: 'swiper-slide swiper-slide-active slide-visible',
+	      // slideNextClass: 'swiper-slide swiper-slide-next slide-visible',
+	      // slidePrevClass: 'swiper-slide swiper-slide-prev slide-visible',
 	      // on:{
 	      // 	touchMove: function(e){
 	      // 		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
@@ -447,7 +451,7 @@
 	      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
 	      	},
 	      	slideChange: function(e, i){
-    			swiper3.slideTo(this.realIndex,speed,false );
+    			swiper3.slideToLoop(this.realIndex,speed,false );
 	      	}
 	      }
 	    });
