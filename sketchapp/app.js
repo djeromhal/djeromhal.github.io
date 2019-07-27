@@ -22,14 +22,14 @@ $(function(e){
 	// })
 	$('.slick').slick({
 		dots: false,
-		navs: false,
+		arrows: false,
 		infinite: true,
 		speed: 100,
 		slidesToShow: 9,
 		adaptiveHeight: false,
   		variableWidth: true,
   		centerMode: true,
-  		// cssEase: 'linear'
+  		cssEase: 'linear'
   		// rtl: true	
 	});
 
