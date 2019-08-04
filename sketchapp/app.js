@@ -1,4 +1,7 @@
 $(function(){
+	$(document).longpress(function(e){
+		e.preventDefault();
+	});
 	var speed = 300;
     var touchMove_mainSwiper = false;
     var mainSwiper = new Swiper('#main-swiper', {
