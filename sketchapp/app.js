@@ -27,6 +27,7 @@ $(function(){
       loop: true
     });
 
+    var touchMove_mainSliderRulerTop = false;
     var mainSliderRulerTop = new Swiper('#main-slider-ruler-top', {
       speed: speed,
       slidesPerView: 'auto',
@@ -38,6 +39,7 @@ $(function(){
       on:{
       	touchMove: function(e){
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
+      		touchMove_mainSliderRulerTop = true;
       	},
       	touchStart: function(e){
       		console.log(e)
@@ -47,14 +49,21 @@ $(function(){
       	},
       	touchEnd: function(e){
       		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+
+      		if(!touchMove_mainSliderRulerTop){
+			    mainSliderRulerTop.controller.control = undefined;
+			    mainSwiper.controller.control = undefined;
+      		}
+      		touchMove_mainSliderRulerTop = false;
       	},
       }
     });
     mainSliderRulerTop.on('slideChangeTransitionEnd',function(e){
-		    mainSliderRulerTop.controller.control = undefined;
-		    mainSwiper.controller.control = undefined;
+	    mainSliderRulerTop.controller.control = undefined;
+	    mainSwiper.controller.control = undefined;
     })
 
+    var touchMove_mainSliderRulerBottom = false;
     var mainSliderRulerBottom = new Swiper('#main-slider-ruler-bottom', {
       speed: speed,
       slidesPerView: 'auto',
@@ -65,6 +74,7 @@ $(function(){
       on:{
       	touchMove: function(e){
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
+      		touchMove_mainSliderRulerBottom = true;
       	},
       	touchStart: function(e){
       		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
@@ -73,12 +83,20 @@ $(function(){
       	},
       	touchEnd: function(e){
       		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+
+      		
+
+      		if(!touchMove_mainSliderRulerBottom){
+			    mainSliderRulerBottom.controller.control = undefined;
+			    mainSliderRulerTop.controller.control = undefined;
+      		}
+      		touchMove_mainSliderRulerBottom = false;
       	},
       }
     });
     mainSliderRulerBottom.on('slideChangeTransitionEnd',function(e){
-		    mainSliderRulerBottom.controller.control = undefined;
-		    mainSliderRulerTop.controller.control = undefined;
+	    mainSliderRulerBottom.controller.control = undefined;
+	    mainSliderRulerTop.controller.control = undefined;
     })
     
 
