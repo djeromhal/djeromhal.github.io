@@ -1,5 +1,6 @@
 $(function(){
 	var speed = 300;
+    var touchMove_mainSwiper = false;
     var mainSwiper = new Swiper('#main-swiper', {
       speed: speed,
       slidesPerView: 'auto',
@@ -7,11 +8,21 @@ $(function(){
       direction: 'vertical',
       loop: true,
       on:{
+      	touchMove: function(e){
+      		touchMove_mainSwiper = true;
+      	},
       	touchStart: function(e){
       		console.log(e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('touch');
 		    mainSwiper.controller.control = mainSliderRulerBottom;
 		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
+      	},
+      	touchEnd: function(e){
+      		if(!touchMove_mainSwiper){
+			    mainSwiper.controller.control = undefined;
+			    mainSliderRulerBottom.controller.control = undefined;
+      		}
+      		touchMove_mainSwiper = false;
       	},
       }
     });
@@ -83,8 +94,6 @@ $(function(){
       	},
       	touchEnd: function(e){
       		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
-
-      		
 
       		if(!touchMove_mainSliderRulerBottom){
 			    mainSliderRulerBottom.controller.control = undefined;
