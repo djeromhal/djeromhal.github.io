@@ -3,7 +3,7 @@
 
 body{
 	font: 14px/18px 'Arial', 'Roboto';
-	background: @color1;
+	background: @color3;
 	color: @color2;
     position: relative;
 }
@@ -98,6 +98,15 @@ html, body{
 	height: 320px;
 	// max-height: 300px;
 	// overflow-y: hidden;
+    transform: translateX(70px);
+    z-index: 1;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.main-slider-ruler.show{
+	opacity: 1;
+    transform: translateX(0);
 }
 .h100{
 	height: 100%;

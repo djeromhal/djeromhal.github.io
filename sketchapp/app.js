@@ -5,8 +5,21 @@ $(function(){
       slidesPerView: 'auto',
       spaceBetween: 0,
       direction: 'vertical',
-      loop: true
+      loop: true,
+      on:{
+      	touchStart: function(e){
+      		console.log(e)
+      		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('touch');
+		    mainSwiper.controller.control = mainSliderRulerBottom;
+		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
+      	},
+      }
     });
+    mainSwiper.on('slideChangeTransitionEnd',function(e){
+	    mainSwiper.controller.control = undefined;
+	    mainSliderRulerBottom.controller.control = undefined;
+    })
+
     var productSwiper = new Swiper('.product-swiper', {
       speed: speed,
       slidesPerView: 'auto',
@@ -21,20 +34,27 @@ $(function(){
       spaceBetween: 0,
       loop: true,
       centeredSlides: true,
-      allowTouchMove: false,
-      // on:{
-      // 	touchMove: function(e){
-      // 		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
-      // 	},
-      // 	touchStart: function(e){
-      // 		console.log(e)
-      // 		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('touch');
-      // 	},
-      // 	touchEnd: function(e){
-      // 		$(e.target).closest('.main-slider-ruler').find('.swiper-top').removeClass('touch move');
-      // 	},
-      // }
+      // allowTouchMove: false,
+      on:{
+      	touchMove: function(e){
+      		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
+      	},
+      	touchStart: function(e){
+      		console.log(e)
+      		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
+		    mainSliderRulerTop.controller.control = mainSwiper;
+		    mainSwiper.controller.control = mainSliderRulerBottom;
+      	},
+      	touchEnd: function(e){
+      		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+      	},
+      }
     });
+    mainSliderRulerTop.on('slideChangeTransitionEnd',function(e){
+		    mainSliderRulerTop.controller.control = undefined;
+		    mainSwiper.controller.control = undefined;
+    })
+
     var mainSliderRulerBottom = new Swiper('#main-slider-ruler-bottom', {
       speed: speed,
       slidesPerView: 'auto',
@@ -47,16 +67,19 @@ $(function(){
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
       	},
       	touchStart: function(e){
-      		console.log(e)
-      		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('touch');
+      		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
+		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
+		    mainSliderRulerTop.controller.control = mainSwiper;
       	},
       	touchEnd: function(e){
-      		$(e.target).closest('.main-slider-ruler').find('.swiper-top').removeClass('touch move');
+      		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
       	},
       }
     });
-    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
-    mainSliderRulerTop.controller.control = mainSwiper;
+    mainSliderRulerBottom.on('slideChangeTransitionEnd',function(e){
+		    mainSliderRulerBottom.controller.control = undefined;
+		    mainSliderRulerTop.controller.control = undefined;
+    })
     
 
     var swiper1 = new Swiper('.swiper1', {

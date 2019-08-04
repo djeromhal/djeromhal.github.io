@@ -1,7 +1,7 @@
 @import 'reset.css';
 body {
   font: 14px/18px 'Arial', 'Roboto';
-  background: #6f80db;
+  background: #233A54;
   color: #D8D8D8;
   position: relative;
 }
@@ -82,6 +82,14 @@ body {
   bottom: 0;
   margin: auto;
   height: 320px;
+  transform: translateX(70px);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.main-slider-ruler.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 .h100 {
   height: 100%;
