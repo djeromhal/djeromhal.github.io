@@ -101,8 +101,8 @@ body {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   background-color: rgba(35, 58, 84, 0.7);
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+          transform: rotateY(180deg) translateZ(1px);
   z-index: 2;
 }
 .popup-inner {
