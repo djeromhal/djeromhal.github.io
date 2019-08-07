@@ -1,4 +1,19 @@
 $(function(){
+	$('.call-popup').click(function(e){
+		var id = $(this).data('href');
+
+		$(id).addClass('active');
+		$('.flip-card-inner').addClass('popup-active');
+	});
+
+	$('.popup-close').click(function(e){
+		var popup = $(this).closest('.popup');
+
+		$('.flip-card-inner').removeClass('popup-active');
+		popup.find('.popup-inner.active').removeClass('active');
+	});
+
+
 	$(document).longpress(function(e){
 		e.preventDefault();
 	});
