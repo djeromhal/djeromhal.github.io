@@ -105,8 +105,8 @@ body {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   background-color: rgba(35, 58, 84, 0.7);
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+          transform: rotateY(180deg) translateZ(1px);
   z-index: 2;
 }
 .popup-inner {
@@ -165,8 +165,6 @@ body {
 .flip-card-inner.popup-active .main-slider {
   -webkit-filter: blur(5px);
           filter: blur(5px);
-  -webkit-transform: translateZ(1px);
-          transform: translateZ(1px);
 }
 .main-slider-ruler {
   position: absolute;
