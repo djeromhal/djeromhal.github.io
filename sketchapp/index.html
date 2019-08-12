@@ -17,7 +17,7 @@
 	<div class="flip-card-inner">
 		<div class="main-slider">
 			<div class="header">
-				<ul class="breadcrumbs call-popup" data-href="#category-filter">
+				<ul class="breadcrumbs call-popup" data-href="#category-filter" id="category-filter-call-popup">
 					<li class="breadcrumbs-item">Белье</li>
 					<li class="breadcrumbs-item">/</li>
 					<li class="breadcrumbs-item active">Бюстгальтеры</li>
@@ -228,7 +228,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main-slider-ruler vertical">
+			<div class="main-slider-ruler vertical show">
 				<div class="swiper-container swiper-top" id="main-slider-ruler-top">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide" style="height: 70px;">					
@@ -296,7 +296,151 @@
 		<div class="popup">
 			<div class="popup-close"></div>
 			<div class="popup-inner" id="category-filter">
-				HELLO
+				<div class="popup-form-wrapper">
+					<div class="popup-form-title-category">
+						<ul class="breadcrumbs">
+							<li class="breadcrumbs-item">Белье</li>
+							<li class="breadcrumbs-item">/</li>
+							<li class="breadcrumbs-item active">Бюстгальтеры</li>
+						</ul>
+					</div>
+					<div class="popup-form-search">
+						<input type="text" name="search">
+						<button class="button popup-form-search-button"><img src="i/search.png"></button>
+					</div>
+					<div class="popup-form-category-rulers">
+						
+						<div class="popup-form-ruler right vertical">
+							<div class="swiper-container swiper-top" id="category-ruler-right-top">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="height: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Спортивные</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Без косточек</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Большие размеры</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Без косточек</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Бесшовные</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Спортивные</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom w200" id="category-ruler-right-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="height: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Спортивные</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Без косточек</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Большие размеры</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Без косточек</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Бесшовные</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Спортивные</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup-form-ruler left vertical">
+							<div class="swiper-container swiper-top" id="category-ruler-left-top">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="height: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Бюстье</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Майки</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Боди</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Корсеты</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Боди</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Эротическое</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Нижние юбки</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Подвязки</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Эротическое</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom w200" id="category-ruler-left-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="height: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Бюстье</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Майки</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Боди</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Корсеты</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Боди</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Эротическое</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Нижние юбки</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Подвязки</span></div>
+									</div>
+									<div class="swiper-slide" style="height: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Эротическое</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="button-big-icon button"><i class="icon-submit"><img src="i/shirt.png"></i><span>Применить</span></button>
+				</div>
 			</div>
 		</div>
 	</div>

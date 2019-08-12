@@ -13,6 +13,34 @@ html,
 body {
   height: 100%;
 }
+.button {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.button-big-icon {
+  height: 100px;
+  line-height: 100px;
+  background-color: #d4b885;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 300px;
+}
+.button-big-icon span {
+  font-size: 30px;
+  color: #233A54;
+  line-height: 30px;
+}
+.button-big-icon i {
+  margin-right: 16px;
+  line-height: 30px;
+}
 .header {
   height: 40px;
   background-color: #233A54;
@@ -111,6 +139,7 @@ body {
 }
 .popup-inner {
   display: none;
+  height: 100%;
 }
 .popup-inner.active {
   display: block;
@@ -138,6 +167,97 @@ body {
 .popup-close:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+.popup-form-ruler {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  padding: 20px 0;
+}
+.popup-form-ruler.right {
+  right: 0;
+}
+.popup-form-ruler.right.vertical .swiper-top.swiper-container {
+  right: -10px;
+}
+.popup-form-ruler.left {
+  left: 0;
+}
+.popup-form-ruler.left.vertical .swiper-top.swiper-container {
+  left: -10px;
+  right: auto;
+}
+.popup-form-ruler.left.vertical .swiper-top.swiper-container.touch {
+  -webkit-transform: translateX(30px) scale(1);
+          transform: translateX(30px) scale(1);
+}
+.popup-form-ruler.vertical .swiper-top {
+  width: 150px;
+}
+.popup-form-ruler .ruler-slider-cur-value {
+  font-size: 18px;
+}
+.popup-form-ruler .ruler-slider-value {
+  font-size: 14px;
+}
+.popup-form-wrapper {
+  padding: 15px 15px 100px 15px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.popup-form-wrapper .button-big-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.popup-form-category-rulers {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+.popup-form-title-category {
+  height: 40px;
+  margin-bottom: 20px;
+}
+.popup-form-search {
+  position: relative;
+}
+.popup-form-search input {
+  width: 100%;
+  height: 32px;
+  line-height: 30px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0 50px 0 10px;
+  color: #fff;
+  font-size: 14px;
+  background-color: transparent;
+  outline: none;
+}
+.popup-form-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  padding: 7px 0 7px 10px;
+}
+.popup-form-search-button img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .flip-card {
   overflow: hidden;
@@ -191,6 +311,9 @@ body {
 .w100.swiper-container {
   width: 100px;
 }
+.w200.swiper-container {
+  width: 200px;
+}
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -220,17 +343,36 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
+.vertical.left .swiper-bottom .swiper-slide {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.vertical .swiper-bottom .ruler-slider-bg {
+  width: 40px;
+  height: 40px;
+}
+.vertical .ruler-slider-cur-bg {
+  background: url(i/ruler-bg-v.png) no-repeat calc(100% + 25px) center;
+  background-size: contain;
+}
+.vertical.left .ruler-slider-cur-bg {
+  background: url(i/ruler-bg-v-left.png) no-repeat calc(0% - 25px) center;
+  background-size: contain;
+}
 .vertical .ruler-slider-bg {
   width: 40px;
   height: 40px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  background: url(i/ruler-bg-v.png) no-repeat right center;
+  background-size: contain;
+}
+.vertical.left .ruler-slider-bg {
+  background: url(i/ruler-bg-v-left.png) no-repeat right center;
+  background-size: contain;
 }
 .vertical .ruler-slider-cur {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  width: 70px;
-  height: 90px;
+  width: 100%;
+  height: 100%;
   text-align: center;
 }
 .vertical .swiper-wrapper {
@@ -242,30 +384,34 @@ body {
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, black), color-stop(70%, black), to(transparent));
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
 }
-.vertical .ruler-slider-value {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  bottom: -30px;
-}
 .vertical .ruler-slider-cur-value {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  left: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   right: auto;
   width: auto;
-  margin: auto;
-  display: inline-block;
-  padding-top: 0;
-  position: relative;
-  margin-top: 55px;
+  line-height: 71px;
   padding: 0 6px;
   z-index: 3;
+  white-space: nowrap;
+  max-width: 131px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.vertical .ruler-slider-cur-value {
-  left: 0;
+.vertical.left .ruler-slider-cur-value {
   right: 0;
+  left: auto;
+}
+.vertical .ruler-slider-value {
+  white-space: nowrap;
+  left: auto;
+  right: 45px;
+  line-height: 40px;
   width: auto;
-  padding-top: 0;
+}
+.vertical.left .ruler-slider-value {
+  left: 45px;
 }
 .ruler-slider-value {
   position: absolute;

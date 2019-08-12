@@ -17,6 +17,7 @@ $(function(){
 	$(document).longpress(function(e){
 		e.preventDefault();
 	});
+
 	var speed = 300;
     var touchMove_mainSwiper = false;
     var mainSwiper = new Swiper('#main-swiper', {
@@ -125,6 +126,99 @@ $(function(){
 	    mainSliderRulerBottom.controller.control = undefined;
 	    mainSliderRulerTop.controller.control = undefined;
     })
+
+    ///////
+    $('#category-filter-call-popup').click(function(e){
+	    var categoryRulerRightTop = new Swiper('#category-ruler-right-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      direction: 'vertical',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.popup-form-ruler.right').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.popup-form-ruler.right').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.popup-form-ruler.right').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var categoryRulerRightBottom = new Swiper('#category-ruler-right-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      direction: 'vertical',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.popup-form-ruler.right').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.popup-form-ruler.right').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.popup-form-ruler.right').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    categoryRulerRightBottom.controller.control = categoryRulerRightTop;
+	    categoryRulerRightTop.controller.control = categoryRulerRightBottom;
+
+	    var categoryRulerLeftTop = new Swiper('#category-ruler-left-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      direction: 'vertical',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.popup-form-ruler.left').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.popup-form-ruler.left').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.popup-form-ruler.left').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var categoryRulerLeftBottom = new Swiper('#category-ruler-left-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      direction: 'vertical',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.popup-form-ruler.left').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.popup-form-ruler.left').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.popup-form-ruler.left').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    categoryRulerLeftBottom.controller.control = categoryRulerLeftTop;
+	    categoryRulerLeftTop.controller.control = categoryRulerLeftBottom;
+
+    })
+    /////
     
 
     var swiper1 = new Swiper('.swiper1', {
