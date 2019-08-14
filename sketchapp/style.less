@@ -133,6 +133,14 @@ html, body{
     transform: rotateY(180deg) translateZ(1px);
     z-index: 2;
 
+    &-h-line{
+    	height: 1px;
+    	width: auto;
+    	background-color: @color5;
+    	margin-left: -15px;
+    	margin-right: -15px;
+    }
+
     &-inner{
     	display: none;
     	height: 100%;
@@ -168,6 +176,9 @@ html, body{
     }
 
     &-form{
+    	flex: 1;
+	    overflow-x: hidden;
+	    overflow-y: auto;
 
     	&-ruler{
 		    position: absolute;
@@ -181,14 +192,14 @@ html, body{
 		    	right: 0;
 
 			    &.vertical .swiper-top.swiper-container{
-			    	right: -10px;
+			    	right: -8px;
 			    }
 		    }
 		    &.left{
 		    	left: 0;
 
 			    &.vertical .swiper-top.swiper-container{
-			    	left: -10px;
+			    	left: -8px;
 			    	right: auto;
 
 			    	&.touch{
@@ -227,6 +238,7 @@ html, body{
     	&-category{
     		&-rulers{
     			flex: 1;
+    			height: 100%;
     			position: relative;
     		}
     	}
@@ -240,19 +252,10 @@ html, body{
 
     	&-search{
     		position: relative;
+    		margin-bottom: 15px;
 
     		input{
-    			width: 100%;
-    			height: 32px;
-    			line-height: 30px;
-    			border: 1px solid @color5;
-    			border-radius: 5px;
-    			padding: 0 50px 0 10px;
-    			color: @color5;
-    			font-size: 14px;
-    			background-color: transparent;
-    			outline: none;
-
+    			padding-right: 50px;
     		}
 
     		&-button{
@@ -271,6 +274,79 @@ html, body{
     		}
     	}
     }
+}
+
+.input{
+	width: 100%;
+	height: 32px;
+	line-height: 30px;
+	border: 1px solid @color5;
+	border-radius: 5px;
+	padding: 0 10px;
+	color: @color5;
+	font-size: 14px;
+	background-color: transparent;
+	outline: none;
+
+	&-wrapper{
+		margin-bottom: 15px;
+	}
+
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	    color: @color5;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color: @color5;
+	   opacity:  1;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color: @color5;
+	   opacity:  1;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	    color: @color5;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+	    color: @color5;
+	}
+
+	&::placeholder { /* Most modern browsers support this now. */
+	    color: @color5;
+	}
+}
+.textarea{
+	width: 100%;
+	height: 200px;
+	line-height: 30px;
+	border: 1px solid @color5;
+	border-radius: 5px;
+	padding: 10px;
+	color: @color5;
+	font-size: 14px;
+	background-color: transparent;
+	outline: none;
+
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	    color: @color5;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color: @color5;
+	   opacity:  1;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color: @color5;
+	   opacity:  1;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	    color: @color5;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+	    color: @color5;
+	}
+
+	&::placeholder { /* Most modern browsers support this now. */
+	    color: @color5;
+	}
 }
 
 .flip{
@@ -395,6 +471,9 @@ html, body{
 }
 .vertical .swiper-container.swiper-bottom{
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+}
+.swiper-container.swiper-bottom{
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
 }
 // .vertical .ruler-slider-value{
 // 	transform: rotate(-90deg);
@@ -605,3 +684,132 @@ html, body{
     object-fit: cover;
 }
 
+
+.chat{
+	&-title{
+		margin-bottom: 40px;
+		color: @color5;
+		text-align: center;
+		margin-top: 50px;
+	}
+	&-num{
+		font-size: 26px;
+		color: @color5;
+		text-decoration: none;
+	    margin-bottom: 20px;
+	    display: block;
+
+	    i{
+	    	margin-right: 10px;
+		    display: inline-block;
+		    max-width: 25px;
+
+	    	img{
+	    		width: 100%;
+	    	}
+	    }
+	}
+	&-code{
+		display: block;
+		font-size: 20px;
+	}
+}
+.clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+.brands{
+    margin: 0 -7.5px;
+
+	&-row{
+		margin-bottom: 15px;
+
+		&::after {
+			display: block;
+			content: "";
+			clear: both;
+		}
+
+		&__half{
+			width: 50%;
+			float: left;
+
+			.brands-item-wrapper{
+				width: 100%;
+			}
+		}
+	}
+	&-item{
+		border: 1px solid @color5;
+		border-radius: 5px;
+		height: 40px;
+		padding: 0 10px;
+		text-align: center;
+		position: relative;
+
+		&.active{
+			background-color: @color7;
+			border-color: @color7;
+			color: @color3;
+		}
+
+		&-text{
+			width: 100%;
+			display: block;
+			line-height: 23px;
+    		padding: 0 15px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+
+		&-wrapper{
+			width: 50%;
+			float: left;
+			padding: 0 7.5px;
+
+			&_full{
+				width: 100%;
+			}
+		}
+
+
+		&_2rows{
+			height: 95px;
+		}
+
+	}
+}
+
+.card{
+	&-title{
+		font-size: 24px;
+		margin-bottom: 10px;
+		line-height: 30px;
+		text-align: center;
+		font-weight: bold;
+
+		&-sub{
+			font-size: 16px;
+			line-height: 26px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+	}
+
+	&-price{
+	    font-size: 40px;
+	    text-align: center;
+	    line-height: 40px;
+	}
+}
+.filtr-ruler{
+	&:first-child{
+		margin-top: 30px;
+	}
+}

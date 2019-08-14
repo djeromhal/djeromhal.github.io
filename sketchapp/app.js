@@ -1,4 +1,7 @@
 $(function(){
+	$('.brands-item').click(function(e){
+		$(this).toggleClass('active');
+	})
 	$('.call-popup').click(function(e){
 		var id = $(this).data('href');
 
@@ -216,6 +219,224 @@ $(function(){
 	    });
 	    categoryRulerLeftBottom.controller.control = categoryRulerLeftTop;
 	    categoryRulerLeftTop.controller.control = categoryRulerLeftBottom;
+
+    })
+    /////
+    ///////
+    $('#card-call-popup').click(function(e){
+	    var cardRulerSizeTop = new Swiper('#card-ruler-size-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.card-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.card-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var cardRulerSizeBottom = new Swiper('#card-ruler-size-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.card-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.card-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    cardRulerSizeBottom.controller.control = cardRulerSizeTop;
+	    cardRulerSizeTop.controller.control = cardRulerSizeBottom;
+
+	    var cardRulerColorTop = new Swiper('#card-ruler-color-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.card-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.card-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var cardRulerColorBottom = new Swiper('#card-ruler-color-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.card-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.card-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    cardRulerColorBottom.controller.control = cardRulerColorTop;
+	    cardRulerColorTop.controller.control = cardRulerColorBottom;
+
+    })
+    /////
+    ///////
+    $('#filtr-call-popup').click(function(e){
+	    var filtrRulerSizeTop = new Swiper('#filtr-ruler-size-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.filtr-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.filtr-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var filtrRulerSizeBottom = new Swiper('#filtr-ruler-size-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.filtr-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.filtr-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    filtrRulerSizeBottom.controller.control = filtrRulerSizeTop;
+	    filtrRulerSizeTop.controller.control = filtrRulerSizeBottom;
+
+	    var filtrRulerColorTop = new Swiper('#filtr-ruler-color-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.filtr-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.filtr-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var filtrRulerColorBottom = new Swiper('#filtr-ruler-color-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.filtr-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.filtr-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    filtrRulerColorBottom.controller.control = filtrRulerColorTop;
+	    filtrRulerColorTop.controller.control = filtrRulerColorBottom;
+
+	    var filtrRulerCatTop = new Swiper('#filtr-ruler-cat-top', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		console.log(e)
+	      		$(e.target).closest('.filtr-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.filtr-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	},
+	      }
+	    });
+
+	    var filtrRulerCatBottom = new Swiper('#filtr-ruler-cat-bottom', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: true,
+	      centeredSlides: true,
+	      on:{
+	      	touchMove: function(e){
+	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
+	      	},
+	      	touchStart: function(e){
+	      		$(e.target).closest('.filtr-ruler').addClass('show').find('.swiper-top').addClass('touch');
+	      	},
+	      	touchEnd: function(e){
+	      		$(e.target).closest('.filtr-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
+	      	}
+	      }
+	    });
+	    filtrRulerCatBottom.controller.control = filtrRulerCatTop;
+	    filtrRulerCatTop.controller.control = filtrRulerCatBottom;
 
     })
     /////

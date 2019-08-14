@@ -43,27 +43,27 @@
 			<div class="sidebar">
 				<ul class="sidebar-menu">
 					<li class="sidebar-menu-item">
-						<a href="#" class="sidebar-menu-link">
+						<a href="#" class="sidebar-menu-link call-popup" data-href="#chat">
 							<i class="header-menu-icon"><img src="i/chat.png"></i>
 						</a>
 					</li>
 					<li class="sidebar-menu-item">
-						<a href="#" class="sidebar-menu-link">
+						<a href="#" class="sidebar-menu-link call-popup" data-href="#brand">
 							<i class="header-menu-icon"><img src="i/label.png"></i>
 						</a>
 					</li>
 					<li class="sidebar-menu-item">
-						<a href="#" class="sidebar-menu-link">
+						<a href="#" class="sidebar-menu-link call-popup" data-href="#card" id="card-call-popup">
 							<i class="header-menu-icon"><img src="i/info.png"></i>
 						</a>
 					</li>
 					<li class="sidebar-menu-item">
-						<a href="#" class="sidebar-menu-link">
+						<a href="#" class="sidebar-menu-link call-popup" data-href="#">
 							<i class="header-menu-icon"><img src="i/sort_up.png"></i>
 						</a>
 					</li>
 					<li class="sidebar-menu-item">
-						<a href="#" class="sidebar-menu-link">
+						<a href="#" class="sidebar-menu-link call-popup" data-href="#filtr" id="filtr-call-popup">
 							<i class="header-menu-icon"><img src="i/filtr.png"></i>
 						</a>
 					</li>
@@ -304,142 +304,865 @@
 							<li class="breadcrumbs-item active">Бюстгальтеры</li>
 						</ul>
 					</div>
-					<div class="popup-form-search">
-						<input type="text" name="search">
-						<button class="button popup-form-search-button"><img src="i/search.png"></button>
-					</div>
-					<div class="popup-form-category-rulers">
-						
-						<div class="popup-form-ruler right vertical">
-							<div class="swiper-container swiper-top" id="category-ruler-right-top">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide" style="height: 70px;">					
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Спортивные</span></div>
+					<form class="popup-form-search">
+						<input type="text" name="search" class="input">
+						<button class="button popup-form-search-button" type="submit"><img src="i/search.png"></button>
+					</form>
+					<form class="popup-form">
+						<div class="popup-form-category-rulers">
+							
+							<div class="popup-form-ruler right vertical">
+								<div class="swiper-container swiper-top" id="category-ruler-right-top">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide" style="height: 70px;">					
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Спортивные</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Без косточек</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Большие размеры</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Без косточек</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Бесшовные</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Спортивные</span></div>
+										</div>
 									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Без косточек</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Большие размеры</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Без косточек</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Бесшовные</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Для беременных</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Спортивные</span></div>
+								</div>
+								<div class="swiper-container swiper-bottom w200" id="category-ruler-right-bottom">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide" style="height: 40px;">					
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Спортивные</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Без косточек</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Большие размеры</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Без косточек</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Бесшовные</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Спортивные</span></div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-container swiper-bottom w200" id="category-ruler-right-bottom">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide" style="height: 40px;">					
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Спортивные</span></div>
+							<div class="popup-form-ruler left vertical">
+								<div class="swiper-container swiper-top" id="category-ruler-left-top">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide" style="height: 70px;">					
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Бюстье</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Майки</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Боди</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Корсеты</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Боди</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Эротическое</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Нижние юбки</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Подвязки</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 70px;">						
+											<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Эротическое</span></div>
+										</div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Без косточек</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Большие размеры</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Без косточек</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Бесшовные</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Для беременных</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Спортивные</span></div>
+								</div>
+								<div class="swiper-container swiper-bottom w200" id="category-ruler-left-bottom">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide" style="height: 40px;">					
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Бюстье</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Майки</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Боди</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Корсеты</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Боди</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Эротическое</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Нижние юбки</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Подвязки</span></div>
+										</div>
+										<div class="swiper-slide" style="height: 40px;">						
+											<div class="ruler-slider-bg"><span class="ruler-slider-value">Эротическое</span></div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="popup-form-ruler left vertical">
-							<div class="swiper-container swiper-top" id="category-ruler-left-top">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide" style="height: 70px;">					
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Бюстье</span></div>
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/shirt.png"></i><span>Применить</span></button>
+					</form>
+				</div>
+			</div>
+			<div class="popup-inner" id="chat">
+				<div class="popup-form-wrapper">
+					<form class="popup-form">
+						<div class="chat-title">
+							<a class="chat-num" href="tel:+70000000000"><i><img src="i/chat.png"></i>+7 000 000 00 00</a>
+							<span class="chat-code">код клиента <span class="chat-client-code">234-432</span></span>
+						</div>
+						<div class="input-wrapper">
+							<input type="text" name="name" class="input" placeholder="Имя">
+						</div>
+						<div class="input-wrapper">
+							<textarea name="msg" class="textarea" placeholder="Сообщение"></textarea>
+						</div>
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/chat-blue.png"></i><span>Отправить</span></button>
+					</form>
+				</div>
+			</div>
+			<div class="popup-inner" id="brand">
+				<div class="popup-form-wrapper">
+					<div class="popup-form-title-category">
+					</div>
+					<form class="popup-form-search">
+						<input type="text" name="search" class="input">
+						<button class="button popup-form-search-button" type="submit"><img src="i/search.png"></button>
+					</form>
+					<form class="popup-form">
+						<div class="brands clearfix">
+							<div class="brands-row">
+								<div class="brands-item-wrapper brands-item-wrapper_full">
+									<div class="brands-item active"><span class="brands-item-text">CUDDLY SOCKS BY TAUBERT</span></div>
+								</div>
+							</div>
+							<div class="brands-row__half_wrapper clearfix">
+								<div class="brands-row__half">
+									<div class="brands-row">
+										<div class="brands-item-wrapper">
+											<div class="brands-item"><span class="brands-item-text">CHARMOR PURO</span></div>
+										</div>
 									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Майки</span></div>
+									<div class="brands-row">
+										<div class="brands-item-wrapper">
+											<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+										</div>
 									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Боди</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Корсеты</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Боди</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Эротическое</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Нижние юбки</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Подвязки</span></div>
-									</div>
-									<div class="swiper-slide" style="height: 70px;">						
-										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Эротическое</span></div>
+								</div>
+								<div class="brands-row__half">
+									<div class="brands-row">
+										<div class="brands-item-wrapper">
+											<div class="brands-item brands-item_2rows"><span class="brands-item-text">CUDDLY SOCKS BY TAUBERT</span></div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-container swiper-bottom w200" id="category-ruler-left-bottom">
+							<div class="brands-row">
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+							</div>
+							<div class="brands-row">
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+							</div>
+							<div class="brands-row">
+								<div class="brands-item-wrapper">
+									<div class="brands-item active"><span class="brands-item-text">Brand</span></div>
+								</div>
+								<div class="brands-item-wrapper">
+									<div class="brands-item active"><span class="brands-item-text">Brand</span></div>
+								</div>
+							</div>
+							<div class="brands-row">
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+							</div>
+							<div class="brands-row">
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+								<div class="brands-item-wrapper">
+									<div class="brands-item"><span class="brands-item-text">Brand</span></div>
+								</div>
+							</div>
+							<div class="brands-row">
+								<div class="brands-item-wrapper">
+									<div class="brands-item active"><span class="brands-item-text">Brand</span></div>
+								</div>
+								<div class="brands-item-wrapper">
+									<div class="brands-item active"><span class="brands-item-text">Brand</span></div>
+								</div>
+							</div>
+						</div>
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/shirt.png"></i><span>Применить</span></button>
+					</form>
+				</div>
+			</div>
+			<div class="popup-inner" id="card">
+				<div class="popup-form-wrapper">
+					<h2 class="card-title">Линейка: DESIRE</h2>
+					<h3 class="card-title-sub">Бюстгальтер push-up<br>формованная чашечка - SENA</h3>
+					<div class="popup-h-line"></div>
+					<ul class="breadcrumbs">
+						<li class="breadcrumbs-item">Белье</li>
+						<li class="breadcrumbs-item">/</li>
+						<li class="breadcrumbs-item active">Бюстгальтеры</li>
+					</ul>
+					<form class="popup-form">
+						<div class="card-price">10 000 &#8381;</div>
+
+						<div class="card-ruler">
+							<div class="swiper-container swiper-top" id="card-ruler-size-top">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide" style="height: 40px;">					
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Бюстье</span></div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">1<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Майки</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">2<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Боди</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">3<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Корсеты</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">4<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Боди</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">5<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Эротическое</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">6<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Нижние юбки</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">7<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Подвязки</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">8<span></div>
 									</div>
-									<div class="swiper-slide" style="height: 40px;">						
-										<div class="ruler-slider-bg"><span class="ruler-slider-value">Эротическое</span></div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">9<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">10<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">11<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">12<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">13<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">14<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">15<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">16<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">17<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">18<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">19<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">20<span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom" id="card-ruler-size-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">1<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">2<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">3<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">4<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">5<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">6<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">7<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">8<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">9<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">10<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">11<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">12<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">13<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">14<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">15<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">16<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">17<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">18<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">19<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">20<span></div>
 									</div>
 								</div>
 							</div>
 						</div>
+						<div class="card-ruler">
+							<div class="swiper-container swiper-top" id="card-ruler-color-top">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom" id="card-ruler-color-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/shopping-basket-blue.png"></i><span>Купить</span></button>
+					</form>
+				</div>
+			</div>
+			<div class="popup-inner" id="filtr">
+				<div class="popup-form-wrapper">
+					<div class="popup-form-title-category">
 					</div>
-					<button class="button-big-icon button"><i class="icon-submit"><img src="i/shirt.png"></i><span>Применить</span></button>
+					<form class="popup-form-search">
+						<input type="text" name="search" class="input">
+						<button class="button popup-form-search-button" type="submit"><img src="i/search.png"></button>
+					</form>
+					<form class="popup-form">
+						<div class="filtr-ruler">
+							<div class="swiper-container swiper-top" style="width: 180px;" id="filtr-ruler-cat-top">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Новинки<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Распродажа<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Luxury<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Новинки<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Распродажа<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Luxury<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Новинки<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Распродажа<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 180px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">Luxury<span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom" id="filtr-ruler-cat-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Новинки<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Распродажа<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Luxury<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Новинки<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Распродажа<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Luxury<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Новинки<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Распродажа<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 120px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">Luxury<span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="filtr-ruler">
+							<div class="swiper-container swiper-top" id="filtr-ruler-color-top">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-color-value"><span class="ruler-slider-cur-color" style="background: black"></span><span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom" id="filtr-ruler-color-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: yellow"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: blue"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: green"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: white"></span><span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value"><span class="ruler-slider-color" style="background: black"></span><span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="filtr-ruler">
+							<div class="swiper-container swiper-top" id="filtr-ruler-size-top">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 70px;">					
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">1<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">2<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">3<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">4<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">5<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">6<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">7<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">8<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">9<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">10<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">11<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">12<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">13<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">14<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">15<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">16<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">17<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">18<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">19<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 70px;">						
+										<div class="ruler-slider-cur"><span class="ruler-slider-cur-bg"></span><span class="ruler-slider-cur-value">20<span></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-container swiper-bottom" id="filtr-ruler-size-bottom">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" style="width: 40px;">					
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">1<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">2<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">3<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">4<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">5<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">6<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">7<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">8<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">9<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">10<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">11<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">12<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">13<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">14<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">15<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">16<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">17<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">18<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">19<span></div>
+									</div>
+									<div class="swiper-slide" style="width: 40px;">						
+										<div class="ruler-slider-bg"><span class="ruler-slider-value">20<span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/filtr-blue.png"></i><span>Применить</span></button>
+					</form>
 				</div>
 			</div>
 		</div>
