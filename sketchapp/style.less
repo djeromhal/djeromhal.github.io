@@ -156,6 +156,7 @@ html, body{
 		top: 20px;
 		width: 30px;
 		height: 30px;
+		z-index: 2;
 
 		&:before, &:after {
 		    position: absolute;
@@ -232,6 +233,7 @@ html, body{
 	    		left: 0;
 	    		right: 0;
 	    		width: 100%;
+	    		z-index: 1;
 	    	}
     	}
 
@@ -818,5 +820,112 @@ html, body{
 .filtr-ruler{
 	&:first-child{
 		margin-top: 30px;
+	}
+}
+.ruler{
+	&-wrapper{
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+}
+.basket{
+	height: 100%;
+
+	&-wrapper{
+		padding: 0;
+	}
+
+	&-step{
+		height: 100%;
+		width: 100%;
+		padding: 70px 15px 100px;
+		overflow: auto;
+
+		.button{
+		}
+	}
+
+	&-item{
+		border-bottom: 1px solid @color6;
+		padding-bottom: 7px;
+		margin-bottom: 7px;
+
+		&-inner{
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		&-img{
+			width: 100px;
+			height: 100px;
+			min-width: 100px;
+			margin-right: 10px;
+			border-radius: 5px;
+			overflow: hidden;
+
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&-detail{
+			padding-right: 20px;
+
+			h3{
+				font-size: 18px;
+				font-weight: bold;
+				margin-bottom: 3px;
+			}
+			p{
+				font-size: 10px;
+				line-height: 12px;
+				margin-bottom: 3px;
+			}
+		}
+
+		&-price{
+			font-size: 16px;
+			margin-bottom: 3px;
+		}
+
+		&-count{
+			&-plus, &-minus{
+				width: 24px;
+				height: 24px;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 100%;
+				border: 2px solid @color6;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+				color: @color6;
+				font-weight: bold;
+			}
+			&-value{
+				font-size: 16px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+		}
+
+		&-delete{
+			background-color: @color6;
+			height: 100px;
+			width: 100px;
+			border-radius: 5px;
+			line-height: 100px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			i{
+				display: inherit;
+			}
+		}
 	}
 }

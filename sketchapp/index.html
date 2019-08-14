@@ -29,7 +29,7 @@
 						</a>
 					</li>
 					<li class="header-menu-item">
-						<a href="#" class="header-menu-link">
+						<a href="#" class="header-menu-link call-popup" data-href="#basket" id="basket-call-popup">
 							<i class="header-menu-icon"><img src="i/shopping-basket.png"></i>
 						</a>
 					</li>
@@ -563,7 +563,7 @@
 					<form class="popup-form">
 						<div class="card-price">10 000 &#8381;</div>
 
-						<div class="card-ruler">
+						<div class="card-ruler ruler-wrapper">
 							<div class="swiper-container swiper-top" id="card-ruler-size-top">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide" style="width: 70px;">					
@@ -693,7 +693,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="card-ruler">
+						<div class="card-ruler ruler-wrapper">
 							<div class="swiper-container swiper-top" id="card-ruler-color-top">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide" style="width: 70px;">					
@@ -836,7 +836,7 @@
 						<button class="button popup-form-search-button" type="submit"><img src="i/search.png"></button>
 					</form>
 					<form class="popup-form">
-						<div class="filtr-ruler">
+						<div class="filtr-ruler ruler-wrapper">
 							<div class="swiper-container swiper-top" style="width: 180px;" id="filtr-ruler-cat-top">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide" style="width: 180px;">						
@@ -900,7 +900,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="filtr-ruler">
+						<div class="filtr-ruler ruler-wrapper">
 							<div class="swiper-container swiper-top" id="filtr-ruler-color-top">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide" style="width: 70px;">					
@@ -1031,7 +1031,7 @@
 							</div>
 						</div>
 
-						<div class="filtr-ruler">
+						<div class="filtr-ruler ruler-wrapper">
 							<div class="swiper-container swiper-top" id="filtr-ruler-size-top">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide" style="width: 70px;">					
@@ -1162,6 +1162,173 @@
 							</div>
 						</div>
 						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/filtr-blue.png"></i><span>Применить</span></button>
+					</form>
+				</div>
+			</div>
+			<div class="popup-inner" id="basket">
+				<div class="popup-form-wrapper basket-wrapper">
+					<form class="popup-form">
+						<div class="basket">
+							<div class="swiper-container" id="basket-swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="basket-step">
+											<div class="basket-item">
+												<div class="swiper-container basket-item-swiper">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide">
+															<div class="basket-item-inner">
+																<div class="basket-item-img">
+																	<img src="i/basket-item-img.png">
+																</div>
+																<div class="basket-item-detail">
+																	<h3>Линейка: Desire</h3>
+																	<p>Бюстгальтер push-up формованная чашка - SENA</p>
+																	<div class="basket-item-price">
+																		<span class="basket-item-price-label">Цена:</span>
+																		<span class="basket-item-price-value">10 000 &#8381;</span>
+																	</div>
+																	<div class="basket-item-count">
+																		<span class="basket-item-count-plus">+</span>
+																		<span class="basket-item-count-value">1</span>
+																		<span class="basket-item-count-minus">-</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-slide" style="width: 100px;">
+															<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="basket-item">
+												<div class="swiper-container basket-item-swiper">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide">
+															<div class="basket-item-inner">
+																<div class="basket-item-img">
+																	<img src="i/basket-item-img.png">
+																</div>
+																<div class="basket-item-detail">
+																	<h3>Линейка: Desire</h3>
+																	<p>Бюстгальтер push-up формованная чашка - SENA</p>
+																	<div class="basket-item-price">
+																		<span class="basket-item-price-label">Цена:</span>
+																		<span class="basket-item-price-value">10 000 &#8381;</span>
+																	</div>
+																	<div class="basket-item-count">
+																		<span class="basket-item-count-plus">+</span>
+																		<span class="basket-item-count-value">1</span>
+																		<span class="basket-item-count-minus">-</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-slide" style="width: 100px;">
+															<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="basket-item">
+												<div class="swiper-container basket-item-swiper">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide">
+															<div class="basket-item-inner">
+																<div class="basket-item-img">
+																	<img src="i/basket-item-img.png">
+																</div>
+																<div class="basket-item-detail">
+																	<h3>Линейка: Desire</h3>
+																	<p>Бюстгальтер push-up формованная чашка - SENA</p>
+																	<div class="basket-item-price">
+																		<span class="basket-item-price-label">Цена:</span>
+																		<span class="basket-item-price-value">10 000 &#8381;</span>
+																	</div>
+																	<div class="basket-item-count">
+																		<span class="basket-item-count-plus">+</span>
+																		<span class="basket-item-count-value">1</span>
+																		<span class="basket-item-count-minus">-</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-slide" style="width: 100px;">
+															<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="basket-item">
+												<div class="swiper-container basket-item-swiper">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide">
+															<div class="basket-item-inner">
+																<div class="basket-item-img">
+																	<img src="i/basket-item-img.png">
+																</div>
+																<div class="basket-item-detail">
+																	<h3>Линейка: Desire</h3>
+																	<p>Бюстгальтер push-up формованная чашка - SENA</p>
+																	<div class="basket-item-price">
+																		<span class="basket-item-price-label">Цена:</span>
+																		<span class="basket-item-price-value">10 000 &#8381;</span>
+																	</div>
+																	<div class="basket-item-count">
+																		<span class="basket-item-count-plus">+</span>
+																		<span class="basket-item-count-value">1</span>
+																		<span class="basket-item-count-minus">-</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-slide" style="width: 100px;">
+															<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="basket-item">
+												<div class="swiper-container basket-item-swiper">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide">
+															<div class="basket-item-inner">
+																<div class="basket-item-img">
+																	<img src="i/basket-item-img.png">
+																</div>
+																<div class="basket-item-detail">
+																	<h3>Линейка: Desire</h3>
+																	<p>Бюстгальтер push-up формованная чашка - SENA</p>
+																	<div class="basket-item-price">
+																		<span class="basket-item-price-label">Цена:</span>
+																		<span class="basket-item-price-value">10 000 &#8381;</span>
+																	</div>
+																	<div class="basket-item-count">
+																		<span class="basket-item-count-plus">+</span>
+																		<span class="basket-item-count-value">1</span>
+																		<span class="basket-item-count-minus">-</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-slide" style="width: 100px;">
+															<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<button class="button-big-icon button" type="submit"><span>Далее</span></button>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="basket-step">
+											<button class="button-big-icon button" type="submit"><i><img src="i/shopping-basket-blue.png"></i><span>Оформить</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

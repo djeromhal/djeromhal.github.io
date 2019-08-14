@@ -440,6 +440,29 @@ $(function(){
 
     })
     /////
+    ///////
+    $('#basket-call-popup').click(function(e){
+	    var basketSwiper = new Swiper('#basket-swiper', {
+	      speed: speed,
+	      slidesPerView: 1,
+	      spaceBetween: 0,
+	      loop: false,
+	      centeredSlides: true,
+	      // allowTouchMove: false,
+	    });
+	    var basketItemSwiper = new Swiper('.basket-item-swiper', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: false,
+	      centeredSlides: false,
+	      // allowTouchMove: false,
+	    });
+    })
+    $('.basket-item-delete').click(function(e){
+    	$(this).closest('.basket-item').remove();
+    })
+    /////
     
 
     var swiper1 = new Swiper('.swiper1', {
