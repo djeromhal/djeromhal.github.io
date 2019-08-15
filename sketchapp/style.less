@@ -901,6 +901,11 @@ html, body{
 			border-radius: 5px;
 			overflow: hidden;
 
+			&.small{
+				width: 80px;
+				min-width: 80px;
+			}
+
 			img{
 				width: 100%;
 				height: 100%;
@@ -916,6 +921,13 @@ html, body{
 				font-weight: bold;
 				margin-bottom: 3px;
 			}
+
+			&.small{
+				h3{
+					font-size: 14px;
+				}
+			}
+
 			p{
 				font-size: 10px;
 				line-height: 12px;
@@ -969,11 +981,28 @@ html, body{
 }
 .profile{
 	&-form{
-		padding-left: 70px;
+		display: none;
+		overflow: hidden;
+		padding-bottom: 100px;
+
+		&#favorites-form{
+			padding-bottom: 0;
+		}
+
+		&.active{
+			display: block;
+		}
 
 		&-wrapper{
 			padding-top: 0;
+			padding-bottom: 0;
 		}
+	}
+	&-inner{
+		padding-left: 70px;
+		margin-top: 60px;
+		height: calc(100% - 60px);
+		overflow: auto;
 	}
 	&-title{
 		font-size: 24px;
@@ -982,6 +1011,11 @@ html, body{
 
 		&-wrapper{
 			height: 60px;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    padding: 0 15px;
 		}
 	}
 }

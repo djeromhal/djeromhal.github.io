@@ -1361,52 +1361,241 @@
 					<div class="sidebar">
 						<ul class="sidebar-menu">
 							<li class="sidebar-menu-item sidebar-menu-item__profile">
-								<a href="#" class="sidebar-menu-link">
+								<a href="#" class="sidebar-menu-link call-form" data-href="#profile-form">
 									<i class="header-menu-icon"><img src="i/user-gold.png"></i>
 								</a>
 							</li>
 							<li class="sidebar-menu-item sidebar-menu-item__profile">
-								<a href="#" class="sidebar-menu-link">
+								<a href="#" class="sidebar-menu-link call-form" data-href="#orders-form">
 									<i class="header-menu-icon"><img src="i/bar-code.png"></i>
 								</a>
 							</li>
 							<li class="sidebar-menu-item sidebar-menu-item__profile">
-								<a href="#" class="sidebar-menu-link">
+								<a href="#" class="sidebar-menu-link call-form" data-href="#favorites-form" id="call-form-favorites-form">
 									<i class="header-menu-icon"><img src="i/heart-outline-gold.png"></i>
 								</a>
 							</li>
 							<li class="sidebar-menu-item sidebar-menu-item__profile">
-								<a href="#" class="sidebar-menu-link">
+								<a href="#" class="sidebar-menu-link call-form" data-href="#callback-form">
 									<i class="header-menu-icon"><img src="i/phone-call-gold.png"></i>
 								</a>
 							</li>
 						</ul>
 					</div>
-					<div class="profile-title-wrapper">
-						<h2 class="profile-title">Профиль</h2>
-					</div>
-					<form class="popup-form profile-form">
-						<div class="input-wrapper">
-							<input type="text" name="name" class="input" placeholder="Имя">
+					<form class="popup-form profile-form active" id="profile-form">
+						<div class="profile-title-wrapper">
+							<h2 class="profile-title">Профиль</h2>
 						</div>
-						<div class="input-wrapper">
-							<input type="tel" name="tel" class="input" placeholder="Телефон">
-						</div>
-						<div class="input-wrapper">
-							<input type="email" name="mail" class="input" placeholder="Email">
-						</div>
-						<div class="input-wrapper">
-							<input type="text" name="date" class="input input-with-icon datepicker-here" placeholder="Дата рождения">
-							<i class="input-icon"><img src="i/calendar.png"></i>
-						</div>
-						<div class="input-wrapper">
-							<input type="text" name="newpass" class="input" placeholder="Новый пароль">
-						</div>
-						<div class="input-wrapper">
-							<input type="text" name="repeatpass" class="input" placeholder="Подтвердите пароль">
+						<div class="profile-inner">
+							<div class="input-wrapper">
+								<input type="text" name="name" class="input" placeholder="Имя">
+							</div>
+							<div class="input-wrapper">
+								<input type="tel" name="tel" class="input" placeholder="Телефон">
+							</div>
+							<div class="input-wrapper">
+								<input type="email" name="mail" class="input" placeholder="Email">
+							</div>
+							<div class="input-wrapper">
+								<input type="text" name="date" class="input input-with-icon datepicker-here" placeholder="Дата рождения">
+								<i class="input-icon"><img src="i/calendar.png"></i>
+							</div>
+							<div class="input-wrapper">
+								<input type="text" name="newpass" class="input" placeholder="Новый пароль">
+							</div>
+							<div class="input-wrapper">
+								<input type="text" name="repeatpass" class="input" placeholder="Подтвердите пароль">
+							</div>
 						</div>
 
 						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/user-blue.png"></i><span>Обновить</span></button>
+					</form>
+					<form class="popup-form profile-form" id="favorites-form">
+						<div class="profile-title-wrapper">
+							<h2 class="profile-title">Избранное</h2>
+						</div>
+						<div class="profile-inner">
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="basket-item">
+								<div class="swiper-container basket-item-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="basket-item-inner">
+												<div class="basket-item-img small">
+													<img src="i/basket-item-img.png">
+												</div>
+												<div class="basket-item-detail small">
+													<h3>Линейка: Desire</h3>
+													<p>Бюстгальтер push-up формованная чашка - SENA</p>
+													<div class="basket-item-price">
+														<span class="basket-item-price-label">Цена:</span>
+														<span class="basket-item-price-value">10 000 &#8381;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide" style="width: 100px;">
+											<div class="basket-item-delete"><i><img src="i/trash.png"></i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<form class="popup-form profile-form" id="callback-form">
+						<div class="profile-title-wrapper">
+							<h2 class="profile-title">Обратная связь</h2>
+						</div>
+						<div class="profile-inner">
+							<div class="input-wrapper">
+								<textarea name="msg" class="textarea" placeholder="Сообщение"></textarea>
+							</div>
+						</div>
+
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/chat-blue.png"></i><span>Отправить</span></button>
 					</form>
 				</div>
 			</div>

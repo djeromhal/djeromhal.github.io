@@ -1,5 +1,12 @@
 $(function(){
 
+	$('.call-form').click(function(e){
+		$('.profile-form.active').removeClass('active');
+
+		var id = $(this).data('href');
+		$(id).addClass('active');
+	})
+
 	function getTimer(){
 		return setTimeout(function(){
 			$('.sidebar-main').addClass('hide');
@@ -487,6 +494,17 @@ $(function(){
 	      // allowTouchMove: false,
 	    });
     })
+    $('#call-form-favorites-form').click(function(e){
+	    var basketItemSwiper = new Swiper('.basket-item-swiper', {
+	      speed: speed,
+	      slidesPerView: 'auto',
+	      spaceBetween: 0,
+	      loop: false,
+	      centeredSlides: false,
+	      // allowTouchMove: false,
+	    });
+    })
+
     $('.basket-item-delete').click(function(e){
     	$(this).closest('.basket-item').remove();
     })
