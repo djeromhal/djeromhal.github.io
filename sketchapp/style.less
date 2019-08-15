@@ -301,6 +301,26 @@ html, body{
 
 	&-wrapper{
 		margin-bottom: 15px;
+		position: relative;
+	}
+
+	&-icon{
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    right: 0;
+	    padding: 7px;
+	    box-sizing: border-box;
+
+	    img{
+	    	max-width: 100%;
+	    	max-height: 100%;
+	    	object-fit: cover;
+	    }
+	}
+	&-with-icon{
+		padding-right: 50px;
 	}
 
 	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -983,5 +1003,61 @@ html, body{
 	}
 	&--cell.-selected-, &--cell.-selected-.-current-, &--cell.-selected-.-focus-{
 		background: @color6;
+	}
+}
+.checkbox{
+	&-wrapper{
+		display: block;
+		margin-bottom: 15px;
+
+		input{
+			padding: 0;
+			height: initial;
+			width: initial;
+			margin-bottom: 0;
+			display: none;
+			cursor: pointer;
+
+			&:checked + label:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 2px;
+				left: 9px;
+				width: 6px;
+				height: 14px;
+				border: solid @color6;
+				border-width: 0 2px 2px 0;
+				transform: rotate(45deg);
+			}
+		}
+
+		label{
+			position: relative;
+			cursor: pointer;
+			font-size: 10px;
+			line-height: 12px;
+			display: block;
+			padding-left: 30px;
+
+			&:before {
+				content:'';
+				-webkit-appearance: none;
+				background-color: transparent;
+				border: 2px solid @color6;
+				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+				padding: 10px;
+				display: block;
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+				vertical-align: middle;
+				cursor: pointer;
+				margin-right: 5px;
+				border-radius: 5px;
+			}
+		}
+
+
 	}
 }

@@ -441,14 +441,15 @@ $(function(){
     })
     /////
     ///////
+    var basketSwiper;
     $('#basket-call-popup').click(function(e){
-	    var basketSwiper = new Swiper('#basket-swiper', {
+	    basketSwiper = new Swiper('#basket-swiper', {
 	      speed: speed,
 	      slidesPerView: 1,
 	      spaceBetween: 0,
 	      loop: false,
 	      centeredSlides: true,
-	      // allowTouchMove: false,
+	      allowTouchMove: false,
 	    });
 	    var basketItemSwiper = new Swiper('.basket-item-swiper', {
 	      speed: speed,
@@ -461,6 +462,10 @@ $(function(){
     })
     $('.basket-item-delete').click(function(e){
     	$(this).closest('.basket-item').remove();
+    })
+    $('.basket-next-step').click(function(e){
+    	e.preventDefault();
+    	basketSwiper.slideNext(speed);
     })
     /////
     

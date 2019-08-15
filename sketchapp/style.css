@@ -921,6 +921,26 @@ body {
 }
 .input-wrapper {
   margin-bottom: 15px;
+  position: relative;
+}
+.input-icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 7px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.input-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.input-with-icon {
+  padding-right: 50px;
 }
 .input::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
@@ -1542,4 +1562,54 @@ body {
 .datepicker--cell.-selected-.-current-,
 .datepicker--cell.-selected-.-focus- {
   background: #d4b885;
+}
+.checkbox-wrapper {
+  display: block;
+  margin-bottom: 15px;
+}
+.checkbox-wrapper input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.checkbox-wrapper input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #d4b885;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.checkbox-wrapper label {
+  position: relative;
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 12px;
+  display: block;
+  padding-left: 30px;
+}
+.checkbox-wrapper label:before {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #d4b885;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px;
 }
