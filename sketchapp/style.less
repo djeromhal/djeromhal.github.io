@@ -1,5 +1,6 @@
 @import 'reset.css';
 @import 'colors.less';
+@import 'datepicker.min.less';
 
 body{
 	font: 14px/18px 'Arial', 'Roboto';
@@ -953,5 +954,34 @@ html, body{
 		&-wrapper{
 			height: 60px;
 		}
+	}
+}
+.datepicker{
+	border: 1px solid @color6;
+	background: @color3;
+	color: @color5;
+
+	&--pointer{
+	    border-top: 1px solid @color6;
+	    border-right: 1px solid @color6;
+		background: @color3;
+	}
+	&--day-name{
+		color: @color6;
+	}
+	&--cell.-current-{
+		color: @color6;
+	}
+	&--nav-title i{
+		color: @color7;
+	}
+	&--cell-day.-other-month-, &--cell-year.-other-decade-{
+		color: @color7;
+	}
+	&--nav{
+		border-bottom-color: @color6;
+	}
+	&--cell.-selected-, &--cell.-selected-.-current-, &--cell.-selected-.-focus-{
+		background: @color6;
 	}
 }
