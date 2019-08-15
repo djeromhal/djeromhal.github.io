@@ -131,7 +131,7 @@ $(function(){
     })
 
     ///////
-    $('#category-filter-call-popup').click(function(e){
+    $('.category-filter-call-popup').click(function(e){
 	    var categoryRulerRightTop = new Swiper('#category-ruler-right-top', {
 	      speed: speed,
 	      slidesPerView: 'auto',
