@@ -1,4 +1,23 @@
 $(function(){
+
+	function getTimer(){
+		return setTimeout(function(){
+			$('.sidebar-main').addClass('hide');
+		},3000);
+	}
+
+	document._timer = getTimer();
+
+	$('.main-slider-wrapper').click(function(e){
+		$('.sidebar-main').removeClass('hide');
+
+		clearInterval(document._timer);
+		document._timer = getTimer();
+
+		console.log(document._timer)
+
+	})
+
 	$('.brands-item').click(function(e){
 		$(this).toggleClass('active');
 	})

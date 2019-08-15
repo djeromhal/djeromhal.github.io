@@ -85,6 +85,15 @@ html, body{
 	left: 0;
 	z-index: 2;
 
+	&-main{
+		transition: all .2s ease;
+
+		&.hide{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
 	&-menu{
 		&-link{
 			width: 100%;
