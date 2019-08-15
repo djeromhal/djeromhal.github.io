@@ -14,8 +14,6 @@ $(function(){
 		clearInterval(document._timer);
 		document._timer = getTimer();
 
-		console.log(document._timer)
-
 	})
 
 	$('.brands-item').click(function(e){
@@ -49,16 +47,18 @@ $(function(){
       direction: 'vertical',
       loop: true,
       on:{
-      	touchMove: function(e){
+      	sliderMove: function(e){
       		touchMove_mainSwiper = true;
+      		console.log('mainSwiper::touchMove',e)
       	},
       	touchStart: function(e){
-      		console.log(e)
+      		console.log('mainSwiper::touchStart',e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('touch');
 		    mainSwiper.controller.control = mainSliderRulerBottom;
 		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
       	},
       	touchEnd: function(e){
+      		console.log('mainSwiper::touchEnd',e)
       		if(!touchMove_mainSwiper){
 			    mainSwiper.controller.control = undefined;
 			    mainSliderRulerBottom.controller.control = undefined;
@@ -68,6 +68,7 @@ $(function(){
       }
     });
     mainSwiper.on('slideChangeTransitionEnd',function(e){
+      	console.log('mainSwiper::slideChangeTransitionEnd',e)
 	    mainSwiper.controller.control = undefined;
 	    mainSliderRulerBottom.controller.control = undefined;
     })
@@ -89,17 +90,19 @@ $(function(){
       centeredSlides: true,
       // allowTouchMove: false,
       on:{
-      	touchMove: function(e){
+      	sliderMove: function(e){
+      		console.log('mainSliderRulerTop::touchMove',e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
       		touchMove_mainSliderRulerTop = true;
       	},
       	touchStart: function(e){
-      		console.log(e)
+      		console.log('mainSliderRulerTop::touchStart',e)
       		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
 		    mainSliderRulerTop.controller.control = mainSwiper;
 		    mainSwiper.controller.control = mainSliderRulerBottom;
       	},
       	touchEnd: function(e){
+      		console.log('mainSliderRulerTop::touchEnd',e)
       		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
 
       		if(!touchMove_mainSliderRulerTop){
@@ -111,6 +114,7 @@ $(function(){
       }
     });
     mainSliderRulerTop.on('slideChangeTransitionEnd',function(e){
+      	console.log('mainSliderRulerTop::slideChangeTransitionEnd',e)
 	    mainSliderRulerTop.controller.control = undefined;
 	    mainSwiper.controller.control = undefined;
     })
@@ -124,16 +128,19 @@ $(function(){
       loop: true,
       centeredSlides: true,
       on:{
-      	touchMove: function(e){
+      	sliderMove: function(e){
+      		console.log('mainSliderRulerBottom::touchMove',e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
       		touchMove_mainSliderRulerBottom = true;
       	},
       	touchStart: function(e){
+      		console.log('mainSliderRulerBottom::touchStart',e)
       		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
 		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
 		    mainSliderRulerTop.controller.control = mainSwiper;
       	},
       	touchEnd: function(e){
+      		console.log('mainSliderRulerBottom::touchEnd',e)
       		$(e.target).closest('.main-slider-ruler').removeClass('show').find('.swiper-top').removeClass('touch move');
 
       		if(!touchMove_mainSliderRulerBottom){
@@ -145,6 +152,7 @@ $(function(){
       }
     });
     mainSliderRulerBottom.on('slideChangeTransitionEnd',function(e){
+      	console.log('mainSliderRulerBottom::slideChangeTransitionEnd',e)
 	    mainSliderRulerBottom.controller.control = undefined;
 	    mainSliderRulerTop.controller.control = undefined;
     })
