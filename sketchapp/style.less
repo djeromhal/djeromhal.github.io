@@ -101,6 +101,14 @@ html, body{
 			background-color: fade(@color3, 70%);
 			margin-bottom: 10px;
 			display: block;
+
+			&__profile{
+				border-top-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 1px;
+				border-style: solid;
+				border-color: @color6;
+			}
 		}
 	}
 }
@@ -926,6 +934,24 @@ html, body{
 			i{
 				display: inherit;
 			}
+		}
+	}
+}
+.profile{
+	&-form{
+		padding-left: 70px;
+
+		&-wrapper{
+			padding-top: 0;
+		}
+	}
+	&-title{
+		font-size: 24px;
+		color: @color6;
+		line-height: 60px;
+
+		&-wrapper{
+			height: 60px;
 		}
 	}
 }

@@ -25,7 +25,7 @@
 				<ul class="header-menu">
 					<li class="header-menu-item">
 						<a href="#" class="header-menu-link">
-							<i class="header-menu-icon"><img src="i/user.png"></i>
+							<i class="header-menu-icon call-popup" data-href="#profile"><img src="i/user.png"></i>
 						</a>
 					</li>
 					<li class="header-menu-item">
@@ -1329,6 +1329,59 @@
 								</div>
 							</div>
 						</div>
+					</form>
+				</div>
+			</div>
+			<div class="popup-inner" id="profile">
+				<div class="popup-form-wrapper profile-form-wrapper">
+					<div class="sidebar">
+						<ul class="sidebar-menu">
+							<li class="sidebar-menu-item sidebar-menu-item__profile">
+								<a href="#" class="sidebar-menu-link">
+									<i class="header-menu-icon"><img src="i/user-gold.png"></i>
+								</a>
+							</li>
+							<li class="sidebar-menu-item sidebar-menu-item__profile">
+								<a href="#" class="sidebar-menu-link">
+									<i class="header-menu-icon"><img src="i/bar-code.png"></i>
+								</a>
+							</li>
+							<li class="sidebar-menu-item sidebar-menu-item__profile">
+								<a href="#" class="sidebar-menu-link">
+									<i class="header-menu-icon"><img src="i/heart-outline-gold.png"></i>
+								</a>
+							</li>
+							<li class="sidebar-menu-item sidebar-menu-item__profile">
+								<a href="#" class="sidebar-menu-link">
+									<i class="header-menu-icon"><img src="i/phone-call-gold.png"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="profile-title-wrapper">
+						<h2 class="profile-title">Профиль</h2>
+					</div>
+					<form class="popup-form profile-form">
+						<div class="input-wrapper">
+							<input type="text" name="name" class="input" placeholder="Имя">
+						</div>
+						<div class="input-wrapper">
+							<input type="tel" name="tel" class="input" placeholder="Телефон">
+						</div>
+						<div class="input-wrapper">
+							<input type="email" name="mail" class="input" placeholder="Email">
+						</div>
+						<div class="input-wrapper">
+							<input type="text" name="date" class="input" placeholder="Дата рождения">
+						</div>
+						<div class="input-wrapper">
+							<input type="text" name="newpass" class="input" placeholder="Новый пароль">
+						</div>
+						<div class="input-wrapper">
+							<input type="text" name="repeatpass" class="input" placeholder="Подтвердите пароль">
+						</div>
+
+						<button class="button-big-icon button" type="submit"><i class="icon-submit"><img src="i/user-blue.png"></i><span>Обновить</span></button>
 					</form>
 				</div>
 			</div>

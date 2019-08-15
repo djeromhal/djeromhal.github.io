@@ -106,6 +106,13 @@ body {
   margin-bottom: 10px;
   display: block;
 }
+.sidebar-menu-item__profile {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #d4b885;
+}
 .wrapper {
   margin: 0 auto;
   max-width: 600px;
@@ -858,4 +865,18 @@ body {
 }
 .basket-item-delete i {
   display: inherit;
+}
+.profile-form {
+  padding-left: 70px;
+}
+.profile-form-wrapper {
+  padding-top: 0;
+}
+.profile-title {
+  font-size: 24px;
+  color: #d4b885;
+  line-height: 60px;
+}
+.profile-title-wrapper {
+  height: 60px;
 }
