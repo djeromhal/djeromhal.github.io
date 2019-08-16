@@ -673,6 +673,9 @@ body {
   margin-right: 16px;
   line-height: 30px;
 }
+.hide {
+  display: none;
+}
 .header {
   height: 40px;
   background-color: #233A54;
@@ -1541,6 +1544,9 @@ body {
 .profile-form#favorites-form {
   padding-bottom: 0;
 }
+.profile-form#orders-form {
+  padding-bottom: 0;
+}
 .profile-form.active {
   display: block;
 }
@@ -1647,4 +1653,29 @@ body {
   cursor: pointer;
   margin-right: 5px;
   border-radius: 5px;
+}
+.orders-step {
+  height: 100%;
+  overflow: auto;
+}
+.orders-step__btn {
+  height: 100%;
+  padding-bottom: 175px;
+}
+.orders-total {
+  font-size: 20px;
+  line-height: 40px;
+}
+.orders-item {
+  border-bottom: 1px solid #d4b885;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+.orders-item h3 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+.orders-item p {
+  font-size: 14px;
+  margin-bottom: 3px;
 }

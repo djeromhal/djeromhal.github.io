@@ -43,6 +43,9 @@ html, body{
 		}
 	}
 }
+.hide{
+	display: none;
+}
 .header{
 	height: 40px;
 	background-color: @color3;
@@ -988,6 +991,9 @@ html, body{
 		&#favorites-form{
 			padding-bottom: 0;
 		}
+		&#orders-form{
+			padding-bottom: 0;
+		}
 
 		&.active{
 			display: block;
@@ -1102,5 +1108,36 @@ html, body{
 		}
 
 
+	}
+}
+
+.orders{
+	&-step{
+		height: 100%;
+		overflow: auto;
+
+		&__btn{
+			height: 100%;
+			padding-bottom: 175px;
+		}
+	}
+	&-total{
+	    font-size: 20px;
+	    line-height: 40px;
+	}
+
+	&-item{
+		border-bottom: 1px solid @color6;
+		padding-bottom: 7px;
+		margin-bottom: 7px;
+
+		h3{
+			font-size: 18px;
+			margin-bottom: 3px;
+		}
+		p{
+			font-size: 14px;
+			margin-bottom: 3px;
+		}
 	}
 }
