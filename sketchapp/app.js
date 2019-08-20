@@ -1,5 +1,36 @@
 $(function(){
+	$('.popup').swipe( {
+	    swipeStatus:function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection){
+	        if (phase=="start"){
+	            // сработает в начале swipe
+	        } 
+	        if (phase=="end"){ 
+	            //сработает через 20 пикселей то число которое выбрали в threshold
+	            if (direction == 'left') {
+	                //сработает при движении влево
+					var popup = $(this).closest('.popup');
 
+					$('.flip-card-inner').removeClass('popup-active');
+					popup.find('.popup-inner.active').removeClass('active');
+	            }
+	            if (direction == 'right') {
+	                //сработает при движении вправо
+	                console.log('right')
+	            }
+	            if (direction == 'up') {
+	                //сработает при движении вверх
+	                console.log('up')
+	            }
+	            if (direction == 'down') {
+	                //сработает при движении вниз
+	                console.log('down')
+	            }
+	 		}
+	 	},
+		triggerOnTouchEnd:false,
+		threshold:20 // сработает через 20 пикселей
+	
+	});
 	$('.call-form').click(function(e){
 		$('.profile-form.active').removeClass('active');
 
@@ -98,6 +129,7 @@ $(function(){
       // allowTouchMove: false,
       on:{
       	sliderMove: function(e){
+	      	touchMoveTimer(e, '.main-slider-ruler');
       		console.log('mainSliderRulerTop::touchMove',e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
       		touchMove_mainSliderRulerTop = true;
@@ -136,6 +168,7 @@ $(function(){
       centeredSlides: true,
       on:{
       	sliderMove: function(e){
+	      	touchMoveTimer(e, '.main-slider-ruler');
       		console.log('mainSliderRulerBottom::touchMove',e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('move');
       		touchMove_mainSliderRulerBottom = true;
@@ -176,10 +209,10 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.popup-form-ruler.right');
 	      		$(e.target).closest('.popup-form-ruler.right').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
-	      		console.log(e)
 	      		$(e.target).closest('.popup-form-ruler.right').addClass('show').find('.swiper-top').addClass('touch');
 	      	},
 	      	touchEnd: function(e){
@@ -197,6 +230,8 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.popup-form-ruler.right');
+
 	      		$(e.target).closest('.popup-form-ruler.right').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -220,6 +255,7 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.popup-form-ruler.left');
 	      		$(e.target).closest('.popup-form-ruler.left').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -241,6 +277,7 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.popup-form-ruler.left');
 	      		$(e.target).closest('.popup-form-ruler.left').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -267,6 +304,7 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.card-ruler');
 	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -287,6 +325,7 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.card-ruler');
 	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -309,6 +348,7 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.card-ruler');
 	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -329,6 +369,7 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.card-ruler');
 	      		$(e.target).closest('.card-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -355,6 +396,7 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.filtr-ruler');
 	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -375,6 +417,7 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.filtr-ruler');
 	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -397,6 +440,7 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.filtr-ruler');
 	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -417,6 +461,7 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.filtr-ruler');
 	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -439,6 +484,7 @@ $(function(){
 	      // allowTouchMove: false,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.filtr-ruler');
 	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -459,6 +505,7 @@ $(function(){
 	      centeredSlides: true,
 	      on:{
 	      	touchMove: function(e){
+	      		touchMoveTimer(e, '.filtr-ruler');
 	      		$(e.target).closest('.filtr-ruler').find('.swiper-top').addClass('move');
 	      	},
 	      	touchStart: function(e){
@@ -539,178 +586,12 @@ $(function(){
     })
     /////
     
-
-    var swiper1 = new Swiper('.swiper1', {
-      speed: speed,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      // freeMode: true,
-      // freeModeSticky: true,
-      // freeModeMomentumRatio: 1,
-      // freeModeMomentumVelocityRatio: 0.3,
-      // freeModeMomentumBounce: false,
-      loop: true,
-      centeredSlides: true,
-      on:{
-      	touchMove: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
-      	},
-      	touchStart: function(e){
-      		console.log(e)
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
-      	},
-      	touchEnd: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
-      	},
-      }
-    });
-    var swiper2 = new Swiper('.swiper2', {
-      speed: speed,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      // freeMode: true,
-      // freeModeSticky: true,
-      // freeModeMomentumRatio: 1,
-      // freeModeMomentumVelocityRatio: 0.3,
-      // freeModeMomentumBounce: false,
-      loop: true,
-      centeredSlides: true,
-      // effect: 'coverflow',
-      on:{
-      	touchMove: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
-      	},
-      	touchStart: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
-      	},
-      	touchEnd: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
-      	},
-      }
-    });
-    if(swiper1.$el !== undefined){
-	    swiper1.controller.control = swiper2;
-	    swiper2.controller.control = swiper1;
-    }
-
-
-    var swiper3 = new Swiper('.swiper3', {
-      speed: speed,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      // freeMode: true,
-      // freeModeSticky: true,
-      // freeModeMomentumRatio: 1,
-      // freeModeMomentumVelocityRatio: 0.3,
-      // freeModeMomentumBounce: false,
-      // freeModeMinimumVelocity: 1,
-      // effect: 'fade',
-      loop: true,
-      centeredSlides: true,
-      // allowTouchMove: false,
-      // slideClass: 'swiper-slide slide-hidden',
-      // slideActiveClass: 'swiper-slide swiper-slide-active slide-visible',
-      // slideNextClass: 'swiper-slide swiper-slide-next slide-visible',
-      // slidePrevClass: 'swiper-slide swiper-slide-prev slide-visible',
-      // on:{
-      // 	touchMove: function(e){
-      // 		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
-      // 	},
-      // 	touchStart: function(e){
-      // 		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
-      // 	},
-      // 	touchEnd: function(e){
-      // 		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
-      // 	},
-      // 	slideChange: function(e, i){
-			// swiper3.slideTo(swiper4.realIndex,speed,false );
-      // 	}
-      // }
-    });
-    var swiper4 = new Swiper('.swiper4', {
-      speed: speed,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      // freeMode: true,
-      // freeModeSticky: true,
-      // freeModeMomentumRatio: 1,
-      // freeModeMomentumVelocityRatio: 0.3,
-      // freeModeMomentumBounce: false,
-      loop: true,
-      centeredSlides: true,
-      // effect: 'coverflow',
-      on:{
-      	touchMove: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
-      	},
-      	touchStart: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
-      	},
-      	touchEnd: function(e){
-      		// console.log(e)
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
-      	},
-      	slideNextTransitionStart: function(e, i){
-      		console.log(e, i)
-			// swiper3.slideToLoop(this.realIndex,speed,false );
-      	}
-      }
-    });
-    if(swiper3.$el !== undefined){
-	    swiper3.controller.control = swiper4;
-	    swiper4.controller.control = swiper3;
-	}
-
-
-    var swiper5 = new Swiper('.swiper5', {
-      speed: speed,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      // freeMode: true,
-      // freeModeSticky: true,
-      // freeModeMomentumRatio: 1,
-      // freeModeMomentumVelocityRatio: 0.3,
-      // freeModeMomentumBounce: false,
-      loop: true,
-      centeredSlides: true,
-      on:{
-      	touchMove: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
-      	},
-      	touchStart: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
-      	},
-      	touchEnd: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
-      	},
-      }
-    });
-    var swiper6 = new Swiper('.swiper6', {
-      speed: speed,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      // freeMode: true,
-      // freeModeSticky: true,
-      // freeModeMomentumRatio: 1,
-      // freeModeMomentumVelocityRatio: 0.3,
-      // freeModeMomentumBounce: false,
-      loop: true,
-      centeredSlides: true,
-      // effect: 'coverflow',
-      on:{
-      	touchMove: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('move');
-      	},
-      	touchStart: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').addClass('touch');
-      	},
-      	touchEnd: function(e){
-      		$(e.target).closest('.ruler-slider').find('.swiper-top').removeClass('touch move');
-      	},
-      }
-    });
-    if(swiper5.$el !== undefined){
-	    swiper5.controller.control = swiper6;
-	    swiper6.controller.control = swiper5;
-	}
 })
+
+var touchMoveTimer = function(e, className){
+	clearInterval(document._touchMoveTimer);
+	var touchMoveTimer = setTimeout(function(){
+		$(e.target).closest(className).find('.swiper-top').removeClass('move');
+	},50);
+	document._touchMoveTimer = touchMoveTimer;
+}

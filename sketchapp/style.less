@@ -64,6 +64,11 @@ html, body{
 			display: inline-block;
 			vertical-align: middle;
 			margin: 5px;
+			transition: opacity .3s ease;
+
+			&:hover{
+    			opacity: 0.7;
+			}
 		}
 	}
 }
@@ -114,6 +119,14 @@ html, body{
 			background-color: fade(@color3, 70%);
 			margin-bottom: 10px;
 			display: block;
+			transition: all .3s ease;
+
+			&:hover{
+				background-color: fade(@color3, 80%);
+			}
+			&:active{
+				background-color: fade(@color3, 90%);
+			}
 
 			&__profile{
 				border-top-width: 1px;
@@ -310,6 +323,14 @@ html, body{
 	font-size: 14px;
 	background-color: transparent;
 	outline: none;
+	transition: border-color .3s ease;
+
+	&:hover{
+		border-color: fade(@color5, 80%);
+	}
+	&:focus{
+		border-color: fade(@color5, 60%);
+	}
 
 	&-wrapper{
 		margin-bottom: 15px;
@@ -531,8 +552,8 @@ html, body{
 // }
 .vertical .ruler-slider-cur-value{
 	position: absolute;
-	top: 0;
-	bottom: 0;
+	top: 2px;
+	bottom: 2px;
 	left: 0;
 	right: auto;
 	width: auto;
@@ -651,6 +672,7 @@ html, body{
 		width: 100%;
 		height: 70px;
 		position: relative;
+		transition: all .35s ease;
 
 		&-bg{
 			z-index: 1;
