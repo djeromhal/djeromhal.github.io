@@ -1,4 +1,10 @@
 $(function(){
+	// A Player built from a new DIV:
+	const myNewPlayer = LivePhotosKit.Player();
+	document.body.appendChild(myNewPlayer);
+	// A Player built from a pre-existing element:
+	LivePhotosKit.Player(document.querySelector('.livephoto'));
+
 	$('.popup').swipe( {
 	    swipeStatus:function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection){
 	        if (phase=="start"){
@@ -45,6 +51,10 @@ $(function(){
 	}
 
 	document._timer = getTimer();
+	
+	document._mainRulerSliderTimer = setTimeout(function(){
+		$('.main-slider-ruler').removeClass('show');
+	},3000);
 
 	$('.main-slider-wrapper').click(function(e){
 		$('.sidebar-main').removeClass('hide');
@@ -72,10 +82,10 @@ $(function(){
 	});
 
 
-	$(document).longpress(function(e){
-		e.preventDefault();
-	});
-
+	// $(document).longpress(function(e){
+	// 	e.preventDefault();
+	// });
+	document._mainSwiperSlideChangeCount = -1;
 	var speed = 300;
     var touchMove_mainSwiper = false;
     var mainSwiper = new Swiper('#main-swiper', {
@@ -85,18 +95,33 @@ $(function(){
       direction: 'vertical',
       loop: true,
       on:{
+      	slideChange: function(){
+      		document._mainSwiperSlideChangeCount++;
+      		clearInterval(document._mainSwiperSlideChangeTimer);
+      		document._mainSwiperSlideChangeTimer = setTimeout(function(){
+      			document._mainSwiperSlideChangeCount = -1;
+				$('.main-slider-ruler').removeClass('show');
+      		},3000)
+
+      		if(document._mainSwiperSlideChangeCount >= 3){
+				$('.main-slider-ruler').addClass('show');
+      		}
+
+
+      		console.log(document._mainSwiperSlideChangeCount)
+      	},
       	sliderMove: function(e){
       		touchMove_mainSwiper = true;
-      		console.log('mainSwiper::touchMove',e)
+      		// console.log('mainSwiper::touchMove',e)
       	},
       	touchStart: function(e){
-      		console.log('mainSwiper::touchStart',e)
+      		// console.log('mainSwiper::touchStart',e)
       		$(e.target).closest('.main-slider-ruler').find('.swiper-top').addClass('touch');
 		    mainSwiper.controller.control = mainSliderRulerBottom;
 		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
       	},
       	touchEnd: function(e){
-      		console.log('mainSwiper::touchEnd',e)
+      		// console.log('mainSwiper::touchEnd',e)
       		if(!touchMove_mainSwiper){
 			    mainSwiper.controller.control = undefined;
 			    mainSliderRulerBottom.controller.control = undefined;
@@ -136,6 +161,7 @@ $(function(){
       	},
       	touchStart: function(e){
       		console.log('mainSliderRulerTop::touchStart',e)
+      		clearInterval(document._mainRulerSliderTimer);
       		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
 		    mainSliderRulerTop.controller.control = mainSwiper;
 		    mainSwiper.controller.control = mainSliderRulerBottom;
@@ -175,6 +201,7 @@ $(function(){
       	},
       	touchStart: function(e){
       		console.log('mainSliderRulerBottom::touchStart',e)
+      		clearInterval(document._mainRulerSliderTimer);
       		$(e.target).closest('.main-slider-ruler').addClass('show').find('.swiper-top').addClass('touch');
 		    mainSliderRulerBottom.controller.control = mainSliderRulerTop;
 		    mainSliderRulerTop.controller.control = mainSwiper;

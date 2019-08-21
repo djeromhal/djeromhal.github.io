@@ -9,6 +9,7 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/jquery.touchSwipe.min.js"></script>
+	<script src="https://cdn.apple-livephotoskit.com/lpk/1/livephotoskit.js"></script>
 	<script type="text/javascript" src="swiper/swiper.min.js"></script>
 	<script type="text/javascript" src="js/datepicker.min.js"></script>
   	<script type="text/javascript" src="app.js"></script>
@@ -85,7 +86,14 @@
 											<img src="i/img.png">
 										</div>
 										<div class="swiper-slide">
-											<img src="i/img.png">
+											<img src="">
+											<div
+												class="livephoto"
+									            data-live-photo
+									            data-photo-src="i/video.png"
+									            data-video-src="i/video.mov"
+									            style="width: 320px; height: 320px">            
+									        </div>
 										</div>
 									</div>
 								</div>
@@ -230,7 +238,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main-slider-ruler vertical">
+			<div class="main-slider-ruler vertical show">
 				<div class="swiper-container swiper-top" id="main-slider-ruler-top">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide" style="height: 70px;">					
