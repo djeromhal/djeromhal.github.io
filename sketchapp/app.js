@@ -64,6 +64,34 @@ $(function(){
 
 	})
 
+	var tapped = false;
+	$('.main-slider-item').on('touchstart',function(e){
+		var _this = $(this);
+
+	    if(!tapped){ //if tap is not set, set up single tap
+	      	tapped=setTimeout(function(){
+	          	tapped = null;
+	          	//insert things you want to do when single tapped
+	      	},300);   //wait 300ms then run single click code
+	    } else {    //tapped within 300ms of last tap. double tap
+			clearTimeout(tapped); //stop single tap callback
+			tapped = null;
+			//insert things you want to do when double tapped
+
+			_this.find('.heart').remove();
+			if(document._heartTimer){
+				clearInterval(document._heartTimer);
+			}
+			_this.append('<div class="heart"></div>');
+
+			document._heartTimer = setTimeout(function(){
+				_this.find('.heart').remove();
+			},1000);
+			
+	    }
+	    e.preventDefault()
+	})
+
 	$('.brands-item').click(function(e){
 		$(this).toggleClass('active');
 	})

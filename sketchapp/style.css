@@ -789,6 +789,106 @@ body {
 .main-slider-wrapper {
   height: 100%;
 }
+.main-slider-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.heart {
+  -webkit-animation: heartBeat 1s 1 forwards ease-in-out;
+          animation: heartBeat 1s 1 forwards ease-in-out;
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -40px;
+  opacity: 0.8;
+}
+.heart:before,
+.heart:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50px;
+  height: 80px;
+  background: #233A54;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+.heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
 .popup {
   position: absolute;
   width: 100%;
