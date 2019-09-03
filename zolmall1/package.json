@@ -1,0 +1,27 @@
+{
+  "name": "gulp-postcss-sass-starter-kit",
+  "version": "1.0.0",
+  "description": "A collection of packages that build a website using Gulp build system with PostCSS Sass UglifyJS Browsersync",
+  "author": "Tamas Czombos",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.8",
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-cssnext": "^1.0.1",
+    "gulp-include": "^2.3.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "pixrem": "^3.0.2",
+    "postcss-import": "^9.1.0"
+  }
+}
