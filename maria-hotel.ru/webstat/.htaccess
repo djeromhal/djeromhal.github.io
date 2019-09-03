@@ -1,7 +1,0 @@
-DirectoryIndex index.html
-AuthType Basic
-AuthName "/www/maria-hotel.ru/webstat"
-AuthUserFile /var/www/ivank220/data/etc/1220810.passwd
-<Limit GET POST>
-	require valid-user
-</Limit>
