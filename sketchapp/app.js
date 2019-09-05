@@ -1,4 +1,5 @@
 $(function(){
+	alert()
 	// A Player built from a new DIV:
 	const myNewPlayer = LivePhotosKit.Player();
 	document.body.appendChild(myNewPlayer);
