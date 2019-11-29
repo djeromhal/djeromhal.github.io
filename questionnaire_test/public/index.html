@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1">
+  <title>New site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="burger"><span></span><span></span></div>
+		<div class="header">
+			<a href="#main-info" class="header-item">Личная информация</a>
+			<a href="#main-exp" class="header-item">Опыт</a>
+			<a href="#main-js" class="header-item">JavaScript</a>
+			<a href="#main-about" class="header-item">О себе</a>
+		</div>
+	</div>
+	<div></div>
+	<div class="main">
+		<div class="main-bg"></div>
+		<div class="container">
+			<form class="main-form">
+				<h1 class="title-h1">Анкета</h1>
+
+				<div class="main-info" id="main-info">
+					<div class="icon-wrapper">
+						<i class="icon icon-info"></i>
+					</div>
+					<div class="title-h2-wrapper">
+						<h2 class="title-h2">Личная информация</h2>
+					</div>
+
+					<div class="input-wrapper">
+						<input class="input" type="text" name="fio" placeholder="ФИО" value="Иванько Михаил Михайлович">
+						<div class="input-placeholder">ФИО</div>
+					</div>
+					<div class="input-wrapper select-wrapper bday">
+						<input class="input" type="text" name="place" placeholder="Год рождения" value="1995" disabled>
+						<div class="input-placeholder">Год рождения</div>
+						<i class="icon-drop"></i>
+						<ul class="select-choice"></ul>
+					</div>
+					<div class="input-wrapper">
+						<input class="input" type="text" name="place" placeholder="Место проживания" value="Алушта">
+						<div class="input-placeholder">Место проживания</div>
+					</div>
+					<div class="input-wrapper">
+						<input class="input" type="text" name="skype" placeholder="Skype" value="mikhailivanko">
+						<div class="input-placeholder">Skype</div>
+					</div>
+					<div class="input-wrapper">
+						<input class="input" type="email" name="email" placeholder="E-mail" value="mikhailivanko@gmail.com">
+						<div class="input-placeholder">E-mail</div>
+					</div>
+				</div>
+
+				<div class="main-exp" id="main-exp">
+					<div class="icon-wrapper">
+						<i class="icon icon-exp"></i>
+					</div>
+					<div class="title-h2-wrapper">
+						<h2 class="title-h2">Расскажите о своем опыте</h2>
+					</div>
+
+					<div class="col-wrapper clearfix">
+						<div class="col">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="method" id="method" checked>
+								<label for="method">БЭМ/OOCSS</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="css_proc" id="css_proc" checked>
+								<label for="css_proc">Stylus/LESS/SASS</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="svg" id="svg" checked>
+								<label for="svg">Работаю с SVG</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="verstka" id="verstka" checked>
+								<label for="verstka">Верстаю семантично</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="es" id="es" checked>
+								<label for="es">ES2015/ES2016</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="Gulp" id="Gulp" checked>
+								<label for="Gulp">Gulp/GRUNT</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="webpack" id="webpack" checked>
+								<label for="webpack">Webpack</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="jquery" id="jquery" checked>
+								<label for="jquery">jQuery</label>
+							</div>
+							<div class="checkbox-wrapper">
+								<input type="checkbox" name="git" id="git" checked>
+								<label for="git">Ипользую Git</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-js" id="main-js">
+					<div class="icon-wrapper">
+						<i class="icon icon-js"></i>
+					</div>
+					<div class="title-h2-wrapper">
+						<h2 class="title-h2">Уровень владения JavaScript</h2>
+					</div>
+
+					<div class="range-block">
+						<div class="range-stage">
+							<div class="range-stage-item">Не владею</div>
+							<div class="range-stage-item">Использую готовые<br>решения</div>
+							<div class="range-stage-item">Использую готовые решения<br>и умею и переделывать</div>
+							<div class="range-stage-item">Пишу сложный JS с нуля</div>
+						</div>
+						<div class="range-wrapper">
+							<input type="range" min="1" max="100" value="100" class="range" id="range">
+							<div class="range-bg">
+								<div class="range-bg-up"></div>
+								<div class="range-bg-down"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-about" id="main-about">
+					<div class="icon-wrapper">
+						<i class="icon icon-about"></i>
+					</div>
+					<div class="title-h2-wrapper">
+						<h2 class="title-h2">Расскажите о себе</h2>
+						<p>Напишите несколько предложений, чем привлекла наша вакансия<br> и что вы ожидаете от работы у нас.</p>
+					</div>
+					<div class="textarea-wrapper">
+						<textarea class="textarea" name="text_about" placeholder="Понравилась тем, что...">Вакансия привлекла тем, что есть возможность работать удаленно и уровнем з/п. От работы ожидаю продуктивного роста и интересных задач.</textarea>
+					</div>
+
+					<button class="button" type="submit">Готово</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="javascripts/app.min.js"></script>
+</body>
+</html>
